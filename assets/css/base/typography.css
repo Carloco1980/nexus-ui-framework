@@ -1,0 +1,86 @@
+/*=========================================================
+04 Typography
+=========================================================*/
+
+/*---------------------------------------------------------
+Base Typography
+---------------------------------------------------------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+
+    color:var(--nx-white);
+
+    font-weight:700;
+
+    line-height:1.15;
+
+}
+
+p{
+
+    color:var(--nx-text);
+
+    line-height:1.7;
+
+}
+
+small{
+
+    color:var(--nx-muted);
+
+}
+
+strong{
+
+    font-weight:700;
+
+}
+
+/*---------------------------------------------------------
+Nexus Typography Components
+---------------------------------------------------------*/
+
+.nx-title-xl{
+
+    font-size:clamp(3.5rem,6vw,5.2rem);
+
+    line-height:.95;
+
+    font-weight:800;
+
+    letter-spacing:-.05em;
+
+}
+
+.nx-title-lg{
+
+    margin-bottom:1rem;
+
+    font-size:clamp(2.2rem,4vw,3.5rem);
+
+    font-weight:800;
+
+    line-height:1.15;
+
+    letter-spacing:-.03em;
+
+}
+
+.nx-lead{
+
+    max-width:680px;
+
+    margin-top:2rem;
+
+    color:var(--nx-text);
+
+    font-size:1.2rem;
+
+    line-height:1.7;
+
+}

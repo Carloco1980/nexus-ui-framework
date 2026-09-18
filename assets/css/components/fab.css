@@ -1,0 +1,65 @@
+/*=========================================================
+07 Components
+=========================================================*/
+
+/*---------------------------------------------------------
+07.6 Floating Action Button
+---------------------------------------------------------*/
+
+.nx-fab{
+
+    position:fixed;
+
+    right:24px;
+
+    bottom:24px;
+
+    z-index:1000;
+
+    display:grid;
+
+    place-items:center;
+
+    width:56px;
+
+    aspect-ratio:1;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--nx-primary);
+
+    color:var(--nx-white);
+
+    box-shadow:var(--nx-shadow-md);
+
+    transition:var(--nx-transition);
+
+}
+
+.nx-fab:hover{
+
+    transform:translateY(-3px);
+
+    background:var(--nx-primary-dark);
+
+}
+
+.nx-fab:focus-visible{
+
+    outline:2px solid var(--nx-white);
+
+    outline-offset:4px;
+
+}
+
+.nx-fab svg{
+
+    width:30px;
+
+    height:30px;
+
+    fill:currentColor;
+
+}

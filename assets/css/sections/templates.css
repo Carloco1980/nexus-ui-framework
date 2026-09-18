@@ -1,0 +1,182 @@
+/*=========================================================
+08 Sections
+=========================================================*/
+
+/*---------------------------------------------------------
+08.4 Templates
+---------------------------------------------------------*/
+
+.nx-template-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:var(--nx-space-md);
+
+    margin-top:var(--nx-space-xl);
+
+}
+
+/*---------------------------------------------------------
+Template Card
+Extiende .nx-card
+---------------------------------------------------------*/
+
+.nx-template-card{
+
+    overflow:hidden;
+
+}
+
+.nx-template-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(37,99,235,.45);
+
+    box-shadow:var(--nx-shadow-md);
+
+}
+
+/*---------------------------------------------------------
+Template Preview
+---------------------------------------------------------*/
+
+.nx-template-preview{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:var(--nx-space-sm);
+
+    height:240px;
+
+    padding:var(--nx-space-md);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.04),
+            rgba(255,255,255,.01)
+        );
+
+}
+
+/*---------------------------------------------------------
+Preview Elements
+---------------------------------------------------------*/
+
+.nx-preview-header{
+
+    width:45%;
+
+    height:22px;
+
+    border-radius:var(--nx-radius-pill);
+
+    background:rgba(255,255,255,.10);
+
+}
+
+.nx-preview-line{
+
+    width:100%;
+
+    height:14px;
+
+    border-radius:var(--nx-radius-pill);
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.nx-preview-line.short{
+
+    width:70%;
+
+}
+
+.nx-preview-avatar{
+
+    width:72px;
+
+    aspect-ratio:1;
+
+    border-radius:50%;
+
+    background:rgba(37,99,235,.18);
+
+}
+
+.nx-preview-chart{
+
+    flex:1;
+
+    border-radius:var(--nx-radius-md);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(37,99,235,.25),
+            rgba(37,99,235,.05)
+        );
+
+}
+
+/*---------------------------------------------------------
+WordPress Preview
+---------------------------------------------------------*/
+
+.wordpress{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:var(--nx-space-sm);
+
+    align-items:center;
+
+}
+
+.nx-preview-block{
+
+    height:140px;
+
+    border-radius:var(--nx-radius-sm);
+
+    background:rgba(255,255,255,.08);
+
+}
+
+/*---------------------------------------------------------
+Content
+---------------------------------------------------------*/
+
+.nx-template-content{
+
+    padding:var(--nx-space-md);
+
+}
+
+.nx-template-content h3{
+
+    margin-bottom:var(--nx-space-sm);
+
+    font-size:1.35rem;
+
+    font-weight:700;
+
+    color:var(--nx-white);
+
+}
+
+.nx-template-content p{
+
+    color:var(--nx-muted);
+
+    line-height:1.8;
+
+}

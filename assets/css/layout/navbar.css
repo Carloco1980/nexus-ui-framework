@@ -1,0 +1,95 @@
+/*=========================================================
+06 Layout
+=========================================================*/
+
+/*---------------------------------------------------------
+06.3 Navbar
+---------------------------------------------------------*/
+
+.nx-navbar{
+
+    position:fixed;
+
+    top:24px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:min(95%, var(--nx-container));
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(2,6,23,.45);
+
+    border:1px solid var(--nx-border);
+
+    border-radius:var(--nx-radius-pill);
+
+    z-index:1000;
+
+}
+
+.nx-navbar-wrapper{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    height:82px;
+
+}
+
+.nx-logo{
+
+    font-size:1.6rem;
+
+    font-weight:800;
+
+    color:var(--nx-white);
+
+}
+
+.nx-menu{
+
+    display:flex;
+
+    gap:2.5rem;
+
+}
+
+.nx-menu a{
+
+    color:var(--nx-text);
+
+    transition:var(--nx-transition);
+
+}
+
+.nx-menu a:hover{
+
+    color:var(--nx-white);
+
+}
+
+.nx-navbar-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1rem;
+
+}
+
+.nx-mobile-button{
+
+    display:none;
+
+    font-size:1.8rem;
+
+    color:var(--nx-white);
+
+}

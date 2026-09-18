@@ -1,0 +1,122 @@
+/*=========================================================
+02 Reset
+=========================================================*/
+
+html{
+
+    box-sizing:border-box;
+
+    scroll-behavior:smooth;
+
+}
+
+*,
+*::before,
+*::after{
+
+    box-sizing:inherit;
+
+    margin:0;
+
+    padding:0;
+
+}
+
+body{
+
+    font-family:var(--nx-font-family);
+
+    background:var(--nx-bg);
+
+    color:var(--nx-text);
+
+    overflow-x:hidden;
+
+    text-rendering:optimizeLegibility;
+
+    -webkit-font-smoothing:antialiased;
+
+}
+
+img,
+picture,
+video,
+canvas,
+svg{
+
+    display:block;
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+ul,
+ol{
+
+    list-style:none;
+
+}
+
+button,
+input,
+textarea,
+select{
+
+    font:inherit;
+
+    color:inherit;
+
+}
+
+button{
+
+    background:none;
+
+    border:none;
+
+    cursor:pointer;
+
+}
+
+/*=========================================================
+03 Base
+=========================================================*/
+
+#nx-app{
+
+    min-height:100vh;
+
+}
+
+section{
+
+    position:relative;
+
+}
+
+::selection{
+
+    background:var(--nx-primary);
+
+    color:var(--nx-white);
+
+}
+
+a:focus-visible,
+button:focus-visible{
+
+    outline:2px solid var(--nx-primary);
+
+    outline-offset:3px;
+
+}

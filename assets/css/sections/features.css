@@ -1,0 +1,152 @@
+/*=========================================================
+08 Sections
+=========================================================*/
+
+/*---------------------------------------------------------
+08.3 Features
+---------------------------------------------------------*/
+
+.nx-feature-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:2rem;
+
+}
+
+/*---------------------------------------------------------
+Feature Card
+Extiende .nx-card
+---------------------------------------------------------*/
+
+.nx-feature-card{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:2.5rem 2rem;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid var(--nx-border);
+
+    border-radius:var(--nx-radius-lg);
+
+    overflow:hidden;
+
+    transition:var(--nx-transition);
+
+}
+.nx-feature-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(37,99,235,.45);
+
+    background:rgba(255,255,255,.05);
+
+    box-shadow:
+        0 20px 40px rgba(15,23,42,.45),
+        0 12px 28px rgba(37,99,235,.18),
+        inset 0 1px rgba(255,255,255,.06);
+
+}
+
+/*---------------------------------------------------------
+Feature Icon
+---------------------------------------------------------*/
+
+.nx-feature-icon{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:72px;
+
+    height:72px;
+
+    margin:0 auto 2rem;
+
+    border-radius:var(--nx-radius-md);
+
+    background:rgba(37,99,235,.12);
+
+    font-size:2rem;
+    
+    transition:var(--nx-transition);
+
+}
+/*---------------------------------------------------------
+Typography
+---------------------------------------------------------*/
+
+.nx-feature-card h3{
+
+    margin-bottom:1rem;
+
+    font-size:1.45rem;
+
+    font-weight:700;
+
+    color:var(--nx-white);
+
+}
+
+.nx-feature-card p{
+
+    max-width:320px;
+
+    margin:0 auto;
+
+    color:var(--nx-muted);
+
+    line-height:1.8;
+
+    font-size:1rem;
+
+}
+
+/*---------------------------------------------------------
+Hover Effect
+---------------------------------------------------------*/
+
+.nx-feature-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(37,99,235,.08),
+            transparent 60%
+        );
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:var(--nx-transition);
+
+}
+
+.nx-feature-card:hover::before{
+
+    opacity:1;
+
+}

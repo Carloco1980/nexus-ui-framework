@@ -1,0 +1,35 @@
+/*=========================================================
+06 Layout
+=========================================================*/
+
+/*---------------------------------------------------------
+06.1 Base Layout
+---------------------------------------------------------*/
+
+.nx-container{
+
+    width:min(92%, var(--nx-container));
+
+    margin:0 auto;
+
+    padding-inline:1rem;
+
+}
+
+.nx-section{
+
+    position:relative;
+
+    padding:var(--nx-space-2xl) 0;
+
+}
+
+.nx-section-header{
+
+    max-width:900px;
+
+    margin:0 auto 5rem;
+
+    text-align:center;
+
+}

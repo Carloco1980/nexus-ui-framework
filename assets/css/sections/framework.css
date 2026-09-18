@@ -1,0 +1,132 @@
+/*=========================================================
+08 Sections
+=========================================================*/
+
+/*---------------------------------------------------------
+08.5 Framework
+---------------------------------------------------------*/
+
+.nx-framework-diagram{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:var(--nx-space-lg);
+
+    margin-top:var(--nx-space-xl);
+
+}
+
+.nx-framework-row{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:var(--nx-space-md);
+
+    width:100%;
+
+}
+
+/*---------------------------------------------------------
+Framework Node
+Extiende .nx-card
+---------------------------------------------------------*/
+
+.nx-framework-node{
+
+    overflow:hidden;
+
+    text-align:center;
+
+}
+
+.nx-framework-node:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(37,99,235,.45);
+
+    box-shadow:var(--nx-shadow-md);
+
+}
+
+/*---------------------------------------------------------
+Typography
+---------------------------------------------------------*/
+
+.nx-framework-node h3{
+
+    margin-bottom:var(--nx-space-sm);
+
+    font-size:1.35rem;
+
+    font-weight:700;
+
+    color:var(--nx-white);
+
+}
+
+.nx-framework-node p{
+
+    color:var(--nx-muted);
+
+    line-height:1.7;
+
+}
+
+/*---------------------------------------------------------
+Core Node
+---------------------------------------------------------*/
+
+.nx-framework-core{
+
+    width:min(100%,520px);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(37,99,235,.12),
+            rgba(255,255,255,.03)
+        );
+
+    border-color:rgba(37,99,235,.35);
+
+}
+
+/*---------------------------------------------------------
+Hover Effect
+---------------------------------------------------------*/
+
+.nx-framework-node::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(37,99,235,.08),
+            transparent 70%
+        );
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:var(--nx-transition);
+
+}
+
+.nx-framework-node:hover::before{
+
+    opacity:1;
+
+}

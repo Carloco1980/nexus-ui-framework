@@ -1,0 +1,70 @@
+/*=========================================================
+07 Components
+=========================================================*/
+
+/*---------------------------------------------------------
+07.1 Buttons
+---------------------------------------------------------*/
+
+.nx-button,
+.nx-button-secondary{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:.9rem 1.8rem;
+
+    border:1px solid transparent;
+
+    border-radius:var(--nx-radius-pill);
+
+    font-weight:600;
+
+    transition:var(--nx-transition);
+
+}
+
+/*---------------------------------------------------------
+Primary
+---------------------------------------------------------*/
+
+.nx-button{
+
+    background:var(--nx-primary);
+
+    color:var(--nx-white);
+
+}
+
+.nx-button:hover{
+
+    transform:translateY(-3px);
+
+    background:var(--nx-primary-dark);
+
+}
+
+/*---------------------------------------------------------
+Secondary
+---------------------------------------------------------*/
+
+.nx-button-secondary{
+
+    background:transparent;
+
+    color:var(--nx-white);
+
+    border-color:var(--nx-border);
+
+}
+
+.nx-button-secondary:hover{
+
+    transform:translateY(-3px);
+
+    background:rgba(255,255,255,.05);
+
+}

@@ -1,0 +1,73 @@
+.nx-design-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,minmax(0,1fr));
+
+    gap:2rem;
+
+    margin-top:var(--nx-space-xl);
+
+}
+
+.nx-design-card{
+
+    padding:2.5rem;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid var(--nx-border);
+
+    border-radius:var(--nx-radius-lg);
+
+    transition:var(--nx-transition);
+
+}
+
+.nx-design-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(37,99,235,.45);
+
+    box-shadow:var(--nx-shadow-md);
+
+}
+
+.nx-design-icon{
+
+    width:72px;
+
+    height:72px;
+
+    margin:0 auto 1.5rem;
+
+    border-radius:var(--nx-radius-md);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:2rem;
+
+    background:rgba(37,99,235,.12);
+
+}
+
+.nx-design-card h3{
+
+    margin-bottom:1rem;
+
+}
+
+.nx-design-card p{
+
+    color:var(--nx-muted);
+
+    line-height:1.8;
+
+}

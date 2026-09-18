@@ -1,0 +1,110 @@
+/*=========================================================
+07 Components
+=========================================================*/
+
+/*---------------------------------------------------------
+07.5 Forms
+---------------------------------------------------------*/
+
+.nx-contact-fields{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:var(--nx-space-sm);
+
+    margin-bottom:var(--nx-space-md);
+
+}
+
+.nx-form-field{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.5rem;
+
+}
+
+.nx-form-field-full{
+
+    grid-column:1 / -1;
+
+}
+
+.nx-form-field label{
+
+    color:var(--nx-text);
+
+    font-size:.9rem;
+
+    font-weight:500;
+
+}
+
+.nx-form-field input,
+.nx-form-field textarea{
+
+    width:100%;
+
+    padding:.9rem 1rem;
+
+    border:1px solid var(--nx-border);
+
+    border-radius:var(--nx-radius-sm);
+
+    background:rgba(255,255,255,.04);
+
+    color:var(--nx-white);
+
+    font:inherit;
+
+    resize:vertical;
+
+    transition:var(--nx-transition);
+
+}
+
+.nx-form-field input::placeholder,
+.nx-form-field textarea::placeholder{
+
+    color:var(--nx-muted);
+
+}
+
+.nx-form-field input:focus,
+.nx-form-field textarea:focus{
+
+    border-color:var(--nx-primary);
+
+    outline:none;
+
+}
+
+.nx-form-field input:disabled,
+.nx-form-field textarea:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+}
+
+.nx-form-field input[aria-invalid="true"],
+.nx-form-field textarea[aria-invalid="true"]{
+
+    border-color:var(--nx-primary);
+
+}
+
+.nx-form-status{
+
+    min-height:1.5em;
+
+    margin-top:var(--nx-space-sm);
+
+    color:var(--nx-text);
+
+}

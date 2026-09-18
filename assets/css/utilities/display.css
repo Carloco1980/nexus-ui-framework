@@ -1,0 +1,153 @@
+/*=========================================================
+05 Utilities
+=========================================================*/
+
+/*---------------------------------------------------------
+Display
+---------------------------------------------------------*/
+
+.nx-block{
+
+    display:block;
+
+}
+
+.nx-inline{
+
+    display:inline;
+
+}
+
+.nx-inline-block{
+
+    display:inline-block;
+
+}
+
+.nx-flex{
+
+    display:flex;
+
+}
+
+.nx-inline-flex{
+
+    display:inline-flex;
+
+}
+
+.nx-grid{
+
+    display:grid;
+
+}
+
+.nx-hidden{
+
+    display:none !important;
+
+}
+
+/*---------------------------------------------------------
+Flex Direction
+---------------------------------------------------------*/
+
+.nx-flex-row{
+
+    flex-direction:row;
+
+}
+
+.nx-flex-column{
+
+    flex-direction:column;
+
+}
+
+/*---------------------------------------------------------
+Flex Alignment
+---------------------------------------------------------*/
+
+.nx-items-start{
+
+    align-items:flex-start;
+
+}
+
+.nx-items-center{
+
+    align-items:center;
+
+}
+
+.nx-items-end{
+
+    align-items:flex-end;
+
+}
+
+.nx-justify-start{
+
+    justify-content:flex-start;
+
+}
+
+.nx-justify-center{
+
+    justify-content:center;
+
+}
+
+.nx-justify-end{
+
+    justify-content:flex-end;
+
+}
+
+.nx-justify-between{
+
+    justify-content:space-between;
+
+}
+
+.nx-justify-around{
+
+    justify-content:space-around;
+
+}
+
+.nx-justify-evenly{
+
+    justify-content:space-evenly;
+
+}
+
+/*---------------------------------------------------------
+Flex Wrap
+---------------------------------------------------------*/
+
+.nx-flex-wrap{
+
+    flex-wrap:wrap;
+
+}
+
+.nx-flex-nowrap{
+
+    flex-wrap:nowrap;
+
+}
+
+/*---------------------------------------------------------
+Grid Helpers
+---------------------------------------------------------*/
+
+.nx-grid-auto{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:var(--nx-space-md);
+
+}
