@@ -12,7 +12,9 @@
 
     margin-bottom:var(--nx-space-md);
 
-    padding:.45rem 1rem;
+    padding:
+        var(--nx-space-xs)
+        var(--nx-space-sm);
 
     border-radius:var(--nx-radius-pill);
 
@@ -20,6 +22,10 @@
 
     color:var(--nx-primary);
 
+    font-size:.85rem;
+
     font-weight:600;
+
+    transition:var(--nx-transition);
 
 }

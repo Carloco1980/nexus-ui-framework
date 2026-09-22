@@ -19,6 +19,8 @@ h6{
 
     line-height:1.15;
 
+    letter-spacing:-.02em;
+
 }
 
 p{
@@ -31,7 +33,7 @@ p{
 
 small{
 
-    color:var(--nx-muted);
+    color:var(--nx-text-muted);
 
 }
 
@@ -55,19 +57,19 @@ Nexus Typography Components
 
     letter-spacing:-.05em;
 
+    color:var(--nx-white);
+
 }
 
 .nx-title-lg{
 
-    margin-bottom:1rem;
+    margin-top:1rem;
 
-    font-size:clamp(2.2rem,4vw,3.5rem);
+    font-size:1.6rem;
 
-    font-weight:800;
+    font-weight:500;
 
-    line-height:1.15;
-
-    letter-spacing:-.03em;
+    color:var(--nx-text-muted);
 
 }
 
@@ -80,6 +82,8 @@ Nexus Typography Components
     color:var(--nx-text);
 
     font-size:1.2rem;
+
+    font-weight:400;
 
     line-height:1.7;
 

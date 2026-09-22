@@ -2,7 +2,7 @@
 ==================================================
 Nexus UI Framework
 
-Version : 0.9.0 RC1
+Version : 1.0.0
 Author  : Carlos Santander Díaz
 License : MIT
 
@@ -28,31 +28,136 @@ Load Order
 
 
 /*=========================================================
-01 Design Tokens
+01. NEXUS DESIGN TOKENS
 =========================================================*/
 
 :root{
 
-    /*---------------------------------------------------------
-    Colors
-    ---------------------------------------------------------*/
+    /*=====================================================
+    BACKGROUND
+    =====================================================*/
+
+    --nx-bg:#020617;
+
+    /*=====================================================
+    SURFACES
+    =====================================================*/
+
+    --nx-surface:#0F172A;
+    --nx-surface-light:#162033;
+    --nx-surface-hover:#1B2940;
+    --nx-surface-elevated:#1E293B;
+
+    /*=====================================================
+    PRIMARY COLORS
+    =====================================================*/
 
     --nx-primary:#2563EB;
     --nx-primary-dark:#1D4ED8;
 
-    --nx-bg:#020617;
-    --nx-surface:#0F172A;
+    /*=====================================================
+    ACCENT COLORS
+    =====================================================*/
+
+    --nx-green:#32E67A;
+    --nx-cyan:#35D8FF;
+    --nx-purple:#8B5CF6;
+    --nx-orange:#F59E0B;
+    --nx-red:#EF4444;
+
+    /*=====================================================
+    TEXT
+    =====================================================*/
 
     --nx-white:#FFFFFF;
 
     --nx-text:#CBD5E1;
-    --nx-muted:#94A3B8;
+    --nx-text-muted:#94A3B8;
+    --nx-text-soft:#64748B;
+
+    /*=====================================================
+    BORDERS
+    =====================================================*/
 
     --nx-border:rgba(255,255,255,.08);
+    --nx-border-soft:rgba(255,255,255,.05);
+    --nx-border-strong:rgba(255,255,255,.16);
 
-    /*---------------------------------------------------------
-    Typography
-    ---------------------------------------------------------*/
+    /*=====================================================
+    GLOW
+    =====================================================*/
+
+    --nx-glow-green:
+        0 0 10px rgba(50,230,122,.25),
+        0 0 25px rgba(50,230,122,.12);
+
+    --nx-glow-blue:
+        0 0 10px rgba(37,99,235,.25),
+        0 0 25px rgba(37,99,235,.12);
+
+    --nx-glow-purple:
+        0 0 10px rgba(139,92,246,.25),
+        0 0 25px rgba(139,92,246,.12);
+
+    --nx-glow-white:
+        0 0 10px rgba(255,255,255,.08);
+
+    --nx-glow-green-strong:
+        0 0 20px rgba(50,230,122,.45),
+        0 0 45px rgba(50,230,122,.22);
+
+       /*=====================================================
+    GLASS
+    =====================================================*/
+
+    --nx-glass-bg:rgba(15,23,42,.72);
+
+    --nx-glass-border:rgba(255,255,255,.08);
+
+    --nx-glass-blur:blur(18px);
+
+    /*=====================================================
+    GRADIENTS
+    =====================================================*/
+
+    --nx-gradient-primary:
+        linear-gradient(
+            135deg,
+            var(--nx-green),
+            var(--nx-cyan)
+        );
+
+    --nx-gradient-secondary:
+        linear-gradient(
+            135deg,
+            var(--nx-purple),
+            var(--nx-cyan)
+        );
+
+    --nx-gradient-dark:
+        linear-gradient(
+            180deg,
+            #0B1220,
+            #020617
+        );
+
+    /*=====================================================
+    ALIASES
+    =====================================================*/
+
+    --nx-text-primary:var(--nx-white);
+    --nx-text-secondary:var(--nx-text);
+    --nx-text-tertiary:var(--nx-text-muted);
+
+    --nx-accent-green:var(--nx-green);
+    --nx-accent-cyan:var(--nx-cyan);
+    --nx-accent-purple:var(--nx-purple);
+    --nx-accent-orange:var(--nx-orange);
+    --nx-accent-red:var(--nx-red);
+
+    /*=====================================================
+    TYPOGRAPHY
+    =====================================================*/
 
     --nx-font-family:
         "Inter",
@@ -62,9 +167,9 @@ Load Order
         "Segoe UI",
         sans-serif;
 
-    /*---------------------------------------------------------
-    Spacing
-    ---------------------------------------------------------*/
+    /*=====================================================
+    SPACING
+    =====================================================*/
 
     --nx-space-xs:.5rem;
     --nx-space-sm:1rem;
@@ -73,34 +178,72 @@ Load Order
     --nx-space-xl:6rem;
     --nx-space-2xl:8rem;
 
-    /*---------------------------------------------------------
-    Radius
-    ---------------------------------------------------------*/
+    /*=====================================================
+    RADIUS
+    =====================================================*/
 
+    --nx-radius-xs:8px;
     --nx-radius-sm:12px;
     --nx-radius-md:20px;
     --nx-radius-lg:32px;
+    --nx-radius-xl:40px;
     --nx-radius-pill:999px;
 
-    /*---------------------------------------------------------
-    Shadows
-    ---------------------------------------------------------*/
+    /*=====================================================
+    SHADOWS
+    =====================================================*/
 
     --nx-shadow-sm:0 10px 25px rgba(0,0,0,.18);
     --nx-shadow-md:0 20px 50px rgba(0,0,0,.30);
     --nx-shadow-lg:0 40px 80px rgba(0,0,0,.45);
 
-    /*---------------------------------------------------------
-    Transition
-    ---------------------------------------------------------*/
+    /*=====================================================
+    MOTION
+    =====================================================*/
 
-    --nx-transition:.35s ease;
+    --nx-duration-fast:.2s;
+    --nx-duration-normal:.35s;
+    --nx-duration-slow:.5s;
 
-    /*---------------------------------------------------------
-    Layout
-    ---------------------------------------------------------*/
+    --nx-easing:ease;
 
-    --nx-container:1400px;
+    /*=====================================================
+      TRANSITIONS
+      =====================================================*/
+
+--nx-transition:
+    all
+    var(--nx-duration-normal)
+    var(--nx-easing);
+
+    /*=====================================================
+    LAYOUT
+    =====================================================*/
+
+    --nx-container:1440px;
+
+    --nx-navbar-padding:2rem;
+
+    /*=====================================================
+    COMPONENTS
+    =====================================================*/
+
+    --nx-search-width:250px;
+
+    --nx-button-height:48px;
+
+    --nx-input-height:46px;
+
+    --nx-icon-button-size:46px;
+
+    /*=====================================================
+    Z INDEX
+    =====================================================*/
+
+    --nx-z-navbar:100;
+    --nx-z-dropdown:200;
+    --nx-z-modal:500;
+    --nx-z-toast:1000;
 
 }
 
@@ -135,6 +278,8 @@ body{
     background:var(--nx-bg);
 
     color:var(--nx-text);
+
+    line-height:1.6;
 
     overflow-x:hidden;
 
@@ -181,6 +326,9 @@ select{
     font:inherit;
 
     color:inherit;
+
+    background:none;
+
 
 }
 
@@ -256,6 +404,8 @@ h6{
 
     line-height:1.15;
 
+    letter-spacing:-.02em;
+
 }
 
 p{
@@ -268,7 +418,7 @@ p{
 
 small{
 
-    color:var(--nx-muted);
+    color:var(--nx-text-muted);
 
 }
 
@@ -292,19 +442,19 @@ Nexus Typography Components
 
     letter-spacing:-.05em;
 
+    color:var(--nx-white);
+
 }
 
 .nx-title-lg{
 
-    margin-bottom:1rem;
+    margin-top:1rem;
 
-    font-size:clamp(2.2rem,4vw,3.5rem);
+    font-size:1.6rem;
 
-    font-weight:800;
+    font-weight:500;
 
-    line-height:1.15;
-
-    letter-spacing:-.03em;
+    color:var(--nx-text-muted);
 
 }
 
@@ -318,12 +468,14 @@ Nexus Typography Components
 
     font-size:1.2rem;
 
+    font-weight:400;
+
     line-height:1.7;
 
 }
 
 /*=========================================================
-09 Animations
+05 Animations
 =========================================================*/
 
 /*---------------------------------------------------------
@@ -374,6 +526,74 @@ Scroll Indicator
 }
 
 /*---------------------------------------------------------
+Fade
+---------------------------------------------------------*/
+
+@keyframes nxFade{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+/*---------------------------------------------------------
+Fade Up
+---------------------------------------------------------*/
+
+@keyframes nxFadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*---------------------------------------------------------
+Scale
+---------------------------------------------------------*/
+
+@keyframes nxScale{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.96);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/*---------------------------------------------------------
 Accessibility
 ---------------------------------------------------------*/
 
@@ -385,17 +605,15 @@ Accessibility
 
     }
 
-    *{
+    *,
+    *::before,
+    *::after{
 
-        animation:none !important;
+        animation-duration:.01ms !important;
 
-        transition:none !important;
+        animation-iteration-count:1 !important;
 
-    }
-
-    .nx-hero-video{
-
-        display:none;
+        transition-duration:.01ms !important;
 
     }
 
@@ -410,18 +628,36 @@ Accessibility
 =========================================================*/
 
 /*---------------------------------------------------------
-06.1 Base Layout
+06.1 Container
 ---------------------------------------------------------*/
 
 .nx-container{
 
-    width:min(92%, var(--nx-container));
+    width:100%;
 
-    margin:0 auto;
+    max-width:var(--nx-container);
 
-    padding-inline:1rem;
+    margin-inline:auto;
+
+    padding-inline:1.5rem;
 
 }
+
+/*---------------------------------------------------------
+06.2 Main
+---------------------------------------------------------*/
+
+.nx-main{
+
+    position:relative;
+
+    min-height:100vh;
+
+}
+
+/*---------------------------------------------------------
+06.3 Sections
+---------------------------------------------------------*/
 
 .nx-section{
 
@@ -442,94 +678,298 @@ Accessibility
 }
 
 /*=========================================================
-06.2 Grid
+06 Layout
 =========================================================*/
+
+/*---------------------------------------------------------
+06.2 Grid
+---------------------------------------------------------*/
 
 .nx-grid{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-
     gap:var(--nx-space-md);
 
 }
 
+/*---------------------------------------------------------
+Auto Grid
+---------------------------------------------------------*/
+
+.nx-grid-auto{
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(320px,1fr)
+        );
+
+}
+
+/*---------------------------------------------------------
+2 Columns
+---------------------------------------------------------*/
+
+.nx-grid-2{
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+}
+
+/*---------------------------------------------------------
+3 Columns
+---------------------------------------------------------*/
+
+.nx-grid-3{
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+}
+
+/*---------------------------------------------------------
+4 Columns
+---------------------------------------------------------*/
+
+.nx-grid-4{
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+}
+
 /*=========================================================
-06 Layout
+06.3 Navbar
 =========================================================*/
 
 /*---------------------------------------------------------
-06.3 Navbar
+Header
+---------------------------------------------------------*/
+
+.nx-header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:var(--nx-z-navbar);
+
+    padding:1.25rem 0;
+
+}
+
+/*---------------------------------------------------------
+Navbar
 ---------------------------------------------------------*/
 
 .nx-navbar{
 
-    position:fixed;
+    display:grid;
 
-    top:24px;
+    grid-template-columns:auto 1fr auto;
 
-    left:50%;
+    align-items:center;
 
-    transform:translateX(-50%);
+    gap:2rem;
 
-    width:min(95%, var(--nx-container));
+    width:100%;
+
+    min-height:82px;
+
+    padding:0 2rem;
+
+    background:rgba(15,23,42,.82);
 
     backdrop-filter:blur(18px);
 
-    background:rgba(2,6,23,.45);
-
     border:1px solid var(--nx-border);
 
-    border-radius:var(--nx-radius-pill);
+    border-radius:999px;
 
-    z-index:1000;
+    box-shadow:var(--nx-shadow-sm);
 
 }
 
-.nx-navbar-wrapper{
+/*---------------------------------------------------------
+Brand
+---------------------------------------------------------*/
+
+.nx-navbar-brand{
 
     display:flex;
 
     align-items:center;
 
-    justify-content:space-between;
+    gap:1rem;
 
-    height:82px;
+    text-decoration:none;
 
-}
-
-.nx-logo{
-
-    font-size:1.6rem;
-
-    font-weight:800;
-
-    color:var(--nx-white);
+    flex-shrink:0;
 
 }
 
-.nx-menu{
+.nx-logo-mark{
+
+    width:56px;
+    height:56px;
 
     display:flex;
 
-    gap:2.5rem;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:16px;
+
+    background:linear-gradient(
+        135deg,
+        var(--nx-cyan),
+        var(--nx-green)
+    );
+
+    color:#fff;
+
+    font-size:1.4rem;
+
+    font-weight:800;
+
+    box-shadow:var(--nx-glow-green);
 
 }
 
-.nx-menu a{
+.nx-logo-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    line-height:1.05;
+
+}
+
+.nx-logo-title{
+
+    color:#fff;
+
+    font-size:1rem;
+
+    font-weight:800;
+
+    letter-spacing:.20em;
+
+}
+
+.nx-logo-subtitle{
+
+    color:var(--nx-text-soft);
+
+    font-size:.70rem;
+
+    letter-spacing:.22em;
+
+}
+
+/*---------------------------------------------------------
+Menu
+---------------------------------------------------------*/
+
+.nx-navbar-menu{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    list-style:none;
+
+    gap:2.5rem;
+
+    margin:0;
+
+    padding:0;
+
+}
+
+.nx-navbar-menu li{
+
+    position:relative;
+
+}
+
+.nx-navbar-menu a{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    height:82px;
 
     color:var(--nx-text);
 
-    transition:var(--nx-transition);
+    text-decoration:none;
+
+    font-size:.96rem;
+
+    font-weight:600;
+
+    transition:
+        color .25s ease,
+        transform .25s ease;
 
 }
 
-.nx-menu a:hover{
+.nx-navbar-menu a:hover{
 
-    color:var(--nx-white);
+    color:#fff;
 
 }
+
+.nx-navbar-menu a.active{
+
+    color:#fff;
+
+}
+
+/* Línea verde */
+
+.nx-navbar-menu a.active::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    bottom:16px;
+
+    width:30px;
+
+    height:4px;
+
+    border-radius:999px;
+
+    background:var(--nx-green);
+
+    box-shadow:
+        0 0 12px rgba(80,255,170,.8),
+        0 0 24px rgba(80,255,170,.45);
+
+}
+
+/*---------------------------------------------------------
+Actions
+---------------------------------------------------------*/
 
 .nx-navbar-actions{
 
@@ -539,15 +979,95 @@ Accessibility
 
     gap:1rem;
 
+    flex-shrink:0;
+
 }
 
-.nx-mobile-button{
+/*---------------------------------------------------------
+Search
+---------------------------------------------------------*/
 
-    display:none;
+.nx-navbar-search{
 
-    font-size:1.8rem;
+    width:240px;
 
-    color:var(--nx-white);
+    height:48px;
+
+    padding:0 1rem;
+
+    border-radius:999px;
+
+    border:1px solid var(--nx-border);
+
+    background:rgba(255,255,255,.04);
+
+    color:var(--nx-text);
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.nx-navbar-search::-moz-placeholder{
+
+    color:var(--nx-text-soft);
+
+}
+
+.nx-navbar-search::placeholder{
+
+    color:var(--nx-text-soft);
+
+}
+
+.nx-navbar-search:focus{
+
+    border-color:var(--nx-primary);
+
+    background:rgba(255,255,255,.06);
+
+    box-shadow:var(--nx-glow-blue);
+
+}
+
+/*---------------------------------------------------------
+Theme
+---------------------------------------------------------*/
+
+.nx-navbar-theme{
+
+    width:48px;
+
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    border:1px solid var(--nx-border);
+
+    background:rgba(255,255,255,.04);
+
+    color:#fff;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.nx-navbar-theme:hover{
+
+    transform:translateY(-2px);
+
+    border-color:var(--nx-primary);
+
+    box-shadow:var(--nx-glow-blue);
 
 }
 
@@ -559,11 +1079,13 @@ Accessibility
 06.4 Footer
 ---------------------------------------------------------*/
 
-#nx-footer{
+.nx-footer{
 
     position:relative;
 
     padding:var(--nx-space-xl) 0;
+
+    background:transparent;
 
 }
 
@@ -579,90 +1101,348 @@ Accessibility
 07.1 Buttons
 ---------------------------------------------------------*/
 
-.nx-button,
-.nx-button-secondary{
+/*=========================================================
+Base
+=========================================================*/
 
+.nx-btn{
+
+    position:relative;
     display:inline-flex;
-
     align-items:center;
-
     justify-content:center;
+    gap:.75rem;
 
-    padding:.9rem 1.8rem;
+    min-width:170px;
+    height:56px;
+
+    padding:0 2rem;
 
     border:1px solid transparent;
 
-    border-radius:var(--nx-radius-pill);
+    border-radius:18px;
 
-    font-weight:600;
+    cursor:pointer;
 
-    transition:var(--nx-transition);
+    overflow:hidden;
+    isolation:isolate;
 
-}
+    text-decoration:none;
+    white-space:nowrap;
 
-/*---------------------------------------------------------
-Primary
----------------------------------------------------------*/
-
-.nx-button{
-
-    background:var(--nx-primary);
+    font-family:var(--nx-font-family);
+    font-size:1rem;
+    font-weight:700;
+    letter-spacing:.02em;
 
     color:var(--nx-white);
 
+    transition:
+        transform .28s ease,
+        background .28s ease,
+        border-color .28s ease,
+        color .28s ease,
+        box-shadow .28s ease,
+        filter .28s ease;
+
 }
 
-.nx-button:hover{
+/*=========================================================
+Glow
+=========================================================*/
 
-    transform:translateY(-3px);
+.nx-btn::before{
 
-    background:var(--nx-primary-dark);
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:inherit;
+
+    pointer-events:none;
+
+    opacity:0;
+
+    transition:opacity .28s ease;
 
 }
 
-/*---------------------------------------------------------
-Secondary
----------------------------------------------------------*/
+/*=========================================================
+Hover
+=========================================================*/
 
-.nx-button-secondary{
+.nx-btn:hover{
+
+    transform:translateY(-2px);
+
+    filter:brightness(1.05);
+
+}
+
+/*=========================================================
+Active
+=========================================================*/
+
+.nx-btn:active{
+
+    transform:translateY(1px);
+
+}
+
+/*=========================================================
+Focus
+=========================================================*/
+
+.nx-btn:focus-visible{
+
+    outline:none;
+
+    box-shadow:
+
+        0 0 0 3px rgba(53,216,255,.18),
+        0 0 30px rgba(53,216,255,.22);
+
+}
+
+/*=========================================================
+Primary
+=========================================================*/
+
+.nx-btn-primary{
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--nx-green),
+            var(--nx-cyan)
+        );
+
+    border-color:rgba(255,255,255,.12);
+
+    box-shadow:
+
+        0 12px 30px rgba(75,255,180,.22);
+
+}
+
+.nx-btn-primary::before{
+
+    opacity:1;
+
+    background:
+
+        linear-gradient(
+
+            180deg,
+
+            rgba(255,255,255,.18),
+
+            transparent 60%
+
+        );
+
+}
+
+/*=========================================================
+Outline
+=========================================================*/
+
+.nx-btn-outline{
 
     background:transparent;
 
-    color:var(--nx-white);
-
-    border-color:var(--nx-border);
+    border-color:rgba(96,145,255,.45);
 
 }
 
-.nx-button-secondary:hover{
+.nx-btn-outline:hover{
 
-    transform:translateY(-3px);
+    border-color:var(--nx-cyan);
+
+    box-shadow:
+
+        0 10px 28px rgba(53,216,255,.18);
+
+}
+
+/*=========================================================
+Glass
+=========================================================*/
+
+.nx-btn-glass{
+
+    background:rgba(255,255,255,.05);
+
+    border-color:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+}
+
+.nx-btn-glass:hover{
+
+    box-shadow:
+
+        0 10px 28px rgba(255,255,255,.10);
+
+}
+
+/*=========================================================
+Ghost
+=========================================================*/
+
+.nx-btn-ghost{
+
+    background:transparent;
+
+    border-color:transparent;
+
+}
+
+.nx-btn-ghost:hover{
 
     background:rgba(255,255,255,.05);
 
 }
 
 /*=========================================================
-07 Components
+Success
 =========================================================*/
 
-/*---------------------------------------------------------
-07.2 Cards
----------------------------------------------------------*/
+.nx-btn-success{
 
-.nx-card{
+    background:
 
-    position:relative;
+        linear-gradient(
+            135deg,
+            #76e07f,
+            #58c965
+        );
 
-    padding:var(--nx-space-md);
+    border-color:rgba(255,255,255,.10);
 
-    background:rgba(255,255,255,.04);
+    box-shadow:
 
-    border:1px solid var(--nx-border);
+        0 12px 30px rgba(72,201,110,.22);
 
-    border-radius:var(--nx-radius-lg);
+}
 
-    transition:var(--nx-transition);
+/*=========================================================
+Danger
+=========================================================*/
+
+.nx-btn-danger{
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ef6760,
+            #d64039
+        );
+
+    border-color:rgba(255,255,255,.10);
+
+    box-shadow:
+
+        0 12px 30px rgba(239,68,68,.22);
+
+}
+
+/*=========================================================
+Sizes
+=========================================================*/
+
+.nx-btn-sm{
+
+    min-width:110px;
+
+    height:44px;
+
+    padding:0 1.4rem;
+
+    font-size:.85rem;
+
+}
+
+.nx-btn-md{
+
+    height:56px;
+
+}
+
+.nx-btn-lg{
+
+    min-width:190px;
+
+    height:64px;
+
+    padding:0 2.5rem;
+
+    font-size:1.05rem;
+
+}
+
+/*=========================================================
+Block
+=========================================================*/
+
+.nx-btn-block{
+
+    width:100%;
+
+}
+
+/*=========================================================
+Icon
+=========================================================*/
+
+.nx-btn-icon{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:.75rem;
+
+}
+
+.nx-btn-icon svg{
+
+    width:18px;
+
+    height:18px;
+
+}
+
+.nx-btn-icon-only{
+
+    width:56px;
+
+    min-width:56px;
+
+    padding:0;
+
+}
+
+/*=========================================================
+Disabled
+=========================================================*/
+
+.nx-btn:disabled{
+
+    opacity:.45;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+    filter:none;
+
+    box-shadow:none;
 
 }
 
@@ -680,7 +1460,9 @@ Secondary
 
     margin-bottom:var(--nx-space-md);
 
-    padding:.45rem 1rem;
+    padding:
+        var(--nx-space-xs)
+        var(--nx-space-sm);
 
     border-radius:var(--nx-radius-pill);
 
@@ -688,150 +1470,11 @@ Secondary
 
     color:var(--nx-primary);
 
-    font-weight:600;
-
-}
-
-/*=========================================================
-07 Components
-=========================================================*/
-
-/*---------------------------------------------------------
-07.4 Dashboard
----------------------------------------------------------*/
-
-.nx-dashboard{
-
-    position:relative;
-
-    padding:var(--nx-space-md);
-
-    background:rgba(15,23,42,.72);
-
-    backdrop-filter:blur(30px);
-
-    border:1px solid var(--nx-border);
-
-    border-radius:var(--nx-radius-lg);
-
-    box-shadow:
-        var(--nx-shadow-lg),
-        inset 0 1px rgba(255,255,255,.05);
-
-}
-
-.nx-dashboard-header{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    margin-bottom:var(--nx-space-md);
-
-    font-size:1.2rem;
+    font-size:.85rem;
 
     font-weight:600;
-
-}
-
-.nx-status{
-
-    width:14px;
-
-    aspect-ratio:1;
-
-    border-radius:50%;
-
-    background:#4ADE80;
-
-    box-shadow:
-        0 0 10px #4ADE80,
-        0 0 25px #4ADE80;
-
-}
-
-.nx-dashboard-chart{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    height:280px;
-
-    margin-bottom:var(--nx-space-md);
-
-    border:1px solid rgba(255,255,255,.05);
-
-    border-radius:var(--nx-radius-md);
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(255,255,255,.05),
-            rgba(255,255,255,.02)
-        );
-
-    color:rgba(255,255,255,.35);
-
-}
-
-.nx-dashboard-stats{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:var(--nx-space-sm);
-
-}
-
-.nx-stat{
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:.35rem;
-
-    padding:1.25rem;
-
-    background:rgba(255,255,255,.05);
-
-    border:1px solid rgba(255,255,255,.06);
-
-    border-radius:var(--nx-radius-md);
 
     transition:var(--nx-transition);
-
-}
-
-.nx-stat:hover{
-
-    transform:translateY(-4px);
-
-    background:rgba(37,99,235,.15);
-
-}
-
-.nx-stat strong{
-
-    font-size:2rem;
-
-    color:var(--nx-white);
-
-}
-
-.nx-stat span{
-
-    color:var(--nx-muted);
 
 }
 
@@ -861,7 +1504,7 @@ Secondary
 
     flex-direction:column;
 
-    gap:.5rem;
+    gap:var(--nx-space-xs);
 
 }
 
@@ -886,13 +1529,17 @@ Secondary
 
     width:100%;
 
+    min-height:var(--nx-input-height);
+
     padding:.9rem 1rem;
 
     border:1px solid var(--nx-border);
 
     border-radius:var(--nx-radius-sm);
 
-    background:rgba(255,255,255,.04);
+    background:var(--nx-glass-bg);
+
+    backdrop-filter:var(--nx-glass-blur);
 
     color:var(--nx-white);
 
@@ -906,14 +1553,14 @@ Secondary
 
 .nx-form-field input::-moz-placeholder, .nx-form-field textarea::-moz-placeholder{
 
-    color:var(--nx-muted);
+    color:var(--nx-text-soft);
 
 }
 
 .nx-form-field input::placeholder,
 .nx-form-field textarea::placeholder{
 
-    color:var(--nx-muted);
+    color:var(--nx-text-soft);
 
 }
 
@@ -921,6 +1568,8 @@ Secondary
 .nx-form-field textarea:focus{
 
     border-color:var(--nx-primary);
+
+    box-shadow:var(--nx-glow-blue);
 
     outline:none;
 
@@ -938,7 +1587,7 @@ Secondary
 .nx-form-field input[aria-invalid="true"],
 .nx-form-field textarea[aria-invalid="true"]{
 
-    border-color:var(--nx-primary);
+    border-color:var(--nx-red);
 
 }
 
@@ -949,6 +1598,193 @@ Secondary
     margin-top:var(--nx-space-sm);
 
     color:var(--nx-text);
+
+}
+
+/*=========================================================
+07 Components
+=========================================================*/
+
+/*---------------------------------------------------------
+07.2 Cards
+---------------------------------------------------------*/
+
+.nx-card{
+
+    position:relative;
+
+    padding:var(--nx-space-md);
+
+    background:var(--nx-glass-bg);
+
+    border:1px solid var(--nx-glass-border);
+
+    backdrop-filter:var(--nx-glass-blur);
+
+    border-radius:var(--nx-radius-md);
+
+    transition:var(--nx-transition);
+
+}
+
+.nx-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:var(--nx-border-strong);
+
+    box-shadow:var(--nx-shadow-md);
+
+}
+
+/*=========================================================
+07 Components
+=========================================================*/
+
+/*---------------------------------------------------------
+07.4 Dashboard
+---------------------------------------------------------*/
+
+.nx-dashboard{
+
+    position:relative;
+
+    padding:var(--nx-space-md);
+
+    background:var(--nx-glass-bg);
+
+    backdrop-filter:var(--nx-glass-blur);
+
+    border:1px solid var(--nx-glass-border);
+
+    border-radius:var(--nx-radius-lg);
+
+    box-shadow:
+        var(--nx-shadow-lg),
+        inset 0 1px 0 rgba(255,255,255,.05);
+
+}
+
+.nx-dashboard-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:var(--nx-space-md);
+
+    padding-bottom:var(--nx-space-sm);
+
+    border-bottom:1px solid var(--nx-border-soft);
+
+    font-size:1.2rem;
+
+    font-weight:600;
+
+}
+
+.nx-status{
+
+    width:14px;
+
+    aspect-ratio:1;
+
+    border-radius:50%;
+
+    background:var(--nx-green);
+
+    box-shadow:var(--nx-glow-green);
+
+}
+
+.nx-dashboard-chart{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    height:280px;
+
+    margin-bottom:var(--nx-space-md);
+
+    border:1px solid var(--nx-border-soft);
+
+    border-radius:var(--nx-radius-md);
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--nx-surface-light),
+            var(--nx-surface)
+        );
+
+    color:var(--nx-text-soft);
+
+}
+
+.nx-dashboard-stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:var(--nx-space-sm);
+
+}
+
+.nx-stat{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:.35rem;
+
+    padding:var(--nx-space-sm);
+
+    background:var(--nx-glass-bg);
+
+    backdrop-filter:var(--nx-glass-blur);
+
+    border:1px solid var(--nx-border-soft);
+
+    border-radius:var(--nx-radius-md);
+
+    transition:var(--nx-transition);
+
+}
+
+.nx-stat:hover{
+
+    transform:translateY(-4px);
+
+    background:var(--nx-surface-hover);
+
+    border-color:var(--nx-border-strong);
+
+    box-shadow:var(--nx-shadow-sm);
+
+}
+
+.nx-stat strong{
+
+    font-size:2rem;
+
+    color:var(--nx-white);
+
+}
+
+.nx-stat span{
+
+    color:var(--nx-text-muted);
 
 }
 
@@ -968,7 +1804,7 @@ Secondary
 
     bottom:24px;
 
-    z-index:1000;
+    z-index:var(--nx-z-toast);
 
     display:grid;
 
@@ -982,11 +1818,13 @@ Secondary
 
     border-radius:50%;
 
-    background:var(--nx-primary);
+    background:var(--nx-gradient-primary);
 
     color:var(--nx-white);
 
-    box-shadow:var(--nx-shadow-md);
+    box-shadow:var(--nx-glow-green);
+
+    cursor:pointer;
 
     transition:var(--nx-transition);
 
@@ -994,9 +1832,17 @@ Secondary
 
 .nx-fab:hover{
 
-    transform:translateY(-3px);
+    transform:translateY(-4px);
 
-    background:var(--nx-primary-dark);
+    box-shadow:
+        var(--nx-glow-green-strong),
+        var(--nx-shadow-md);
+
+}
+
+.nx-fab:active{
+
+    transform:translateY(0) scale(.96);
 
 }
 
@@ -1026,9 +1872,9 @@ Secondary
 08 Sections
 =========================================================*/
 
-/*=========================================================
+/*---------------------------------------------------------
 08.1 Hero
-=========================================================*/
+---------------------------------------------------------*/
 
 .nx-hero{
 
@@ -1042,9 +1888,10 @@ Secondary
 
     min-height:100vh;
 
-    padding-top:140px;
-
-    padding-bottom:4rem;
+    padding:
+        calc(var(--nx-header-height) + var(--nx-space-xl))
+        0
+        var(--nx-space-xl);
 
     overflow:hidden;
 
@@ -1126,7 +1973,7 @@ Layout
 
     align-items:center;
 
-    gap:5rem;
+    gap:var(--nx-space-lg);
 
 }
 
@@ -1146,9 +1993,15 @@ Content
 
     margin-bottom:var(--nx-space-md);
 
-    color:var(--nx-muted);
+    color:var(--nx-text-muted);
+
+    line-height:1.7;
 
 }
+
+/*---------------------------------------------------------
+Actions
+---------------------------------------------------------*/
 
 .nx-hero-actions{
 
@@ -1180,13 +2033,13 @@ Highlights
 
     padding:.8rem 1.3rem;
 
-    border:1px solid var(--nx-border);
+    background:var(--nx-glass-bg);
+
+    backdrop-filter:var(--nx-glass-blur);
+
+    border:1px solid var(--nx-glass-border);
 
     border-radius:var(--nx-radius-pill);
-
-    background:rgba(255,255,255,.06);
-
-    backdrop-filter:blur(20px);
 
     color:var(--nx-text);
 
@@ -1200,7 +2053,11 @@ Highlights
 
     transform:translateY(-3px);
 
-    background:rgba(37,99,235,.18);
+    background:var(--nx-surface-hover);
+
+    border-color:var(--nx-border-strong);
+
+    box-shadow:var(--nx-shadow-sm);
 
 }
 
@@ -1224,9 +2081,9 @@ Scroll Indicator
 
     align-items:center;
 
-    gap:.5rem;
+    gap:var(--nx-space-xs);
 
-    color:var(--nx-muted);
+    color:var(--nx-text-muted);
 
     transform:translateX(-50%);
 
@@ -1254,7 +2111,7 @@ Scroll Indicator
 
     grid-template-columns:repeat(4,1fr);
 
-    gap:2rem;
+    gap:var(--nx-space-md);
 
 }
 
@@ -1275,11 +2132,13 @@ Extiende .nx-card
 
     text-align:center;
 
-    padding:2.5rem 2rem;
+    padding:calc(var(--nx-space-md) + .5rem) var(--nx-space-md);
 
-    background:rgba(255,255,255,.03);
+    background:var(--nx-glass-bg);
 
-    border:1px solid var(--nx-border);
+    backdrop-filter:var(--nx-glass-blur);
+
+    border:1px solid var(--nx-glass-border);
 
     border-radius:var(--nx-radius-lg);
 
@@ -1288,18 +2147,16 @@ Extiende .nx-card
     transition:var(--nx-transition);
 
 }
+
 .nx-feature-card:hover{
 
     transform:translateY(-8px);
 
-    border-color:rgba(37,99,235,.45);
+    background:var(--nx-surface-hover);
 
-    background:rgba(255,255,255,.05);
+    border-color:var(--nx-border-strong);
 
-    box-shadow:
-        0 20px 40px rgba(15,23,42,.45),
-        0 12px 28px rgba(37,99,235,.18),
-        inset 0 1px rgba(255,255,255,.06);
+    box-shadow:var(--nx-shadow-md);
 
 }
 
@@ -1319,24 +2176,35 @@ Feature Icon
 
     height:72px;
 
-    margin:0 auto 2rem;
+    margin:0 auto var(--nx-space-md);
 
     border-radius:var(--nx-radius-md);
 
     background:rgba(37,99,235,.12);
 
+    color:var(--nx-primary);
+
     font-size:2rem;
-    
+
     transition:var(--nx-transition);
 
 }
+
+.nx-feature-card:hover .nx-feature-icon{
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--nx-glow-blue);
+
+}
+
 /*---------------------------------------------------------
 Typography
 ---------------------------------------------------------*/
 
 .nx-feature-card h3{
 
-    margin-bottom:1rem;
+    margin-bottom:var(--nx-space-sm);
 
     font-size:1.45rem;
 
@@ -1352,7 +2220,7 @@ Typography
 
     margin:0 auto;
 
-    color:var(--nx-muted);
+    color:var(--nx-text-muted);
 
     line-height:1.8;
 
@@ -1403,6 +2271,8 @@ Hover Effect
 
 .nx-contact{
 
+    width:100%;
+
     max-width:760px;
 
     margin:0 auto;
@@ -1413,11 +2283,15 @@ Hover Effect
 
     margin-bottom:var(--nx-space-md);
 
+    text-align:center;
+
 }
 
 .nx-contact-header h2{
 
     font-size:clamp(2rem,4vw,2.5rem);
+
+    color:var(--nx-white);
 
 }
 
@@ -1425,7 +2299,9 @@ Hover Effect
 
     margin-top:var(--nx-space-xs);
 
-    color:var(--nx-text);
+    color:var(--nx-text-muted);
+
+    line-height:1.7;
 
 }
 
@@ -1456,6 +2332,8 @@ Extiende .nx-card
 
 .nx-template-card{
 
+    position:relative;
+
     overflow:hidden;
 
 }
@@ -1464,7 +2342,7 @@ Extiende .nx-card
 
     transform:translateY(-8px);
 
-    border-color:rgba(37,99,235,.45);
+    border-color:var(--nx-border-strong);
 
     box-shadow:var(--nx-shadow-md);
 
@@ -1487,10 +2365,15 @@ Template Preview
     padding:var(--nx-space-md);
 
     background:
+
         linear-gradient(
+
             180deg,
+
             rgba(255,255,255,.04),
+
             rgba(255,255,255,.01)
+
         );
 
 }
@@ -1548,10 +2431,15 @@ Preview Elements
     border-radius:var(--nx-radius-md);
 
     background:
+
         linear-gradient(
+
             180deg,
+
             rgba(37,99,235,.25),
+
             rgba(37,99,235,.05)
+
         );
 
 }
@@ -1606,7 +2494,7 @@ Content
 
 .nx-template-content p{
 
-    color:var(--nx-muted);
+    color:var(--nx-text-muted);
 
     line-height:1.8;
 
@@ -1653,6 +2541,8 @@ Extiende .nx-card
 
 .nx-framework-node{
 
+    position:relative;
+
     overflow:hidden;
 
     text-align:center;
@@ -1663,7 +2553,7 @@ Extiende .nx-card
 
     transform:translateY(-8px);
 
-    border-color:rgba(37,99,235,.45);
+    border-color:var(--nx-border-strong);
 
     box-shadow:var(--nx-shadow-md);
 
@@ -1687,7 +2577,7 @@ Typography
 
 .nx-framework-node p{
 
-    color:var(--nx-muted);
+    color:var(--nx-text-muted);
 
     line-height:1.7;
 
@@ -1702,13 +2592,20 @@ Core Node
     width:min(100%,520px);
 
     background:
+
         linear-gradient(
+
             135deg,
+
             rgba(37,99,235,.12),
+
             rgba(255,255,255,.03)
+
         );
 
-    border-color:rgba(37,99,235,.35);
+    border-color:var(--nx-primary);
+
+    transition:var(--nx-transition);
 
 }
 
@@ -1725,10 +2622,15 @@ Hover Effect
     inset:0;
 
     background:
+
         linear-gradient(
+
             135deg,
+
             rgba(37,99,235,.08),
+
             transparent 70%
+
         );
 
     opacity:0;
@@ -1751,7 +2653,7 @@ Hover Effect
 
     grid-template-columns:repeat(4,minmax(0,1fr));
 
-    gap:2rem;
+    gap:var(--nx-space-md);
 
     margin-top:var(--nx-space-xl);
 
@@ -1759,13 +2661,15 @@ Hover Effect
 
 .nx-design-card{
 
-    padding:2.5rem;
+    padding:var(--nx-space-md);
 
     text-align:center;
 
-    background:rgba(255,255,255,.03);
+    background:var(--nx-glass-bg);
 
-    border:1px solid var(--nx-border);
+    backdrop-filter:var(--nx-glass-blur);
+
+    border:1px solid var(--nx-glass-border);
 
     border-radius:var(--nx-radius-lg);
 
@@ -1777,7 +2681,7 @@ Hover Effect
 
     transform:translateY(-8px);
 
-    border-color:rgba(37,99,235,.45);
+    border-color:var(--nx-border-strong);
 
     box-shadow:var(--nx-shadow-md);
 
@@ -1785,35 +2689,35 @@ Hover Effect
 
 .nx-design-icon{
 
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
     width:72px;
 
     height:72px;
 
-    margin:0 auto 1.5rem;
+    margin:0 auto var(--nx-space-md);
 
     border-radius:var(--nx-radius-md);
 
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
     font-size:2rem;
 
-    background:rgba(37,99,235,.12);
+    background:color-mix(in srgb, var(--nx-primary) 12%, transparent);
 
 }
 
 .nx-design-card h3{
 
-    margin-bottom:1rem;
+    margin-bottom:var(--nx-space-sm);
 
 }
 
 .nx-design-card p{
 
-    color:var(--nx-muted);
+    color:var(--nx-text-muted);
 
     line-height:1.8;
 
@@ -1964,6 +2868,34 @@ Flex Wrap
 }
 
 /*---------------------------------------------------------
+Gap
+---------------------------------------------------------*/
+
+.nx-gap-xs{
+
+    gap:var(--nx-space-xs);
+
+}
+
+.nx-gap-sm{
+
+    gap:var(--nx-space-sm);
+
+}
+
+.nx-gap-md{
+
+    gap:var(--nx-space-md);
+
+}
+
+.nx-gap-lg{
+
+    gap:var(--nx-space-lg);
+
+}
+
+/*---------------------------------------------------------
 Grid Helpers
 ---------------------------------------------------------*/
 
@@ -2029,6 +2961,12 @@ Overflow
 
 }
 
+.nx-overflow-auto{
+
+    overflow:auto;
+
+}
+
 /*---------------------------------------------------------
 Border Radius
 ---------------------------------------------------------*/
@@ -2058,7 +2996,7 @@ Border Radius
 }
 
 /*---------------------------------------------------------
-Width Helpers
+Width / Height Helpers
 ---------------------------------------------------------*/
 
 .nx-w-full{
@@ -2070,6 +3008,12 @@ Width Helpers
 .nx-h-full{
 
     height:100%;
+
+}
+
+.nx-min-h-screen{
+
+    min-height:100vh;
 
 }
 
@@ -2086,6 +3030,7 @@ Margin Top
 .nx-mt-md{ margin-top:var(--nx-space-md); }
 .nx-mt-lg{ margin-top:var(--nx-space-lg); }
 .nx-mt-xl{ margin-top:var(--nx-space-xl); }
+.nx-mt-2xl{ margin-top:var(--nx-space-2xl); }
 
 /*---------------------------------------------------------
 Margin Bottom
@@ -2096,6 +3041,7 @@ Margin Bottom
 .nx-mb-md{ margin-bottom:var(--nx-space-md); }
 .nx-mb-lg{ margin-bottom:var(--nx-space-lg); }
 .nx-mb-xl{ margin-bottom:var(--nx-space-xl); }
+.nx-mb-2xl{ margin-bottom:var(--nx-space-2xl); }
 
 /*---------------------------------------------------------
 Margin Left
@@ -2116,6 +3062,84 @@ Margin Right
 .nx-mr-lg{ margin-right:var(--nx-space-lg); }
 
 /*---------------------------------------------------------
+Margin X
+---------------------------------------------------------*/
+
+.nx-mx-xs{
+    margin-left:var(--nx-space-xs);
+    margin-right:var(--nx-space-xs);
+}
+
+.nx-mx-sm{
+    margin-left:var(--nx-space-sm);
+    margin-right:var(--nx-space-sm);
+}
+
+.nx-mx-md{
+    margin-left:var(--nx-space-md);
+    margin-right:var(--nx-space-md);
+}
+
+.nx-mx-lg{
+    margin-left:var(--nx-space-lg);
+    margin-right:var(--nx-space-lg);
+}
+
+.nx-mx-xl{
+    margin-left:var(--nx-space-xl);
+    margin-right:var(--nx-space-xl);
+}
+
+.nx-mx-2xl{
+    margin-left:var(--nx-space-2xl);
+    margin-right:var(--nx-space-2xl);
+}
+
+.nx-mx-auto{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/*---------------------------------------------------------
+Margin Y
+---------------------------------------------------------*/
+
+.nx-my-xs{
+    margin-top:var(--nx-space-xs);
+    margin-bottom:var(--nx-space-xs);
+}
+
+.nx-my-sm{
+    margin-top:var(--nx-space-sm);
+    margin-bottom:var(--nx-space-sm);
+}
+
+.nx-my-md{
+    margin-top:var(--nx-space-md);
+    margin-bottom:var(--nx-space-md);
+}
+
+.nx-my-lg{
+    margin-top:var(--nx-space-lg);
+    margin-bottom:var(--nx-space-lg);
+}
+
+.nx-my-xl{
+    margin-top:var(--nx-space-xl);
+    margin-bottom:var(--nx-space-xl);
+}
+
+.nx-my-2xl{
+    margin-top:var(--nx-space-2xl);
+    margin-bottom:var(--nx-space-2xl);
+}
+
+.nx-my-auto{
+    margin-top:auto;
+    margin-bottom:auto;
+}
+
+/*---------------------------------------------------------
 Padding
 ---------------------------------------------------------*/
 
@@ -2123,37 +3147,41 @@ Padding
 .nx-p-sm{ padding:var(--nx-space-sm); }
 .nx-p-md{ padding:var(--nx-space-md); }
 .nx-p-lg{ padding:var(--nx-space-lg); }
+.nx-p-xl{ padding:var(--nx-space-xl); }
+.nx-p-2xl{ padding:var(--nx-space-2xl); }
 
 /*---------------------------------------------------------
 Padding X
 ---------------------------------------------------------*/
 
 .nx-px-xs{
-
     padding-left:var(--nx-space-xs);
     padding-right:var(--nx-space-xs);
-
 }
 
 .nx-px-sm{
-
     padding-left:var(--nx-space-sm);
     padding-right:var(--nx-space-sm);
-
 }
 
 .nx-px-md{
-
     padding-left:var(--nx-space-md);
     padding-right:var(--nx-space-md);
-
 }
 
 .nx-px-lg{
-
     padding-left:var(--nx-space-lg);
     padding-right:var(--nx-space-lg);
+}
 
+.nx-px-xl{
+    padding-left:var(--nx-space-xl);
+    padding-right:var(--nx-space-xl);
+}
+
+.nx-px-2xl{
+    padding-left:var(--nx-space-2xl);
+    padding-right:var(--nx-space-2xl);
 }
 
 /*---------------------------------------------------------
@@ -2161,31 +3189,33 @@ Padding Y
 ---------------------------------------------------------*/
 
 .nx-py-xs{
-
     padding-top:var(--nx-space-xs);
     padding-bottom:var(--nx-space-xs);
-
 }
 
 .nx-py-sm{
-
     padding-top:var(--nx-space-sm);
     padding-bottom:var(--nx-space-sm);
-
 }
 
 .nx-py-md{
-
     padding-top:var(--nx-space-md);
     padding-bottom:var(--nx-space-md);
-
 }
 
 .nx-py-lg{
-
     padding-top:var(--nx-space-lg);
     padding-bottom:var(--nx-space-lg);
+}
 
+.nx-py-xl{
+    padding-top:var(--nx-space-xl);
+    padding-bottom:var(--nx-space-xl);
+}
+
+.nx-py-2xl{
+    padding-top:var(--nx-space-2xl);
+    padding-bottom:var(--nx-space-2xl);
 }
 
 /*=========================================================
@@ -2199,11 +3229,8 @@ Padding Y
 @media (max-width:1100px){
 
     .nx-hero-grid{
-
         grid-template-columns:1fr;
-
         gap:var(--nx-space-lg);
-
     }
 
 }
@@ -2215,33 +3242,27 @@ Padding Y
 @media (max-width:992px){
 
     .nx-template-grid{
-
         grid-template-columns:1fr;
-
     }
 
     .wordpress{
-
         grid-template-columns:1fr;
-
     }
 
     .nx-preview-block{
-
         height:70px;
-
     }
 
     .nx-framework-row{
-
         grid-template-columns:1fr;
-
     }
 
     .nx-framework-core{
-
         width:100%;
+    }
 
+    .nx-design-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
 }
@@ -2253,49 +3274,31 @@ Padding Y
 @media (max-width:900px){
 
     .nx-navbar-wrapper{
-
         position:relative;
-
     }
 
     .nx-menu{
-
         display:none;
-
         position:absolute;
-
         top:calc(100% + 12px);
-
         right:0;
-
         flex-direction:column;
-
         gap:var(--nx-space-sm);
-
         min-width:220px;
-
         padding:var(--nx-space-md);
-
         border:1px solid var(--nx-border);
-
         border-radius:var(--nx-radius-md);
-
-        background:var(--nx-surface);
-
+        background:var(--nx-glass-bg);
+        backdrop-filter:var(--nx-glass-blur);
         box-shadow:var(--nx-shadow-md);
-
     }
 
     .nx-menu.is-open{
-
         display:flex;
-
     }
 
     .nx-mobile-button{
-
         display:block;
-
     }
 
 }
@@ -2307,49 +3310,32 @@ Padding Y
 @media (max-width:768px){
 
     .nx-title-xl{
-
         font-size:clamp(2.5rem,8vw,3.4rem);
-
     }
 
     .nx-dashboard-stats{
-
         grid-template-columns:1fr;
-
     }
 
     .nx-contact-fields{
-
         grid-template-columns:1fr;
-
     }
 
     .nx-whatsapp-button{
-
         right:16px;
-
         bottom:16px;
-
-    }
-
-    @media(max-width:992px){
-
-    .nx-design-grid{
-
-        grid-template-columns:repeat(2,1fr);
-
     }
 
 }
 
-@media(max-width:640px){
+/*---------------------------------------------------------
+≤ 640px
+---------------------------------------------------------*/
+
+@media (max-width:640px){
 
     .nx-design-grid{
-
         grid-template-columns:1fr;
-
     }
-
-}
 
 }

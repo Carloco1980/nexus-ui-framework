@@ -25,6 +25,8 @@ Extiende .nx-card
 
 .nx-template-card{
 
+    position:relative;
+
     overflow:hidden;
 
 }
@@ -33,7 +35,7 @@ Extiende .nx-card
 
     transform:translateY(-8px);
 
-    border-color:rgba(37,99,235,.45);
+    border-color:var(--nx-border-strong);
 
     box-shadow:var(--nx-shadow-md);
 
@@ -56,10 +58,15 @@ Template Preview
     padding:var(--nx-space-md);
 
     background:
+
         linear-gradient(
+
             180deg,
+
             rgba(255,255,255,.04),
+
             rgba(255,255,255,.01)
+
         );
 
 }
@@ -117,10 +124,15 @@ Preview Elements
     border-radius:var(--nx-radius-md);
 
     background:
+
         linear-gradient(
+
             180deg,
+
             rgba(37,99,235,.25),
+
             rgba(37,99,235,.05)
+
         );
 
 }
@@ -175,7 +187,7 @@ Content
 
 .nx-template-content p{
 
-    color:var(--nx-muted);
+    color:var(--nx-text-muted);
 
     line-height:1.8;
 

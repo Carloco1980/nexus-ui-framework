@@ -50,6 +50,12 @@ Overflow
 
 }
 
+.nx-overflow-auto{
+
+    overflow:auto;
+
+}
+
 /*---------------------------------------------------------
 Border Radius
 ---------------------------------------------------------*/
@@ -79,7 +85,7 @@ Border Radius
 }
 
 /*---------------------------------------------------------
-Width Helpers
+Width / Height Helpers
 ---------------------------------------------------------*/
 
 .nx-w-full{
@@ -91,5 +97,11 @@ Width Helpers
 .nx-h-full{
 
     height:100%;
+
+}
+
+.nx-min-h-screen{
+
+    min-height:100vh;
 
 }

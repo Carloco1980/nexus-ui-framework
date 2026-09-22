@@ -1,78 +1,233 @@
 /*=========================================================
-06 Layout
+06.3 Navbar
 =========================================================*/
 
 /*---------------------------------------------------------
-06.3 Navbar
+Header
+---------------------------------------------------------*/
+
+.nx-header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:var(--nx-z-navbar);
+
+    padding:1.25rem 0;
+
+}
+
+/*---------------------------------------------------------
+Navbar
 ---------------------------------------------------------*/
 
 .nx-navbar{
 
-    position:fixed;
+    display:grid;
 
-    top:24px;
+    grid-template-columns:auto 1fr auto;
 
-    left:50%;
+    align-items:center;
 
-    transform:translateX(-50%);
+    gap:2rem;
 
-    width:min(95%, var(--nx-container));
+    width:100%;
+
+    min-height:82px;
+
+    padding:0 2rem;
+
+    background:rgba(15,23,42,.82);
 
     backdrop-filter:blur(18px);
 
-    background:rgba(2,6,23,.45);
-
     border:1px solid var(--nx-border);
 
-    border-radius:var(--nx-radius-pill);
+    border-radius:999px;
 
-    z-index:1000;
+    box-shadow:var(--nx-shadow-sm);
 
 }
 
-.nx-navbar-wrapper{
+/*---------------------------------------------------------
+Brand
+---------------------------------------------------------*/
+
+.nx-navbar-brand{
 
     display:flex;
 
     align-items:center;
 
-    justify-content:space-between;
+    gap:1rem;
 
-    height:82px;
+    text-decoration:none;
 
-}
-
-.nx-logo{
-
-    font-size:1.6rem;
-
-    font-weight:800;
-
-    color:var(--nx-white);
+    flex-shrink:0;
 
 }
 
-.nx-menu{
+.nx-logo-mark{
+
+    width:56px;
+    height:56px;
 
     display:flex;
 
-    gap:2.5rem;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:16px;
+
+    background:linear-gradient(
+        135deg,
+        var(--nx-cyan),
+        var(--nx-green)
+    );
+
+    color:#fff;
+
+    font-size:1.4rem;
+
+    font-weight:800;
+
+    box-shadow:var(--nx-glow-green);
 
 }
 
-.nx-menu a{
+.nx-logo-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    line-height:1.05;
+
+}
+
+.nx-logo-title{
+
+    color:#fff;
+
+    font-size:1rem;
+
+    font-weight:800;
+
+    letter-spacing:.20em;
+
+}
+
+.nx-logo-subtitle{
+
+    color:var(--nx-text-soft);
+
+    font-size:.70rem;
+
+    letter-spacing:.22em;
+
+}
+
+/*---------------------------------------------------------
+Menu
+---------------------------------------------------------*/
+
+.nx-navbar-menu{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    list-style:none;
+
+    gap:2.5rem;
+
+    margin:0;
+
+    padding:0;
+
+}
+
+.nx-navbar-menu li{
+
+    position:relative;
+
+}
+
+.nx-navbar-menu a{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    height:82px;
 
     color:var(--nx-text);
 
-    transition:var(--nx-transition);
+    text-decoration:none;
+
+    font-size:.96rem;
+
+    font-weight:600;
+
+    transition:
+        color .25s ease,
+        transform .25s ease;
 
 }
 
-.nx-menu a:hover{
+.nx-navbar-menu a:hover{
 
-    color:var(--nx-white);
+    color:#fff;
 
 }
+
+.nx-navbar-menu a.active{
+
+    color:#fff;
+
+}
+
+/* Línea verde */
+
+.nx-navbar-menu a.active::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    bottom:16px;
+
+    width:30px;
+
+    height:4px;
+
+    border-radius:999px;
+
+    background:var(--nx-green);
+
+    box-shadow:
+        0 0 12px rgba(80,255,170,.8),
+        0 0 24px rgba(80,255,170,.45);
+
+}
+
+/*---------------------------------------------------------
+Actions
+---------------------------------------------------------*/
 
 .nx-navbar-actions{
 
@@ -82,14 +237,88 @@
 
     gap:1rem;
 
+    flex-shrink:0;
+
 }
 
-.nx-mobile-button{
+/*---------------------------------------------------------
+Search
+---------------------------------------------------------*/
 
-    display:none;
+.nx-navbar-search{
 
-    font-size:1.8rem;
+    width:240px;
 
-    color:var(--nx-white);
+    height:48px;
+
+    padding:0 1rem;
+
+    border-radius:999px;
+
+    border:1px solid var(--nx-border);
+
+    background:rgba(255,255,255,.04);
+
+    color:var(--nx-text);
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.nx-navbar-search::placeholder{
+
+    color:var(--nx-text-soft);
+
+}
+
+.nx-navbar-search:focus{
+
+    border-color:var(--nx-primary);
+
+    background:rgba(255,255,255,.06);
+
+    box-shadow:var(--nx-glow-blue);
+
+}
+
+/*---------------------------------------------------------
+Theme
+---------------------------------------------------------*/
+
+.nx-navbar-theme{
+
+    width:48px;
+
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    border:1px solid var(--nx-border);
+
+    background:rgba(255,255,255,.04);
+
+    color:#fff;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.nx-navbar-theme:hover{
+
+    transform:translateY(-2px);
+
+    border-color:var(--nx-primary);
+
+    box-shadow:var(--nx-glow-blue);
 
 }

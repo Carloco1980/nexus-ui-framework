@@ -24,7 +24,7 @@
 
     flex-direction:column;
 
-    gap:.5rem;
+    gap:var(--nx-space-xs);
 
 }
 
@@ -49,13 +49,17 @@
 
     width:100%;
 
+    min-height:var(--nx-input-height);
+
     padding:.9rem 1rem;
 
     border:1px solid var(--nx-border);
 
     border-radius:var(--nx-radius-sm);
 
-    background:rgba(255,255,255,.04);
+    background:var(--nx-glass-bg);
+
+    backdrop-filter:var(--nx-glass-blur);
 
     color:var(--nx-white);
 
@@ -70,7 +74,7 @@
 .nx-form-field input::placeholder,
 .nx-form-field textarea::placeholder{
 
-    color:var(--nx-muted);
+    color:var(--nx-text-soft);
 
 }
 
@@ -78,6 +82,8 @@
 .nx-form-field textarea:focus{
 
     border-color:var(--nx-primary);
+
+    box-shadow:var(--nx-glow-blue);
 
     outline:none;
 
@@ -95,7 +101,7 @@
 .nx-form-field input[aria-invalid="true"],
 .nx-form-field textarea[aria-invalid="true"]{
 
-    border-color:var(--nx-primary);
+    border-color:var(--nx-red);
 
 }
 

@@ -2,9 +2,9 @@
 08 Sections
 =========================================================*/
 
-/*=========================================================
+/*---------------------------------------------------------
 08.1 Hero
-=========================================================*/
+---------------------------------------------------------*/
 
 .nx-hero{
 
@@ -18,9 +18,10 @@
 
     min-height:100vh;
 
-    padding-top:140px;
-
-    padding-bottom:4rem;
+    padding:
+        calc(var(--nx-header-height) + var(--nx-space-xl))
+        0
+        var(--nx-space-xl);
 
     overflow:hidden;
 
@@ -100,7 +101,7 @@ Layout
 
     align-items:center;
 
-    gap:5rem;
+    gap:var(--nx-space-lg);
 
 }
 
@@ -120,9 +121,15 @@ Content
 
     margin-bottom:var(--nx-space-md);
 
-    color:var(--nx-muted);
+    color:var(--nx-text-muted);
+
+    line-height:1.7;
 
 }
+
+/*---------------------------------------------------------
+Actions
+---------------------------------------------------------*/
 
 .nx-hero-actions{
 
@@ -154,13 +161,13 @@ Highlights
 
     padding:.8rem 1.3rem;
 
-    border:1px solid var(--nx-border);
+    background:var(--nx-glass-bg);
+
+    backdrop-filter:var(--nx-glass-blur);
+
+    border:1px solid var(--nx-glass-border);
 
     border-radius:var(--nx-radius-pill);
-
-    background:rgba(255,255,255,.06);
-
-    backdrop-filter:blur(20px);
 
     color:var(--nx-text);
 
@@ -174,7 +181,11 @@ Highlights
 
     transform:translateY(-3px);
 
-    background:rgba(37,99,235,.18);
+    background:var(--nx-surface-hover);
+
+    border-color:var(--nx-border-strong);
+
+    box-shadow:var(--nx-shadow-sm);
 
 }
 
@@ -198,9 +209,9 @@ Scroll Indicator
 
     align-items:center;
 
-    gap:.5rem;
+    gap:var(--nx-space-xs);
 
-    color:var(--nx-muted);
+    color:var(--nx-text-muted);
 
     transform:translateX(-50%);
 

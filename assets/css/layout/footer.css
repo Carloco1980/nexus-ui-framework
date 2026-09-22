@@ -6,10 +6,12 @@
 06.4 Footer
 ---------------------------------------------------------*/
 
-#nx-footer{
+.nx-footer{
 
     position:relative;
 
     padding:var(--nx-space-xl) 0;
+
+    background:transparent;
 
 }

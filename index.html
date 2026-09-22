@@ -1,196 +1,231 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 
-    <!-- ==========================================
+    <!--=====================================================
     Meta
-    =========================================== -->
+    ======================================================-->
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Nexus UI Framework</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Nexus UI Framework | Modern UI Components</title>
 
     <meta
         name="description"
-        content="Nexus UI Framework es un framework modular construido con HTML5, CSS3 y JavaScript moderno para crear interfaces reutilizables, dashboards y aplicaciones web.">
+        content="Modern UI Framework for Dashboards, Landing Pages, Enterprise Applications and WordPress Plugins.">
 
-    <meta
-        name="keywords"
-        content="Nexus UI Framework, HTML, CSS, JavaScript, Dashboard, UI Framework, WordPress">
-
-    <meta
-        name="author"
-        content="Carlos Santander Díaz">
-
-    <!-- ==========================================
-    Open Graph
-    =========================================== -->
-
-    <meta property="og:title" content="Nexus UI Framework">
-    <meta property="og:description"
-        content="Design Once. Build Everywhere.">
-    <meta property="og:type" content="website">
-
-    <!-- ==========================================
+    <!--=====================================================
     Fonts
-    =========================================== -->
+    ======================================================-->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <!-- ==========================================
-    Nexus CSS
-    =========================================== -->
+    <!--=====================================================
+    Nexus UI
+    ======================================================-->
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link
+        rel="stylesheet"
+        href="dist/nexus-ui.css">
 
 </head>
 
 <body>
 
-    <!-- ==========================================
+    <!--=====================================================
     Header
-    =========================================== -->
+    ======================================================-->
 
+    <header class="nx-header">
 
-<header id="nx-header">
+    <div class="nx-container">
 
-    <nav class="nx-navbar">
+        <nav class="nx-navbar">
 
-        <div class="nx-container">
+            <!-- Logo -->
 
-            <div class="nx-navbar-wrapper">
+            <a
+                href="#"
+                class="nx-navbar-brand">
 
-                <!-- Logo -->
+                <div class="nx-logo-mark">
 
-                <a href="#" class="nx-logo">
-
-                    NEXUS
-
-                </a>
-
-                <!-- Navigation -->
-
-                <ul
-                    id="nx-menu"
-                    class="nx-menu">
-
-                    <li><a href="#nx-hero">Inicio</a></li>
-
-                    <li><a href="#nx-features">Características</a></li>
-
-                    <li><a href="#nx-components">Componentes</a></li>
-
-                    <li><a href="#nx-roadmap">Roadmap</a></li>
-
-                    <li><a href="#nx-documentation">Documentación</a></li>
-
-                </ul>
-
-                <!-- Actions -->
-
-                <div class="nx-navbar-actions">
-
-                    <a
-                        href="https://github.com"
-                        target="_blank"
-                        class="nx-button-secondary">
-
-                        GitHub
-
-                    </a>
-
-                    <button
-                        class="nx-mobile-button"
-                        aria-label="Abrir menú"
-                        aria-expanded="false">
-
-                        ☰
-
-                    </button>
+                    N
 
                 </div>
 
-            </div>
+                <div class="nx-logo-content">
 
-        </div>
+                    <span class="nx-logo-title">
 
-    </nav>
+                        NEXUS
 
-</header>
+                    </span>
 
+                    <span class="nx-logo-subtitle">
 
+                        UI FRAMEWORK
 
-    <!-- ==========================================
-    Main
-    =========================================== -->
+                    </span>
 
-    <main id="nx-app">
+                </div>
 
-        <!-- Hero -->
-        <section id="nx-hero" class="nx-hero">
+            </a>
 
-    <!-- Background -->
+            <!-- Navigation -->
 
-    <div class="nx-hero-background">
+            <ul class="nx-navbar-menu">
 
-        <div class="nx-overlay"></div>
+                <li>
+                    <a
+                        class="active"
+                        href="#">
+                        Home
+                    </a>
+                </li>
 
-        <div class="nx-gradient"></div>
+                <li>
+                    <a href="#">
+                        Components
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Templates
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Documentation
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Roadmap
+                    </a>
+                </li>
+
+            </ul>
+
+            <!-- Actions -->
+
+            <div class="nx-navbar-actions">
+
+                <input
+                    class="nx-navbar-search"
+                    type="search"
+                    placeholder="Search...">
+
+                <button
+                    class="nx-navbar-theme"
+                    aria-label="Toggle theme">
+
+                    ☀
+
+                </button>
+
+                <a
+                    href="#"
+                    class="nx-btn nx-btn-primary">
+
+                    GitHub
+
+                </a>
+
+             </div>
+
+        </nav>
 
     </div>
+
+ </header>
+
+    <!--=====================================================
+    Main
+    ======================================================-->
+
+    <main class="nx-main">
+
+        <!--=====================================================
+           Hero
+          ======================================================-->
+
+    <section
+    id="hero"
+    class="nx-hero">
 
     <div class="nx-container">
 
         <div class="nx-hero-grid">
 
-            <!-- ==========================================
-            Hero Content
-            =========================================== -->
+            <!--=========================================
+            Left
+            ==========================================-->
 
             <div class="nx-hero-content">
 
                 <span class="nx-badge">
 
-                    Version 0.2.0 RC1
+                    Version 0.2.0
 
                 </span>
 
                 <h1 class="nx-title-xl">
 
-                    Design Once.<br>
-                    Build Everywhere.
+                 Build Beautiful
+                 Interfaces Faster
 
                 </h1>
+                <h2 class="nx-title-lg">
 
-                <p class="nx-lead">
+                 Powered by Nexus UI Framework
 
-                    Nexus UI Framework es un framework modular desarrollado con
-                    HTML5, CSS3 y JavaScript moderno para crear interfaces
-                    profesionales, dashboards, landing pages y aplicaciones web
-                    reutilizables.
+                </h2>
 
-                </p>
+                 <p>
+
+                 Create enterprise dashboards,
+                 landing pages and WordPress interfaces
+                 with reusable components,
+                 design tokens and a scalable architecture.
+
+                 </p>
 
                 <div class="nx-hero-actions">
 
-                    <a href="#nx-components"
-                        class="nx-button">
+                    <a
+                        href="#components"
+                        class="nx-btn nx-btn-primary">
 
-                        Explorar Componentes
+                        Get Started
 
                     </a>
 
-                    <a href="#nx-documentation"
-                        class="nx-button-secondary">
 
-                        Documentación
+                    <a
+                        href="#documentation"
+                        class="nx-btn nx-btn-outline">
+
+                        Documentation
 
                     </a>
 
@@ -198,35 +233,43 @@
 
                 <div class="nx-highlights">
 
-                    <span class="nx-highlight">HTML5</span>
+                    <div class="nx-highlight">
 
-                    <span class="nx-highlight">CSS3</span>
+                        CSS Variables
 
-                    <span class="nx-highlight">JavaScript</span>
+                    </div>
 
-                    <span class="nx-highlight">Responsive</span>
+                    <div class="nx-highlight">
 
-                    <span class="nx-highlight">Accesible</span>
+                        Glass UI
 
-                    <span class="nx-highlight">WordPress Ready</span>
+                    </div>
+
+                    <div class="nx-highlight">
+
+                        Dashboard Ready
+
+                    </div>
+
+                    <div class="nx-highlight">
+
+                        WordPress Friendly
+
+                    </div>
 
                 </div>
 
             </div>
 
-            <!-- ==========================================
-            Dashboard Preview
-            =========================================== -->
+            <!--=========================================
+            Right
+            ==========================================-->
 
-            <aside class="nx-dashboard">
+            <div class="nx-dashboard">
 
                 <div class="nx-dashboard-header">
 
-                    <span>
-
-                        Nexus Dashboard
-
-                    </span>
+                    Dashboard Preview
 
                     <span class="nx-status"></span>
 
@@ -234,7 +277,7 @@
 
                 <div class="nx-dashboard-chart">
 
-                    Dashboard Preview
+                    Dashboard Component
 
                 </div>
 
@@ -242,247 +285,179 @@
 
                     <div class="nx-stat">
 
-                        <strong>
+                        <strong>42</strong>
 
-                            18
-
-                        </strong>
-
-                        <span>
-
-                            Componentes
-
-                        </span>
+                        <span>Components</span>
 
                     </div>
 
                     <div class="nx-stat">
 
-                        <strong>
+                        <strong>100%</strong>
 
-                            6
-
-                        </strong>
-
-                        <span>
-
-                            Layouts
-
-                        </span>
+                        <span>Responsive</span>
 
                     </div>
 
                     <div class="nx-stat">
 
-                        <strong>
+                        <strong>MIT</strong>
 
-                            100%
-
-                        </strong>
-
-                        <span>
-
-                            Responsive
-
-                        </span>
+                        <span>License</span>
 
                     </div>
 
                 </div>
 
-            </aside>
+            </div>
 
         </div>
 
     </div>
 
-    <!-- Scroll -->
+   </section>
 
-    <div class="nx-scroll-indicator">
+        <!--=================================================
+Features
+==================================================-->
 
-        <span>
-
-            Scroll
-
-        </span>
-
-        <span class="nx-scroll-arrow">
-
-            ↓
-
-        </span>
-
-    </div>
-
-</section>
-
-        
-
-        <!-- Technologies -->
-        <section id="nx-technologies" class="nx-section">
+<section
+    id="features"
+    class="nx-section">
 
     <div class="nx-container">
 
-        <div class="nx-section-header">
+        <!--=========================================
+        Section Header
+        ==========================================-->
 
-            <span class="nx-badge">Tecnologías</span>
+        <header class="nx-section-header">
 
-            <h2 class="nx-title-lg">
-                Construido sobre estándares web modernos.
+            <span class="nx-badge">
+
+                Features
+
+            </span>
+
+            <h2>
+
+                Everything You Need
+                To Build Modern Interfaces
+
             </h2>
 
-            <p class="nx-lead">
-                Nexus utiliza únicamente tecnologías abiertas y ampliamente soportadas.
+            <p>
+
+                Nexus UI Framework provides reusable components,
+                design tokens and a scalable architecture for
+                dashboards, landing pages and WordPress projects.
+
             </p>
 
-        </div>
+        </header>
+
+        <!--=========================================
+        Feature Grid
+        ==========================================-->
 
         <div class="nx-feature-grid">
 
-            <article class="nx-feature-card">
+            <!-- Card 1 -->
+
+            <article class="nx-card nx-feature-card">
 
                 <div class="nx-feature-icon">
-                    🌐
+
+                    🧩
+
                 </div>
 
-                <h3>HTML5</h3>
+                <h3>
+
+                    Reusable Components
+
+                </h3>
 
                 <p>
-                    Estructura semántica y accesible.
+
+                    Modular UI components ready to build
+                    modern interfaces with minimal effort.
+
                 </p>
 
             </article>
 
-            <article class="nx-feature-card">
+            <!-- Card 2 -->
+
+            <article class="nx-card nx-feature-card">
 
                 <div class="nx-feature-icon">
+
                     🎨
+
                 </div>
 
-                <h3>CSS3</h3>
+                <h3>
+
+                    Design Tokens
+
+                </h3>
 
                 <p>
-                    Variables CSS, Grid, Flexbox y Design Tokens.
+
+                    Centralized colors, spacing,
+                    typography and shadows for
+                    consistent design.
+
                 </p>
 
             </article>
 
-            <article class="nx-feature-card">
+            <!-- Card 3 -->
+
+            <article class="nx-card nx-feature-card">
 
                 <div class="nx-feature-icon">
-                    ⚡
+
+                    📊
+
                 </div>
 
-                <h3>JavaScript</h3>
+                <h3>
+
+                    Dashboard Ready
+
+                </h3>
 
                 <p>
-                    Componentes escritos en Vanilla JS.
+
+                    Built for enterprise dashboards,
+                    analytics and administration panels.
+
                 </p>
 
             </article>
 
-            <article class="nx-feature-card">
+            <!-- Card 4 -->
+
+            <article class="nx-card nx-feature-card">
 
                 <div class="nx-feature-icon">
-                    📱
+
+                    ⚙️
+
                 </div>
 
-                <h3>Responsive</h3>
+                <h3>
 
-                <p>
-                    Mobile First y adaptable a cualquier dispositivo.
-                </p>
+                    WordPress Friendly
 
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-        <!-- About -->
-        
-
-<section id="nx-about" class="nx-section">
-
-    <div class="nx-container">
-
-        <div class="nx-section-header nx-text-center">
-
-            <span class="nx-badge">
-                Acerca de Nexus
-            </span>
-
-            <h2 class="nx-title-lg">
-                Un framework pensado para proyectos reales.
-            </h2>
-
-            <p class="nx-section-description">
-
-                Nexus UI Framework nace para construir sitios web,
-                dashboards, aplicaciones institucionales y plataformas
-                empresariales utilizando una arquitectura moderna,
-                modular y reutilizable.
-
-            </p>
-
-        </div>
-
-        <div class="nx-feature-grid">
-
-            <article class="nx-feature-card">
-
-                <div class="nx-feature-icon">⚡</div>
-
-                <h3>Ligero</h3>
+                </h3>
 
                 <p>
 
-                    Sin dependencias pesadas.
-                    Solo HTML, CSS y JavaScript moderno.
-
-                </p>
-
-            </article>
-
-            <article class="nx-feature-card">
-
-                <div class="nx-feature-icon">🧩</div>
-
-                <h3>Modular</h3>
-
-                <p>
-
-                    Cada componente funciona de forma independiente.
-
-                </p>
-
-            </article>
-
-            <article class="nx-feature-card">
-
-                <div class="nx-feature-icon">♿</div>
-
-                <h3>Accesible</h3>
-
-                <p>
-
-                    Basado en HTML semántico y buenas prácticas.
-
-                </p>
-
-            </article>
-
-            <article class="nx-feature-card">
-
-                <div class="nx-feature-icon">🚀</div>
-
-                <h3>Escalable</h3>
-
-                <p>
-
-                    Diseñado para crecer sin perder organización.
+                    Perfect for WordPress themes,
+                    plugins and Elementor-based projects.
 
                 </p>
 
@@ -494,129 +469,75 @@
 
 </section>
 
-        <!-- Design System -->
-        
+        <!--=================================================
+        Components Showcase
+        ==================================================-->
 
-<section id="design-system" class="nx-section">
+        <section
+            id="components"
+            class="nx-section">
 
-    <div class="nx-container">
+        </section>
 
-        <div class="nx-section-header">
+        <!--=================================================
+        Templates
+        ==================================================-->
 
-            <span class="nx-badge">
-                Design System
-            </span>
+        <section
+            id="templates"
+            class="nx-section">
 
-            <h2 class="nx-title-lg">
-                Un lenguaje visual consistente.
-            </h2>
+        </section>
 
-            <p class="nx-section-description">
-                Todos los componentes de Nexus utilizan los mismos principios
-                de color, tipografía, espaciado, radios y animaciones para
-                mantener una experiencia uniforme.
-            </p>
+        <!--=================================================
+        Framework Architecture
+        ==================================================-->
 
-        </div>
+        <section
+            id="framework"
+            class="nx-section">
 
-        <div class="nx-design-grid">
+        </section>
 
-            <article class="nx-design-card">
+        <!--=================================================
+        Design System
+        ==================================================-->
 
-                <div class="nx-design-icon">🎨</div>
+        <section
+            id="design-system"
+            class="nx-section">
 
-                <h3>Colores</h3>
+        </section>
 
-                <p>
-                    Variables CSS centralizadas mediante Design Tokens.
-                </p>
+        <!--=================================================
+        Documentation
+        ==================================================-->
 
-            </article>
+        <section
+            id="documentation"
+            class="nx-section">
 
-            <article class="nx-design-card">
+        </section>
 
-                <div class="nx-design-icon">🔠</div>
+        <!--=================================================
+        Contact
+        ==================================================-->
 
-                <h3>Tipografía</h3>
+        <section
+            id="contact"
+            class="nx-section">
 
-                <p>
-                    Escalas tipográficas consistentes para títulos,
-                    subtítulos y contenido.
-                </p>
-
-            </article>
-
-            <article class="nx-design-card">
-
-                <div class="nx-design-icon">📐</div>
-
-                <h3>Espaciado</h3>
-
-                <p>
-                    Sistema uniforme basado en variables reutilizables.
-                </p>
-
-            </article>
-
-            <article class="nx-design-card">
-
-                <div class="nx-design-icon">✨</div>
-
-                <h3>Animaciones</h3>
-
-                <p>
-                    Transiciones suaves y efectos reutilizables.
-                </p>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-        <!-- Components -->
-        <section id="nx-components"></section>
-
-        <!-- Dashboard -->
-        <section id="nx-dashboard"></section>
-
-        <!-- Architecture -->
-        <section id="nx-architecture"></section>
-
-        <!-- Examples -->
-        <section id="nx-examples"></section>
-
-        <!-- Use Cases -->
-        <section id="nx-use-cases"></section>
-
-        <!-- Roadmap -->
-        <section id="nx-roadmap"></section>
-
-        <!-- Ecosystem -->
-        <section id="nx-ecosystem"></section>
-
-        <!-- Documentation -->
-        <section id="nx-documentation"></section>
+        </section>
 
     </main>
 
-    <!-- ==========================================
+    <!--=====================================================
     Footer
-    =========================================== -->
+    ======================================================-->
 
-    <footer id="nx-footer"></footer>
+    <footer class="nx-footer">
 
-    <!-- ==========================================
-    Nexus JS
-    =========================================== -->
-
-    <script src="assets/js/navbar.js"></script>
-    <script src="assets/js/forms.js"></script>
-    <script src="assets/js/fab.js"></script>
-    <script src="assets/js/animations.js"></script>
-    <script src="assets/js/app.js"></script>
+    </footer>
 
 </body>
 

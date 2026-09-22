@@ -14,7 +14,7 @@
 
     bottom:24px;
 
-    z-index:1000;
+    z-index:var(--nx-z-toast);
 
     display:grid;
 
@@ -28,11 +28,13 @@
 
     border-radius:50%;
 
-    background:var(--nx-primary);
+    background:var(--nx-gradient-primary);
 
     color:var(--nx-white);
 
-    box-shadow:var(--nx-shadow-md);
+    box-shadow:var(--nx-glow-green);
+
+    cursor:pointer;
 
     transition:var(--nx-transition);
 
@@ -40,9 +42,17 @@
 
 .nx-fab:hover{
 
-    transform:translateY(-3px);
+    transform:translateY(-4px);
 
-    background:var(--nx-primary-dark);
+    box-shadow:
+        var(--nx-glow-green-strong),
+        var(--nx-shadow-md);
+
+}
+
+.nx-fab:active{
+
+    transform:translateY(0) scale(.96);
 
 }
 

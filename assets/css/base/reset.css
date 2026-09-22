@@ -30,6 +30,8 @@ body{
 
     color:var(--nx-text);
 
+    line-height:1.6;
+
     overflow-x:hidden;
 
     text-rendering:optimizeLegibility;
@@ -75,6 +77,9 @@ select{
     font:inherit;
 
     color:inherit;
+
+    background:none;
+
 
 }
 

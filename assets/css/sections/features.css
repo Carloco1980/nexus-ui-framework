@@ -12,7 +12,7 @@
 
     grid-template-columns:repeat(4,1fr);
 
-    gap:2rem;
+    gap:var(--nx-space-md);
 
 }
 
@@ -33,11 +33,13 @@ Extiende .nx-card
 
     text-align:center;
 
-    padding:2.5rem 2rem;
+    padding:calc(var(--nx-space-md) + .5rem) var(--nx-space-md);
 
-    background:rgba(255,255,255,.03);
+    background:var(--nx-glass-bg);
 
-    border:1px solid var(--nx-border);
+    backdrop-filter:var(--nx-glass-blur);
+
+    border:1px solid var(--nx-glass-border);
 
     border-radius:var(--nx-radius-lg);
 
@@ -46,18 +48,16 @@ Extiende .nx-card
     transition:var(--nx-transition);
 
 }
+
 .nx-feature-card:hover{
 
     transform:translateY(-8px);
 
-    border-color:rgba(37,99,235,.45);
+    background:var(--nx-surface-hover);
 
-    background:rgba(255,255,255,.05);
+    border-color:var(--nx-border-strong);
 
-    box-shadow:
-        0 20px 40px rgba(15,23,42,.45),
-        0 12px 28px rgba(37,99,235,.18),
-        inset 0 1px rgba(255,255,255,.06);
+    box-shadow:var(--nx-shadow-md);
 
 }
 
@@ -77,24 +77,35 @@ Feature Icon
 
     height:72px;
 
-    margin:0 auto 2rem;
+    margin:0 auto var(--nx-space-md);
 
     border-radius:var(--nx-radius-md);
 
     background:rgba(37,99,235,.12);
 
+    color:var(--nx-primary);
+
     font-size:2rem;
-    
+
     transition:var(--nx-transition);
 
 }
+
+.nx-feature-card:hover .nx-feature-icon{
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--nx-glow-blue);
+
+}
+
 /*---------------------------------------------------------
 Typography
 ---------------------------------------------------------*/
 
 .nx-feature-card h3{
 
-    margin-bottom:1rem;
+    margin-bottom:var(--nx-space-sm);
 
     font-size:1.45rem;
 
@@ -110,7 +121,7 @@ Typography
 
     margin:0 auto;
 
-    color:var(--nx-muted);
+    color:var(--nx-text-muted);
 
     line-height:1.8;
 

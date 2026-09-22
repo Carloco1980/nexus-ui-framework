@@ -1,5 +1,5 @@
 /*=========================================================
-09 Animations
+05 Animations
 =========================================================*/
 
 /*---------------------------------------------------------
@@ -50,6 +50,74 @@ Scroll Indicator
 }
 
 /*---------------------------------------------------------
+Fade
+---------------------------------------------------------*/
+
+@keyframes nxFade{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+/*---------------------------------------------------------
+Fade Up
+---------------------------------------------------------*/
+
+@keyframes nxFadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*---------------------------------------------------------
+Scale
+---------------------------------------------------------*/
+
+@keyframes nxScale{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.96);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/*---------------------------------------------------------
 Accessibility
 ---------------------------------------------------------*/
 
@@ -61,17 +129,15 @@ Accessibility
 
     }
 
-    *{
+    *,
+    *::before,
+    *::after{
 
-        animation:none !important;
+        animation-duration:.01ms !important;
 
-        transition:none !important;
+        animation-iteration-count:1 !important;
 
-    }
-
-    .nx-hero-video{
-
-        display:none;
+        transition-duration:.01ms !important;
 
     }
 

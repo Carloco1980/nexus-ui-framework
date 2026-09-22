@@ -12,12 +12,24 @@
 
     padding:var(--nx-space-md);
 
-    background:rgba(255,255,255,.04);
+    background:var(--nx-glass-bg);
 
-    border:1px solid var(--nx-border);
+    border:1px solid var(--nx-glass-border);
 
-    border-radius:var(--nx-radius-lg);
+    backdrop-filter:var(--nx-glass-blur);
+
+    border-radius:var(--nx-radius-md);
 
     transition:var(--nx-transition);
+
+}
+
+.nx-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:var(--nx-border-strong);
+
+    box-shadow:var(--nx-shadow-md);
 
 }

@@ -12,17 +12,17 @@
 
     padding:var(--nx-space-md);
 
-    background:rgba(15,23,42,.72);
+    background:var(--nx-glass-bg);
 
-    backdrop-filter:blur(30px);
+    backdrop-filter:var(--nx-glass-blur);
 
-    border:1px solid var(--nx-border);
+    border:1px solid var(--nx-glass-border);
 
     border-radius:var(--nx-radius-lg);
 
     box-shadow:
         var(--nx-shadow-lg),
-        inset 0 1px rgba(255,255,255,.05);
+        inset 0 1px 0 rgba(255,255,255,.05);
 
 }
 
@@ -35,6 +35,10 @@
     justify-content:space-between;
 
     margin-bottom:var(--nx-space-md);
+
+    padding-bottom:var(--nx-space-sm);
+
+    border-bottom:1px solid var(--nx-border-soft);
 
     font-size:1.2rem;
 
@@ -50,11 +54,9 @@
 
     border-radius:50%;
 
-    background:#4ADE80;
+    background:var(--nx-green);
 
-    box-shadow:
-        0 0 10px #4ADE80,
-        0 0 25px #4ADE80;
+    box-shadow:var(--nx-glow-green);
 
 }
 
@@ -70,18 +72,18 @@
 
     margin-bottom:var(--nx-space-md);
 
-    border:1px solid rgba(255,255,255,.05);
+    border:1px solid var(--nx-border-soft);
 
     border-radius:var(--nx-radius-md);
 
     background:
         linear-gradient(
             180deg,
-            rgba(255,255,255,.05),
-            rgba(255,255,255,.02)
+            var(--nx-surface-light),
+            var(--nx-surface)
         );
 
-    color:rgba(255,255,255,.35);
+    color:var(--nx-text-soft);
 
 }
 
@@ -107,11 +109,13 @@
 
     gap:.35rem;
 
-    padding:1.25rem;
+    padding:var(--nx-space-sm);
 
-    background:rgba(255,255,255,.05);
+    background:var(--nx-glass-bg);
 
-    border:1px solid rgba(255,255,255,.06);
+    backdrop-filter:var(--nx-glass-blur);
+
+    border:1px solid var(--nx-border-soft);
 
     border-radius:var(--nx-radius-md);
 
@@ -123,7 +127,11 @@
 
     transform:translateY(-4px);
 
-    background:rgba(37,99,235,.15);
+    background:var(--nx-surface-hover);
+
+    border-color:var(--nx-border-strong);
+
+    box-shadow:var(--nx-shadow-sm);
 
 }
 
@@ -137,6 +145,6 @@
 
 .nx-stat span{
 
-    color:var(--nx-muted);
+    color:var(--nx-text-muted);
 
 }

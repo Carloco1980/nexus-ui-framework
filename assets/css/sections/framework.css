@@ -39,6 +39,8 @@ Extiende .nx-card
 
 .nx-framework-node{
 
+    position:relative;
+
     overflow:hidden;
 
     text-align:center;
@@ -49,7 +51,7 @@ Extiende .nx-card
 
     transform:translateY(-8px);
 
-    border-color:rgba(37,99,235,.45);
+    border-color:var(--nx-border-strong);
 
     box-shadow:var(--nx-shadow-md);
 
@@ -73,7 +75,7 @@ Typography
 
 .nx-framework-node p{
 
-    color:var(--nx-muted);
+    color:var(--nx-text-muted);
 
     line-height:1.7;
 
@@ -88,13 +90,20 @@ Core Node
     width:min(100%,520px);
 
     background:
+
         linear-gradient(
+
             135deg,
+
             rgba(37,99,235,.12),
+
             rgba(255,255,255,.03)
+
         );
 
-    border-color:rgba(37,99,235,.35);
+    border-color:var(--nx-primary);
+
+    transition:var(--nx-transition);
 
 }
 
@@ -111,10 +120,15 @@ Hover Effect
     inset:0;
 
     background:
+
         linear-gradient(
+
             135deg,
+
             rgba(37,99,235,.08),
+
             transparent 70%
+
         );
 
     opacity:0;

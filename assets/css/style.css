@@ -2,7 +2,7 @@
 ==================================================
 Nexus UI Framework
 
-Version : 0.9.0 RC1
+Version : 1.0.0
 Author  : Carlos Santander Díaz
 License : MIT
 
@@ -45,10 +45,10 @@ Load Order
 =========================================================*/
 
 @import url("./components/buttons.css");
-@import url("./components/cards.css");
 @import url("./components/badges.css");
-@import url("./components/dashboard.css");
 @import url("./components/forms.css");
+@import url("./components/cards.css");
+@import url("./components/dashboard.css");
 @import url("./components/fab.css");
 
 /*=========================================================
