@@ -1,0 +1,51 @@
+/*=========================================================
+07 Components
+=========================================================*/
+
+/*---------------------------------------------------------
+07.6 KPI Cards
+---------------------------------------------------------*/
+
+/*=========================================================
+Base
+=========================================================*/
+
+.nx-kpi{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    gap:var(--nx-space-md);
+
+    min-height:220px;
+
+    padding:var(--nx-space-md);
+
+    background:var(--nx-glass-bg);
+
+    backdrop-filter:var(--nx-glass-blur);
+
+    border:1px solid var(--nx-glass-border);
+
+    border-radius:var(--nx-radius-md);
+
+    box-shadow:var(--nx-shadow-sm);
+
+    transition:var(--nx-transition);
+
+}
+
+.nx-kpi:hover{
+
+    transform:translateY(-6px);
+
+    border-color:var(--nx-border-strong);
+
+    box-shadow:var(--nx-shadow-md);
+
+}
