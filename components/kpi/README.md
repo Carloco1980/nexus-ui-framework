@@ -121,4 +121,12 @@ El componente debe adaptarse automáticamente al sistema de grid (`.nx-grid` y `
 
 ## Estado
 
-🟡 En desarrollo.
+🟡 Versión 0.1
+
+Estructura HTML y CSS implementadas.
+
+Pendiente:
+
+- Responsive
+- Variantes (Success, Warning, Danger)
+- Demo en Design System
