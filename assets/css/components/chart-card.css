@@ -1,0 +1,185 @@
+/*=========================================================
+07 Components
+=========================================================*/
+
+/*---------------------------------------------------------
+07.7 chart-card
+---------------------------------------------------------*/
+
+/*=========================================================
+Base
+=========================================================*/
+
+.nx-kpi{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    gap:var(--nx-space-md);
+
+    min-height:220px;
+
+    padding:var(--nx-space-md);
+
+    background:var(--nx-glass-bg);
+
+    backdrop-filter:var(--nx-glass-blur);
+
+    border:1px solid var(--nx-glass-border);
+
+    border-radius:var(--nx-radius-md);
+
+    box-shadow:var(--nx-shadow-sm);
+
+    transition:var(--nx-transition);
+
+}
+
+/*=========================================================
+Header
+=========================================================*/
+
+.nx-kpi-header{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    justify-content:space-between;
+
+    gap:var(--nx-space-sm);
+
+    margin-bottom:var(--nx-space-md);
+
+}
+
+/*=========================================================
+Icon
+=========================================================*/
+
+.nx-kpi-icon{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:56px;
+
+    height:56px;
+
+    border-radius:var(--nx-radius-sm);
+
+    background:var(--nx-gradient-primary);
+
+    color:var(--nx-white);
+
+    font-size:1.35rem;
+
+    box-shadow:var(--nx-glow-green);
+
+}
+
+/*=========================================================
+Action
+=========================================================*/
+
+.nx-kpi-action{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:40px;
+
+    height:40px;
+
+    border-radius:50%;
+
+    border:1px solid var(--nx-border);
+
+    background:rgba(255,255,255,.04);
+
+    color:var(--nx-text-muted);
+
+    cursor:pointer;
+
+    transition:var(--nx-transition);
+
+}
+
+.nx-kpi-action:hover{
+
+    color:var(--nx-white);
+
+    border-color:var(--nx-primary);
+
+    box-shadow:var(--nx-glow-blue);
+
+}
+
+/*=========================================================
+Body
+=========================================================*/
+
+.nx-kpi-body{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.35rem;
+
+}
+
+/*=========================================================
+Value
+=========================================================*/
+
+.nx-kpi-value{
+
+    font-size:2.8rem;
+
+    font-weight:800;
+
+    line-height:1;
+
+    color:var(--nx-white);
+
+}
+
+/*=========================================================
+Title
+=========================================================*/
+
+.nx-kpi-title{
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    color:var(--nx-text);
+
+}
+
+/*=========================================================
+Description
+=========================================================*/
+
+.nx-kpi-description{
+
+    font-size:.92rem;
+
+    line-height:1.6;
+
+    color:var(--nx-text-muted);
+
+}
