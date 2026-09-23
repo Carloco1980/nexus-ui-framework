@@ -3,14 +3,14 @@
 =========================================================*/
 
 /*---------------------------------------------------------
-07.7 chart-card
+07.7 Chart Card
 ---------------------------------------------------------*/
 
 /*=========================================================
 Base
 =========================================================*/
 
-.nx-kpi{
+.nx-chart-card{
 
     position:relative;
 
@@ -18,11 +18,7 @@ Base
 
     flex-direction:column;
 
-    justify-content:space-between;
-
     gap:var(--nx-space-md);
-
-    min-height:220px;
 
     padding:var(--nx-space-md);
 
@@ -40,15 +36,25 @@ Base
 
 }
 
+.nx-chart-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:var(--nx-border-strong);
+
+    box-shadow:var(--nx-shadow-md);
+
+}
+
 /*=========================================================
 Header
 =========================================================*/
 
-.nx-kpi-header{
+.nx-chart-header{
 
     display:flex;
 
-    align-items:flex-start;
+    align-items:center;
 
     justify-content:space-between;
 
@@ -59,78 +65,10 @@ Header
 }
 
 /*=========================================================
-Icon
+Heading
 =========================================================*/
 
-.nx-kpi-icon{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    width:56px;
-
-    height:56px;
-
-    border-radius:var(--nx-radius-sm);
-
-    background:var(--nx-gradient-primary);
-
-    color:var(--nx-white);
-
-    font-size:1.35rem;
-
-    box-shadow:var(--nx-glow-green);
-
-}
-
-/*=========================================================
-Action
-=========================================================*/
-
-.nx-kpi-action{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    width:40px;
-
-    height:40px;
-
-    border-radius:50%;
-
-    border:1px solid var(--nx-border);
-
-    background:rgba(255,255,255,.04);
-
-    color:var(--nx-text-muted);
-
-    cursor:pointer;
-
-    transition:var(--nx-transition);
-
-}
-
-.nx-kpi-action:hover{
-
-    color:var(--nx-white);
-
-    border-color:var(--nx-primary);
-
-    box-shadow:var(--nx-glow-blue);
-
-}
-
-/*=========================================================
-Body
-=========================================================*/
-
-.nx-kpi-body{
+.nx-chart-heading{
 
     display:flex;
 
@@ -141,45 +79,111 @@ Body
 }
 
 /*=========================================================
-Value
-=========================================================*/
-
-.nx-kpi-value{
-
-    font-size:2.8rem;
-
-    font-weight:800;
-
-    line-height:1;
-
-    color:var(--nx-white);
-
-}
-
-/*=========================================================
 Title
 =========================================================*/
 
-.nx-kpi-title{
+.nx-chart-title{
 
-    font-size:1rem;
+    margin:0;
 
-    font-weight:600;
+    color:var(--nx-white);
 
-    color:var(--nx-text);
+    font-size:1.2rem;
+
+    font-weight:700;
 
 }
 
 /*=========================================================
-Description
+Subtitle
 =========================================================*/
 
-.nx-kpi-description{
+.nx-chart-subtitle{
+
+    margin:0;
+
+    color:var(--nx-text-muted);
 
     font-size:.92rem;
 
-    line-height:1.6;
+}
 
-    color:var(--nx-text-muted);
+/*=========================================================
+Body
+=========================================================*/
+
+.nx-chart-body{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:100%;
+
+    min-height:320px;
+
+}
+
+/*=========================================================
+Canvas
+=========================================================*/
+
+.nx-chart-body canvas{
+
+    width:100% !important;
+
+    min-height:320px;
+
+}
+
+/*=========================================================
+Footer
+=========================================================*/
+
+.nx-chart-footer{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    flex-wrap:wrap;
+
+    gap:var(--nx-space-sm);
+
+    margin-top:var(--nx-space-md);
+
+    padding-top:var(--nx-space-sm);
+
+    border-top:1px solid var(--nx-border-soft);
+
+}
+
+/*=========================================================
+Legend
+=========================================================*/
+
+.nx-chart-legend{
+
+    color:var(--nx-text);
+
+    font-size:.9rem;
+
+}
+
+/*=========================================================
+Update
+=========================================================*/
+
+.nx-chart-update{
+
+    color:var(--nx-text-soft);
+
+    font-size:.82rem;
 
 }

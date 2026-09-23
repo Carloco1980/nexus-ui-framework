@@ -52,6 +52,7 @@ Load Order
 @import url("./components/fab.css");
 @import url("./components/kpi.css");
 @import url("./components/chart-card.css");
+@import url("./components/panel.css");
 
 /*=========================================================
 04 Sections
@@ -72,3 +73,4 @@ Load Order
 @import url("./utilities/helpers.css");
 @import url("./utilities/spacing.css");
 @import url("./utilities/responsive.css");
+
