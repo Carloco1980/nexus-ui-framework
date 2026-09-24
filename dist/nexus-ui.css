@@ -189,13 +189,19 @@ Load Order
     --nx-radius-xl:40px;
     --nx-radius-pill:999px;
 
-    /*=====================================================
-    SHADOWS
-    =====================================================*/
+   /*=========================================================
+SHADOWS
+=========================================================*/
 
-    --nx-shadow-sm:0 10px 25px rgba(0,0,0,.18);
-    --nx-shadow-md:0 20px 50px rgba(0,0,0,.30);
-    --nx-shadow-lg:0 40px 80px rgba(0,0,0,.45);
+--nx-shadow-xs: 0 4px 8px rgba(0,0,0,.10);
+
+--nx-shadow-sm: 0 8px 16px rgba(0,0,0,.16);
+
+--nx-shadow-md: 0 16px 32px rgba(0,0,0,.24);
+
+--nx-shadow-lg: 0 32px 64px rgba(0,0,0,.36);
+
+--nx-shadow-xl: 0 48px 96px rgba(0,0,0,.48);
 
     /*=====================================================
     MOTION
@@ -1105,7 +1111,7 @@ Theme
 Base
 =========================================================*/
 
-.nx-btn{
+.nx-button{
 
     position:relative;
     display:inline-flex;
@@ -1120,7 +1126,7 @@ Base
 
     border:1px solid transparent;
 
-    border-radius:18px;
+    border-radius:var(--nx-radius-md);
 
     cursor:pointer;
 
@@ -1137,13 +1143,7 @@ Base
 
     color:var(--nx-white);
 
-    transition:
-        transform .28s ease,
-        background .28s ease,
-        border-color .28s ease,
-        color .28s ease,
-        box-shadow .28s ease,
-        filter .28s ease;
+    transition:var(--nx-transition);
 
 }
 
@@ -1151,7 +1151,7 @@ Base
 Glow
 =========================================================*/
 
-.nx-btn::before{
+.nx-button::before{
 
     content:"";
 
@@ -1173,11 +1173,11 @@ Glow
 Hover
 =========================================================*/
 
-.nx-btn:hover{
+.nx-button:hover{
 
     transform:translateY(-2px);
 
-    filter:brightness(1.05);
+    box-shadow:var(--nx-shadow-md);
 
 }
 
@@ -1185,7 +1185,7 @@ Hover
 Active
 =========================================================*/
 
-.nx-btn:active{
+.nx-button:active{
 
     transform:translateY(1px);
 
@@ -1195,14 +1195,13 @@ Active
 Focus
 =========================================================*/
 
-.nx-btn:focus-visible{
+.nx-button:focus-visible{
 
     outline:none;
 
     box-shadow:
-
-        0 0 0 3px rgba(53,216,255,.18),
-        0 0 30px rgba(53,216,255,.22);
+0 0 0 3px rgba(53,216,255,.18),
+var(--nx-shadow-lg);
 
 }
 
@@ -1210,25 +1209,19 @@ Focus
 Primary
 =========================================================*/
 
-.nx-btn-primary{
+.nx-button-primary{
 
     background:
 
-        linear-gradient(
-            135deg,
-            var(--nx-green),
-            var(--nx-cyan)
-        );
+        var(--nx-gradient-primary);
 
     border-color:rgba(255,255,255,.12);
 
-    box-shadow:
-
-        0 12px 30px rgba(75,255,180,.22);
+    box-shadow:var(--nx-shadow-md);
 
 }
 
-.nx-btn-primary::before{
+.nx-button-primary::before{
 
     opacity:1;
 
@@ -1250,7 +1243,7 @@ Primary
 Outline
 =========================================================*/
 
-.nx-btn-outline{
+.nx-button-outline{
 
     background:transparent;
 
@@ -1258,13 +1251,11 @@ Outline
 
 }
 
-.nx-btn-outline:hover{
+.nx-button-outline:hover{
 
     border-color:var(--nx-cyan);
 
-    box-shadow:
-
-        0 10px 28px rgba(53,216,255,.18);
+    box-shadow:var(--nx-shadow-sm);
 
 }
 
@@ -1272,21 +1263,19 @@ Outline
 Glass
 =========================================================*/
 
-.nx-btn-glass{
+.nx-button-glass{
 
     background:rgba(255,255,255,.05);
 
-    border-color:rgba(255,255,255,.08);
+    border-color:var(--nx-border);
 
-    backdrop-filter:blur(18px);
+    backdrop-filter:var(--nx-glass-blur);
 
 }
 
-.nx-btn-glass:hover{
+.nx-button-glass:hover{
 
-    box-shadow:
-
-        0 10px 28px rgba(255,255,255,.10);
+    box-shadow:var(--nx-shadow-sm);
 
 }
 
@@ -1294,7 +1283,7 @@ Glass
 Ghost
 =========================================================*/
 
-.nx-btn-ghost{
+.nx-button-ghost{
 
     background:transparent;
 
@@ -1302,7 +1291,7 @@ Ghost
 
 }
 
-.nx-btn-ghost:hover{
+.nx-button-ghost:hover{
 
     background:rgba(255,255,255,.05);
 
@@ -1312,7 +1301,7 @@ Ghost
 Success
 =========================================================*/
 
-.nx-btn-success{
+.nx-button-success{
 
     background:
 
@@ -1324,9 +1313,7 @@ Success
 
     border-color:rgba(255,255,255,.10);
 
-    box-shadow:
-
-        0 12px 30px rgba(72,201,110,.22);
+    box-shadow:var(--nx-shadow-sm);
 
 }
 
@@ -1334,7 +1321,7 @@ Success
 Danger
 =========================================================*/
 
-.nx-btn-danger{
+.nx-button-danger{
 
     background:
 
@@ -1346,9 +1333,7 @@ Danger
 
     border-color:rgba(255,255,255,.10);
 
-    box-shadow:
-
-        0 12px 30px rgba(239,68,68,.22);
+    box-shadow:var(--nx-shadow-md);
 
 }
 
@@ -1356,7 +1341,7 @@ Danger
 Sizes
 =========================================================*/
 
-.nx-btn-sm{
+.nx-button-sm{
 
     min-width:110px;
 
@@ -1368,13 +1353,13 @@ Sizes
 
 }
 
-.nx-btn-md{
+.nx-button-md{
 
     height:56px;
 
 }
 
-.nx-btn-lg{
+.nx-button-lg{
 
     min-width:190px;
 
@@ -1390,7 +1375,7 @@ Sizes
 Block
 =========================================================*/
 
-.nx-btn-block{
+.nx-button-block{
 
     width:100%;
 
@@ -1400,7 +1385,7 @@ Block
 Icon
 =========================================================*/
 
-.nx-btn-icon{
+.nx-button-icon{
 
     display:inline-flex;
 
@@ -1410,7 +1395,7 @@ Icon
 
 }
 
-.nx-btn-icon svg{
+.nx-button-icon svg{
 
     width:18px;
 
@@ -1418,7 +1403,7 @@ Icon
 
 }
 
-.nx-btn-icon-only{
+.nx-button-icon-only{
 
     width:56px;
 
@@ -1432,7 +1417,7 @@ Icon
 Disabled
 =========================================================*/
 
-.nx-btn:disabled{
+.nx-button:disabled{
 
     opacity:.45;
 
@@ -1450,31 +1435,89 @@ Disabled
 07 Components
 =========================================================*/
 
-/*---------------------------------------------------------
+/*=========================================================
 07.3 Badges
----------------------------------------------------------*/
+=========================================================*/
 
 .nx-badge{
 
-    display:inline-block;
+    display:inline-flex;
 
-    margin-bottom:var(--nx-space-md);
+    align-items:center;
 
-    padding:
-        var(--nx-space-xs)
-        var(--nx-space-sm);
+    justify-content:center;
+
+    gap:.35rem;
+
+    padding:.35rem .80rem;
 
     border-radius:var(--nx-radius-pill);
 
-    background:rgba(37,99,235,.15);
+    background:var(--nx-surface-light);
 
-    color:var(--nx-primary);
+    border:1px solid var(--nx-border);
 
-    font-size:.85rem;
+    color:var(--nx-text);
+
+    font-size:.75rem;
 
     font-weight:600;
 
+    line-height:1;
+
+    white-space:nowrap;
+
     transition:var(--nx-transition);
+
+}
+
+.nx-badge:hover{
+
+    border-color:var(--nx-border-strong);
+
+    box-shadow:var(--nx-shadow-sm);
+
+}
+
+/*========================================*/
+
+.nx-badge-primary{
+
+    background:var(--nx-gradient-primary);
+
+    color:var(--nx-white);
+
+    border:1px solid transparent;
+
+}
+
+/*========================================*/
+
+.nx-badge-success{
+
+    background:rgba(50,230,122,.15);
+
+    color:var(--nx-green);
+
+    border-color:rgba(50,230,122,.25);
+
+}
+
+/*========================================*/
+
+.nx-badge-outline{
+
+    background:transparent;
+
+}
+
+/*========================================*/
+
+.nx-badge-glass{
+
+    background:var(--nx-glass-bg);
+
+    backdrop-filter:var(--nx-glass-blur);
 
 }
 
@@ -1613,6 +1656,10 @@ Disabled
 
     position:relative;
 
+    display:flex;
+
+    flex-direction:column;
+
     padding:var(--nx-space-md);
 
     background:var(--nx-glass-bg);
@@ -1637,6 +1684,93 @@ Disabled
 
 }
 
+
+/*=========================================================
+Card Header
+=========================================================*/
+
+.nx-card-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:var(--nx-space-sm);
+
+    margin-bottom:var(--nx-space-md);
+
+}
+
+/*=========================================================
+Card Body
+=========================================================*/
+
+.nx-card-body{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:var(--nx-space-sm);
+
+}
+
+/*=========================================================
+Card Footer
+=========================================================*/
+
+.nx-card-footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:var(--nx-space-lg);
+
+    padding-top:var(--nx-space-md);
+
+    border-top:1px solid var(--nx-border);
+
+}
+
+/*=========================================================
+Card Title
+=========================================================*/
+
+.nx-card-title{
+
+    margin:0;
+
+}
+
+/*=========================================================
+Card Meta
+=========================================================*/
+
+.nx-card-meta{
+
+    font-size:.875rem;
+
+    color:var(--nx-text-muted);
+
+}
+
+/*=========================================================
+Card Text
+=========================================================*/
+
+.nx-card-text{
+
+    color:var(--nx-text-muted);
+
+    line-height:1.6;
+
+}
+
 /*=========================================================
 07 Components
 =========================================================*/
@@ -1647,21 +1781,11 @@ Disabled
 
 .nx-dashboard{
 
-    position:relative;
+    display:flex;
 
-    padding:var(--nx-space-md);
+    flex-direction:column;
 
-    background:var(--nx-glass-bg);
-
-    backdrop-filter:var(--nx-glass-blur);
-
-    border:1px solid var(--nx-glass-border);
-
-    border-radius:var(--nx-radius-lg);
-
-    box-shadow:
-        var(--nx-shadow-lg),
-        inset 0 1px 0 rgba(255,255,255,.05);
+    gap:var(--nx-space-lg);
 
 }
 
@@ -1673,15 +1797,13 @@ Disabled
 
     justify-content:space-between;
 
-    margin-bottom:var(--nx-space-md);
+    gap:var(--nx-space-md);
 
-    padding-bottom:var(--nx-space-sm);
+}
 
-    border-bottom:1px solid var(--nx-border-soft);
+.nx-dashboard-header h3{
 
-    font-size:1.2rem;
-
-    font-weight:600;
+    margin:0;
 
 }
 
@@ -1699,92 +1821,44 @@ Disabled
 
 }
 
-.nx-dashboard-chart{
 
-    display:flex;
 
-    align-items:center;
-
-    justify-content:center;
-
-    height:280px;
-
-    margin-bottom:var(--nx-space-md);
-
-    border:1px solid var(--nx-border-soft);
-
-    border-radius:var(--nx-radius-md);
-
-    background:
-        linear-gradient(
-            180deg,
-            var(--nx-surface-light),
-            var(--nx-surface)
-        );
-
-    color:var(--nx-text-soft);
-
-}
-
-.nx-dashboard-stats{
+.nx-dashboard-kpis{
 
     display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 
-    gap:var(--nx-space-sm);
-
-}
-
-.nx-stat{
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:.35rem;
-
-    padding:var(--nx-space-sm);
-
-    background:var(--nx-glass-bg);
-
-    backdrop-filter:var(--nx-glass-blur);
-
-    border:1px solid var(--nx-border-soft);
-
-    border-radius:var(--nx-radius-md);
-
-    transition:var(--nx-transition);
+    gap:var(--nx-space-md);
 
 }
 
-.nx-stat:hover{
+/*=========================================================
+Charts
+=========================================================*/
 
-    transform:translateY(-4px);
+.nx-dashboard-charts{
 
-    background:var(--nx-surface-hover);
+    display:grid;
 
-    border-color:var(--nx-border-strong);
+    grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
 
-    box-shadow:var(--nx-shadow-sm);
-
-}
-
-.nx-stat strong{
-
-    font-size:2rem;
-
-    color:var(--nx-white);
+    gap:var(--nx-space-md);
 
 }
 
-.nx-stat span{
 
-    color:var(--nx-text-muted);
+/*=========================================================
+Responsive
+=========================================================*/
+
+@media (max-width:768px){
+
+    .nx-dashboard-charts{
+
+        grid-template-columns:1fr;
+
+    }
 
 }
 
@@ -1861,6 +1935,382 @@ Disabled
     height:30px;
 
     fill:currentColor;
+
+}
+
+/*=========================================================
+07 Components
+=========================================================*/
+
+/*---------------------------------------------------------
+07.6 KPI Cards
+---------------------------------------------------------*/
+
+
+
+
+.nx-kpi-icon{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:56px;
+
+    height:56px;
+
+    border-radius:var(--nx-radius-sm);
+
+    background:var(--nx-gradient-primary);
+
+    color:var(--nx-white);
+
+    font-size:1.35rem;
+
+   box-shadow: var(--nx-glow-green);
+
+}
+
+
+
+.nx-kpi-action:hover{
+
+    color:var(--nx-white);
+
+    border-color:var(--nx-primary);
+
+    box-shadow:var(--nx-glow-blue);
+
+}
+
+/*=========================================================
+Body
+=========================================================*/
+
+.nx-kpi-body{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:var(--nx-space-xs);
+
+    flex:1;
+
+}
+
+/*=========================================================
+Value
+=========================================================*/
+
+.nx-kpi-value{
+
+    font-size:clamp(2.2rem,5vw,3rem);
+
+    font-weight:800;
+
+    line-height:1;
+
+    color:var(--nx-white);
+
+}
+
+/*=========================================================
+Title
+=========================================================*/
+
+.nx-kpi-title{
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    color:var(--nx-text);
+
+}
+
+/*=========================================================
+Description
+=========================================================*/
+
+.nx-kpi-description{
+
+    font-size:.92rem;
+
+    line-height:1.6;
+
+    color:var(--nx-text-muted);
+
+}
+
+
+
+/*=========================================================
+Trend
+=========================================================*/
+
+.nx-kpi-trend{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:.35rem;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+    color:var(--nx-green);
+
+}
+
+/*=========================================================
+Update
+=========================================================*/
+
+.nx-kpi-update{
+
+    font-size:.82rem;
+
+    color:var(--nx-text-soft);
+
+}
+
+/*=========================================================
+07 Components
+=========================================================*/
+
+/*---------------------------------------------------------
+07.7 Chart Card
+---------------------------------------------------------*/
+
+
+
+
+/*=========================================================
+Body
+=========================================================*/
+
+.nx-chart-body{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:100%;
+
+    min-height:320px;
+
+}
+
+/*=========================================================
+Canvas
+=========================================================*/
+
+.nx-chart-body canvas{
+
+    width:100% !important;
+
+    height:100% !important;
+
+}
+
+
+
+/*=========================================================
+Legend
+=========================================================*/
+
+.nx-chart-legend{
+
+    color:var(--nx-text);
+
+    font-size:.9rem;
+
+}
+
+/*=========================================================
+Update
+=========================================================*/
+
+.nx-chart-update{
+
+    color:var(--nx-text-soft);
+
+    font-size:.82rem;
+
+}
+
+/*=========================================================
+07.7 Panel
+=========================================================*/
+
+/*=========================================================
+Base
+=========================================================*/
+
+.nx-panel{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:var(--nx-space-md);
+
+    padding:var(--nx-space-md);
+
+    background:var(--nx-glass-bg);
+
+    border:1px solid var(--nx-glass-border);
+
+    border-radius:var(--nx-radius-md);
+
+    backdrop-filter:var(--nx-glass-blur);
+
+    box-shadow:var(--nx-shadow-sm);
+
+    transition:var(--nx-transition);
+
+}
+
+.nx-panel:hover{
+
+    transform:translateY(-4px);
+
+    border-color:var(--nx-border-strong);
+
+    box-shadow:var(--nx-shadow-md);
+
+}
+
+/*=========================================================
+Header
+=========================================================*/
+
+.nx-panel-header{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    justify-content:space-between;
+
+    gap:var(--nx-space-md);
+
+}
+
+/*=========================================================
+Heading
+=========================================================*/
+
+.nx-panel-heading{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:var(--nx-space-xs);
+
+}
+
+/*=========================================================
+Title
+=========================================================*/
+
+.nx-panel-title{
+
+    margin:0;
+
+    color:var(--nx-text);
+
+}
+
+/*=========================================================
+Subtitle
+=========================================================*/
+
+.nx-panel-subtitle{
+
+    margin:0;
+
+    color:var(--nx-text-muted);
+
+    font-size:.90rem;
+
+}
+
+/*=========================================================
+Body
+=========================================================*/
+
+.nx-panel-body{
+
+    flex:1;
+
+}
+
+/*=========================================================
+Footer
+=========================================================*/
+
+.nx-panel-footer{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:var(--nx-space-sm);
+
+    padding-top:var(--nx-space-sm);
+
+    border-top:1px solid var(--nx-border-soft);
+
+}
+
+/*=========================================================
+Action
+=========================================================*/
+
+.nx-panel-action{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:40px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:transparent;
+
+    color:var(--nx-text-muted);
+
+    cursor:pointer;
+
+    transition:var(--nx-transition);
+
+}
+
+.nx-panel-action:hover{
+
+    background:var(--nx-surface-hover);
+
+    color:var(--nx-text);
 
 }
 
@@ -3339,3 +3789,509 @@ Padding Y
     }
 
 }
+
+/*=========================================================
+Pages
+=========================================================*/
+
+/*=========================================================
+09 Pages
+=========================================================*/
+
+/*---------------------------------------------------------
+09.2 Design System
+---------------------------------------------------------*/
+
+/*=========================================================
+Page
+=========================================================*/
+
+.nx-design-system{
+
+    min-height:100vh;
+
+    background:var(--nx-bg);
+
+    color:var(--nx-text);
+
+}
+
+/*=========================================================
+Header
+=========================================================*/
+
+.nx-design-header{
+
+    padding:6rem 0 4rem;
+
+    border-bottom:1px solid var(--nx-border-soft);
+
+    text-align:center;
+
+}
+
+.nx-design-header .nx-badge{
+
+    margin-bottom:var(--nx-space-md);
+
+}
+
+.nx-design-header .nx-title{
+
+    margin-bottom:var(--nx-space-md);
+
+}
+
+.nx-design-header .nx-subtitle{
+
+    max-width:760px;
+
+    margin:0 auto;
+
+    color:var(--nx-text-muted);
+
+    line-height:1.7;
+
+}
+
+/*=========================================================
+Main
+=========================================================*/
+
+.nx-design-main{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:4rem;
+
+    padding:4rem 0;
+
+}
+
+/*=========================================================
+Sections
+=========================================================*/
+
+.nx-design-section{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1rem;
+
+    padding-bottom:3rem;
+
+    border-bottom:1px solid var(--nx-border-soft);
+
+}
+
+.nx-design-section:last-child{
+
+    border-bottom:none;
+
+}
+
+.nx-design-section h2{
+
+    margin:0;
+
+    color:var(--nx-white);
+
+}
+
+.nx-design-section p{
+
+    margin:0;
+
+    color:var(--nx-text-muted);
+
+    line-height:1.7;
+
+}
+
+/*=========================================================
+Footer
+=========================================================*/
+
+.nx-design-footer{
+
+    padding:2rem 0;
+
+    border-top:1px solid var(--nx-border-soft);
+
+    text-align:center;
+
+    color:var(--nx-text-soft);
+
+}
+
+/*=========================================================
+Responsive
+=========================================================*/
+
+@media (max-width:768px){
+
+    .nx-design-header{
+
+        padding:4rem 0 3rem;
+
+    }
+
+    .nx-design-main{
+
+        gap:3rem;
+
+        padding:3rem 0;
+
+    }
+
+}
+
+/*=========================================================
+Foundation
+=========================================================*/
+
+.nx-foundation-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1.5rem;
+
+}
+
+.nx-foundation-group h3{
+
+    margin:0;
+
+    font-size:1rem;
+
+    color:var(--nx-white);
+
+}
+
+.nx-foundation-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:var(--nx-space-lg);
+
+    margin-top:var(--nx-space-lg);
+
+}
+
+/*=========================================================
+Token Grid
+=========================================================*/
+
+.nx-token-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    gap:1.5rem;
+
+}
+
+/*=========================================================
+Token Card
+=========================================================*/
+
+.nx-token{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    min-height:190px;
+
+    gap:var(--nx-space-md);
+
+    padding:1.25rem;
+
+    background:var(--nx-glass-bg);
+
+    border:1px solid var(--nx-glass-border);
+
+    border-radius:var(--nx-radius-md);
+
+}
+
+.nx-token code{
+
+    margin-top:auto;
+
+}
+
+/*=========================================================
+Color Preview
+=========================================================*/
+
+.nx-color-preview{
+
+    width:100%;
+
+    height:72px;
+
+    border-radius:var(--nx-radius-sm);
+
+    border:1px solid var(--nx-border-soft);
+
+}
+
+/*=========================================================
+Colors
+=========================================================*/
+
+.nx-color-primary{
+
+    background:var(--nx-primary);
+
+}
+
+.nx-color-secondary{
+
+    background:var(--nx-primary-dark);
+
+}
+
+.nx-color-success{
+
+    background:var(--nx-green);
+
+}
+
+.nx-color-danger{
+
+    background:var(--nx-red);
+
+}
+
+.nx-color-primary-dark{
+    background:var(--nx-primary-dark);
+}
+
+.nx-color-green{
+    background:var(--nx-green);
+}
+
+.nx-color-cyan{
+    background:var(--nx-cyan);
+}
+
+.nx-color-purple{
+    background:var(--nx-purple);
+}
+
+.nx-color-orange{
+    background:var(--nx-orange);
+}
+
+.nx-color-red{
+    background:var(--nx-red);
+}
+
+/*=========================================================
+Typography Demo
+=========================================================*/
+
+.nx-demo-h1{
+
+    margin:0;
+
+}
+
+.nx-demo-h2{
+
+    margin:0;
+
+}
+
+.nx-demo-h3{
+
+    margin:0;
+
+}
+
+.nx-demo-body{
+
+    margin:0;
+
+    line-height:1.8;
+
+}
+
+.nx-demo-small{
+
+    color:var(--nx-text-muted);
+
+}
+
+.nx-token hr{
+
+    border:none;
+
+    border-top:1px solid var(--nx-border-soft);
+
+    margin:.75rem 0;
+
+}
+
+/*=========================================================
+Spacing Preview
+=========================================================*/
+
+.nx-spacing-preview{
+
+    height:16px;
+
+    border-radius:999px;
+
+    background:var(--nx-primary);
+
+    margin-bottom:var(--nx-space-md);
+
+}
+
+.nx-space-xs{
+
+    width:20px;
+
+}
+
+.nx-space-sm{
+
+    width:40px;
+
+}
+
+.nx-space-md{
+
+    width:70px;
+
+}
+
+.nx-space-lg{
+
+    width:100px;
+
+}
+
+.nx-space-xl{
+
+    width:140px;
+
+}
+
+/*=========================================================
+Code
+=========================================================*/
+
+code{
+
+    display:inline-block;
+
+    margin-top:auto;
+
+    padding:.35rem .65rem;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid var(--nx-border-soft);
+
+    border-radius:var(--nx-radius-sm);
+
+    color:var(--nx-cyan);
+
+    font-family:var(--nx-font-mono);
+
+    font-size:.82rem;
+
+}
+
+/*=========================================================
+Radius
+=========================================================*/
+
+.nx-radius-demo{
+
+    width:120px;
+
+    height:80px;
+
+    margin-bottom:var(--nx-space-md);
+
+    background:var(--nx-gradient-primary);
+
+}
+
+.nx-radius-xs{
+
+    border-radius:var(--nx-radius-xs);
+
+}
+
+.nx-radius-sm{
+
+    border-radius:var(--nx-radius-sm);
+
+}
+
+.nx-radius-md{
+
+    border-radius:var(--nx-radius-md);
+
+}
+
+.nx-radius-lg{
+
+    border-radius:var(--nx-radius-lg);
+
+}
+
+.nx-radius-xl{
+
+    border-radius:var(--nx-radius-xl);
+
+}
+
+/*=========================================================
+Shadows
+=========================================================*/
+
+.nx-shadow-card{
+
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+
+}
+
+.nx-shadow-demo{
+
+    width:170px;
+    height:120px;
+
+    border-radius:var(--nx-radius-md);
+
+    background:var(--nx-surface-light);
+
+    border:1px solid var(--nx-border);
+
+}
+
+.nx-shadow-demo:hover{
+
+    transform:translateY(-4px);
+
+}
+
