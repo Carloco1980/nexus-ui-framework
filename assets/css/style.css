@@ -74,3 +74,11 @@ Load Order
 @import url("./utilities/spacing.css");
 @import url("./utilities/responsive.css");
 
+/*=========================================================
+Pages
+=========================================================*/
+
+@import url("./pages/landing.css");
+@import url("./pages/design-system.css");
+@import url("./pages/dashboard-demo.css");
+
