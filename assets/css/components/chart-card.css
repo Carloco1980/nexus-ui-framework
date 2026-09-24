@@ -6,107 +6,8 @@
 07.7 Chart Card
 ---------------------------------------------------------*/
 
-/*=========================================================
-Base
-=========================================================*/
 
-.nx-chart-card{
 
-    position:relative;
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:var(--nx-space-md);
-
-    padding:var(--nx-space-md);
-
-    background:var(--nx-glass-bg);
-
-    backdrop-filter:var(--nx-glass-blur);
-
-    border:1px solid var(--nx-glass-border);
-
-    border-radius:var(--nx-radius-md);
-
-    box-shadow:var(--nx-shadow-sm);
-
-    transition:var(--nx-transition);
-
-}
-
-.nx-chart-card:hover{
-
-    transform:translateY(-6px);
-
-    border-color:var(--nx-border-strong);
-
-    box-shadow:var(--nx-shadow-md);
-
-}
-
-/*=========================================================
-Header
-=========================================================*/
-
-.nx-chart-header{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    gap:var(--nx-space-sm);
-
-    margin-bottom:var(--nx-space-md);
-
-}
-
-/*=========================================================
-Heading
-=========================================================*/
-
-.nx-chart-heading{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:.35rem;
-
-}
-
-/*=========================================================
-Title
-=========================================================*/
-
-.nx-chart-title{
-
-    margin:0;
-
-    color:var(--nx-white);
-
-    font-size:1.2rem;
-
-    font-weight:700;
-
-}
-
-/*=========================================================
-Subtitle
-=========================================================*/
-
-.nx-chart-subtitle{
-
-    margin:0;
-
-    color:var(--nx-text-muted);
-
-    font-size:.92rem;
-
-}
 
 /*=========================================================
 Body
@@ -136,33 +37,11 @@ Canvas
 
     width:100% !important;
 
-    min-height:320px;
+    height:100% !important;
 
 }
 
-/*=========================================================
-Footer
-=========================================================*/
 
-.nx-chart-footer{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    flex-wrap:wrap;
-
-    gap:var(--nx-space-sm);
-
-    margin-top:var(--nx-space-md);
-
-    padding-top:var(--nx-space-sm);
-
-    border-top:1px solid var(--nx-border-soft);
-
-}
 
 /*=========================================================
 Legend

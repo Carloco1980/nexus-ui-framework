@@ -10,7 +10,7 @@
 Base
 =========================================================*/
 
-.nx-btn{
+.nx-button{
 
     position:relative;
     display:inline-flex;
@@ -25,7 +25,7 @@ Base
 
     border:1px solid transparent;
 
-    border-radius:18px;
+    border-radius:var(--nx-radius-md);
 
     cursor:pointer;
 
@@ -42,13 +42,7 @@ Base
 
     color:var(--nx-white);
 
-    transition:
-        transform .28s ease,
-        background .28s ease,
-        border-color .28s ease,
-        color .28s ease,
-        box-shadow .28s ease,
-        filter .28s ease;
+    transition:var(--nx-transition);
 
 }
 
@@ -56,7 +50,7 @@ Base
 Glow
 =========================================================*/
 
-.nx-btn::before{
+.nx-button::before{
 
     content:"";
 
@@ -78,11 +72,11 @@ Glow
 Hover
 =========================================================*/
 
-.nx-btn:hover{
+.nx-button:hover{
 
     transform:translateY(-2px);
 
-    filter:brightness(1.05);
+    box-shadow:var(--nx-shadow-md);
 
 }
 
@@ -90,7 +84,7 @@ Hover
 Active
 =========================================================*/
 
-.nx-btn:active{
+.nx-button:active{
 
     transform:translateY(1px);
 
@@ -100,14 +94,13 @@ Active
 Focus
 =========================================================*/
 
-.nx-btn:focus-visible{
+.nx-button:focus-visible{
 
     outline:none;
 
     box-shadow:
-
-        0 0 0 3px rgba(53,216,255,.18),
-        0 0 30px rgba(53,216,255,.22);
+0 0 0 3px rgba(53,216,255,.18),
+var(--nx-shadow-lg);
 
 }
 
@@ -115,25 +108,19 @@ Focus
 Primary
 =========================================================*/
 
-.nx-btn-primary{
+.nx-button-primary{
 
     background:
 
-        linear-gradient(
-            135deg,
-            var(--nx-green),
-            var(--nx-cyan)
-        );
+        var(--nx-gradient-primary);
 
     border-color:rgba(255,255,255,.12);
 
-    box-shadow:
-
-        0 12px 30px rgba(75,255,180,.22);
+    box-shadow:var(--nx-shadow-md);
 
 }
 
-.nx-btn-primary::before{
+.nx-button-primary::before{
 
     opacity:1;
 
@@ -155,7 +142,7 @@ Primary
 Outline
 =========================================================*/
 
-.nx-btn-outline{
+.nx-button-outline{
 
     background:transparent;
 
@@ -163,13 +150,11 @@ Outline
 
 }
 
-.nx-btn-outline:hover{
+.nx-button-outline:hover{
 
     border-color:var(--nx-cyan);
 
-    box-shadow:
-
-        0 10px 28px rgba(53,216,255,.18);
+    box-shadow:var(--nx-shadow-sm);
 
 }
 
@@ -177,21 +162,19 @@ Outline
 Glass
 =========================================================*/
 
-.nx-btn-glass{
+.nx-button-glass{
 
     background:rgba(255,255,255,.05);
 
-    border-color:rgba(255,255,255,.08);
+    border-color:var(--nx-border);
 
-    backdrop-filter:blur(18px);
+    backdrop-filter:var(--nx-glass-blur);
 
 }
 
-.nx-btn-glass:hover{
+.nx-button-glass:hover{
 
-    box-shadow:
-
-        0 10px 28px rgba(255,255,255,.10);
+    box-shadow:var(--nx-shadow-sm);
 
 }
 
@@ -199,7 +182,7 @@ Glass
 Ghost
 =========================================================*/
 
-.nx-btn-ghost{
+.nx-button-ghost{
 
     background:transparent;
 
@@ -207,7 +190,7 @@ Ghost
 
 }
 
-.nx-btn-ghost:hover{
+.nx-button-ghost:hover{
 
     background:rgba(255,255,255,.05);
 
@@ -217,7 +200,7 @@ Ghost
 Success
 =========================================================*/
 
-.nx-btn-success{
+.nx-button-success{
 
     background:
 
@@ -229,9 +212,7 @@ Success
 
     border-color:rgba(255,255,255,.10);
 
-    box-shadow:
-
-        0 12px 30px rgba(72,201,110,.22);
+    box-shadow:var(--nx-shadow-sm);
 
 }
 
@@ -239,7 +220,7 @@ Success
 Danger
 =========================================================*/
 
-.nx-btn-danger{
+.nx-button-danger{
 
     background:
 
@@ -251,9 +232,7 @@ Danger
 
     border-color:rgba(255,255,255,.10);
 
-    box-shadow:
-
-        0 12px 30px rgba(239,68,68,.22);
+    box-shadow:var(--nx-shadow-md);
 
 }
 
@@ -261,7 +240,7 @@ Danger
 Sizes
 =========================================================*/
 
-.nx-btn-sm{
+.nx-button-sm{
 
     min-width:110px;
 
@@ -273,13 +252,13 @@ Sizes
 
 }
 
-.nx-btn-md{
+.nx-button-md{
 
     height:56px;
 
 }
 
-.nx-btn-lg{
+.nx-button-lg{
 
     min-width:190px;
 
@@ -295,7 +274,7 @@ Sizes
 Block
 =========================================================*/
 
-.nx-btn-block{
+.nx-button-block{
 
     width:100%;
 
@@ -305,7 +284,7 @@ Block
 Icon
 =========================================================*/
 
-.nx-btn-icon{
+.nx-button-icon{
 
     display:inline-flex;
 
@@ -315,7 +294,7 @@ Icon
 
 }
 
-.nx-btn-icon svg{
+.nx-button-icon svg{
 
     width:18px;
 
@@ -323,7 +302,7 @@ Icon
 
 }
 
-.nx-btn-icon-only{
+.nx-button-icon-only{
 
     width:56px;
 
@@ -337,7 +316,7 @@ Icon
 Disabled
 =========================================================*/
 
-.nx-btn:disabled{
+.nx-button:disabled{
 
     opacity:.45;
 

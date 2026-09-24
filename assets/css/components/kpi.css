@@ -6,71 +6,8 @@
 07.6 KPI Cards
 ---------------------------------------------------------*/
 
-/*=========================================================
-Base
-=========================================================*/
 
-.nx-kpi{
 
-    position:relative;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:space-between;
-
-    gap:var(--nx-space-md);
-
-    min-height:220px;
-
-    padding:var(--nx-space-md);
-
-    background:var(--nx-glass-bg);
-
-    backdrop-filter:var(--nx-glass-blur);
-
-    border:1px solid var(--nx-glass-border);
-
-    border-radius:var(--nx-radius-md);
-
-    box-shadow:var(--nx-shadow-sm);
-
-    transition:var(--nx-transition);
-
-}
-
-.nx-kpi:hover{
-
-    transform:translateY(-6px);
-
-    border-color:var(--nx-border-strong);
-
-    box-shadow:var(--nx-shadow-md);
-
-}
-
-/*=========================================================
-Header
-=========================================================*/
-
-.nx-kpi-header{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    gap:var(--nx-space-sm);
-
-    margin-bottom:var(--nx-space-md);
-
-}
-
-/*=========================================================
-Icon
-=========================================================*/
 
 .nx-kpi-icon{
 
@@ -92,39 +29,11 @@ Icon
 
     font-size:1.35rem;
 
-    box-shadow:var(--nx-glow-green);
+   box-shadow: var(--nx-glow-green);
 
 }
 
-/*=========================================================
-Action
-=========================================================*/
 
-.nx-kpi-action{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    width:40px;
-
-    height:40px;
-
-    border-radius:50%;
-
-    border:1px solid var(--nx-border);
-
-    background:rgba(255,255,255,.04);
-
-    color:var(--nx-text-muted);
-
-    cursor:pointer;
-
-    transition:var(--nx-transition);
-
-}
 
 .nx-kpi-action:hover{
 
@@ -146,7 +55,7 @@ Body
 
     flex-direction:column;
 
-    gap:.35rem;
+    gap:var(--nx-space-xs);
 
     flex:1;
 
@@ -196,27 +105,7 @@ Description
 
 }
 
-/*=========================================================
-Footer
-=========================================================*/
 
-.nx-kpi-footer{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    gap:var(--nx-space-sm);
-
-    margin-top:var(--nx-space-md);
-
-    padding-top:var(--nx-space-sm);
-
-    border-top:1px solid var(--nx-border-soft);
-
-}
 
 /*=========================================================
 Trend

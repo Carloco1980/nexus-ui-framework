@@ -1,0 +1,165 @@
+/*=========================================================
+07.7 Panel
+=========================================================*/
+
+/*=========================================================
+Base
+=========================================================*/
+
+.nx-panel{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:var(--nx-space-md);
+
+    padding:var(--nx-space-md);
+
+    background:var(--nx-glass-bg);
+
+    border:1px solid var(--nx-glass-border);
+
+    border-radius:var(--nx-radius-md);
+
+    backdrop-filter:var(--nx-glass-blur);
+
+    box-shadow:var(--nx-shadow-sm);
+
+    transition:var(--nx-transition);
+
+}
+
+.nx-panel:hover{
+
+    transform:translateY(-4px);
+
+    border-color:var(--nx-border-strong);
+
+    box-shadow:var(--nx-shadow-md);
+
+}
+
+/*=========================================================
+Header
+=========================================================*/
+
+.nx-panel-header{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    justify-content:space-between;
+
+    gap:var(--nx-space-md);
+
+}
+
+/*=========================================================
+Heading
+=========================================================*/
+
+.nx-panel-heading{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:var(--nx-space-xs);
+
+}
+
+/*=========================================================
+Title
+=========================================================*/
+
+.nx-panel-title{
+
+    margin:0;
+
+    color:var(--nx-text);
+
+}
+
+/*=========================================================
+Subtitle
+=========================================================*/
+
+.nx-panel-subtitle{
+
+    margin:0;
+
+    color:var(--nx-text-muted);
+
+    font-size:.90rem;
+
+}
+
+/*=========================================================
+Body
+=========================================================*/
+
+.nx-panel-body{
+
+    flex:1;
+
+}
+
+/*=========================================================
+Footer
+=========================================================*/
+
+.nx-panel-footer{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:var(--nx-space-sm);
+
+    padding-top:var(--nx-space-sm);
+
+    border-top:1px solid var(--nx-border-soft);
+
+}
+
+/*=========================================================
+Action
+=========================================================*/
+
+.nx-panel-action{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:40px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:transparent;
+
+    color:var(--nx-text-muted);
+
+    cursor:pointer;
+
+    transition:var(--nx-transition);
+
+}
+
+.nx-panel-action:hover{
+
+    background:var(--nx-surface-hover);
+
+    color:var(--nx-text);
+
+}

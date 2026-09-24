@@ -2,30 +2,88 @@
 07 Components
 =========================================================*/
 
-/*---------------------------------------------------------
+/*=========================================================
 07.3 Badges
----------------------------------------------------------*/
+=========================================================*/
 
 .nx-badge{
 
-    display:inline-block;
+    display:inline-flex;
 
-    margin-bottom:var(--nx-space-md);
+    align-items:center;
 
-    padding:
-        var(--nx-space-xs)
-        var(--nx-space-sm);
+    justify-content:center;
+
+    gap:.35rem;
+
+    padding:.35rem .80rem;
 
     border-radius:var(--nx-radius-pill);
 
-    background:rgba(37,99,235,.15);
+    background:var(--nx-surface-light);
 
-    color:var(--nx-primary);
+    border:1px solid var(--nx-border);
 
-    font-size:.85rem;
+    color:var(--nx-text);
+
+    font-size:.75rem;
 
     font-weight:600;
 
+    line-height:1;
+
+    white-space:nowrap;
+
     transition:var(--nx-transition);
+
+}
+
+.nx-badge:hover{
+
+    border-color:var(--nx-border-strong);
+
+    box-shadow:var(--nx-shadow-sm);
+
+}
+
+/*========================================*/
+
+.nx-badge-primary{
+
+    background:var(--nx-gradient-primary);
+
+    color:var(--nx-white);
+
+    border:1px solid transparent;
+
+}
+
+/*========================================*/
+
+.nx-badge-success{
+
+    background:rgba(50,230,122,.15);
+
+    color:var(--nx-green);
+
+    border-color:rgba(50,230,122,.25);
+
+}
+
+/*========================================*/
+
+.nx-badge-outline{
+
+    background:transparent;
+
+}
+
+/*========================================*/
+
+.nx-badge-glass{
+
+    background:var(--nx-glass-bg);
+
+    backdrop-filter:var(--nx-glass-blur);
 
 }
