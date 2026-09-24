@@ -1,16 +1,18 @@
 {
   "name": "nexus-ui-framework",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "Modern UI Framework for dashboards, landing pages, WordPress and reusable web applications.",
   "author": "Carlos Santander Díaz",
   "license": "MIT",
   "private": true,
 
   "scripts": {
-    "dev": "npm run watch",
-    "build": "postcss assets/css/style.css --config config -o dist/nexus-ui.css",
-    "watch": "postcss assets/css/style.css --config config -o dist/nexus-ui.css --watch"
-  },
+  "dev": "npm run watch",
+
+  "build": "postcss assets/css/style.css --config config -o dist/nexus-ui.css && postcss assets/css/style-components.css --config config -o dist/nexus-ui-components.css",
+
+  "watch": "postcss assets/css/style.css --config config -o dist/nexus-ui.css --watch"
+},
 
   "keywords": [
     "nexus",

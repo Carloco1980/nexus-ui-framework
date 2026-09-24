@@ -1,0 +1,42 @@
+/*
+==================================================
+Nexus UI Framework
+Components Bundle
+Version: 1.0.0
+==================================================
+*/
+
+/*=========================================================
+01 Base
+=========================================================*/
+
+@import url("./base/variables.css");
+@import url("./base/animations.css");
+
+/*=========================================================
+02 Layout
+=========================================================*/
+
+@import url("./layout/grid.css");
+
+/*=========================================================
+03 Components
+=========================================================*/
+
+@import url("./components/buttons.css");
+@import url("./components/badges.css");
+@import url("./components/forms.css");
+@import url("./components/cards.css");
+@import url("./components/panel.css");
+@import url("./components/dashboard.css");
+@import url("./components/kpi.css");
+@import url("./components/chart-card.css");
+
+/*=========================================================
+04 Utilities
+=========================================================*/
+
+@import url("./utilities/display.css");
+@import url("./utilities/helpers.css");
+@import url("./utilities/spacing.css");
+@import url("./utilities/responsive.css");
