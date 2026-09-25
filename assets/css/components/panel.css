@@ -54,6 +54,8 @@ Header
 
     gap:var(--nx-space-md);
 
+    width:100%;
+
 }
 
 /*=========================================================
@@ -102,6 +104,12 @@ Body
 
 .nx-panel-body{
 
+    display:flex;
+
+    flex-direction:column;
+
+    gap:var(--nx-space-md);
+
     flex:1;
 
 }
@@ -117,6 +125,8 @@ Footer
     align-items:center;
 
     justify-content:space-between;
+
+    flex-wrap:wrap;
 
     gap:var(--nx-space-sm);
 

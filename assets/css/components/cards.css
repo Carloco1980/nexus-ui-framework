@@ -1,64 +1,19 @@
 /*=========================================================
-07 Components
+07.2 Cards
 =========================================================*/
 
-/*---------------------------------------------------------
-07.2 Cards
----------------------------------------------------------*/
+/*=========================================================
+Base
+=========================================================*/
 
 .nx-card{
 
-    position:relative;
-
-    display:flex;
-
-    flex-direction:column;
-
-    padding:var(--nx-space-md);
-
-    background:var(--nx-glass-bg);
-
-    border:1px solid var(--nx-glass-border);
-
-    backdrop-filter:var(--nx-glass-blur);
-
-    border-radius:var(--nx-radius-md);
-
-    transition:var(--nx-transition);
-
-}
-
-.nx-card:hover{
-
-    transform:translateY(-6px);
-
-    border-color:var(--nx-border-strong);
-
-    box-shadow:var(--nx-shadow-md);
-
-}
-
-
-/*=========================================================
-Card Header
-=========================================================*/
-
-.nx-card-header{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:var(--nx-space-sm);
-
-    margin-bottom:var(--nx-space-md);
+    height:100%;
 
 }
 
 /*=========================================================
-Card Body
+Body
 =========================================================*/
 
 .nx-card-body{
@@ -72,27 +27,7 @@ Card Body
 }
 
 /*=========================================================
-Card Footer
-=========================================================*/
-
-.nx-card-footer{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-top:var(--nx-space-lg);
-
-    padding-top:var(--nx-space-md);
-
-    border-top:1px solid var(--nx-border);
-
-}
-
-/*=========================================================
-Card Title
+Title
 =========================================================*/
 
 .nx-card-title{
@@ -102,7 +37,7 @@ Card Title
 }
 
 /*=========================================================
-Card Meta
+Meta
 =========================================================*/
 
 .nx-card-meta{
@@ -114,7 +49,7 @@ Card Meta
 }
 
 /*=========================================================
-Card Text
+Text
 =========================================================*/
 
 .nx-card-text{

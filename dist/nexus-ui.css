@@ -1529,7 +1529,11 @@ Disabled
 07.5 Forms
 ---------------------------------------------------------*/
 
-.nx-contact-fields{
+/*=========================================================
+Grid
+=========================================================*/
+
+.nx-form-grid{
 
     display:grid;
 
@@ -1540,6 +1544,10 @@ Disabled
     margin-bottom:var(--nx-space-md);
 
 }
+
+/*=========================================================
+Field
+=========================================================*/
 
 .nx-form-field{
 
@@ -1557,17 +1565,26 @@ Disabled
 
 }
 
+/*=========================================================
+Label
+=========================================================*/
+
 .nx-form-field label{
 
     color:var(--nx-text);
 
-    font-size:.9rem;
+    font-size:.90rem;
 
     font-weight:500;
 
 }
 
+/*=========================================================
+Controls
+=========================================================*/
+
 .nx-form-field input,
+.nx-form-field select,
 .nx-form-field textarea{
 
     width:100%;
@@ -1587,12 +1604,24 @@ Disabled
     color:var(--nx-white);
 
     font:inherit;
-
-    resize:vertical;
+    
 
     transition:var(--nx-transition);
 
+
 }
+
+.nx-form-field textarea{
+
+    resize:vertical;
+
+    min-height:140px;
+
+}
+
+/*=========================================================
+Placeholder
+=========================================================*/
 
 .nx-form-field input::-moz-placeholder, .nx-form-field textarea::-moz-placeholder{
 
@@ -1607,18 +1636,31 @@ Disabled
 
 }
 
+/*=========================================================
+Focus
+=========================================================*/
+
 .nx-form-field input:focus,
+.nx-form-field select:focus,
 .nx-form-field textarea:focus{
+
+    outline:none;
 
     border-color:var(--nx-primary);
 
     box-shadow:var(--nx-glow-blue);
 
-    outline:none;
+
 
 }
 
+
+/*=========================================================
+Disabled
+=========================================================*/
+
 .nx-form-field input:disabled,
+.nx-form-field select:disabled,
 .nx-form-field textarea:disabled{
 
     opacity:.6;
@@ -1627,12 +1669,21 @@ Disabled
 
 }
 
+/*=========================================================
+Invalid
+=========================================================*/
+
 .nx-form-field input[aria-invalid="true"],
+.nx-form-field select[aria-invalid="true"],
 .nx-form-field textarea[aria-invalid="true"]{
 
     border-color:var(--nx-red);
 
 }
+
+/*=========================================================
+Status
+=========================================================*/
 
 .nx-form-status{
 
@@ -1645,66 +1696,21 @@ Disabled
 }
 
 /*=========================================================
-07 Components
+07.2 Cards
 =========================================================*/
 
-/*---------------------------------------------------------
-07.2 Cards
----------------------------------------------------------*/
+/*=========================================================
+Base
+=========================================================*/
 
 .nx-card{
 
-    position:relative;
-
-    display:flex;
-
-    flex-direction:column;
-
-    padding:var(--nx-space-md);
-
-    background:var(--nx-glass-bg);
-
-    border:1px solid var(--nx-glass-border);
-
-    backdrop-filter:var(--nx-glass-blur);
-
-    border-radius:var(--nx-radius-md);
-
-    transition:var(--nx-transition);
-
-}
-
-.nx-card:hover{
-
-    transform:translateY(-6px);
-
-    border-color:var(--nx-border-strong);
-
-    box-shadow:var(--nx-shadow-md);
-
-}
-
-
-/*=========================================================
-Card Header
-=========================================================*/
-
-.nx-card-header{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:var(--nx-space-sm);
-
-    margin-bottom:var(--nx-space-md);
+    height:100%;
 
 }
 
 /*=========================================================
-Card Body
+Body
 =========================================================*/
 
 .nx-card-body{
@@ -1718,27 +1724,7 @@ Card Body
 }
 
 /*=========================================================
-Card Footer
-=========================================================*/
-
-.nx-card-footer{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-top:var(--nx-space-lg);
-
-    padding-top:var(--nx-space-md);
-
-    border-top:1px solid var(--nx-border);
-
-}
-
-/*=========================================================
-Card Title
+Title
 =========================================================*/
 
 .nx-card-title{
@@ -1748,7 +1734,7 @@ Card Title
 }
 
 /*=========================================================
-Card Meta
+Meta
 =========================================================*/
 
 .nx-card-meta{
@@ -1760,7 +1746,7 @@ Card Meta
 }
 
 /*=========================================================
-Card Text
+Text
 =========================================================*/
 
 .nx-card-text{
@@ -1943,11 +1929,22 @@ Responsive
 =========================================================*/
 
 /*---------------------------------------------------------
-07.6 KPI Cards
+07.6 KPI
 ---------------------------------------------------------*/
 
+/*=========================================================
+Container
+=========================================================*/
 
+.nx-kpi{
 
+    height:100%;
+
+}
+
+/*=========================================================
+Icon
+=========================================================*/
 
 .nx-kpi-icon{
 
@@ -1969,19 +1966,7 @@ Responsive
 
     font-size:1.35rem;
 
-   box-shadow: var(--nx-glow-green);
-
-}
-
-
-
-.nx-kpi-action:hover{
-
-    color:var(--nx-white);
-
-    border-color:var(--nx-primary);
-
-    box-shadow:var(--nx-glow-blue);
+    box-shadow:var(--nx-glow-green);
 
 }
 
@@ -2045,8 +2030,6 @@ Description
 
 }
 
-
-
 /*=========================================================
 Trend
 =========================================================*/
@@ -2089,14 +2072,9 @@ Update
 
 .nx-chart-card{
 
-    display:flex;
-
-    flex-direction:column;
-
-    gap:var(--nx-space-md);
+    min-height:420px;
 
 }
-
 
 /*=========================================================
 Body
@@ -2106,18 +2084,15 @@ Body
 
     position:relative;
 
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
     width:100%;
+
+    height:320px;
 
     min-height:320px;
 
-}
+    overflow:hidden;
 
+}
 
 /*=========================================================
 Canvas
@@ -2125,13 +2100,15 @@ Canvas
 
 .nx-chart-body canvas{
 
+    position:absolute;
+
+    inset:0;
+
     width:100% !important;
 
     height:100% !important;
 
 }
-
-
 
 /*=========================================================
 Legend
@@ -2144,7 +2121,6 @@ Legend
     font-size:.9rem;
 
 }
-
 
 /*=========================================================
 Update
@@ -2214,6 +2190,8 @@ Header
 
     gap:var(--nx-space-md);
 
+    width:100%;
+
 }
 
 /*=========================================================
@@ -2262,6 +2240,12 @@ Body
 
 .nx-panel-body{
 
+    display:flex;
+
+    flex-direction:column;
+
+    gap:var(--nx-space-md);
+
     flex:1;
 
 }
@@ -2277,6 +2261,8 @@ Footer
     align-items:center;
 
     justify-content:space-between;
+
+    flex-wrap:wrap;
 
     gap:var(--nx-space-sm);
 

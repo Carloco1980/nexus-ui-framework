@@ -6,7 +6,11 @@
 07.5 Forms
 ---------------------------------------------------------*/
 
-.nx-contact-fields{
+/*=========================================================
+Grid
+=========================================================*/
+
+.nx-form-grid{
 
     display:grid;
 
@@ -17,6 +21,10 @@
     margin-bottom:var(--nx-space-md);
 
 }
+
+/*=========================================================
+Field
+=========================================================*/
 
 .nx-form-field{
 
@@ -34,17 +42,26 @@
 
 }
 
+/*=========================================================
+Label
+=========================================================*/
+
 .nx-form-field label{
 
     color:var(--nx-text);
 
-    font-size:.9rem;
+    font-size:.90rem;
 
     font-weight:500;
 
 }
 
+/*=========================================================
+Controls
+=========================================================*/
+
 .nx-form-field input,
+.nx-form-field select,
 .nx-form-field textarea{
 
     width:100%;
@@ -64,12 +81,24 @@
     color:var(--nx-white);
 
     font:inherit;
-
-    resize:vertical;
+    
 
     transition:var(--nx-transition);
 
+
 }
+
+.nx-form-field textarea{
+
+    resize:vertical;
+
+    min-height:140px;
+
+}
+
+/*=========================================================
+Placeholder
+=========================================================*/
 
 .nx-form-field input::placeholder,
 .nx-form-field textarea::placeholder{
@@ -78,18 +107,31 @@
 
 }
 
+/*=========================================================
+Focus
+=========================================================*/
+
 .nx-form-field input:focus,
+.nx-form-field select:focus,
 .nx-form-field textarea:focus{
+
+    outline:none;
 
     border-color:var(--nx-primary);
 
     box-shadow:var(--nx-glow-blue);
 
-    outline:none;
+
 
 }
 
+
+/*=========================================================
+Disabled
+=========================================================*/
+
 .nx-form-field input:disabled,
+.nx-form-field select:disabled,
 .nx-form-field textarea:disabled{
 
     opacity:.6;
@@ -98,12 +140,21 @@
 
 }
 
+/*=========================================================
+Invalid
+=========================================================*/
+
 .nx-form-field input[aria-invalid="true"],
+.nx-form-field select[aria-invalid="true"],
 .nx-form-field textarea[aria-invalid="true"]{
 
     border-color:var(--nx-red);
 
 }
+
+/*=========================================================
+Status
+=========================================================*/
 
 .nx-form-status{
 
