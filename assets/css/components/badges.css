@@ -71,6 +71,30 @@
 
 /*========================================*/
 
+.nx-badge-info{
+
+    background:rgba(53,216,255,.12);
+
+    color:var(--nx-cyan);
+
+    border-color:rgba(53,216,255,.25);
+
+}
+
+/*========================================*/
+
+.nx-badge-purple{
+
+    background:rgba(139,92,246,.15);
+
+    color:var(--nx-purple);
+
+    border-color:rgba(139,92,246,.25);
+
+}
+
+/*========================================*/
+
 .nx-badge-outline{
 
     background:transparent;
