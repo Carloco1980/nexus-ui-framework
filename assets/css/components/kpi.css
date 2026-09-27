@@ -17,6 +17,31 @@ Container
 }
 
 /*=========================================================
+Accent
+=========================================================*/
+
+.nx-kpi-accent{
+
+    height:4px;
+
+    width:100%;
+
+    border-radius:
+        var(--nx-radius-lg)
+        var(--nx-radius-lg)
+        0
+        0;
+
+    margin:
+        calc(var(--nx-space-lg) * -1)
+        calc(var(--nx-space-lg) * -1)
+        var(--nx-space-lg);
+
+    background:var(--nx-primary);
+
+}
+
+/*=========================================================
 Icon
 =========================================================*/
 
@@ -28,19 +53,21 @@ Icon
 
     justify-content:center;
 
-    width:56px;
+    width:60px;
 
-    height:56px;
+    height:60px;
 
-    border-radius:var(--nx-radius-sm);
+    border-radius:var(--nx-radius-md);
 
-    background:var(--nx-gradient-primary);
+    background:var(--nx-surface-light);
 
-    color:var(--nx-white);
+    border:1px solid var(--nx-border);
 
-    font-size:1.35rem;
+    color:var(--nx-primary);
 
-    box-shadow:var(--nx-glow-green);
+    font-size:1.5rem;
+
+    transition:var(--nx-transition);
 
 }
 
@@ -54,7 +81,7 @@ Body
 
     flex-direction:column;
 
-    gap:var(--nx-space-xs);
+    gap:var(--nx-space-sm);
 
     flex:1;
 
@@ -66,11 +93,13 @@ Value
 
 .nx-kpi-value{
 
-    font-size:clamp(2.2rem,5vw,3rem);
+    font-size:clamp(2.6rem,6vw,3.6rem);
 
     font-weight:800;
 
     line-height:1;
+
+    letter-spacing:-1px;
 
     color:var(--nx-white);
 
@@ -133,5 +162,69 @@ Update
     font-size:.82rem;
 
     color:var(--nx-text-soft);
+
+}
+
+/*=========================================================
+Color Variants
+=========================================================*/
+
+.nx-kpi-success .nx-kpi-accent{
+
+    background:var(--nx-green);
+
+}
+
+.nx-kpi-primary .nx-kpi-accent{
+
+    background:var(--nx-primary);
+
+}
+
+.nx-kpi-cyan .nx-kpi-accent{
+
+    background:var(--nx-cyan);
+
+}
+
+.nx-kpi-purple .nx-kpi-accent{
+
+    background:var(--nx-purple);
+
+}
+
+.nx-kpi-orange .nx-kpi-accent{
+
+    background:var(--nx-orange);
+
+}
+
+.nx-kpi-success .nx-kpi-icon{
+
+    color:var(--nx-green);
+
+}
+
+.nx-kpi-primary .nx-kpi-icon{
+
+    color:var(--nx-primary);
+
+}
+
+.nx-kpi-cyan .nx-kpi-icon{
+
+    color:var(--nx-cyan);
+
+}
+
+.nx-kpi-purple .nx-kpi-icon{
+
+    color:var(--nx-purple);
+
+}
+
+.nx-kpi-orange .nx-kpi-icon{
+
+    color:var(--nx-orange);
 
 }
