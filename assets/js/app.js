@@ -1,12 +1,10 @@
 /*
 ==================================================
-Nexus UI Framework
+NEXUS UI FRAMEWORK
 
-Version : 0.9.0 RC1
+Version : 1.0.0
 Author  : Carlos Santander Díaz
 License : MIT
-
-Copyright (c) 2026 Carlos Santander Díaz
 ==================================================
 */
 
@@ -18,7 +16,15 @@ Nexus Core
 
 const Nexus = {
 
-    version: "0.9.0 RC1",
+    /*--------------------------------------------------
+    Framework Info
+    --------------------------------------------------*/
+
+    version: "1.0.0",
+
+    /*--------------------------------------------------
+    Init
+    --------------------------------------------------*/
 
     init() {
 
@@ -27,20 +33,9 @@ const Nexus = {
             "color:#2563EB;font-weight:bold;"
         );
 
-        this.cacheDOM();
         this.bindEvents();
+
         this.initializeModules();
-
-    },
-
-    /*--------------------------------------------------
-    Cache DOM
-    --------------------------------------------------*/
-
-    cacheDOM() {
-
-        this.mobileButton = document.querySelector(".nx-mobile-button");
-        this.menu = document.querySelector("#nx-menu");
 
     },
 
@@ -51,7 +46,6 @@ const Nexus = {
     bindEvents() {
 
         // Eventos globales del Framework.
-        // Los componentes tendrán sus propios eventos.
 
     },
 
@@ -61,28 +55,37 @@ const Nexus = {
 
     initializeModules() {
 
-        if (window.NexusNavbar?.init) {
-            window.NexusNavbar.init();
-        }
+        const modules = [
 
-        if (window.NexusForms?.init) {
-            window.NexusForms.init();
-        }
+            window.NexusNavbar,
+            window.NexusForms,
+            window.NexusFab,
+            window.NexusAnimations
 
-        if (window.NexusFab?.init) {
-            window.NexusFab.init();
-        }
+        ];
 
-        if (window.NexusAnimations?.init) {
-            window.NexusAnimations.init();
-        }
+        modules.forEach((module) => {
+
+            if (module?.init) {
+
+                module.init();
+
+            }
+
+        });
 
     }
 
 };
 
 /*==================================================
-Initialize Framework
+Expose Core
+==================================================*/
+
+window.Nexus = Nexus;
+
+/*==================================================
+Bootstrap
 ==================================================*/
 
 document.addEventListener("DOMContentLoaded", () => {

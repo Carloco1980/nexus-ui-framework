@@ -11,13 +11,14 @@ Header
     position:fixed;
 
     top:0;
+
     left:0;
 
     width:100%;
 
     z-index:var(--nx-z-navbar);
 
-    padding:1.25rem 0;
+    padding:1rem 0;
 
 }
 
@@ -26,6 +27,8 @@ Navbar
 ---------------------------------------------------------*/
 
 .nx-navbar{
+
+    position:relative;
 
     display:grid;
 
@@ -320,5 +323,95 @@ Theme
     border-color:var(--nx-primary);
 
     box-shadow:var(--nx-glow-blue);
+
+}
+
+/*---------------------------------------------------------
+Mobile Button
+---------------------------------------------------------*/
+
+.nx-mobile-button{
+
+    display:none;
+
+    position:absolute;
+
+    top:50%;
+
+    right:2rem;
+
+    transform:translateY(-50%);
+
+    width:46px;
+    height:46px;
+
+    padding:0;
+
+    border:none;
+
+    background:transparent;
+
+    cursor:pointer;
+
+    align-items:center;
+    justify-content:center;
+
+    flex-direction:column;
+
+    gap:5px;
+
+    z-index:10;
+
+}
+
+.nx-mobile-button span{
+
+    display:block;
+
+    width:22px;
+
+    height:2px;
+
+    border-radius:999px;
+
+    background:var(--nx-white);
+
+    transition:var(--nx-transition);
+
+}
+
+/*---------------------------------------------------------
+Mobile Menu States
+---------------------------------------------------------*/
+
+.nx-navbar-menu.is-open{
+
+    display:flex;
+
+}
+
+/*---------------------------------------------------------
+Mobile Button Active
+---------------------------------------------------------*/
+
+.nx-mobile-button.is-active span:nth-child(1){
+
+    transform:
+        translateY(7px)
+        rotate(45deg);
+
+}
+
+.nx-mobile-button.is-active span:nth-child(2){
+
+    opacity:0;
+
+}
+
+.nx-mobile-button.is-active span:nth-child(3){
+
+    transform:
+        translateY(-7px)
+        rotate(-45deg);
 
 }

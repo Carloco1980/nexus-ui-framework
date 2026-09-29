@@ -2,9 +2,10 @@
 ==================================================
 NEXUS UI FRAMEWORK
 
-Module : Navbar
-Version: 0.9.0 RC1
-
+Module  : Navbar
+Version : 1.0.0
+Author  : Carlos Santander Díaz
+License : MIT
 ==================================================
 */
 
@@ -16,9 +17,20 @@ Navbar Module
 
 const NexusNavbar = {
 
+    /*--------------------------------------------------
+    Init
+    --------------------------------------------------*/
+
     init() {
 
         this.cacheDOM();
+
+        if (!this.mobileButton || !this.menu) {
+
+            return;
+
+        }
+
         this.bindEvents();
 
     },
@@ -29,9 +41,17 @@ const NexusNavbar = {
 
     cacheDOM() {
 
-        this.mobileButton = document.querySelector(".nx-mobile-button");
-        this.menu = document.querySelector("#nx-menu");
-        this.links = document.querySelectorAll("#nx-menu a");
+        this.mobileButton = document.getElementById(
+            "nx-mobile-button"
+        );
+
+        this.menu = document.getElementById(
+            "nx-navbar-menu"
+        );
+
+        this.links = this.menu
+            ? this.menu.querySelectorAll("a")
+            : [];
 
     },
 
@@ -40,12 +60,6 @@ const NexusNavbar = {
     --------------------------------------------------*/
 
     bindEvents() {
-
-        if (!this.mobileButton || !this.menu) {
-
-            return;
-
-        }
 
         this.mobileButton.addEventListener("click", () => {
 
@@ -63,6 +77,16 @@ const NexusNavbar = {
 
         });
 
+        window.addEventListener("resize", () => {
+
+            if (window.innerWidth > 900) {
+
+                this.closeMenu();
+
+            }
+
+        });
+
     },
 
     /*--------------------------------------------------
@@ -71,7 +95,14 @@ const NexusNavbar = {
 
     toggleMenu() {
 
-        const isOpen = this.menu.classList.toggle("is-open");
+        const isOpen = this.menu.classList.toggle(
+            "is-open"
+        );
+
+        this.mobileButton.classList.toggle(
+            "is-active",
+            isOpen
+        );
 
         this.mobileButton.setAttribute(
             "aria-expanded",
@@ -80,7 +111,9 @@ const NexusNavbar = {
 
         this.mobileButton.setAttribute(
             "aria-label",
-            isOpen ? "Close Menu" : "Open Menu"
+            isOpen
+                ? "Close navigation"
+                : "Open navigation"
         );
 
     },
@@ -91,7 +124,19 @@ const NexusNavbar = {
 
     closeMenu() {
 
-        this.menu.classList.remove("is-open");
+        if (!this.menu || !this.mobileButton) {
+
+            return;
+
+        }
+
+        this.menu.classList.remove(
+            "is-open"
+        );
+
+        this.mobileButton.classList.remove(
+            "is-active"
+        );
 
         this.mobileButton.setAttribute(
             "aria-expanded",
@@ -100,11 +145,15 @@ const NexusNavbar = {
 
         this.mobileButton.setAttribute(
             "aria-label",
-            "Open Menu"
+            "Open navigation"
         );
 
     }
 
 };
+
+/*==================================================
+Expose Module
+==================================================*/
 
 window.NexusNavbar = NexusNavbar;

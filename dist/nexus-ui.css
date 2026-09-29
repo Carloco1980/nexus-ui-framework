@@ -106,7 +106,7 @@ Load Order
         0 0 20px rgba(50,230,122,.45),
         0 0 45px rgba(50,230,122,.22);
 
-       /*=====================================================
+    /*=====================================================
     GLASS
     =====================================================*/
 
@@ -189,19 +189,19 @@ Load Order
     --nx-radius-xl:40px;
     --nx-radius-pill:999px;
 
-   /*=========================================================
-SHADOWS
-=========================================================*/
+    /*=====================================================
+    SHADOWS
+    =====================================================*/
 
---nx-shadow-xs: 0 4px 8px rgba(0,0,0,.10);
+    --nx-shadow-xs:0 4px 8px rgba(0,0,0,.10);
 
---nx-shadow-sm: 0 8px 16px rgba(0,0,0,.16);
+    --nx-shadow-sm:0 8px 16px rgba(0,0,0,.16);
 
---nx-shadow-md: 0 16px 32px rgba(0,0,0,.24);
+    --nx-shadow-md:0 16px 32px rgba(0,0,0,.24);
 
---nx-shadow-lg: 0 32px 64px rgba(0,0,0,.36);
+    --nx-shadow-lg:0 32px 64px rgba(0,0,0,.36);
 
---nx-shadow-xl: 0 48px 96px rgba(0,0,0,.48);
+    --nx-shadow-xl:0 48px 96px rgba(0,0,0,.48);
 
     /*=====================================================
     MOTION
@@ -214,13 +214,13 @@ SHADOWS
     --nx-easing:ease;
 
     /*=====================================================
-      TRANSITIONS
-      =====================================================*/
+    TRANSITIONS
+    =====================================================*/
 
---nx-transition:
-    all
-    var(--nx-duration-normal)
-    var(--nx-easing);
+    --nx-transition:
+        all
+        var(--nx-duration-normal)
+        var(--nx-easing);
 
     /*=====================================================
     LAYOUT
@@ -228,7 +228,35 @@ SHADOWS
 
     --nx-container:1440px;
 
+    --nx-header-height:88px;
+
+    --nx-hero-dashboard-width:520px;
+
     --nx-navbar-padding:2rem;
+
+    /*=====================================================
+HERO
+=====================================================*/
+
+--nx-hero-dashboard-width:520px;
+
+    /*=====================================================
+    CONTAINER
+    =====================================================*/
+
+    --nx-container-padding:1.5rem;
+
+    --nx-container-padding-tablet:1rem;
+
+    --nx-container-padding-mobile:.75rem;
+
+    /*=====================================================
+    SECTIONS
+    =====================================================*/
+
+    --nx-section-padding:var(--nx-space-2xl);
+
+    --nx-section-padding-mobile:5rem;
 
     /*=====================================================
     COMPONENTS
@@ -247,8 +275,11 @@ SHADOWS
     =====================================================*/
 
     --nx-z-navbar:100;
+
     --nx-z-dropdown:200;
+
     --nx-z-modal:500;
+
     --nx-z-toast:1000;
 
 }
@@ -645,7 +676,35 @@ Accessibility
 
     margin-inline:auto;
 
-    padding-inline:1.5rem;
+    padding-inline:var(--nx-container-padding);
+
+    box-sizing:border-box;
+
+}
+
+/*---------------------------------------------------------
+Responsive
+---------------------------------------------------------*/
+
+@media (max-width:768px){
+
+    .nx-container{
+
+        padding-inline:
+            var(--nx-container-padding-tablet);
+
+    }
+
+}
+
+@media (max-width:576px){
+
+    .nx-container{
+
+        padding-inline:
+            var(--nx-container-padding-mobile);
+
+    }
 
 }
 
@@ -669,7 +728,9 @@ Accessibility
 
     position:relative;
 
-    padding:var(--nx-space-2xl) 0;
+    padding:
+        var(--nx-section-padding)
+        0;
 
 }
 
@@ -677,9 +738,35 @@ Accessibility
 
     max-width:900px;
 
-    margin:0 auto 5rem;
+    margin:
+        0 auto
+        var(--nx-space-lg);
 
     text-align:center;
+
+}
+
+/*---------------------------------------------------------
+Responsive Sections
+---------------------------------------------------------*/
+
+@media (max-width:576px){
+
+    .nx-section{
+
+        padding:
+            var(--nx-section-padding-mobile)
+            0;
+
+    }
+
+    .nx-section-header{
+
+        margin:
+            0 auto
+            var(--nx-space-md);
+
+    }
 
 }
 
@@ -759,13 +846,14 @@ Header
     position:fixed;
 
     top:0;
+
     left:0;
 
     width:100%;
 
     z-index:var(--nx-z-navbar);
 
-    padding:1.25rem 0;
+    padding:1rem 0;
 
 }
 
@@ -774,6 +862,8 @@ Navbar
 ---------------------------------------------------------*/
 
 .nx-navbar{
+
+    position:relative;
 
     display:grid;
 
@@ -1074,6 +1164,96 @@ Theme
     border-color:var(--nx-primary);
 
     box-shadow:var(--nx-glow-blue);
+
+}
+
+/*---------------------------------------------------------
+Mobile Button
+---------------------------------------------------------*/
+
+.nx-mobile-button{
+
+    display:none;
+
+    position:absolute;
+
+    top:50%;
+
+    right:2rem;
+
+    transform:translateY(-50%);
+
+    width:46px;
+    height:46px;
+
+    padding:0;
+
+    border:none;
+
+    background:transparent;
+
+    cursor:pointer;
+
+    align-items:center;
+    justify-content:center;
+
+    flex-direction:column;
+
+    gap:5px;
+
+    z-index:10;
+
+}
+
+.nx-mobile-button span{
+
+    display:block;
+
+    width:22px;
+
+    height:2px;
+
+    border-radius:999px;
+
+    background:var(--nx-white);
+
+    transition:var(--nx-transition);
+
+}
+
+/*---------------------------------------------------------
+Mobile Menu States
+---------------------------------------------------------*/
+
+.nx-navbar-menu.is-open{
+
+    display:flex;
+
+}
+
+/*---------------------------------------------------------
+Mobile Button Active
+---------------------------------------------------------*/
+
+.nx-mobile-button.is-active span:nth-child(1){
+
+    transform:
+        translateY(7px)
+        rotate(45deg);
+
+}
+
+.nx-mobile-button.is-active span:nth-child(2){
+
+    opacity:0;
+
+}
+
+.nx-mobile-button.is-active span:nth-child(3){
+
+    transform:
+        translateY(-7px)
+        rotate(-45deg);
 
 }
 
@@ -2578,9 +2758,11 @@ Layout
 
     display:grid;
 
-    grid-template-columns:1fr 520px;
+    grid-template-columns:
+        1fr
+        var(--nx-hero-dashboard-width);
 
-    align-items:center;
+    align-items:start;
 
     gap:var(--nx-space-lg);
 
@@ -3837,9 +4019,28 @@ Padding Y
 
 @media (max-width:1100px){
 
+    .nx-hero{
+
+        min-height:auto;
+
+    }
+
     .nx-hero-grid{
+
         grid-template-columns:1fr;
+
         gap:var(--nx-space-lg);
+
+    }
+
+    .nx-dashboard{
+
+        max-width:700px;
+
+        width:100%;
+
+        margin:0 auto;
+
     }
 
 }
@@ -3851,27 +4052,39 @@ Padding Y
 @media (max-width:992px){
 
     .nx-template-grid{
+
         grid-template-columns:1fr;
+
     }
 
     .wordpress{
+
         grid-template-columns:1fr;
+
     }
 
     .nx-preview-block{
+
         height:70px;
+
     }
 
     .nx-framework-row{
+
         grid-template-columns:1fr;
+
     }
 
     .nx-framework-core{
+
         width:100%;
+
     }
 
     .nx-design-grid{
+
         grid-template-columns:repeat(2,1fr);
+
     }
 
 }
@@ -3882,32 +4095,115 @@ Padding Y
 
 @media (max-width:900px){
 
-    .nx-navbar-wrapper{
+    .nx-navbar{
+
+        grid-template-columns:auto auto;
+
         position:relative;
+
     }
 
-    .nx-menu{
+    .nx-navbar-menu{
+
         display:none;
+
         position:absolute;
+
         top:calc(100% + 12px);
-        right:0;
+
+        left:50%;
+
+        transform:translate(-50%, -10px);
+
+        width:calc(100% - 2rem);
+
+        max-width:700px;
+
         flex-direction:column;
-        gap:var(--nx-space-sm);
-        min-width:220px;
-        padding:var(--nx-space-md);
+
+        align-items:flex-start;
+
+        gap:0;
+
+        margin:0;
+
+        padding:.75rem;
+
+        list-style:none;
+
         border:1px solid var(--nx-border);
+
         border-radius:var(--nx-radius-md);
-        background:var(--nx-glass-bg);
-        backdrop-filter:var(--nx-glass-blur);
+
+        background:rgba(15,23,42,.98);
+
+        backdrop-filter:blur(18px);
+
         box-shadow:var(--nx-shadow-md);
+
+        opacity:0;
+
+        visibility:hidden;
+
+        transition:
+            opacity .25s ease,
+            transform .25s ease,
+            visibility .25s ease;
+
     }
 
-    .nx-menu.is-open{
+    .nx-navbar-menu.is-open{
+
         display:flex;
+
+        opacity:1;
+
+        visibility:visible;
+
+        transform:translate(-50%,0);
+
+    }
+
+    .nx-navbar-menu li{
+
+        width:100%;
+
+    }
+
+    .nx-navbar-menu li + li{
+
+        border-top:1px solid var(--nx-border-soft);
+
+    }
+
+    .nx-navbar-menu a{
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:flex-start;
+
+        width:100%;
+
+        height:auto;
+
+        padding:.85rem 1rem;
+
+    }
+
+    .nx-navbar-actions{
+
+        display:none;
+
     }
 
     .nx-mobile-button{
-        display:block;
+
+        display:flex;
+
+        justify-self:end;
+
     }
 
 }
@@ -3919,20 +4215,35 @@ Padding Y
 @media (max-width:768px){
 
     .nx-title-xl{
+
         font-size:clamp(2.5rem,8vw,3.4rem);
+
+    }
+
+    .nx-hero-actions{
+
+        flex-direction:column;
+
+        width:100%;
+
+    }
+
+    .nx-hero-actions .nx-button{
+
+        width:100%;
+
+    }
+
+    .nx-highlights{
+
+        justify-content:center;
+
     }
 
     .nx-dashboard-stats{
-        grid-template-columns:1fr;
-    }
 
-    .nx-contact-fields{
         grid-template-columns:1fr;
-    }
 
-    .nx-whatsapp-button{
-        right:16px;
-        bottom:16px;
     }
 
 }
@@ -3944,7 +4255,57 @@ Padding Y
 @media (max-width:640px){
 
     .nx-design-grid{
+
         grid-template-columns:1fr;
+
+    }
+
+    .nx-hero{
+
+        padding-top:calc(var(--nx-header-height) + var(--nx-space-md));
+
+    }
+
+    .nx-section{
+
+        padding:var(--nx-space-lg) 0;
+
+    }
+
+}
+
+/*---------------------------------------------------------
+≤ 480px
+---------------------------------------------------------*/
+
+@media (max-width:480px){
+
+    .nx-navbar{
+
+        min-height:72px;
+
+        padding:0 1rem;
+
+    }
+
+    .nx-brand-text{
+
+        display:none;
+
+    }
+
+    .nx-title-xl{
+
+        font-size:2.5rem;
+
+    }
+
+    .nx-highlights{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
     }
 
 }
