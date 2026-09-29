@@ -1962,15 +1962,22 @@ Status
 Base
 =========================================================*/
 
+
 .nx-card{
 
     display:flex;
 
     flex-direction:column;
 
-    height:100%;
+    background:var(--nx-surface);
 
-    min-height:420px;
+    border:1px solid var(--nx-border);
+
+    border-radius:var(--nx-radius-lg);
+
+    overflow:hidden;
+
+    transition:var(--nx-transition);
 
 }
 
@@ -1986,7 +1993,7 @@ Body
 
     flex:1;
 
-    gap:var(--nx-space-sm);
+     gap:var(--nx-space-md);
 
 }
 
@@ -1996,7 +2003,7 @@ Title
 
 .nx-card-title{
 
-    margin:1rem 0 1.5rem;
+    margin-bottom:var(--nx-space-md);
 
     font-size:1.45rem;
 
@@ -2036,14 +2043,7 @@ Text
    Card Hover
 ===================================================== */
 
-.nx-card{
 
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease,
-        border-color .25s ease;
-
-}
 
 .nx-card:hover{
 
@@ -2056,6 +2056,8 @@ Text
         0 0 0 1px rgba(53,216,255,.08);
 
 }
+
+
 
 /*=========================================================
 07 Components
@@ -2911,6 +2913,7 @@ Feature Card
 Extiende .nx-card
 ---------------------------------------------------------*/
 
+
 .nx-feature-card{
 
     position:relative;
@@ -2919,35 +2922,21 @@ Extiende .nx-card
 
     flex-direction:column;
 
-    align-items:center;
+    padding:var(--nx-space-lg);
 
-    text-align:center;
-
-    padding:calc(var(--nx-space-md) + .5rem) var(--nx-space-md);
-
-    background:var(--nx-glass-bg);
+    gap:var(--nx-space-md);
 
     backdrop-filter:var(--nx-glass-blur);
 
-    border:1px solid var(--nx-glass-border);
+    min-height:320px;
 
-    border-radius:var(--nx-radius-lg);
-
-    overflow:hidden;
-
-    transition:var(--nx-transition);
+    justify-content:flex-start;
 
 }
 
 .nx-feature-card:hover{
 
-    transform:translateY(-8px);
-
     background:var(--nx-surface-hover);
-
-    border-color:var(--nx-border-strong);
-
-    box-shadow:var(--nx-shadow-md);
 
 }
 
@@ -2957,17 +2946,13 @@ Feature Icon
 
 .nx-feature-icon{
 
+    width:72px;
+    height:72px;
+
     display:flex;
 
     align-items:center;
-
     justify-content:center;
-
-    width:72px;
-
-    height:72px;
-
-    margin:0 auto var(--nx-space-md);
 
     border-radius:var(--nx-radius-md);
 
@@ -2976,8 +2961,6 @@ Feature Icon
     color:var(--nx-primary);
 
     font-size:2rem;
-
-    transition:var(--nx-transition);
 
 }
 
@@ -3104,13 +3087,17 @@ Hover Effect
 08.4 Templates
 ---------------------------------------------------------*/
 
+/*---------------------------------------------------------
+Template Grid
+---------------------------------------------------------*/
+
 .nx-template-grid{
 
     display:grid;
 
     grid-template-columns:repeat(2,minmax(0,1fr));
 
-    gap:var(--nx-space-md);
+    gap:var(--nx-space-lg);
 
     margin-top:var(--nx-space-xl);
 
@@ -3118,24 +3105,12 @@ Hover Effect
 
 /*---------------------------------------------------------
 Template Card
-Extiende .nx-card
+Extends .nx-card
 ---------------------------------------------------------*/
 
 .nx-template-card{
 
     position:relative;
-
-    overflow:hidden;
-
-}
-
-.nx-template-card:hover{
-
-    transform:translateY(-8px);
-
-    border-color:var(--nx-border-strong);
-
-    box-shadow:var(--nx-shadow-md);
 
 }
 
@@ -3151,21 +3126,18 @@ Template Preview
 
     gap:var(--nx-space-sm);
 
-    height:240px;
+    min-height:240px;
 
     padding:var(--nx-space-md);
 
     background:
-
         linear-gradient(
-
             180deg,
-
             rgba(255,255,255,.04),
-
             rgba(255,255,255,.01)
-
         );
+
+    border-bottom:1px solid var(--nx-border);
 
 }
 
@@ -3222,15 +3194,10 @@ Preview Elements
     border-radius:var(--nx-radius-md);
 
     background:
-
         linear-gradient(
-
             180deg,
-
             rgba(37,99,235,.25),
-
             rgba(37,99,235,.05)
-
         );
 
 }
@@ -3262,32 +3229,40 @@ WordPress Preview
 }
 
 /*---------------------------------------------------------
-Content
+Template Content
 ---------------------------------------------------------*/
 
 .nx-template-content{
 
-    padding:var(--nx-space-md);
+    display:flex;
+
+    flex-direction:column;
+
+    flex:1;
+
+    gap:var(--nx-space-md);
+
+    padding:var(--nx-space-lg);
 
 }
 
-.nx-template-content h3{
+/*---------------------------------------------------------
+Template Actions
+---------------------------------------------------------*/
 
-    margin-bottom:var(--nx-space-sm);
+.nx-template-actions{
 
-    font-size:1.35rem;
+    display:flex;
 
-    font-weight:700;
+    justify-content:space-between;
 
-    color:var(--nx-white);
+    align-items:center;
 
-}
+    margin-top:auto;
 
-.nx-template-content p{
+    padding-top:var(--nx-space-md);
 
-    color:var(--nx-text-muted);
-
-    line-height:1.8;
+    border-top:1px solid var(--nx-border);
 
 }
 
@@ -4087,6 +4062,12 @@ Padding Y
 
     }
 
+    .nx-feature-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
 }
 
 /*---------------------------------------------------------
@@ -4271,6 +4252,26 @@ Padding Y
         padding:var(--nx-space-lg) 0;
 
     }
+
+    .nx-feature-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.nx-feature-card{
+
+    text-align:left;
+
+    align-items:flex-start;
+
+}
+
+.nx-feature-icon{
+
+    margin:0 0 var(--nx-space-md);
+
+}
 
 }
 

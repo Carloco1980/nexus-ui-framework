@@ -6,13 +6,17 @@
 08.4 Templates
 ---------------------------------------------------------*/
 
+/*---------------------------------------------------------
+Template Grid
+---------------------------------------------------------*/
+
 .nx-template-grid{
 
     display:grid;
 
     grid-template-columns:repeat(2,minmax(0,1fr));
 
-    gap:var(--nx-space-md);
+    gap:var(--nx-space-lg);
 
     margin-top:var(--nx-space-xl);
 
@@ -20,24 +24,12 @@
 
 /*---------------------------------------------------------
 Template Card
-Extiende .nx-card
+Extends .nx-card
 ---------------------------------------------------------*/
 
 .nx-template-card{
 
     position:relative;
-
-    overflow:hidden;
-
-}
-
-.nx-template-card:hover{
-
-    transform:translateY(-8px);
-
-    border-color:var(--nx-border-strong);
-
-    box-shadow:var(--nx-shadow-md);
 
 }
 
@@ -53,21 +45,18 @@ Template Preview
 
     gap:var(--nx-space-sm);
 
-    height:240px;
+    min-height:240px;
 
     padding:var(--nx-space-md);
 
     background:
-
         linear-gradient(
-
             180deg,
-
             rgba(255,255,255,.04),
-
             rgba(255,255,255,.01)
-
         );
+
+    border-bottom:1px solid var(--nx-border);
 
 }
 
@@ -124,15 +113,10 @@ Preview Elements
     border-radius:var(--nx-radius-md);
 
     background:
-
         linear-gradient(
-
             180deg,
-
             rgba(37,99,235,.25),
-
             rgba(37,99,235,.05)
-
         );
 
 }
@@ -164,31 +148,39 @@ WordPress Preview
 }
 
 /*---------------------------------------------------------
-Content
+Template Content
 ---------------------------------------------------------*/
 
 .nx-template-content{
 
-    padding:var(--nx-space-md);
+    display:flex;
+
+    flex-direction:column;
+
+    flex:1;
+
+    gap:var(--nx-space-md);
+
+    padding:var(--nx-space-lg);
 
 }
 
-.nx-template-content h3{
+/*---------------------------------------------------------
+Template Actions
+---------------------------------------------------------*/
 
-    margin-bottom:var(--nx-space-sm);
+.nx-template-actions{
 
-    font-size:1.35rem;
+    display:flex;
 
-    font-weight:700;
+    justify-content:space-between;
 
-    color:var(--nx-white);
+    align-items:center;
 
-}
+    margin-top:auto;
 
-.nx-template-content p{
+    padding-top:var(--nx-space-md);
 
-    color:var(--nx-text-muted);
-
-    line-height:1.8;
+    border-top:1px solid var(--nx-border);
 
 }

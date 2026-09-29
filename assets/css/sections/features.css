@@ -21,6 +21,7 @@ Feature Card
 Extiende .nx-card
 ---------------------------------------------------------*/
 
+
 .nx-feature-card{
 
     position:relative;
@@ -29,35 +30,19 @@ Extiende .nx-card
 
     flex-direction:column;
 
-    align-items:center;
+    justify-content:flex-start;
 
-    text-align:center;
+    gap:var(--nx-space-lg);
 
-    padding:calc(var(--nx-space-md) + .5rem) var(--nx-space-md);
+    min-height:300px;
 
-    background:var(--nx-glass-bg);
-
-    backdrop-filter:var(--nx-glass-blur);
-
-    border:1px solid var(--nx-glass-border);
-
-    border-radius:var(--nx-radius-lg);
-
-    overflow:hidden;
-
-    transition:var(--nx-transition);
+    padding:var(--nx-space-xl);
 
 }
 
 .nx-feature-card:hover{
 
-    transform:translateY(-8px);
-
     background:var(--nx-surface-hover);
-
-    border-color:var(--nx-border-strong);
-
-    box-shadow:var(--nx-shadow-md);
 
 }
 
@@ -67,17 +52,13 @@ Feature Icon
 
 .nx-feature-icon{
 
+    width:72px;
+    height:72px;
+
     display:flex;
 
     align-items:center;
-
     justify-content:center;
-
-    width:72px;
-
-    height:72px;
-
-    margin:0 auto var(--nx-space-md);
 
     border-radius:var(--nx-radius-md);
 
@@ -86,8 +67,6 @@ Feature Icon
     color:var(--nx-primary);
 
     font-size:2rem;
-
-    transition:var(--nx-transition);
 
 }
 

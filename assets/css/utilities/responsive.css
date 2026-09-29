@@ -76,6 +76,12 @@
 
     }
 
+    .nx-feature-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
 }
 
 /*---------------------------------------------------------
@@ -260,6 +266,26 @@
         padding:var(--nx-space-lg) 0;
 
     }
+
+    .nx-feature-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.nx-feature-card{
+
+    text-align:left;
+
+    align-items:flex-start;
+
+}
+
+.nx-feature-icon{
+
+    margin:0 0 var(--nx-space-md);
+
+}
 
 }
 

@@ -1166,15 +1166,22 @@ Status
 Base
 =========================================================*/
 
+
 .nx-card{
 
     display:flex;
 
     flex-direction:column;
 
-    height:100%;
+    background:var(--nx-surface);
 
-    min-height:420px;
+    border:1px solid var(--nx-border);
+
+    border-radius:var(--nx-radius-lg);
+
+    overflow:hidden;
+
+    transition:var(--nx-transition);
 
 }
 
@@ -1190,7 +1197,7 @@ Body
 
     flex:1;
 
-    gap:var(--nx-space-sm);
+     gap:var(--nx-space-md);
 
 }
 
@@ -1200,7 +1207,7 @@ Title
 
 .nx-card-title{
 
-    margin:1rem 0 1.5rem;
+    margin-bottom:var(--nx-space-md);
 
     font-size:1.45rem;
 
@@ -1240,14 +1247,7 @@ Text
    Card Hover
 ===================================================== */
 
-.nx-card{
 
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease,
-        border-color .25s ease;
-
-}
 
 .nx-card:hover{
 
@@ -1260,6 +1260,8 @@ Text
         0 0 0 1px rgba(53,216,255,.08);
 
 }
+
+
 
 /*=========================================================
 07.7 Panel
@@ -2354,6 +2356,12 @@ Padding Y
 
     }
 
+    .nx-feature-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
 }
 
 /*---------------------------------------------------------
@@ -2538,6 +2546,26 @@ Padding Y
         padding:var(--nx-space-lg) 0;
 
     }
+
+    .nx-feature-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.nx-feature-card{
+
+    text-align:left;
+
+    align-items:flex-start;
+
+}
+
+.nx-feature-icon{
+
+    margin:0 0 var(--nx-space-md);
+
+}
 
 }
 
