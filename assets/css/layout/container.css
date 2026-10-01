@@ -72,17 +72,6 @@ Responsive
 
 }
 
-.nx-section-header{
-
-    max-width:900px;
-
-    margin:
-        0 auto
-        var(--nx-space-lg);
-
-    text-align:center;
-
-}
 
 /*---------------------------------------------------------
 Responsive Sections
@@ -98,12 +87,6 @@ Responsive Sections
 
     }
 
-    .nx-section-header{
-
-        margin:
-            0 auto
-            var(--nx-space-md);
-
-    }
+  
 
 }

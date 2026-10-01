@@ -16,7 +16,7 @@
 
     gap:.35rem;
 
-    padding:.35rem .80rem;
+    padding:.45rem 1rem;
 
     border-radius:var(--nx-radius-pill);
 
@@ -26,7 +26,8 @@
 
     color:var(--nx-text);
 
-    font-size:.75rem;
+    font-size:.82rem;
+
 
     font-weight:600;
 
@@ -126,5 +127,7 @@ Badge Dot
     background:currentColor;
 
     flex-shrink:0;
+
+    box-shadow:0 0 10px currentColor;
 
 }

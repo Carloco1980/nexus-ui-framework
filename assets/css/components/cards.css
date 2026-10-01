@@ -6,7 +6,6 @@
 Base
 =========================================================*/
 
-
 .nx-card{
 
     display:flex;
@@ -35,9 +34,9 @@ Body
 
     flex-direction:column;
 
-    flex:1;
+    gap:var(--nx-space-md);
 
-     gap:var(--nx-space-md);
+    flex:1;
 
 }
 
@@ -47,15 +46,15 @@ Title
 
 .nx-card-title{
 
-    margin-bottom:var(--nx-space-md);
+    margin:0;
 
-    font-size:1.45rem;
+    color:var(--nx-text);
+
+    font-size:1.5rem;
 
     font-weight:700;
 
-    line-height:1.45;
-
-    color:var(--nx-text);
+    line-height:1.3;
 
 }
 
@@ -65,9 +64,11 @@ Meta
 
 .nx-card-meta{
 
-    font-size:.875rem;
+    margin:0;
 
     color:var(--nx-text-muted);
+
+    font-size:.875rem;
 
 }
 
@@ -77,17 +78,19 @@ Text
 
 .nx-card-text{
 
+    margin:0;
+
     color:var(--nx-text-muted);
 
-    line-height:1.6;
+    font-size:1rem;
+
+    line-height:1.7;
 
 }
 
-/* =====================================================
-   Card Hover
-===================================================== */
-
-
+/*=========================================================
+Hover
+=========================================================*/
 
 .nx-card:hover{
 

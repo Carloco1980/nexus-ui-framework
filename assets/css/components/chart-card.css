@@ -69,4 +69,90 @@ Update
 
 }
 
+/*=========================================================
+Preview Chart
+=========================================================*/
+
+.nx-preview-chart{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:space-between;
+
+    gap:.75rem;
+
+    height:160px;
+
+}
+
+.nx-preview-chart span{
+
+    flex:1;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+        180deg,
+        var(--nx-cyan),
+        var(--nx-primary)
+    );
+
+}
+
+/*=========================================================
+Divider
+=========================================================*/
+
+.nx-preview-divider{
+
+    height:1px;
+
+    margin:1.5rem 0;
+
+    background:var(--nx-border);
+
+}
+
+/*=========================================================
+Preview Stats
+=========================================================*/
+
+.nx-preview-stats{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:1rem;
+
+}
+
+.nx-preview-stat{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.25rem;
+
+}
+
+.nx-preview-stat span{
+
+    color:var(--nx-text-muted);
+
+    font-size:.85rem;
+
+}
+
+.nx-preview-stat strong{
+
+    font-size:1.35rem;
+
+    color:var(--nx-white);
+
+}
+
 

@@ -1,9 +1,9 @@
 /*=========================================================
-08 Sections
+08.1 Hero
 =========================================================*/
 
 /*---------------------------------------------------------
-08.1 Hero
+Hero
 ---------------------------------------------------------*/
 
 .nx-hero{
@@ -19,9 +19,9 @@
     min-height:100vh;
 
     padding:
-        calc(var(--nx-header-height) + var(--nx-space-xl))
-        0
-        var(--nx-space-xl);
+    calc(var(--nx-header-height) + 6rem)
+    0
+    5rem;
 
     overflow:hidden;
 
@@ -101,31 +101,60 @@ Layout
         1fr
         var(--nx-hero-dashboard-width);
 
-    align-items:start;
+    align-items:center;
 
-    gap:var(--nx-space-lg);
+    gap:4rem;
 
 }
 
 /*---------------------------------------------------------
-Content
+Hero Content
 ---------------------------------------------------------*/
 
-.nx-hero-grid h1{
+.nx-hero-content{
 
-    margin-bottom:var(--nx-space-md);
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    gap:1.5rem;
+}
+
+.nx-hero-title{
+
+    margin:0;
+
+    max-width:650px;
 
 }
 
-.nx-hero-grid p{
+.nx-hero-description{
 
-    max-width:620px;
+    max-width:560px;
 
-    margin-bottom:var(--nx-space-md);
+    margin:0;
 
     color:var(--nx-text-muted);
 
-    line-height:1.7;
+    line-height:1.8;
+
+}
+
+/*---------------------------------------------------------
+Hero Dashboard
+---------------------------------------------------------*/
+
+.nx-hero-dashboard{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    align-items:center;
 
 }
 
@@ -154,8 +183,6 @@ Highlights
     flex-wrap:wrap;
 
     gap:var(--nx-space-sm);
-
-    margin-top:var(--nx-space-lg);
 
 }
 

@@ -1,48 +1,40 @@
 /*=========================================================
-08 Sections
+08.3 Features
 =========================================================*/
 
 /*---------------------------------------------------------
-08.3 Features
+Grid
 ---------------------------------------------------------*/
 
 .nx-feature-grid{
 
     display:grid;
 
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(3,1fr);
 
-    gap:var(--nx-space-md);
+    gap:2rem;
 
 }
 
 /*---------------------------------------------------------
 Feature Card
-Extiende .nx-card
 ---------------------------------------------------------*/
-
 
 .nx-feature-card{
 
     position:relative;
 
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:flex-start;
-
-    gap:var(--nx-space-lg);
-
     min-height:300px;
 
-    padding:var(--nx-space-xl);
+    padding:2rem;
 
 }
 
 .nx-feature-card:hover{
 
     background:var(--nx-surface-hover);
+
+    border-color:var(--nx-border-strong);
 
 }
 
@@ -53,12 +45,16 @@ Feature Icon
 .nx-feature-icon{
 
     width:72px;
+
     height:72px;
 
     display:flex;
 
     align-items:center;
+
     justify-content:center;
+
+    margin-bottom:1.5rem;
 
     border-radius:var(--nx-radius-md);
 
@@ -67,6 +63,8 @@ Feature Icon
     color:var(--nx-primary);
 
     font-size:2rem;
+
+    transition:var(--nx-transition);
 
 }
 
@@ -79,32 +77,12 @@ Feature Icon
 }
 
 /*---------------------------------------------------------
-Typography
+Feature Title
 ---------------------------------------------------------*/
 
-.nx-feature-card h3{
+.nx-feature-card .nx-card-title{
 
-    margin-bottom:var(--nx-space-sm);
-
-    font-size:1.45rem;
-
-    font-weight:700;
-
-    color:var(--nx-white);
-
-}
-
-.nx-feature-card p{
-
-    max-width:320px;
-
-    margin:0 auto;
-
-    color:var(--nx-text-muted);
-
-    line-height:1.8;
-
-    font-size:1rem;
+    max-width:260px;
 
 }
 
@@ -120,12 +98,11 @@ Hover Effect
 
     inset:0;
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(37,99,235,.08),
-            transparent 60%
-        );
+    background:linear-gradient(
+        135deg,
+        rgba(37,99,235,.08),
+        transparent 60%
+    );
 
     opacity:0;
 

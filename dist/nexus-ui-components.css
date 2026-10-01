@@ -833,7 +833,7 @@ Disabled
 
     gap:.35rem;
 
-    padding:.35rem .80rem;
+    padding:.45rem 1rem;
 
     border-radius:var(--nx-radius-pill);
 
@@ -843,7 +843,8 @@ Disabled
 
     color:var(--nx-text);
 
-    font-size:.75rem;
+    font-size:.82rem;
+
 
     font-weight:600;
 
@@ -943,6 +944,8 @@ Badge Dot
     background:currentColor;
 
     flex-shrink:0;
+
+    box-shadow:0 0 10px currentColor;
 
 }
 
@@ -1166,7 +1169,6 @@ Status
 Base
 =========================================================*/
 
-
 .nx-card{
 
     display:flex;
@@ -1195,9 +1197,9 @@ Body
 
     flex-direction:column;
 
-    flex:1;
+    gap:var(--nx-space-md);
 
-     gap:var(--nx-space-md);
+    flex:1;
 
 }
 
@@ -1207,15 +1209,15 @@ Title
 
 .nx-card-title{
 
-    margin-bottom:var(--nx-space-md);
+    margin:0;
 
-    font-size:1.45rem;
+    color:var(--nx-text);
+
+    font-size:1.5rem;
 
     font-weight:700;
 
-    line-height:1.45;
-
-    color:var(--nx-text);
+    line-height:1.3;
 
 }
 
@@ -1225,9 +1227,11 @@ Meta
 
 .nx-card-meta{
 
-    font-size:.875rem;
+    margin:0;
 
     color:var(--nx-text-muted);
+
+    font-size:.875rem;
 
 }
 
@@ -1237,17 +1241,19 @@ Text
 
 .nx-card-text{
 
+    margin:0;
+
     color:var(--nx-text-muted);
 
-    line-height:1.6;
+    font-size:1rem;
+
+    line-height:1.7;
 
 }
 
-/* =====================================================
-   Card Hover
-===================================================== */
-
-
+/*=========================================================
+Hover
+=========================================================*/
 
 .nx-card:hover{
 
@@ -1260,8 +1266,6 @@ Text
         0 0 0 1px rgba(53,216,255,.08);
 
 }
-
-
 
 /*=========================================================
 07.7 Panel
@@ -1453,7 +1457,7 @@ Action
 
     flex-direction:column;
 
-    gap:var(--nx-space-lg);
+   gap:var(--nx-space-xl);
 
 }
 
@@ -1467,6 +1471,10 @@ Action
 
     gap:var(--nx-space-md);
 
+    padding-bottom:var(--nx-space-sm);
+
+    border-bottom:1px solid var(--nx-border);
+
 }
 
 .nx-dashboard-header h3{
@@ -1477,7 +1485,7 @@ Action
 
 .nx-status{
 
-    width:14px;
+    width:12px;
 
     aspect-ratio:1;
 
@@ -1515,6 +1523,85 @@ Charts
 
 }
 
+/*=========================================================
+Dashboard Summary
+=========================================================*/
+
+.nx-dashboard-summary{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.75rem;
+
+    padding-bottom:var(--nx-space-lg);
+
+     border-bottom:1px solid var(--nx-border);
+
+}
+
+.nx-summary-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:.35rem 0;
+
+    border-bottom:1px solid var(--nx-border);
+
+}
+
+.nx-summary-row:last-child{
+
+    border-bottom:none;
+
+}
+
+.nx-summary-row span{
+
+    color:var(--nx-text-muted);
+
+    font-size:.92rem;
+
+}
+
+.nx-summary-row strong{
+
+    color:var(--nx-white);
+
+    font-weight:700;
+
+}
+
+/*=========================================================
+Dashboard Placeholder
+=========================================================*/
+
+.nx-dashboard-placeholder{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    height:180px;
+
+    border:1px dashed var(--nx-border);
+
+    border-radius:var(--nx-radius-md);
+
+    background:var(--nx-surface);
+
+    color:var(--nx-text-soft);
+
+    font-size:.90rem;
+
+}
 
 /*=========================================================
 Responsive
@@ -1527,6 +1614,12 @@ Responsive
         grid-template-columns:1fr;
 
     }
+
+    .nx-dashboard-kpis{
+
+    grid-template-columns:1fr;
+
+}
 
 }
 
@@ -1629,13 +1722,13 @@ Value
 
 .nx-kpi-value{
 
-    font-size:clamp(2.6rem,6vw,3.6rem);
+    font-size:clamp(2.2rem,5vw,2.9rem);
 
-    font-weight:800;
+    font-weight:700;
 
     line-height:1;
 
-    letter-spacing:-1px;
+    letter-spacing:-0.5px;
 
     color:var(--nx-white);
 
@@ -1647,11 +1740,13 @@ Title
 
 .nx-kpi-title{
 
-    font-size:1rem;
+    font-size:.95rem;
 
-    font-weight:600;
+    font-weight:500;
 
-    color:var(--nx-text);
+    color:var(--nx-text-muted);
+
+    margin-top:.35rem;
 
 }
 
@@ -1780,6 +1875,92 @@ Update
     color:var(--nx-text-soft);
 
     font-size:.82rem;
+
+}
+
+/*=========================================================
+Preview Chart
+=========================================================*/
+
+.nx-preview-chart{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:space-between;
+
+    gap:.75rem;
+
+    height:160px;
+
+}
+
+.nx-preview-chart span{
+
+    flex:1;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+        180deg,
+        var(--nx-cyan),
+        var(--nx-primary)
+    );
+
+}
+
+/*=========================================================
+Divider
+=========================================================*/
+
+.nx-preview-divider{
+
+    height:1px;
+
+    margin:1.5rem 0;
+
+    background:var(--nx-border);
+
+}
+
+/*=========================================================
+Preview Stats
+=========================================================*/
+
+.nx-preview-stats{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:1rem;
+
+}
+
+.nx-preview-stat{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.25rem;
+
+}
+
+.nx-preview-stat span{
+
+    color:var(--nx-text-muted);
+
+    font-size:.85rem;
+
+}
+
+.nx-preview-stat strong{
+
+    font-size:1.35rem;
+
+    color:var(--nx-white);
 
 }
 
@@ -2358,7 +2539,7 @@ Padding Y
 
     .nx-feature-grid{
 
-    grid-template-columns:repeat(2,1fr);
+      grid-template-columns:repeat(2,1fr);
 
 }
 
@@ -2549,7 +2730,7 @@ Padding Y
 
     .nx-feature-grid{
 
-    grid-template-columns:1fr;
+      grid-template-columns:1fr;
 
 }
 
@@ -2557,13 +2738,13 @@ Padding Y
 
     text-align:left;
 
-    align-items:flex-start;
+    
 
 }
 
 .nx-feature-icon{
 
-    margin:0 0 var(--nx-space-md);
+    margin-bottom:var(--nx-space-md);
 
 }
 

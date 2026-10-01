@@ -97,13 +97,13 @@ Value
 
 .nx-kpi-value{
 
-    font-size:clamp(2.6rem,6vw,3.6rem);
+    font-size:clamp(2.2rem,5vw,2.9rem);
 
-    font-weight:800;
+    font-weight:700;
 
     line-height:1;
 
-    letter-spacing:-1px;
+    letter-spacing:-0.5px;
 
     color:var(--nx-white);
 
@@ -115,11 +115,13 @@ Title
 
 .nx-kpi-title{
 
-    font-size:1rem;
+    font-size:.95rem;
 
-    font-weight:600;
+    font-weight:500;
 
-    color:var(--nx-text);
+    color:var(--nx-text-muted);
+
+    margin-top:.35rem;
 
 }
 

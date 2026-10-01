@@ -12,15 +12,45 @@ Base
 
     flex-direction:column;
 
-    align-items:center;
-
     gap:var(--nx-space-md);
 
-    max-width:760px;
+    width:100%;
 
-    margin:0 auto var(--nx-space-2xl);
+    margin-bottom:var(--nx-space-3xl);
+
+}
+
+/*---------------------------------------------------------
+Alignment
+---------------------------------------------------------*/
+
+.nx-section-header-left{
+
+    align-items:flex-start;
+
+    text-align:left;
+
+}
+
+.nx-section-header-center{
+
+    align-items:center;
 
     text-align:center;
+
+    width:100%;
+
+    max-width:840px;
+
+    margin-inline:auto;
+
+}
+
+.nx-section-header-right{
+
+    align-items:flex-end;
+
+    text-align:right;
 
 }
 
@@ -30,7 +60,9 @@ Badge
 
 .nx-section-header .nx-badge{
 
-    margin:0;
+    margin:0 0 var(--nx-space-xs);
+
+    flex-shrink:0;
 
 }
 
@@ -42,6 +74,10 @@ Title
 
     margin:0;
 
+    max-width:760px;
+
+    line-height:1.15;
+
 }
 
 /*---------------------------------------------------------
@@ -52,10 +88,40 @@ Description
 
     margin:0;
 
-    max-width:680px;
+    max-width:760px;
 
     color:var(--nx-text-muted);
 
+    font-size:1.05rem;
+
     line-height:1.8;
+
+}
+
+/*---------------------------------------------------------
+Responsive
+---------------------------------------------------------*/
+
+@media (max-width:768px){
+
+    .nx-section-header{
+
+        margin-bottom:var(--nx-space-2xl);
+
+    }
+
+    .nx-section-header-center,
+    .nx-section-header .nx-title-lg,
+    .nx-section-header p{
+
+        max-width:100%;
+
+    }
+
+    .nx-section-header p{
+
+        font-size:1rem;
+
+    }
 
 }

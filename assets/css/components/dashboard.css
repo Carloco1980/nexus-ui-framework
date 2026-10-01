@@ -12,7 +12,7 @@
 
     flex-direction:column;
 
-    gap:var(--nx-space-lg);
+   gap:var(--nx-space-xl);
 
 }
 
@@ -26,6 +26,10 @@
 
     gap:var(--nx-space-md);
 
+    padding-bottom:var(--nx-space-sm);
+
+    border-bottom:1px solid var(--nx-border);
+
 }
 
 .nx-dashboard-header h3{
@@ -36,7 +40,7 @@
 
 .nx-status{
 
-    width:14px;
+    width:12px;
 
     aspect-ratio:1;
 
@@ -74,6 +78,85 @@ Charts
 
 }
 
+/*=========================================================
+Dashboard Summary
+=========================================================*/
+
+.nx-dashboard-summary{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.75rem;
+
+    padding-bottom:var(--nx-space-lg);
+
+     border-bottom:1px solid var(--nx-border);
+
+}
+
+.nx-summary-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:.35rem 0;
+
+    border-bottom:1px solid var(--nx-border);
+
+}
+
+.nx-summary-row:last-child{
+
+    border-bottom:none;
+
+}
+
+.nx-summary-row span{
+
+    color:var(--nx-text-muted);
+
+    font-size:.92rem;
+
+}
+
+.nx-summary-row strong{
+
+    color:var(--nx-white);
+
+    font-weight:700;
+
+}
+
+/*=========================================================
+Dashboard Placeholder
+=========================================================*/
+
+.nx-dashboard-placeholder{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    height:180px;
+
+    border:1px dashed var(--nx-border);
+
+    border-radius:var(--nx-radius-md);
+
+    background:var(--nx-surface);
+
+    color:var(--nx-text-soft);
+
+    font-size:.90rem;
+
+}
 
 /*=========================================================
 Responsive
@@ -86,6 +169,12 @@ Responsive
         grid-template-columns:1fr;
 
     }
+
+    .nx-dashboard-kpis{
+
+    grid-template-columns:1fr;
+
+}
 
 }
 
