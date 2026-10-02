@@ -11,6 +11,7 @@ Version: 1.0.0
 =========================================================*/
 
 @import url("./base/variables.css");
+@import url("./base/reset-components.css");
 @import url("./base/animations.css");
 
 /*=========================================================

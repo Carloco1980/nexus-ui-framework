@@ -1,0 +1,67 @@
+/*=========================================================
+02 Reset Components
+Solo para Nexus Components Bundle
+=========================================================*/
+
+/*---------------------------------------------------------
+Box Model
+---------------------------------------------------------*/
+
+html{
+
+    box-sizing:border-box;
+
+}
+
+*,
+*::before,
+*::after{
+
+    box-sizing:inherit;
+
+}
+
+/*---------------------------------------------------------
+Media (solo dentro de componentes Nexus)
+---------------------------------------------------------*/
+
+.nx-card img,
+.nx-panel img,
+.nx-dashboard img,
+.nx-chart-body canvas,
+.nx-chart-body svg{
+
+    display:block;
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+/*---------------------------------------------------------
+Focus accesible para componentes Nexus
+---------------------------------------------------------*/
+
+.nx-button:focus-visible,
+.nx-input:focus-visible,
+.nx-select:focus-visible,
+.nx-textarea:focus-visible{
+
+    outline:2px solid var(--nx-primary);
+
+    outline-offset:3px;
+
+}
+
+/*---------------------------------------------------------
+Selection
+---------------------------------------------------------*/
+
+::selection{
+
+    background:var(--nx-primary);
+
+    color:var(--nx-white);
+
+}
