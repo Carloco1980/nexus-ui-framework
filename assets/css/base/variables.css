@@ -37,6 +37,18 @@
     --nx-red:#EF4444;
 
     /*=====================================================
+STATUS
+=====================================================*/
+
+--nx-success:var(--nx-green);
+
+--nx-warning:var(--nx-orange);
+
+--nx-danger:var(--nx-red);
+
+--nx-info:var(--nx-cyan);
+
+    /*=====================================================
     TEXT
     =====================================================*/
 
@@ -181,6 +193,7 @@
     --nx-duration-fast:.2s;
     --nx-duration-normal:.35s;
     --nx-duration-slow:.5s;
+    --nx-duration-xslow:.8s;
 
     --nx-easing:ease;
 
@@ -193,23 +206,32 @@
         var(--nx-duration-normal)
         var(--nx-easing);
 
-    /*=====================================================
-    LAYOUT
-    =====================================================*/
-
-    --nx-container:1440px;
-
-    --nx-header-height:88px;
-
-    --nx-hero-dashboard-width:520px;
-
-    --nx-navbar-padding:2rem;
-
-    /*=====================================================
-HERO
+   /*=====================================================
+LAYOUT
 =====================================================*/
 
+--nx-container:1440px;
+
+--nx-container-padding:1.5rem;
+
+--nx-container-padding-tablet:1rem;
+
+--nx-container-padding-mobile:.75rem;
+
+--nx-header-height:88px;
+
+--nx-navbar-padding:2rem;
+
+--nx-grid-min:320px;
+
+--nx-kpi-min:220px;
+
+--nx-chart-min:420px;
+
 --nx-hero-dashboard-width:520px;
+
+
+
 
     /*=====================================================
     CONTAINER
@@ -245,12 +267,15 @@ HERO
     Z INDEX
     =====================================================*/
 
-    --nx-z-navbar:100;
+   --nx-z-navbar:100;
 
-    --nx-z-dropdown:200;
+   --nx-z-dropdown:200;
 
-    --nx-z-modal:500;
+   --nx-z-tooltip:300;
 
-    --nx-z-toast:1000;
+   --nx-z-modal:500;
+
+   --nx-z-toast:1000;
 
 }
+

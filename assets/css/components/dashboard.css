@@ -12,9 +12,15 @@
 
     flex-direction:column;
 
-   gap:var(--nx-space-xl);
+    gap:var(--nx-space-xl);
+
+    width:100%;
 
 }
+
+/*=========================================================
+Header
+=========================================================*/
 
 .nx-dashboard-header{
 
@@ -23,6 +29,8 @@
     align-items:center;
 
     justify-content:space-between;
+
+    flex-wrap:wrap;
 
     gap:var(--nx-space-md);
 
@@ -38,6 +46,10 @@
 
 }
 
+/*=========================================================
+Status
+=========================================================*/
+
 .nx-status{
 
     width:12px;
@@ -46,19 +58,28 @@
 
     border-radius:50%;
 
-    background:var(--nx-green);
+    background:var(--nx-success);
 
     box-shadow:var(--nx-glow-green);
 
 }
 
-
+/*=========================================================
+KPIs
+=========================================================*/
 
 .nx-dashboard-kpis{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                var(--nx-kpi-min),
+                1fr
+            )
+        );
 
     gap:var(--nx-space-md);
 
@@ -72,7 +93,14 @@ Charts
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                var(--nx-chart-min),
+                1fr
+            )
+        );
 
     gap:var(--nx-space-md);
 
@@ -90,9 +118,11 @@ Dashboard Summary
 
     gap:.75rem;
 
+    width:100%;
+
     padding-bottom:var(--nx-space-lg);
 
-     border-bottom:1px solid var(--nx-border);
+    border-bottom:1px solid var(--nx-border);
 
 }
 
@@ -100,9 +130,11 @@ Dashboard Summary
 
     display:flex;
 
+    align-items:center;
+
     justify-content:space-between;
 
-    align-items:center;
+    gap:var(--nx-space-md);
 
     padding:.35rem 0;
 
@@ -146,6 +178,8 @@ Dashboard Placeholder
 
     height:180px;
 
+    padding:var(--nx-space-md);
+
     border:1px dashed var(--nx-border);
 
     border-radius:var(--nx-radius-md);
@@ -155,6 +189,8 @@ Dashboard Placeholder
     color:var(--nx-text-soft);
 
     font-size:.90rem;
+
+    text-align:center;
 
 }
 
@@ -172,15 +208,18 @@ Responsive
 
     .nx-dashboard-kpis{
 
-    grid-template-columns:1fr;
+        grid-template-columns:1fr;
+
+    }
+
+    .nx-summary-row{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:.35rem;
+
+    }
 
 }
-
-}
-
-
-
-
-
-
-

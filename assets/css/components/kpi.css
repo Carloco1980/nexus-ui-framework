@@ -25,6 +25,8 @@ Container
 
     height:100%;
 
+    width:100%;
+
     text-align:center;
 
 }
@@ -99,6 +101,8 @@ Value
 
     font-size:clamp(2.2rem,5vw,2.9rem);
 
+    font-variant-numeric:tabular-nums;
+
     font-weight:700;
 
     line-height:1;
@@ -135,6 +139,8 @@ Description
 
     line-height:1.6;
 
+    max-width:26ch;
+
     color:var(--nx-text-muted);
 
 }
@@ -155,7 +161,7 @@ Trend
 
     font-weight:600;
 
-    color:var(--nx-green);
+    color:var(--nx-success);
 
 }
 
@@ -179,5 +185,32 @@ Badge
 .nx-kpi .nx-badge{
 
     align-self:flex-start;
+
+    margin-bottom:auto;
+
+}
+
+
+.nx-kpi:hover .nx-kpi-icon{
+
+    transform:translateY(-2px);
+
+    border-color:var(--nx-primary);
+
+}
+
+/*=========================================================
+Horizontal
+=========================================================*/
+
+.nx-kpi-horizontal{
+
+    flex-direction:row;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
+    text-align:left;
 
 }
