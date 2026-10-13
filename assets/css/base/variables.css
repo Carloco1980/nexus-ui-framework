@@ -48,6 +48,24 @@ STATUS
 
 --nx-info:var(--nx-cyan);
 
+
+/*=====================================================
+CHARTS
+=====================================================*/
+
+--nx-chart-1:var(--nx-primary);
+
+--nx-chart-2:var(--nx-cyan);
+
+--nx-chart-3:var(--nx-green);
+
+--nx-chart-4:var(--nx-purple);
+
+--nx-chart-5:var(--nx-orange);
+
+--nx-chart-6:var(--nx-red);
+
+
     /*=====================================================
     TEXT
     =====================================================*/
@@ -186,6 +204,45 @@ STATUS
 
     --nx-shadow-xl:0 48px 96px rgba(0,0,0,.48);
 
+
+
+
+    /*=====================================================
+ELEVATION
+=====================================================*/
+
+--nx-elevation-1:
+    var(--nx-shadow-xs);
+
+--nx-elevation-2:
+    var(--nx-shadow-sm);
+
+--nx-elevation-3:
+    var(--nx-shadow-md);
+
+--nx-elevation-4:
+    var(--nx-shadow-lg);
+
+
+    /*=====================================================
+OPACITY
+=====================================================*/
+
+--nx-opacity-disabled:.45;
+
+--nx-opacity-muted:.65;
+
+--nx-opacity-hover:.85;
+
+/*=====================================================
+FOCUS
+=====================================================*/
+
+--nx-focus-ring:
+0 0 0 3px rgba(37,99,235,.35);
+
+
+
     /*=====================================================
     MOTION
     =====================================================*/
@@ -226,22 +283,17 @@ LAYOUT
 
 --nx-kpi-min:220px;
 
---nx-chart-min:420px;
+--nx-chart-card-min-height:420px;
+
+--nx-chart-body-min-height:280px;
+
+--nx-chart-loading-height:220px;
 
 --nx-hero-dashboard-width:520px;
 
 
 
-
-    /*=====================================================
-    CONTAINER
-    =====================================================*/
-
-    --nx-container-padding:1.5rem;
-
-    --nx-container-padding-tablet:1rem;
-
-    --nx-container-padding-mobile:.75rem;
+   
 
     /*=====================================================
     SECTIONS
@@ -278,4 +330,6 @@ LAYOUT
    --nx-z-toast:1000;
 
 }
+
+
 
