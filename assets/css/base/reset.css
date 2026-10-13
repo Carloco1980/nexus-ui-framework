@@ -2,7 +2,7 @@
 02 Reset
 =========================================================*/
 
-html{
+#oiid-app{
 
     box-sizing:border-box;
 
@@ -10,9 +10,9 @@ html{
 
 }
 
-*,
-*::before,
-*::after{
+#oiid-app *,
+#oiid-app *::before,
+#oiid-app *::after{
 
     box-sizing:inherit;
 
@@ -22,7 +22,7 @@ html{
 
 }
 
-body{
+#oiid-app{
 
     font-family:var(--nx-font-family);
 
@@ -40,11 +40,11 @@ body{
 
 }
 
-img,
-picture,
-video,
-canvas,
-svg{
+#oiid-app img,
+#oiid-app picture,
+#oiid-app video,
+#oiid-app canvas,
+#oiid-app svg{
 
     display:block;
 
@@ -54,7 +54,7 @@ svg{
 
 }
 
-a{
+#oiid-app a{
 
     color:inherit;
 
@@ -62,17 +62,17 @@ a{
 
 }
 
-ul,
-ol{
+#oiid-app ul,
+#oiid-app ol{
 
     list-style:none;
 
 }
 
-button,
-input,
-textarea,
-select{
+#oiid-app button,
+#oiid-app input,
+#oiid-app textarea,
+#oiid-app select{
 
     font:inherit;
 
@@ -83,7 +83,7 @@ select{
 
 }
 
-button{
+#oiid-app button{
 
     background:none;
 
@@ -97,19 +97,19 @@ button{
 03 Base
 =========================================================*/
 
-#nx-app{
+#oiid-app #nx-app{
 
     min-height:100vh;
 
 }
 
-section{
+#oiid-app section{
 
     position:relative;
 
 }
 
-::selection{
+#oiid-app ::selection{
 
     background:var(--nx-primary);
 
@@ -117,8 +117,8 @@ section{
 
 }
 
-a:focus-visible,
-button:focus-visible{
+#oiid-app a:focus-visible,
+#oiid-app button:focus-visible{
 
     outline:2px solid var(--nx-primary);
 

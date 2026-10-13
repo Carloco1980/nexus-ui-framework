@@ -7,15 +7,15 @@ Solo para Nexus Components Bundle
 Box Model
 ---------------------------------------------------------*/
 
-html{
+#oiid-app{
 
     box-sizing:border-box;
 
 }
 
-*,
-*::before,
-*::after{
+#oiid-app *,
+#oiid-app *::before,
+#oiid-app *::after{
 
     box-sizing:inherit;
 
@@ -58,7 +58,7 @@ Focus accesible para componentes Nexus
 Selection
 ---------------------------------------------------------*/
 
-::selection{
+#oiid-app ::selection{
 
     background:var(--nx-primary);
 

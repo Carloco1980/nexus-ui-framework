@@ -27,6 +27,10 @@ Load Order
 =========================================================*/
 
 @import url("./base/variables.css");
+
+@import url("./themes/dark.css");
+@import url("./themes/light.css");
+
 @import url("./base/reset.css");
 @import url("./base/typography.css");
 @import url("./base/animations.css");
@@ -83,4 +87,5 @@ Pages
 @import url("./pages/landing.css");
 @import url("./pages/design-system.css");
 @import url("./pages/dashboard-demo.css");
+
 

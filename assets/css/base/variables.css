@@ -303,13 +303,36 @@ LAYOUT
 
     --nx-section-padding-mobile:5rem;
 
+
+    /*=====================================================
+BUTTONS
+=====================================================*/
+
+--nx-button-min-width:170px;
+
+--nx-button-height:56px;
+
+--nx-button-padding-x:2rem;
+
+--nx-button-gap:.75rem;
+
+--nx-button-icon-size:18px;
+
+--nx-button-icon-only-size:56px;
+
+--nx-button-sm-height:44px;
+
+--nx-button-lg-height:64px;
+
+--nx-button-sm-width:110px;
+
+--nx-button-lg-width:190px;
+
     /*=====================================================
     COMPONENTS
     =====================================================*/
 
     --nx-search-width:250px;
-
-    --nx-button-height:48px;
 
     --nx-input-height:46px;
 

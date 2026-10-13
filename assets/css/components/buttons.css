@@ -16,12 +16,13 @@ Base
     display:inline-flex;
     align-items:center;
     justify-content:center;
-    gap:.75rem;
+    gap:var(--nx-button-gap);
 
-    min-width:170px;
-    height:56px;
+    min-width:var(--nx-button-min-width);
 
-    padding:0 2rem;
+    height:var(--nx-button-height);
+
+    padding:0 var(--nx-button-padding-x);
 
     border:1px solid transparent;
 
@@ -64,7 +65,10 @@ Glow
 
     opacity:0;
 
-    transition:opacity .28s ease;
+    transition:
+    opacity
+    var(--nx-duration-fast)
+    var(--nx-easing);
 
 }
 
@@ -99,8 +103,8 @@ Focus
     outline:none;
 
     box-shadow:
-0 0 0 3px rgba(53,216,255,.18),
-var(--nx-shadow-lg);
+    var(--nx-focus-ring),
+    var(--nx-shadow-lg);
 
 }
 
@@ -242,9 +246,9 @@ Sizes
 
 .nx-button-sm{
 
-    min-width:110px;
+    min-width:var(--nx-button-sm-width);
 
-    height:44px;
+    height:var(--nx-button-sm-height);
 
     padding:0 1.4rem;
 
@@ -254,15 +258,15 @@ Sizes
 
 .nx-button-md{
 
-    height:56px;
+   height:var(--nx-button-height);
 
 }
 
 .nx-button-lg{
 
-    min-width:190px;
+    min-width:var(--nx-button-lg-width);
 
-    height:64px;
+    height:var(--nx-button-lg-height);
 
     padding:0 2.5rem;
 
@@ -290,23 +294,23 @@ Icon
 
     align-items:center;
 
-    gap:.75rem;
+    gap:var(--nx-button-gap);
 
 }
 
 .nx-button-icon svg{
 
-    width:18px;
+   width:var(--nx-button-icon-size);
 
-    height:18px;
+   height:var(--nx-button-icon-size);
 
 }
 
 .nx-button-icon-only{
 
-    width:56px;
+   width:var(--nx-button-icon-only-size);
 
-    min-width:56px;
+   min-width:var(--nx-button-icon-only-size);
 
     padding:0;
 
@@ -318,7 +322,7 @@ Disabled
 
 .nx-button:disabled{
 
-    opacity:.45;
+    opacity:var(--nx-opacity-disabled);
 
     cursor:not-allowed;
 
