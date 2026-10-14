@@ -49,9 +49,11 @@ Load Order
 =========================================================*/
 
 @import url("./components/buttons.css");
+@import url("./components/theme-toggle.css");
 @import url("./components/badges.css");
 @import url("./components/forms.css");
 @import url("./components/cards.css");
+@import url("./components/modal.css");
 @import url("./components/dashboard.css");
 @import url("./components/fab.css");
 @import url("./components/kpi.css");
@@ -59,6 +61,7 @@ Load Order
 @import url("./components/panel.css");
 @import url("./components/section-header.css");
 @import url("./components/table.css");
+@import url("./components/icons.css");
 
 /*=========================================================
 04 Sections

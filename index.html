@@ -52,6 +52,7 @@
 Header
 ======================================================-->
 
+
 <header class="nx-header">
 
     <div class="nx-container">
@@ -146,6 +147,17 @@ Header
 
                 </a>
 
+                <button
+    class="nx-theme-toggle"
+    aria-label="Cambiar tema"
+    aria-pressed="false">
+
+    <span class="nx-theme-toggle__thumb"></span>
+
+
+
+
+
             </div>
 
             <!--=========================================
@@ -183,6 +195,7 @@ Header
               Hero
            ======================================================-->
 
+
 <section
 id="hero"class="nx-hero">
 
@@ -203,6 +216,19 @@ id="hero"class="nx-hero">
     v1.0
 
 </span>
+
+<button
+    class="nx-button nx-button-primary"
+    data-nx-modal-open="demo-modal">
+
+    <span
+        class="nx-icon"
+        data-nx-icon="search">
+    </span>
+
+    <span>Abrir Modal</span>
+
+</button>
 
                     
 
@@ -684,12 +710,89 @@ Features Grid
     </footer>
 
 
+
+<!--==================================================
+Nexus Modal Demo
+==================================================-->
+
+<div
+    class="nx-modal"
+    id="demo-modal"
+    aria-hidden="true">
+
+    <div class="nx-modal__overlay"></div>
+
+    <div
+        class="nx-modal__dialog"
+        role="dialog"
+        aria-modal="true">
+
+        <header class="nx-modal__header">
+
+            <h2>Nexus Modal</h2>
+
+        </header>
+
+        <div class="nx-modal__body">
+
+            <p>
+
+                Este es el primer componente Modal del
+                Nexus UI Framework.
+
+            </p>
+
+        </div>
+
+       <footer class="nx-modal__footer">
+
+    <button
+        class="nx-button nx-button-outline"
+        data-nx-modal-close>
+
+        <span
+            class="nx-icon"
+            data-nx-icon="close">
+        </span>
+
+        <span>Cancelar</span>
+
+    </button>
+
+    <button
+        class="nx-button nx-button-primary">
+
+        <span
+            class="nx-icon"
+            data-nx-icon="save">
+        </span>
+
+        <span>Aceptar</span>
+
+    </button>
+
+</footer>
+
+    </div>
+
+</div>
+
+
+
+
 <!--=====================================================
 Scripts
 ======================================================-->
 
+
+
+<script src="assets/js/core/theme.js"></script>
+<script src="assets/js/core/events.js"></script>
+<script src="assets/js/theme-toggle.js"></script>
 <script src="assets/js/navbar.js"></script>
+<script src="assets/js/icons.js"></script>
 <script src="assets/js/app.js"></script>
+<script src="assets/js/modal.js"></script>
 
 </body>
 </html>

@@ -33,7 +33,25 @@ const Nexus = {
             "color:#2563EB;font-weight:bold;"
         );
 
+        /*----------------------------------------------
+        Core Services
+        ----------------------------------------------*/
+
+        if (window.NX?.theme?.init) {
+
+            window.NX.theme.init();
+
+        }
+
+        /*----------------------------------------------
+        Global Events
+        ----------------------------------------------*/
+
         this.bindEvents();
+
+        /*----------------------------------------------
+        Modules
+        ----------------------------------------------*/
 
         this.initializeModules();
 
@@ -56,11 +74,14 @@ const Nexus = {
     initializeModules() {
 
         const modules = [
-
+            window.NexusThemeToggle,
             window.NexusNavbar,
             window.NexusForms,
             window.NexusFab,
-            window.NexusAnimations
+            window.NexusAnimations,
+            window.NexusModal,
+            window.NexusIcons
+
 
         ];
 

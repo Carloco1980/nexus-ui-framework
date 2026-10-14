@@ -1,0 +1,77 @@
+/*=========================================================
+Icons
+=========================================================*/
+
+.nx-icon{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:var(--nx-icon-md);
+
+    height:var(--nx-icon-md);
+
+    flex-shrink:0;
+
+    color:currentColor;
+
+}
+
+.nx-icon-xs{
+
+    width:var(--nx-icon-xs);
+
+    height:var(--nx-icon-xs);
+
+}
+
+.nx-icon-sm{
+
+    width:var(--nx-icon-sm);
+
+    height:var(--nx-icon-sm);
+
+}
+
+.nx-icon-md{
+
+    width:var(--nx-icon-md);
+
+    height:var(--nx-icon-md);
+
+}
+
+.nx-icon-lg{
+
+    width:var(--nx-icon-lg);
+
+    height:var(--nx-icon-lg);
+
+}
+
+.nx-icon-xl{
+
+    width:var(--nx-icon-xl);
+
+    height:var(--nx-icon-xl);
+
+}
+
+/*
+==================================================
+SVG
+==================================================
+*/
+
+.nx-icon-svg{
+
+    width:100%;
+
+    height:100%;
+
+    display:block;
+
+}

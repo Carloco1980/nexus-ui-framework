@@ -1,0 +1,197 @@
+/*
+==================================================
+Modal
+==================================================
+*/
+
+.nx-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:1000;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transition:opacity .25s ease;
+
+}
+
+.nx-modal.is-open{
+
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
+}
+
+.nx-modal__overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+}
+
+.nx-modal__dialog{
+
+    position:relative;
+
+    width:min(90vw,520px);
+
+    background:var(--nx-surface);
+
+    color:var(--nx-text);
+
+    border:1px solid var(--nx-border);
+
+    border-radius:var(--nx-radius-lg);
+
+    padding:2rem;
+
+    z-index:1;
+
+    box-shadow:var(--nx-shadow-xl);
+
+    transform:scale(.95);
+
+    opacity:0;
+
+    transition:
+        transform .25s ease,
+        opacity .25s ease;
+
+}
+
+.nx-modal.is-open .nx-modal__dialog{
+
+    transform:scale(1);
+
+    opacity:1;
+
+}
+
+
+/*==================================================
+Header
+==================================================*/
+
+.nx-modal__header{
+
+    margin-bottom:1rem;
+
+}
+
+.nx-modal__header h2{
+
+    margin:0;
+
+    font-size:1.5rem;
+
+    font-weight:700;
+
+    color:var(--nx-text);
+
+}
+
+/*==================================================
+Body
+==================================================*/
+
+.nx-modal__body{
+
+    margin-bottom:2rem;
+
+}
+
+.nx-modal__body p{
+
+    margin:0;
+
+    color:var(--nx-text-muted);
+
+    line-height:1.7;
+
+}
+
+/*==================================================
+Footer
+==================================================*/
+
+.nx-modal__footer{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:1rem;
+
+    margin-top:2rem;
+
+}
+
+/*==================================================
+Animation
+==================================================*/
+
+.nx-modal{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:opacity .25s ease;
+
+}
+
+.nx-modal.is-open{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.nx-modal__dialog{
+
+    transform:scale(.96);
+
+    transition:
+        transform .25s ease,
+        opacity .25s ease;
+
+}
+
+.nx-modal.is-open .nx-modal__dialog{
+
+    transform:scale(1);
+
+}
+
+
+/*
+==================================================
+Body Lock
+==================================================
+*/
+
+body.nx-modal-open{
+
+    overflow:hidden;
+
+}

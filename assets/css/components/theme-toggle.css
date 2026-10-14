@@ -1,0 +1,68 @@
+/*
+==================================================
+Theme Toggle
+==================================================
+*/
+
+.nx-theme-toggle{
+
+    width:60px;
+    height:32px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
+    padding:4px;
+
+    background:var(--nx-surface-light);
+
+    border:1px solid var(--nx-border);
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:
+        background .25s ease,
+        border-color .25s ease;
+
+}
+
+.nx-theme-toggle:hover{
+
+    background:var(--nx-surface-hover);
+
+}
+
+.nx-theme-toggle__thumb{
+
+    width:24px;
+    height:24px;
+
+    border-radius:50%;
+
+    background:var(--nx-primary);
+
+    flex-shrink:0;
+
+    box-shadow:
+        0 2px 8px rgba(0,0,0,.25);
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
+
+}
+
+html[data-nx-theme="light"] .nx-theme-toggle__thumb{
+
+    transform:translateX(28px);
+
+}

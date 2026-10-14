@@ -1,20 +1,18 @@
 /*=========================================================
-02 Reset
+01 Reset
 =========================================================*/
 
-#oiid-app{
-
-    box-sizing:border-box;
+html{
 
     scroll-behavior:smooth;
 
 }
 
-#oiid-app *,
-#oiid-app *::before,
-#oiid-app *::after{
+*,
+*::before,
+*::after{
 
-    box-sizing:inherit;
+    box-sizing:border-box;
 
     margin:0;
 
@@ -22,7 +20,7 @@
 
 }
 
-#oiid-app{
+body{
 
     font-family:var(--nx-font-family);
 
@@ -40,11 +38,11 @@
 
 }
 
-#oiid-app img,
-#oiid-app picture,
-#oiid-app video,
-#oiid-app canvas,
-#oiid-app svg{
+img,
+picture,
+video,
+canvas,
+svg{
 
     display:block;
 
@@ -54,7 +52,7 @@
 
 }
 
-#oiid-app a{
+a{
 
     color:inherit;
 
@@ -62,54 +60,43 @@
 
 }
 
-#oiid-app ul,
-#oiid-app ol{
+ul,
+ol{
 
     list-style:none;
 
 }
 
-#oiid-app button,
-#oiid-app input,
-#oiid-app textarea,
-#oiid-app select{
+button,
+input,
+textarea,
+select{
 
     font:inherit;
 
     color:inherit;
 
-    background:none;
-
-
 }
 
-#oiid-app button{
-
-    background:none;
-
-    border:none;
+button{
 
     cursor:pointer;
 
 }
 
-/*=========================================================
-03 Base
-=========================================================*/
-
-#oiid-app #nx-app{
+#nx-app{
 
     min-height:100vh;
 
 }
 
-#oiid-app section{
+section{
 
     position:relative;
 
 }
 
-#oiid-app ::selection{
+::selection{
 
     background:var(--nx-primary);
 
@@ -117,8 +104,8 @@
 
 }
 
-#oiid-app a:focus-visible,
-#oiid-app button:focus-visible{
+a:focus-visible,
+button:focus-visible{
 
     outline:2px solid var(--nx-primary);
 

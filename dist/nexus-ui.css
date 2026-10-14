@@ -66,34 +66,24 @@ Load Order
     --nx-red:#EF4444;
 
     /*=====================================================
-STATUS
-=====================================================*/
+    STATUS
+    =====================================================*/
 
---nx-success:var(--nx-green);
+    --nx-success:var(--nx-green);
+    --nx-warning:var(--nx-orange);
+    --nx-danger:var(--nx-red);
+    --nx-info:var(--nx-cyan);
 
---nx-warning:var(--nx-orange);
+    /*=====================================================
+    CHARTS
+    =====================================================*/
 
---nx-danger:var(--nx-red);
-
---nx-info:var(--nx-cyan);
-
-
-/*=====================================================
-CHARTS
-=====================================================*/
-
---nx-chart-1:var(--nx-primary);
-
---nx-chart-2:var(--nx-cyan);
-
---nx-chart-3:var(--nx-green);
-
---nx-chart-4:var(--nx-purple);
-
---nx-chart-5:var(--nx-orange);
-
---nx-chart-6:var(--nx-red);
-
+    --nx-chart-1:var(--nx-primary);
+    --nx-chart-2:var(--nx-cyan);
+    --nx-chart-3:var(--nx-green);
+    --nx-chart-4:var(--nx-purple);
+    --nx-chart-5:var(--nx-orange);
+    --nx-chart-6:var(--nx-red);
 
     /*=====================================================
     TEXT
@@ -104,6 +94,20 @@ CHARTS
     --nx-text:#CBD5E1;
     --nx-text-muted:#94A3B8;
     --nx-text-soft:#64748B;
+
+    /*=====================================================
+    ALIASES
+    =====================================================*/
+
+    --nx-text-primary:var(--nx-white);
+    --nx-text-secondary:var(--nx-text);
+    --nx-text-tertiary:var(--nx-text-muted);
+
+    --nx-accent-green:var(--nx-green);
+    --nx-accent-cyan:var(--nx-cyan);
+    --nx-accent-purple:var(--nx-purple);
+    --nx-accent-orange:var(--nx-orange);
+    --nx-accent-red:var(--nx-red);
 
     /*=====================================================
     BORDERS
@@ -141,9 +145,7 @@ CHARTS
     =====================================================*/
 
     --nx-glass-bg:rgba(15,23,42,.72);
-
     --nx-glass-border:rgba(255,255,255,.08);
-
     --nx-glass-blur:blur(18px);
 
     /*=====================================================
@@ -170,20 +172,6 @@ CHARTS
             #0B1220,
             #020617
         );
-
-    /*=====================================================
-    ALIASES
-    =====================================================*/
-
-    --nx-text-primary:var(--nx-white);
-    --nx-text-secondary:var(--nx-text);
-    --nx-text-tertiary:var(--nx-text-muted);
-
-    --nx-accent-green:var(--nx-green);
-    --nx-accent-cyan:var(--nx-cyan);
-    --nx-accent-purple:var(--nx-purple);
-    --nx-accent-orange:var(--nx-orange);
-    --nx-accent-red:var(--nx-red);
 
     /*=====================================================
     TYPOGRAPHY
@@ -224,53 +212,34 @@ CHARTS
     =====================================================*/
 
     --nx-shadow-xs:0 4px 8px rgba(0,0,0,.10);
-
     --nx-shadow-sm:0 8px 16px rgba(0,0,0,.16);
-
     --nx-shadow-md:0 16px 32px rgba(0,0,0,.24);
-
     --nx-shadow-lg:0 32px 64px rgba(0,0,0,.36);
-
     --nx-shadow-xl:0 48px 96px rgba(0,0,0,.48);
 
+    /*=====================================================
+    ELEVATION
+    =====================================================*/
 
-
+    --nx-elevation-1:var(--nx-shadow-xs);
+    --nx-elevation-2:var(--nx-shadow-sm);
+    --nx-elevation-3:var(--nx-shadow-md);
+    --nx-elevation-4:var(--nx-shadow-lg);
 
     /*=====================================================
-ELEVATION
-=====================================================*/
+    OPACITY
+    =====================================================*/
 
---nx-elevation-1:
-    var(--nx-shadow-xs);
-
---nx-elevation-2:
-    var(--nx-shadow-sm);
-
---nx-elevation-3:
-    var(--nx-shadow-md);
-
---nx-elevation-4:
-    var(--nx-shadow-lg);
-
+    --nx-opacity-disabled:.45;
+    --nx-opacity-muted:.65;
+    --nx-opacity-hover:.85;
 
     /*=====================================================
-OPACITY
-=====================================================*/
+    FOCUS
+    =====================================================*/
 
---nx-opacity-disabled:.45;
-
---nx-opacity-muted:.65;
-
---nx-opacity-hover:.85;
-
-/*=====================================================
-FOCUS
-=====================================================*/
-
---nx-focus-ring:
-0 0 0 3px rgba(37,99,235,.35);
-
-
+    --nx-focus-ring:
+        0 0 0 3px rgba(37,99,235,.35);
 
     /*=====================================================
     MOTION
@@ -292,126 +261,199 @@ FOCUS
         var(--nx-duration-normal)
         var(--nx-easing);
 
-   /*=====================================================
-LAYOUT
-=====================================================*/
+    /*=====================================================
+    LAYOUT
+    =====================================================*/
 
---nx-container:1440px;
+    --nx-container:1440px;
 
---nx-container-padding:1.5rem;
+    --nx-container-padding:1.5rem;
+    --nx-container-padding-tablet:1rem;
+    --nx-container-padding-mobile:.75rem;
 
---nx-container-padding-tablet:1rem;
+    --nx-header-height:88px;
 
---nx-container-padding-mobile:.75rem;
+    /*=====================================================
+    GRID
+    =====================================================*/
 
---nx-header-height:88px;
+    --nx-grid-min:320px;
 
---nx-navbar-padding:2rem;
+    /*=====================================================
+    DASHBOARD
+    =====================================================*/
 
---nx-grid-min:320px;
+    --nx-kpi-min:220px;
 
---nx-kpi-min:220px;
+    --nx-chart-card-min-height:420px;
+    --nx-chart-body-min-height:280px;
+    --nx-chart-loading-height:220px;
 
---nx-chart-card-min-height:420px;
-
---nx-chart-body-min-height:280px;
-
---nx-chart-loading-height:220px;
-
---nx-hero-dashboard-width:520px;
-
-
-
-   
+    /* (Mantener aquí solo mientras exista el Hero Dashboard) */
+    --nx-hero-dashboard-width:520px;
 
     /*=====================================================
     SECTIONS
     =====================================================*/
 
     --nx-section-padding:var(--nx-space-2xl);
-
     --nx-section-padding-mobile:5rem;
 
+    /*=====================================================
+    BUTTONS
+    =====================================================*/
+
+    --nx-button-min-width:170px;
+
+    --nx-button-height:56px;
+
+    --nx-button-padding-x:var(--nx-space-md);
+
+    --nx-button-gap:.75rem;
+
+    --nx-button-icon-size:18px;
+    --nx-button-icon-only-size:56px;
+
+    --nx-button-sm-height:44px;
+    --nx-button-lg-height:64px;
+
+    --nx-button-sm-width:110px;
+    --nx-button-lg-width:190px;
 
     /*=====================================================
-BUTTONS
+ICONS
 =====================================================*/
 
---nx-button-min-width:170px;
+--nx-icon-xs:16px;
 
---nx-button-height:56px;
+--nx-icon-sm:20px;
 
---nx-button-padding-x:2rem;
+--nx-icon-md:24px;
 
---nx-button-gap:.75rem;
+--nx-icon-lg:32px;
 
---nx-button-icon-size:18px;
-
---nx-button-icon-only-size:56px;
-
---nx-button-sm-height:44px;
-
---nx-button-lg-height:64px;
-
---nx-button-sm-width:110px;
-
---nx-button-lg-width:190px;
+--nx-icon-xl:40px;
 
     /*=====================================================
-    COMPONENTS
+    FORMS
+    =====================================================*/
+
+    --nx-input-height:46px;
+
+    /*=====================================================
+    NAVBAR
+    =====================================================*/
+
+    --nx-navbar-padding:var(--nx-space-md);
+
+    /*=====================================================
+    SEARCH
     =====================================================*/
 
     --nx-search-width:250px;
 
-    --nx-input-height:46px;
+    /*=====================================================
+    ICON BUTTON
+    =====================================================*/
 
     --nx-icon-button-size:46px;
+
+    /*=====================================================
+    MODAL
+    =====================================================*/
+
+    --nx-modal-width:600px;
+
+    --nx-modal-padding:var(--nx-space-md);
+
+    --nx-modal-footer-gap:var(--nx-space-sm);
+
+    --nx-modal-footer-margin-top:var(--nx-space-md);
+
+    --nx-modal-radius:var(--nx-radius-lg);
+
+    --nx-modal-shadow:var(--nx-shadow-xl);
+
+    --nx-modal-overlay:rgba(0,0,0,.55);
+
+    --nx-modal-backdrop:blur(6px);
 
     /*=====================================================
     Z INDEX
     =====================================================*/
 
-   --nx-z-navbar:100;
-
-   --nx-z-dropdown:200;
-
-   --nx-z-tooltip:300;
-
-   --nx-z-modal:500;
-
-   --nx-z-toast:1000;
+    --nx-z-navbar:100;
+    --nx-z-dropdown:200;
+    --nx-z-tooltip:300;
+    --nx-z-modal:500;
+    --nx-z-toast:1000;
 
 }
 
 /*=========================================================
-Dark Theme
+NEXUS DARK THEME
 =========================================================*/
 
-/* Theme under development */
+:root[data-nx-theme="dark"]{
+
+    /*=====================================================
+    BACKGROUND
+    =====================================================*/
+
+    --nx-bg:#020617;
+
+    /*=====================================================
+    SURFACES
+    =====================================================*/
+
+    --nx-surface:#0F172A;
+    --nx-surface-light:#162033;
+    --nx-surface-hover:#1B2940;
+    --nx-surface-elevated:#1E293B;
+
+    /*=====================================================
+    TEXT
+    =====================================================*/
+
+    --nx-white:#FFFFFF;
+
+    --nx-text:#CBD5E1;
+    --nx-text-muted:#94A3B8;
+    --nx-text-soft:#64748B;
+
+    /*=====================================================
+    BORDERS
+    =====================================================*/
+
+    --nx-border:rgba(255,255,255,.08);
+    --nx-border-soft:rgba(255,255,255,.05);
+    --nx-border-strong:rgba(255,255,255,.16);
+
+}
 
 /*=========================================================
-Light Theme
+NEXUS LIGHT THEME
 =========================================================*/
 
-/* Theme under development */
+:root[data-nx-theme="light"]{
+
+}
 
 /*=========================================================
-02 Reset
+01 Reset
 =========================================================*/
 
-#oiid-app{
-
-    box-sizing:border-box;
+html{
 
     scroll-behavior:smooth;
 
 }
 
-#oiid-app *,
-#oiid-app *::before,
-#oiid-app *::after{
+*,
+*::before,
+*::after{
 
-    box-sizing:inherit;
+    box-sizing:border-box;
 
     margin:0;
 
@@ -419,7 +461,7 @@ Light Theme
 
 }
 
-#oiid-app{
+body{
 
     font-family:var(--nx-font-family);
 
@@ -437,11 +479,11 @@ Light Theme
 
 }
 
-#oiid-app img,
-#oiid-app picture,
-#oiid-app video,
-#oiid-app canvas,
-#oiid-app svg{
+img,
+picture,
+video,
+canvas,
+svg{
 
     display:block;
 
@@ -451,7 +493,7 @@ Light Theme
 
 }
 
-#oiid-app a{
+a{
 
     color:inherit;
 
@@ -459,54 +501,43 @@ Light Theme
 
 }
 
-#oiid-app ul,
-#oiid-app ol{
+ul,
+ol{
 
     list-style:none;
 
 }
 
-#oiid-app button,
-#oiid-app input,
-#oiid-app textarea,
-#oiid-app select{
+button,
+input,
+textarea,
+select{
 
     font:inherit;
 
     color:inherit;
 
-    background:none;
-
-
 }
 
-#oiid-app button{
-
-    background:none;
-
-    border:none;
+button{
 
     cursor:pointer;
 
 }
 
-/*=========================================================
-03 Base
-=========================================================*/
-
-#oiid-app #nx-app{
+#nx-app{
 
     min-height:100vh;
 
 }
 
-#oiid-app section{
+section{
 
     position:relative;
 
 }
 
-#oiid-app ::-moz-selection{
+::-moz-selection{
 
     background:var(--nx-primary);
 
@@ -514,7 +545,7 @@ Light Theme
 
 }
 
-#oiid-app ::selection{
+::selection{
 
     background:var(--nx-primary);
 
@@ -522,8 +553,8 @@ Light Theme
 
 }
 
-#oiid-app a:focus-visible,
-#oiid-app button:focus-visible{
+a:focus-visible,
+button:focus-visible{
 
     outline:2px solid var(--nx-primary);
 
@@ -1451,6 +1482,23 @@ Mobile Button Active
 /*=========================================================
 Base
 =========================================================*/
+/*
+=========================================================
+IMPORTANTE
+
+La clase .nx-button sólo define estructura.
+
+Siempre debe combinarse con una variante:
+
+.nx-button-primary
+.nx-button-outline
+.nx-button-glass
+.nx-button-ghost
+.nx-button-success
+.nx-button-danger
+=========================================================
+*/
+
 
 .nx-button{
 
@@ -1773,6 +1821,91 @@ Disabled
     filter:none;
 
     box-shadow:none;
+
+}
+
+/*=========================================================
+Button Icons
+=========================================================*/
+
+.nx-button__icon{
+
+    width:var(--nx-button-icon-size);
+
+    height:var(--nx-button-icon-size);
+
+    flex-shrink:0;
+
+    stroke:currentColor;
+
+}
+
+/*
+==================================================
+Theme Toggle
+==================================================
+*/
+
+.nx-theme-toggle{
+
+    width:60px;
+    height:32px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
+    padding:4px;
+
+    background:var(--nx-surface-light);
+
+    border:1px solid var(--nx-border);
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:
+        background .25s ease,
+        border-color .25s ease;
+
+}
+
+.nx-theme-toggle:hover{
+
+    background:var(--nx-surface-hover);
+
+}
+
+.nx-theme-toggle__thumb{
+
+    width:24px;
+    height:24px;
+
+    border-radius:50%;
+
+    background:var(--nx-primary);
+
+    flex-shrink:0;
+
+    box-shadow:
+        0 2px 8px rgba(0,0,0,.25);
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
+
+}
+
+html[data-nx-theme="light"] .nx-theme-toggle__thumb{
+
+    transform:translateX(28px);
 
 }
 
@@ -2225,6 +2358,204 @@ Hover
     box-shadow:
         0 18px 45px rgba(0,0,0,.35),
         0 0 0 1px rgba(53,216,255,.08);
+
+}
+
+/*
+==================================================
+Modal
+==================================================
+*/
+
+.nx-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:1000;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transition:opacity .25s ease;
+
+}
+
+.nx-modal.is-open{
+
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
+}
+
+.nx-modal__overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+}
+
+.nx-modal__dialog{
+
+    position:relative;
+
+    width:min(90vw,520px);
+
+    background:var(--nx-surface);
+
+    color:var(--nx-text);
+
+    border:1px solid var(--nx-border);
+
+    border-radius:var(--nx-radius-lg);
+
+    padding:2rem;
+
+    z-index:1;
+
+    box-shadow:var(--nx-shadow-xl);
+
+    transform:scale(.95);
+
+    opacity:0;
+
+    transition:
+        transform .25s ease,
+        opacity .25s ease;
+
+}
+
+.nx-modal.is-open .nx-modal__dialog{
+
+    transform:scale(1);
+
+    opacity:1;
+
+}
+
+
+/*==================================================
+Header
+==================================================*/
+
+.nx-modal__header{
+
+    margin-bottom:1rem;
+
+}
+
+.nx-modal__header h2{
+
+    margin:0;
+
+    font-size:1.5rem;
+
+    font-weight:700;
+
+    color:var(--nx-text);
+
+}
+
+/*==================================================
+Body
+==================================================*/
+
+.nx-modal__body{
+
+    margin-bottom:2rem;
+
+}
+
+.nx-modal__body p{
+
+    margin:0;
+
+    color:var(--nx-text-muted);
+
+    line-height:1.7;
+
+}
+
+/*==================================================
+Footer
+==================================================*/
+
+.nx-modal__footer{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:1rem;
+
+    margin-top:2rem;
+
+}
+
+/*==================================================
+Animation
+==================================================*/
+
+.nx-modal{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:opacity .25s ease;
+
+}
+
+.nx-modal.is-open{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.nx-modal__dialog{
+
+    transform:scale(.96);
+
+    transition:
+        transform .25s ease,
+        opacity .25s ease;
+
+}
+
+.nx-modal.is-open .nx-modal__dialog{
+
+    transform:scale(1);
+
+}
+
+
+/*
+==================================================
+Body Lock
+==================================================
+*/
+
+body.nx-modal-open{
+
+    overflow:hidden;
 
 }
 
@@ -3602,6 +3933,84 @@ Hover
 .nx-table tbody tr:hover{
 
     background:var(--nx-surface-hover);
+
+}
+
+/*=========================================================
+Icons
+=========================================================*/
+
+.nx-icon{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:var(--nx-icon-md);
+
+    height:var(--nx-icon-md);
+
+    flex-shrink:0;
+
+    color:currentColor;
+
+}
+
+.nx-icon-xs{
+
+    width:var(--nx-icon-xs);
+
+    height:var(--nx-icon-xs);
+
+}
+
+.nx-icon-sm{
+
+    width:var(--nx-icon-sm);
+
+    height:var(--nx-icon-sm);
+
+}
+
+.nx-icon-md{
+
+    width:var(--nx-icon-md);
+
+    height:var(--nx-icon-md);
+
+}
+
+.nx-icon-lg{
+
+    width:var(--nx-icon-lg);
+
+    height:var(--nx-icon-lg);
+
+}
+
+.nx-icon-xl{
+
+    width:var(--nx-icon-xl);
+
+    height:var(--nx-icon-xl);
+
+}
+
+/*
+==================================================
+SVG
+==================================================
+*/
+
+.nx-icon-svg{
+
+    width:100%;
+
+    height:100%;
+
+    display:block;
 
 }
 

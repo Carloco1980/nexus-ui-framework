@@ -37,34 +37,24 @@
     --nx-red:#EF4444;
 
     /*=====================================================
-STATUS
-=====================================================*/
+    STATUS
+    =====================================================*/
 
---nx-success:var(--nx-green);
+    --nx-success:var(--nx-green);
+    --nx-warning:var(--nx-orange);
+    --nx-danger:var(--nx-red);
+    --nx-info:var(--nx-cyan);
 
---nx-warning:var(--nx-orange);
+    /*=====================================================
+    CHARTS
+    =====================================================*/
 
---nx-danger:var(--nx-red);
-
---nx-info:var(--nx-cyan);
-
-
-/*=====================================================
-CHARTS
-=====================================================*/
-
---nx-chart-1:var(--nx-primary);
-
---nx-chart-2:var(--nx-cyan);
-
---nx-chart-3:var(--nx-green);
-
---nx-chart-4:var(--nx-purple);
-
---nx-chart-5:var(--nx-orange);
-
---nx-chart-6:var(--nx-red);
-
+    --nx-chart-1:var(--nx-primary);
+    --nx-chart-2:var(--nx-cyan);
+    --nx-chart-3:var(--nx-green);
+    --nx-chart-4:var(--nx-purple);
+    --nx-chart-5:var(--nx-orange);
+    --nx-chart-6:var(--nx-red);
 
     /*=====================================================
     TEXT
@@ -75,6 +65,20 @@ CHARTS
     --nx-text:#CBD5E1;
     --nx-text-muted:#94A3B8;
     --nx-text-soft:#64748B;
+
+    /*=====================================================
+    ALIASES
+    =====================================================*/
+
+    --nx-text-primary:var(--nx-white);
+    --nx-text-secondary:var(--nx-text);
+    --nx-text-tertiary:var(--nx-text-muted);
+
+    --nx-accent-green:var(--nx-green);
+    --nx-accent-cyan:var(--nx-cyan);
+    --nx-accent-purple:var(--nx-purple);
+    --nx-accent-orange:var(--nx-orange);
+    --nx-accent-red:var(--nx-red);
 
     /*=====================================================
     BORDERS
@@ -112,9 +116,7 @@ CHARTS
     =====================================================*/
 
     --nx-glass-bg:rgba(15,23,42,.72);
-
     --nx-glass-border:rgba(255,255,255,.08);
-
     --nx-glass-blur:blur(18px);
 
     /*=====================================================
@@ -141,20 +143,6 @@ CHARTS
             #0B1220,
             #020617
         );
-
-    /*=====================================================
-    ALIASES
-    =====================================================*/
-
-    --nx-text-primary:var(--nx-white);
-    --nx-text-secondary:var(--nx-text);
-    --nx-text-tertiary:var(--nx-text-muted);
-
-    --nx-accent-green:var(--nx-green);
-    --nx-accent-cyan:var(--nx-cyan);
-    --nx-accent-purple:var(--nx-purple);
-    --nx-accent-orange:var(--nx-orange);
-    --nx-accent-red:var(--nx-red);
 
     /*=====================================================
     TYPOGRAPHY
@@ -195,53 +183,34 @@ CHARTS
     =====================================================*/
 
     --nx-shadow-xs:0 4px 8px rgba(0,0,0,.10);
-
     --nx-shadow-sm:0 8px 16px rgba(0,0,0,.16);
-
     --nx-shadow-md:0 16px 32px rgba(0,0,0,.24);
-
     --nx-shadow-lg:0 32px 64px rgba(0,0,0,.36);
-
     --nx-shadow-xl:0 48px 96px rgba(0,0,0,.48);
 
+    /*=====================================================
+    ELEVATION
+    =====================================================*/
 
-
+    --nx-elevation-1:var(--nx-shadow-xs);
+    --nx-elevation-2:var(--nx-shadow-sm);
+    --nx-elevation-3:var(--nx-shadow-md);
+    --nx-elevation-4:var(--nx-shadow-lg);
 
     /*=====================================================
-ELEVATION
-=====================================================*/
+    OPACITY
+    =====================================================*/
 
---nx-elevation-1:
-    var(--nx-shadow-xs);
-
---nx-elevation-2:
-    var(--nx-shadow-sm);
-
---nx-elevation-3:
-    var(--nx-shadow-md);
-
---nx-elevation-4:
-    var(--nx-shadow-lg);
-
+    --nx-opacity-disabled:.45;
+    --nx-opacity-muted:.65;
+    --nx-opacity-hover:.85;
 
     /*=====================================================
-OPACITY
-=====================================================*/
+    FOCUS
+    =====================================================*/
 
---nx-opacity-disabled:.45;
-
---nx-opacity-muted:.65;
-
---nx-opacity-hover:.85;
-
-/*=====================================================
-FOCUS
-=====================================================*/
-
---nx-focus-ring:
-0 0 0 3px rgba(37,99,235,.35);
-
-
+    --nx-focus-ring:
+        0 0 0 3px rgba(37,99,235,.35);
 
     /*=====================================================
     MOTION
@@ -263,96 +232,131 @@ FOCUS
         var(--nx-duration-normal)
         var(--nx-easing);
 
-   /*=====================================================
-LAYOUT
-=====================================================*/
+    /*=====================================================
+    LAYOUT
+    =====================================================*/
 
---nx-container:1440px;
+    --nx-container:1440px;
 
---nx-container-padding:1.5rem;
+    --nx-container-padding:1.5rem;
+    --nx-container-padding-tablet:1rem;
+    --nx-container-padding-mobile:.75rem;
 
---nx-container-padding-tablet:1rem;
+    --nx-header-height:88px;
 
---nx-container-padding-mobile:.75rem;
+    /*=====================================================
+    GRID
+    =====================================================*/
 
---nx-header-height:88px;
+    --nx-grid-min:320px;
 
---nx-navbar-padding:2rem;
+    /*=====================================================
+    DASHBOARD
+    =====================================================*/
 
---nx-grid-min:320px;
+    --nx-kpi-min:220px;
 
---nx-kpi-min:220px;
+    --nx-chart-card-min-height:420px;
+    --nx-chart-body-min-height:280px;
+    --nx-chart-loading-height:220px;
 
---nx-chart-card-min-height:420px;
-
---nx-chart-body-min-height:280px;
-
---nx-chart-loading-height:220px;
-
---nx-hero-dashboard-width:520px;
-
-
-
-   
+    /* (Mantener aquí solo mientras exista el Hero Dashboard) */
+    --nx-hero-dashboard-width:520px;
 
     /*=====================================================
     SECTIONS
     =====================================================*/
 
     --nx-section-padding:var(--nx-space-2xl);
-
     --nx-section-padding-mobile:5rem;
 
+    /*=====================================================
+    BUTTONS
+    =====================================================*/
+
+    --nx-button-min-width:170px;
+
+    --nx-button-height:56px;
+
+    --nx-button-padding-x:var(--nx-space-md);
+
+    --nx-button-gap:.75rem;
+
+    --nx-button-icon-size:18px;
+    --nx-button-icon-only-size:56px;
+
+    --nx-button-sm-height:44px;
+    --nx-button-lg-height:64px;
+
+    --nx-button-sm-width:110px;
+    --nx-button-lg-width:190px;
 
     /*=====================================================
-BUTTONS
+ICONS
 =====================================================*/
 
---nx-button-min-width:170px;
+--nx-icon-xs:16px;
 
---nx-button-height:56px;
+--nx-icon-sm:20px;
 
---nx-button-padding-x:2rem;
+--nx-icon-md:24px;
 
---nx-button-gap:.75rem;
+--nx-icon-lg:32px;
 
---nx-button-icon-size:18px;
-
---nx-button-icon-only-size:56px;
-
---nx-button-sm-height:44px;
-
---nx-button-lg-height:64px;
-
---nx-button-sm-width:110px;
-
---nx-button-lg-width:190px;
+--nx-icon-xl:40px;
 
     /*=====================================================
-    COMPONENTS
+    FORMS
+    =====================================================*/
+
+    --nx-input-height:46px;
+
+    /*=====================================================
+    NAVBAR
+    =====================================================*/
+
+    --nx-navbar-padding:var(--nx-space-md);
+
+    /*=====================================================
+    SEARCH
     =====================================================*/
 
     --nx-search-width:250px;
 
-    --nx-input-height:46px;
+    /*=====================================================
+    ICON BUTTON
+    =====================================================*/
 
     --nx-icon-button-size:46px;
+
+    /*=====================================================
+    MODAL
+    =====================================================*/
+
+    --nx-modal-width:600px;
+
+    --nx-modal-padding:var(--nx-space-md);
+
+    --nx-modal-footer-gap:var(--nx-space-sm);
+
+    --nx-modal-footer-margin-top:var(--nx-space-md);
+
+    --nx-modal-radius:var(--nx-radius-lg);
+
+    --nx-modal-shadow:var(--nx-shadow-xl);
+
+    --nx-modal-overlay:rgba(0,0,0,.55);
+
+    --nx-modal-backdrop:blur(6px);
 
     /*=====================================================
     Z INDEX
     =====================================================*/
 
-   --nx-z-navbar:100;
-
-   --nx-z-dropdown:200;
-
-   --nx-z-tooltip:300;
-
-   --nx-z-modal:500;
-
-   --nx-z-toast:1000;
+    --nx-z-navbar:100;
+    --nx-z-dropdown:200;
+    --nx-z-tooltip:300;
+    --nx-z-modal:500;
+    --nx-z-toast:1000;
 
 }
-
-
-

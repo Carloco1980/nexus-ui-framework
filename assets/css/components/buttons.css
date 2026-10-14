@@ -9,6 +9,23 @@
 /*=========================================================
 Base
 =========================================================*/
+/*
+=========================================================
+IMPORTANTE
+
+La clase .nx-button sólo define estructura.
+
+Siempre debe combinarse con una variante:
+
+.nx-button-primary
+.nx-button-outline
+.nx-button-glass
+.nx-button-ghost
+.nx-button-success
+.nx-button-danger
+=========================================================
+*/
+
 
 .nx-button{
 
@@ -331,5 +348,21 @@ Disabled
     filter:none;
 
     box-shadow:none;
+
+}
+
+/*=========================================================
+Button Icons
+=========================================================*/
+
+.nx-button__icon{
+
+    width:var(--nx-button-icon-size);
+
+    height:var(--nx-button-icon-size);
+
+    flex-shrink:0;
+
+    stroke:currentColor;
 
 }
