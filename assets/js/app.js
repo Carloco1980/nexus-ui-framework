@@ -14,7 +14,9 @@ License : MIT
 Nexus Core
 ==================================================*/
 
-const Nexus = {
+const NX = window.NX = window.NX || {};
+
+Object.assign(NX, {
 
     /*--------------------------------------------------
     Framework Info
@@ -28,19 +30,11 @@ const Nexus = {
 
     init() {
 
-        console.info(
-            `%cNexus UI Framework v${this.version}`,
-            "color:#2563EB;font-weight:bold;"
-        );
-
-        /*----------------------------------------------
-        Core Services
-        ----------------------------------------------*/
-
-        if (window.NX?.theme?.init) {
-
-            window.NX.theme.init();
-
+        if (this.config?.debug?.enabled) {
+            console.info(
+                `%c${this.config.framework.name} v${this.config.framework.version}`,
+                "color:#2563EB;font-weight:bold;"
+            );
         }
 
         /*----------------------------------------------
@@ -74,36 +68,46 @@ const Nexus = {
     initializeModules() {
 
         const modules = [
-            window.NexusThemeToggle,
-            window.NexusNavbar,
-            window.NexusForms,
-            window.NexusFab,
-            window.NexusAnimations,
-            window.NexusModal,
-            window.NexusIcons
-
-
+            this.theme,
+            this.themeToggle,
+            this.navbar,
+            this.forms,
+            this.fab,
+            this.animations,
+            this.modal,
+            this.icons
         ];
 
         modules.forEach((module) => {
-
-            if (module?.init) {
-
-                module.init();
-
+            if (typeof module?.init !== "function") {
+                return;
             }
 
+            try {
+                module.init();
+            } catch (error) {
+                if (this.config?.debug?.enabled) {
+                    const moduleName = Object.keys(this).find(
+                        (key) => this[key] === module
+                    ) || "unknown";
+
+                    console.error(
+                        `[Nexus] Error initializing module "${moduleName}".`,
+                        error
+                    );
+                }
+            }
         });
 
     }
 
-};
+});
 
 /*==================================================
 Expose Core
 ==================================================*/
 
-window.Nexus = Nexus;
+window.Nexus = NX;
 
 /*==================================================
 Bootstrap
@@ -111,6 +115,6 @@ Bootstrap
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    Nexus.init();
+    NX.init();
 
 });

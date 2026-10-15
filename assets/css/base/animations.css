@@ -16,7 +16,7 @@ Floating Animation
 
     50%{
 
-        transform:translateY(-8px);
+        transform:translateY(var(--nx-motion-offset-up-lg));
 
     }
 
@@ -43,7 +43,7 @@ Scroll Indicator
 
     50%{
 
-        transform:translateX(-50%) translateY(10px);
+        transform:translateX(-50%) translateY(var(--nx-size-10));
 
     }
 
@@ -79,7 +79,7 @@ Fade Up
 
         opacity:0;
 
-        transform:translateY(30px);
+        transform:translateY(var(--nx-navbar-indicator-width));
 
     }
 
@@ -133,11 +133,11 @@ Accessibility
     #oiid-app *::before,
     #oiid-app *::after{
 
-        animation-duration:.01ms !important;
+        animation-duration:var(--nx-duration-reduced) !important;
 
         animation-iteration-count:1 !important;
 
-        transition-duration:.01ms !important;
+        transition-duration:var(--nx-duration-reduced) !important;
 
     }
 

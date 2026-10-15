@@ -6,13 +6,29 @@
   "license": "MIT",
   "private": true,
 
+  "homepage": "https://github.com/Carloco1980/nexus-ui-framework",
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Carloco1980/nexus-ui-framework.git"
+  },
+
+  "bugs": {
+    "url": "https://github.com/Carloco1980/nexus-ui-framework/issues"
+  },
+
+  "engines": {
+    "node": ">=24",
+    "npm": ">=11"
+  },
+
   "scripts": {
-  "dev": "npm run watch",
+    "dev": "npm run watch",
 
-  "build": "postcss assets/css/style.css --config config -o dist/nexus-ui.css && postcss assets/css/style-components.css --config config -o dist/nexus-ui-components.css",
+    "build": "postcss assets/css/style.css --config config -o dist/nexus-ui.css && postcss assets/css/style-components.css --config config -o dist/nexus-ui-components.css",
 
-  "watch": "postcss assets/css/style.css --config config -o dist/nexus-ui.css --watch"
-},
+    "watch": "postcss assets/css/style.css --config config -o dist/nexus-ui.css --watch"
+  },
 
   "keywords": [
     "nexus",
@@ -22,7 +38,15 @@
     "landing-page",
     "wordpress",
     "design-system",
-    "css"
+    "component-library",
+    "css-framework",
+    "admin-dashboard"
+  ],
+
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "maintained node versions"
   ],
 
   "devDependencies": {

@@ -6,37 +6,21 @@
 Text Alignment
 ---------------------------------------------------------*/
 
-.nx-text-center{
-
-    text-align:center;
-
-}
-
 .nx-text-left{
 
     text-align:left;
 
 }
 
+.nx-text-center{
+
+    text-align:center;
+
+}
+
 .nx-text-right{
 
     text-align:right;
-
-}
-
-/*---------------------------------------------------------
-Visibility
----------------------------------------------------------*/
-
-.nx-hidden{
-
-    display:none !important;
-
-}
-
-.nx-visible{
-
-    display:block !important;
 
 }
 
@@ -56,9 +40,27 @@ Overflow
 
 }
 
+.nx-overflow-scroll{
+
+    overflow:scroll;
+
+}
+
+.nx-overflow-visible{
+
+    overflow:visible;
+
+}
+
 /*---------------------------------------------------------
 Border Radius
 ---------------------------------------------------------*/
+
+.nx-rounded-none{
+
+    border-radius:var(--nx-radius-none);
+
+}
 
 .nx-rounded-sm{
 
@@ -78,14 +80,120 @@ Border Radius
 
 }
 
+.nx-rounded-xl{
+
+    border-radius:var(--nx-radius-xl);
+
+}
+
 .nx-rounded-pill{
 
     border-radius:var(--nx-radius-pill);
 
 }
 
+.nx-rounded-full{
+
+    border-radius:var(--nx-radius-circle);
+
+}
+
 /*---------------------------------------------------------
-Width / Height Helpers
+Shadow
+---------------------------------------------------------*/
+
+.nx-shadow-sm{
+
+    box-shadow:var(--nx-shadow-sm);
+
+}
+
+.nx-shadow-md{
+
+    box-shadow:var(--nx-shadow-md);
+
+}
+
+.nx-shadow-lg{
+
+    box-shadow:var(--nx-shadow-lg);
+
+}
+
+/*---------------------------------------------------------
+Position
+---------------------------------------------------------*/
+
+.nx-relative{
+
+    position:relative;
+
+}
+
+.nx-absolute{
+
+    position:absolute;
+
+}
+
+.nx-fixed{
+
+    position:fixed;
+
+}
+
+.nx-sticky{
+
+    position:sticky;
+
+}
+
+/*---------------------------------------------------------
+Cursor
+---------------------------------------------------------*/
+
+.nx-cursor-pointer{
+
+    cursor:pointer;
+
+}
+
+.nx-cursor-default{
+
+    cursor:default;
+
+}
+
+.nx-cursor-not-allowed{
+
+    cursor:not-allowed;
+
+}
+
+/*---------------------------------------------------------
+Selection
+---------------------------------------------------------*/
+
+.nx-select-none{
+
+    user-select:none;
+
+}
+
+.nx-select-all{
+
+    user-select:all;
+
+}
+
+.nx-select-text{
+
+    user-select:text;
+
+}
+
+/*---------------------------------------------------------
+Width / Height
 ---------------------------------------------------------*/
 
 .nx-w-full{
@@ -102,6 +210,6 @@ Width / Height Helpers
 
 .nx-min-h-screen{
 
-    min-height:100vh;
+    min-height:var(--nx-viewport-height);
 
 }

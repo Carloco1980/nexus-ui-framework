@@ -54,7 +54,7 @@ Responsive
 
     position:relative;
 
-    min-height:100vh;
+    min-height:var(--nx-viewport-height);
 
 }
 

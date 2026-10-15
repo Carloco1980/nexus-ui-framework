@@ -190,4 +190,6 @@ const NexusForms = {
 
 };
 
+window.NX = window.NX || {};
+window.NX.forms = NexusForms;
 window.NexusForms = NexusForms;

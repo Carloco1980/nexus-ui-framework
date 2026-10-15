@@ -68,7 +68,9 @@ const NexusFab = {
 
         this.button.addEventListener("click", () => {
 
-            console.info("Nexus FAB");
+            if (window.NX.config?.debug?.enabled) {
+                console.info("Nexus FAB");
+            }
 
         });
 
@@ -76,4 +78,6 @@ const NexusFab = {
 
 };
 
+window.NX = window.NX || {};
+window.NX.fab = NexusFab;
 window.NexusFab = NexusFab;

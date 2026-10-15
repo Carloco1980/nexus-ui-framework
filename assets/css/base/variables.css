@@ -65,6 +65,7 @@
     --nx-text:#CBD5E1;
     --nx-text-muted:#94A3B8;
     --nx-text-soft:#64748B;
+    --nx-heading:var(--nx-white);
 
     /*=====================================================
     ALIASES
@@ -119,49 +120,104 @@
     --nx-glass-border:rgba(255,255,255,.08);
     --nx-glass-blur:blur(18px);
 
+   /*=====================================================
+GRADIENTS
+=====================================================*/
+
+--nx-gradient-primary:
+linear-gradient(
+    135deg,
+    var(--nx-green),
+    var(--nx-cyan)
+);
+
+--nx-gradient-secondary:
+linear-gradient(
+    135deg,
+    var(--nx-purple),
+    var(--nx-cyan)
+);
+
+--nx-gradient-dark:
+linear-gradient(
+    180deg,
+    #0B1220,
+    #020617
+);
+
+--nx-gradient-success:
+linear-gradient(
+    135deg,
+    #76E07F,
+    #58C965
+);
+
+--nx-gradient-danger:
+linear-gradient(
+    135deg,
+    #EF6760,
+    #D64039
+);
     /*=====================================================
-    GRADIENTS
-    =====================================================*/
+TYPOGRAPHY
+=====================================================*/
 
-    --nx-gradient-primary:
-        linear-gradient(
-            135deg,
-            var(--nx-green),
-            var(--nx-cyan)
-        );
+--nx-font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
 
-    --nx-gradient-secondary:
-        linear-gradient(
-            135deg,
-            var(--nx-purple),
-            var(--nx-cyan)
-        );
+/* Font Sizes */
 
-    --nx-gradient-dark:
-        linear-gradient(
-            180deg,
-            #0B1220,
-            #020617
-        );
+--nx-font-size-xs:.75rem;
+--nx-font-size-sm:.875rem;
+--nx-font-size-md:1rem;
+--nx-font-size-lg:1.125rem;
+--nx-font-size-xl:1.25rem;
 
-    /*=====================================================
-    TYPOGRAPHY
-    =====================================================*/
+/* Extra Font Sizes */
 
-    --nx-font-family:
-        "Inter",
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
+--nx-font-size-2xl:1.5rem;
+
+--nx-font-size-3xl:2rem;
+
+--nx-font-size-4xl:3rem;
+
+--nx-font-size-5xl:4rem;
+
+--nx-font-size-6xl:5rem;
+
+/* Extra Font Weight */
+
+--nx-font-weight-extrabold:800;
+
+/* Font Weights */
+
+--nx-font-weight-regular:400;
+--nx-font-weight-medium:500;
+--nx-font-weight-semibold:600;
+--nx-font-weight-bold:700;
+
+
+
+/* Letter Spacing */
+
+--nx-letter-spacing-sm:.01em;
+--nx-letter-spacing-md:.02em;
+--nx-letter-spacing-lg:.03em;
 
     /*=====================================================
     SPACING
     =====================================================*/
 
     --nx-space-xs:.5rem;
+    --nx-space-2xs:.25rem;
     --nx-space-sm:1rem;
+    --nx-space-sm-plus:1.25rem;
+    --nx-space-md-minus:1.5rem;
     --nx-space-md:2rem;
     --nx-space-lg:4rem;
     --nx-space-xl:6rem;
@@ -177,6 +233,8 @@
     --nx-radius-lg:32px;
     --nx-radius-xl:40px;
     --nx-radius-pill:999px;
+    --nx-radius-circle:50%;
+    --nx-radius-none:0;
 
     /*=====================================================
     SHADOWS
@@ -249,6 +307,7 @@
     =====================================================*/
 
     --nx-grid-min:320px;
+    
 
     /*=====================================================
     DASHBOARD
@@ -270,28 +329,8 @@
     --nx-section-padding:var(--nx-space-2xl);
     --nx-section-padding-mobile:5rem;
 
-    /*=====================================================
-    BUTTONS
-    =====================================================*/
 
-    --nx-button-min-width:170px;
-
-    --nx-button-height:56px;
-
-    --nx-button-padding-x:var(--nx-space-md);
-
-    --nx-button-gap:.75rem;
-
-    --nx-button-icon-size:18px;
-    --nx-button-icon-only-size:56px;
-
-    --nx-button-sm-height:44px;
-    --nx-button-lg-height:64px;
-
-    --nx-button-sm-width:110px;
-    --nx-button-lg-width:190px;
-
-    /*=====================================================
+/*=====================================================
 ICONS
 =====================================================*/
 
@@ -305,29 +344,336 @@ ICONS
 
 --nx-icon-xl:40px;
 
+
+ /*=====================================================
+BUTTONS
+=====================================================*/
+
+--nx-button-min-width:170px;
+
+--nx-button-height:56px;
+
+--nx-button-padding-x:var(--nx-space-md);
+
+--nx-button-gap:.75rem;
+
+--nx-button-icon-size:18px;
+
+--nx-button-icon-only-size:56px;
+
+--nx-button-sm-height:44px;
+
+--nx-button-lg-height:64px;
+
+--nx-button-sm-width:110px;
+
+--nx-button-lg-width:190px;
+
+--nx-button-sm-padding-x:1.4rem;
+
+--nx-button-lg-padding-x:2.5rem;
+
+--nx-button-hover-offset:-2px;
+
+--nx-button-active-offset:1px;
+
+--nx-button-glass-bg:rgba(255,255,255,.05);
+
+--nx-button-primary-border:rgba(255,255,255,.12);
+
+--nx-button-outline-border:rgba(96,145,255,.45);
+
+--nx-button-success-border:rgba(255,255,255,.10);
+
+--nx-button-danger-border:rgba(255,255,255,.10);
+
+--nx-button-glow:
+linear-gradient(
+    180deg,
+    rgba(255,255,255,.18),
+    transparent 60%
+);
+
+   
+
+
+
+    
     /*=====================================================
-    FORMS
-    =====================================================*/
+FORMS
+=====================================================*/
 
-    --nx-input-height:46px;
+--nx-input-height:56px;
 
-    /*=====================================================
-    NAVBAR
-    =====================================================*/
+--nx-input-padding-x:1rem;
 
-    --nx-navbar-padding:var(--nx-space-md);
+--nx-input-padding-y:.9rem;
 
-    /*=====================================================
-    SEARCH
-    =====================================================*/
+--nx-input-bg:var(--nx-glass-bg);
 
-    --nx-search-width:250px;
+--nx-input-border:var(--nx-border);
 
-    /*=====================================================
-    ICON BUTTON
-    =====================================================*/
+--nx-input-hover-border:rgba(53,216,255,.30);
 
-    --nx-icon-button-size:46px;
+--nx-textarea-min-height:140px;
+
+--nx-disabled-opacity:.6;
+
+    
+
+/*=====================================================
+NAVBAR
+=====================================================*/
+
+--nx-navbar-height:82px;
+
+--nx-navbar-padding-y:1rem;
+--nx-navbar-padding-x:2rem;
+
+--nx-navbar-gap:2rem;
+
+--nx-navbar-radius:999px;
+
+--nx-navbar-bg:rgba(15,23,42,.82);
+
+--nx-navbar-blur:blur(18px);
+
+--nx-navbar-border:var(--nx-border);
+
+--nx-navbar-shadow:var(--nx-shadow-sm);
+
+/*=====================================================
+NAVBAR LOGO
+=====================================================*/
+
+--nx-navbar-logo-size:56px;
+
+--nx-navbar-logo-radius:16px;
+
+--nx-navbar-logo-bg:
+linear-gradient(
+135deg,
+var(--nx-cyan),
+var(--nx-green)
+);
+
+--nx-navbar-logo-color:var(--nx-white);
+
+/*=====================================================
+NAVBAR LINKS
+=====================================================*/
+
+--nx-navbar-link-color:var(--nx-text);
+
+--nx-navbar-link-hover:var(--nx-text-primary);
+
+--nx-navbar-link-active:var(--nx-text-primary);
+
+--nx-navbar-indicator-width:30px;
+
+--nx-navbar-indicator-height:4px;
+
+--nx-navbar-indicator-color:var(--nx-green);
+
+/*=====================================================
+NAVBAR SEARCH
+=====================================================*/
+
+--nx-navbar-search-width:240px;
+
+--nx-navbar-search-height:48px;
+
+--nx-navbar-search-bg:var(--nx-glass-bg);
+
+--nx-navbar-search-border:var(--nx-border);
+
+--nx-navbar-search-color:var(--nx-text);
+
+--nx-navbar-search-placeholder:var(--nx-text-soft);
+
+--nx-navbar-search-focus-border:var(--nx-primary);
+
+--nx-navbar-search-focus-shadow:var(--nx-glow-blue);
+
+/*=====================================================
+NAVBAR BUTTON
+=====================================================*/
+
+--nx-navbar-button-size:48px;
+
+--nx-navbar-button-bg:var(--nx-glass-bg);
+
+--nx-navbar-button-border:var(--nx-border);
+
+--nx-navbar-button-color:var(--nx-text-primary);
+
+--nx-navbar-button-hover-bg:var(--nx-surface-hover);
+
+--nx-navbar-button-hover-border:var(--nx-primary);
+
+--nx-navbar-button-hover-shadow:var(--nx-glow-blue);
+
+/*=====================================================
+NAVBAR MOBILE
+=====================================================*/
+
+--nx-navbar-mobile-button-size:46px;
+
+--nx-navbar-mobile-line-width:22px;
+
+--nx-navbar-mobile-line-height:2px;
+
+--nx-navbar-mobile-line-gap:5px;
+
+
+/*=====================================================
+ADDITIONAL SEMANTIC DESIGN TOKENS
+=====================================================*/
+
+--nx-border-width:1px;
+--nx-focus-outline-width:2px;
+--nx-focus-outline-offset:3px;
+--nx-focus-outline-offset-sm:2px;
+--nx-focus-outline-offset-lg:4px;
+
+--nx-primary-soft-bg:rgba(37,99,235,.12);
+--nx-primary-soft-border:rgba(37,99,235,.25);
+--nx-primary-soft-hover:rgba(37,99,235,.08);
+--nx-primary-soft-strong:rgba(37,99,235,.18);
+--nx-primary-soft-subtle:rgba(37,99,235,.05);
+--nx-primary-glow:rgba(37,99,235,.35);
+--nx-success-soft-bg:rgba(50,230,122,.15);
+--nx-success-soft-border:rgba(50,230,122,.25);
+--nx-info-soft-bg:rgba(53,216,255,.12);
+--nx-info-soft-border:rgba(53,216,255,.25);
+--nx-purple-soft-bg:rgba(139,92,246,.15);
+--nx-purple-soft-border:rgba(139,92,246,.25);
+--nx-hero-overlay-bg:rgba(2,6,23,.72);
+--nx-opacity-video:.30;
+--nx-shadow-toggle-thumb:0 2px 8px rgba(0,0,0,.25);
+--nx-glow-current:0 0 10px currentColor;
+--nx-preview-white-01:rgba(255,255,255,.01);
+--nx-preview-white-03:rgba(255,255,255,.03);
+--nx-preview-white-04:rgba(255,255,255,.04);
+--nx-preview-white-05:rgba(255,255,255,.05);
+--nx-preview-white-08:rgba(255,255,255,.08);
+--nx-preview-white-10:rgba(255,255,255,.10);
+
+--nx-space-compact:.35rem;
+--nx-space-badge:.45rem;
+--nx-space-tight:.65rem;
+--nx-space-button:.8rem;
+--nx-space-action:1.3rem;
+--nx-space-display:3rem;
+--nx-space-menu-link-y:.85rem;
+
+--nx-size-5:5px;
+--nx-size-8:8px;
+--nx-size-7:7px;
+--nx-size-10:10px;
+--nx-size-12:12px;
+--nx-size-14:14px;
+--nx-size-15:15px;
+--nx-size-18:18px;
+--nx-size-22:22px;
+--nx-size-28:28px;
+--nx-size-7-negative:-7px;
+--nx-size-30:30px;
+--nx-size-35:35px;
+--nx-size-60:60px;
+--nx-size-65:65px;
+--nx-size-70:70px;
+--nx-size-72:72px;
+--nx-size-80:80px;
+--nx-size-100:100px;
+--nx-size-120:120px;
+--nx-size-140:140px;
+--nx-size-160:160px;
+--nx-size-180:180px;
+--nx-size-190:190px;
+--nx-size-260:260px;
+--nx-size-300:300px;
+--nx-size-560:560px;
+--nx-size-650:650px;
+--nx-size-680:680px;
+--nx-size-700:700px;
+--nx-size-760:760px;
+--nx-size-840:840px;
+
+--nx-font-size-2xs:.625rem;
+--nx-font-size-compact:.82rem;
+--nx-font-size-dense:.85rem;
+--nx-font-size-small-plus:.9rem;
+--nx-font-size-small-emphasis:.92rem;
+--nx-font-size-medium-minus:.95rem;
+--nx-font-size-medium-plus:1.05rem;
+--nx-font-size-large-minus:1.15rem;
+--nx-font-size-large-plus:1.35rem;
+--nx-font-size-display-sm:2.2rem;
+--nx-font-size-display-md:2.5rem;
+--nx-font-size-display-lg:2.9rem;
+--nx-font-size-display-xl:3.4rem;
+
+--nx-duration-ui:.25s;
+--nx-duration-loading:1.5s;
+--nx-duration-float:2s;
+--nx-duration-reduced:.01ms;
+--nx-easing-linear:linear;
+--nx-easing-in-out:ease-in-out;
+--nx-letter-spacing-tight:-.05em;
+--nx-letter-spacing-wide:.05em;
+--nx-letter-spacing-heading:-.5px;
+--nx-line-height-tight:1;
+--nx-line-height-display:.95;
+--nx-line-height-logo:1.05;
+--nx-line-height-heading:1.15;
+--nx-line-height-title:1.2;
+--nx-line-height-heading-alt:1.3;
+--nx-line-height-medium:1.4;
+--nx-line-height-copy:1.6;
+--nx-line-height-relaxed:1.7;
+--nx-line-height-loose:1.8;
+--nx-fluid-scale-sm:4vw;
+--nx-fluid-scale-md:5vw;
+--nx-fluid-scale-lg:6vw;
+--nx-fluid-scale-xl:8vw;
+--nx-motion-offset-xs:2px;
+--nx-motion-offset-sm:3px;
+--nx-motion-offset-md:4px;
+--nx-motion-offset-lg:8px;
+--nx-motion-offset-xl:10px;
+--nx-motion-offset-up-xs:-2px;
+--nx-motion-offset-up-sm:-3px;
+--nx-motion-offset-up-md:-4px;
+--nx-motion-offset-up-lg:-8px;
+--nx-motion-offset-up-xl:-10px;
+--nx-modal-viewport-width:90vw;
+--nx-viewport-height:100vh;
+--nx-angle-45:45deg;
+--nx-angle-neg-45:-45deg;
+--nx-angle-90:90deg;
+--nx-angle-135:135deg;
+--nx-angle-180:180deg;
+
+/*=====================================================
+ICON BUTTON
+=====================================================*/
+
+--nx-icon-button-size:46px;
+
+--nx-icon-button-radius:50%;
+
+--nx-icon-button-bg:var(--nx-glass-bg);
+
+--nx-icon-button-border:var(--nx-border);
+
+--nx-icon-button-color:var(--nx-text);
+
+--nx-icon-button-hover-bg:var(--nx-surface-hover);
+
+--nx-icon-button-hover-border:var(--nx-primary);
+
+--nx-icon-button-hover-shadow:var(--nx-glow-blue);
 
     /*=====================================================
     MODAL
@@ -359,4 +705,27 @@ ICONS
     --nx-z-modal:500;
     --nx-z-toast:1000;
 
+
+/*=====================================================
+CARDS
+=====================================================*/
+
+--nx-card-padding:1.5rem;
+
+--nx-card-hover-offset:-6px;
+
+--nx-card-active-offset:-2px;
+
+--nx-card-hover-border:rgba(53,216,255,.20);
+
+--nx-card-shadow-hover:
+0 18px 45px rgba(0,0,0,.35),
+0 0 0 1px rgba(53,216,255,.08);
+
+
+
+
+
+
 }
+

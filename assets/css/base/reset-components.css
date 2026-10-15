@@ -48,9 +48,9 @@ Focus accesible para componentes Nexus
 .nx-select:focus-visible,
 .nx-textarea:focus-visible{
 
-    outline:2px solid var(--nx-primary);
+    outline:var(--nx-focus-outline-width) solid var(--nx-primary);
 
-    outline-offset:3px;
+    outline-offset:var(--nx-focus-outline-offset);
 
 }
 

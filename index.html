@@ -54,136 +54,41 @@ Header
 
 
 <header class="nx-header">
-
     <div class="nx-container">
-
-        <nav class="nx-navbar">
-
-            <!--=========================================
-            Brand
-            ==========================================-->
-
-            <a href="index.html"
-               class="nx-navbar-brand">
-
-                <span class="nx-logo"></span>
-
-                <span class="nx-brand-text">
-
-                    Nexus UI Framework
-
+        <nav class="nx-navbar" aria-label="Navegación principal">
+            <a href="/" class="nx-navbar-brand" aria-label="Nexus UI Framework">
+                <span class="nx-logo-mark" aria-hidden="true">N</span>
+                <span class="nx-logo-content">
+                    <span class="nx-logo-title">NEXUS</span>
+                    <span class="nx-logo-subtitle">UI Framework</span>
                 </span>
-
             </a>
 
-            <!--=========================================
-            Navigation
-            ==========================================-->
-
-            <ul
-                id="nx-navbar-menu"
-                class="nx-navbar-menu">
-
-                <li>
-
-                    <a href="index.html">
-
-                        Home
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a href="components.html">
-
-                        Components
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a href="dashboard-demo.html">
-
-                        Dashboard
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a href="design-system.html">
-
-                        Design System
-
-                    </a>
-
-                </li>
-
+            <ul id="nx-navbar-menu" class="nx-navbar-menu">
+                <li><a href="#hero" class="active" aria-current="page">Inicio</a></li>
+                <li><a href="#components">Componentes</a></li>
+                <li><a href="#templates">Templates</a></li>
+                <li><a href="#documentation">Documentación</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
             </ul>
 
-            <!--=========================================
-            Actions
-            ==========================================-->
-
             <div class="nx-navbar-actions">
-
-                <span class="nx-badge">
-
-                    v1.0
-
-                </span>
-
-                <a href="#"
-                   class="nx-button
-                          nx-button-outline
-                          nx-button-sm">
-
-                    GitHub
-
-                </a>
-
-                <button
-    class="nx-theme-toggle"
-    aria-label="Cambiar tema"
-    aria-pressed="false">
-
-    <span class="nx-theme-toggle__thumb"></span>
-
-
-
-
-
+                <input class="nx-navbar-search" type="search" placeholder="Buscar componentes..." aria-label="Buscar">
+                <button id="nx-theme-button" class="nx-theme-toggle" type="button" aria-label="Cambiar tema" aria-pressed="false">
+                    <span class="nx-theme-toggle__thumb" aria-hidden="true"></span>
+                </button>
+                <a href="https://github.com/Carloco1980/nexus-ui-framework" target="_blank" rel="noopener" class="nx-button nx-button-outline">GitHub</a>
             </div>
 
-            <!--=========================================
-            Mobile Menu Button
-            ==========================================-->
-
-            <button
-                id="nx-mobile-button"
-                class="nx-mobile-button"
-                type="button"
-                aria-label="Open navigation"
-                aria-controls="nx-navbar-menu"
-                aria-expanded="false">
-
+            <button id="nx-mobile-button" class="nx-mobile-button" type="button" aria-controls="nx-navbar-menu" aria-expanded="false" aria-label="Abrir menú">
                 <span></span>
                 <span></span>
                 <span></span>
-                
-
             </button>
-
         </nav>
-
     </div>
-
 </header>
+
 
     <!--=====================================================
     Main
@@ -685,6 +590,13 @@ Features Grid
 
     </div>
 
+
+
+
+
+
+    
+
 </section>
 
        
@@ -780,19 +692,25 @@ Nexus Modal Demo
 
 
 
-<!--=====================================================
-Scripts
-======================================================-->
+<!-- ==================================================
+Nexus UI Framework JS
+================================================== -->
 
+<script src="assets/js/core/config.js"></script>
 
+<script src="assets/js/core/events.js"></script>
 
 <script src="assets/js/core/theme.js"></script>
-<script src="assets/js/core/events.js"></script>
-<script src="assets/js/theme-toggle.js"></script>
-<script src="assets/js/navbar.js"></script>
-<script src="assets/js/icons.js"></script>
+
+<script src="assets/js/components/icons.js"></script>
+
+<script src="assets/js/components/navbar.js"></script>
+
+<script src="assets/js/components/modal.js"></script>
+
+<script src="assets/js/components/theme-toggle.js"></script>
+
 <script src="assets/js/app.js"></script>
-<script src="assets/js/modal.js"></script>
 
 </body>
 </html>

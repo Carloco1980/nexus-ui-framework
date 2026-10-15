@@ -12,7 +12,7 @@ Grid
 
     grid-template-columns:repeat(3,1fr);
 
-    gap:2rem;
+    gap:var(--nx-space-md);
 
 }
 
@@ -24,9 +24,9 @@ Feature Card
 
     position:relative;
 
-    min-height:300px;
+    min-height:var(--nx-size-300);
 
-    padding:2rem;
+    padding:var(--nx-space-md);
 
 }
 
@@ -44,9 +44,9 @@ Feature Icon
 
 .nx-feature-icon{
 
-    width:72px;
+    width:var(--nx-size-72);
 
-    height:72px;
+    height:var(--nx-size-72);
 
     display:flex;
 
@@ -54,15 +54,15 @@ Feature Icon
 
     justify-content:center;
 
-    margin-bottom:1.5rem;
+    margin-bottom:var(--nx-space-md-minus);
 
     border-radius:var(--nx-radius-md);
 
-    background:rgba(37,99,235,.12);
+    background:var(--nx-primary-soft-bg);
 
     color:var(--nx-primary);
 
-    font-size:2rem;
+    font-size:var(--nx-font-size-3xl);
 
     transition:var(--nx-transition);
 
@@ -70,7 +70,7 @@ Feature Icon
 
 .nx-feature-card:hover .nx-feature-icon{
 
-    transform:translateY(-4px);
+    transform:translateY(var(--nx-motion-offset-up-md));
 
     box-shadow:var(--nx-glow-blue);
 
@@ -82,7 +82,7 @@ Feature Title
 
 .nx-feature-card .nx-card-title{
 
-    max-width:260px;
+    max-width:var(--nx-size-260);
 
 }
 
@@ -99,8 +99,8 @@ Hover Effect
     inset:0;
 
     background:linear-gradient(
-        135deg,
-        rgba(37,99,235,.08),
+        var(--nx-angle-135),
+        var(--nx-primary-soft-hover),
         transparent 60%
     );
 

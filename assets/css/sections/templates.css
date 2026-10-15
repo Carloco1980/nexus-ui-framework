@@ -45,18 +45,18 @@ Template Preview
 
     gap:var(--nx-space-sm);
 
-    min-height:240px;
+    min-height:var(--nx-navbar-search-width);
 
     padding:var(--nx-space-md);
 
     background:
         linear-gradient(
-            180deg,
-            rgba(255,255,255,.04),
-            rgba(255,255,255,.01)
+            var(--nx-angle-180),
+            var(--nx-preview-white-04),
+            var(--nx-preview-white-01)
         );
 
-    border-bottom:1px solid var(--nx-border);
+    border-bottom:var(--nx-border-width) solid var(--nx-border);
 
 }
 
@@ -68,11 +68,11 @@ Preview Elements
 
     width:45%;
 
-    height:22px;
+    height:var(--nx-size-22);
 
     border-radius:var(--nx-radius-pill);
 
-    background:rgba(255,255,255,.10);
+    background:var(--nx-preview-white-10);
 
 }
 
@@ -80,11 +80,11 @@ Preview Elements
 
     width:100%;
 
-    height:14px;
+    height:var(--nx-size-14);
 
     border-radius:var(--nx-radius-pill);
 
-    background:rgba(255,255,255,.08);
+    background:var(--nx-preview-white-08);
 
 }
 
@@ -96,13 +96,13 @@ Preview Elements
 
 .nx-preview-avatar{
 
-    width:72px;
+    width:var(--nx-size-72);
 
     aspect-ratio:1;
 
-    border-radius:50%;
+    border-radius:var(--nx-radius-circle);
 
-    background:rgba(37,99,235,.18);
+    background:var(--nx-primary-soft-strong);
 
 }
 
@@ -114,9 +114,9 @@ Preview Elements
 
     background:
         linear-gradient(
-            180deg,
-            rgba(37,99,235,.25),
-            rgba(37,99,235,.05)
+            var(--nx-angle-180),
+            var(--nx-primary-soft-border),
+            var(--nx-primary-soft-subtle)
         );
 
 }
@@ -139,11 +139,11 @@ WordPress Preview
 
 .nx-preview-block{
 
-    height:140px;
+    height:var(--nx-size-140);
 
     border-radius:var(--nx-radius-sm);
 
-    background:rgba(255,255,255,.08);
+    background:var(--nx-preview-white-08);
 
 }
 
@@ -181,6 +181,6 @@ Template Actions
 
     padding-top:var(--nx-space-md);
 
-    border-top:1px solid var(--nx-border);
+    border-top:var(--nx-border-width) solid var(--nx-border);
 
 }

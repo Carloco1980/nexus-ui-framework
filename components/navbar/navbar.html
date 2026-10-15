@@ -1,163 +1,35 @@
-<!--=====================================================
-Nexus UI Framework
-Component: Navbar
-======================================================-->
-
 <header class="nx-header">
-
     <div class="nx-container">
-
-        <nav
-            class="nx-navbar"
-            aria-label="Main Navigation">
-
-            <!--=========================================
-            Brand
-            ==========================================-->
-
-            <a
-                href="/"
-                class="nx-navbar-brand"
-                aria-label="Nexus UI Framework">
-
-                <div class="nx-logo-mark">
-
-                    N
-
-                </div>
-
-                <div class="nx-logo-content">
-
-                    <span class="nx-logo-title">
-
-                        NEXUS
-
-                    </span>
-
-                    <span class="nx-logo-subtitle">
-
-                        UI Framework
-
-                    </span>
-
-                </div>
-
+        <nav class="nx-navbar" aria-label="Navegación principal">
+            <a href="/" class="nx-navbar-brand" aria-label="Nexus UI Framework">
+                <span class="nx-logo-mark" aria-hidden="true">N</span>
+                <span class="nx-logo-content">
+                    <span class="nx-logo-title">NEXUS</span>
+                    <span class="nx-logo-subtitle">UI Framework</span>
+                </span>
             </a>
 
-            <!--=========================================
-            Navigation
-            ==========================================-->
-
-            <ul class="nx-navbar-menu">
-
-                <li>
-
-                    <a
-                        href="#hero"
-                        class="active">
-
-                        Inicio
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a href="#components">
-
-                        Componentes
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a href="#templates">
-
-                        Templates
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a href="#documentation">
-
-                        Documentación
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a href="#roadmap">
-
-                        Roadmap
-
-                    </a>
-
-                </li>
-
+            <ul id="nx-navbar-menu" class="nx-navbar-menu">
+                <li><a href="#hero" class="active" aria-current="page">Inicio</a></li>
+                <li><a href="#components">Componentes</a></li>
+                <li><a href="#templates">Templates</a></li>
+                <li><a href="#documentation">Documentación</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
             </ul>
 
-            <!--=========================================
-            Actions
-            ==========================================-->
-
             <div class="nx-navbar-actions">
-
-                <!-- Search -->
-
-                <input
-                    type="search"
-                    class="nx-navbar-search"
-                    placeholder="Buscar componentes..."
-                    aria-label="Buscar">
-
-                <!-- Theme -->
-
-                <button
-                    class="nx-navbar-theme"
-                    type="button"
-                    aria-label="Cambiar tema">
-
-                    ☀
-
+                <input class="nx-navbar-search" type="search" placeholder="Buscar componentes..." aria-label="Buscar">
+                <button id="nx-theme-button" class="nx-theme-toggle" type="button" aria-label="Cambiar tema" aria-pressed="false">
+                    <span class="nx-theme-toggle__thumb" aria-hidden="true"></span>
                 </button>
-
-                <!-- GitHub -->
-
-                <a
-                    href="https://github.com/Carloco1980/nexus-ui-framework"
-                    target="_blank"
-                    rel="noopener"
-                    class="nx-btn nx-btn-outline">
-
-                    GitHub
-
-                </a>
-
+                <a href="https://github.com/Carloco1980/nexus-ui-framework" target="_blank" rel="noopener" class="nx-button nx-button-outline">GitHub</a>
             </div>
 
-            <!--=========================================
-            Mobile Toggle
-            ==========================================-->
-
-            <button
-                class="nx-mobile-button"
-                type="button"
-                aria-label="Abrir menú">
-
-                ☰
-
+            <button id="nx-mobile-button" class="nx-mobile-button" type="button" aria-controls="nx-navbar-menu" aria-expanded="false" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
-
         </nav>
-
     </div>
-
 </header>

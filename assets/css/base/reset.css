@@ -28,7 +28,7 @@ body{
 
     color:var(--nx-text);
 
-    line-height:1.6;
+    line-height:var(--nx-line-height-copy);
 
     overflow-x:hidden;
 
@@ -86,7 +86,7 @@ button{
 
 #nx-app{
 
-    min-height:100vh;
+    min-height:var(--nx-viewport-height);
 
 }
 
@@ -107,8 +107,8 @@ section{
 a:focus-visible,
 button:focus-visible{
 
-    outline:2px solid var(--nx-primary);
+    outline:var(--nx-focus-outline-width) solid var(--nx-primary);
 
-    outline-offset:3px;
+    outline-offset:var(--nx-focus-outline-offset);
 
 }

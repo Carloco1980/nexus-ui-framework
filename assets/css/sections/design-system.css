@@ -20,7 +20,7 @@
 
     backdrop-filter:var(--nx-glass-blur);
 
-    border:1px solid var(--nx-glass-border);
+    border:var(--nx-border-width) solid var(--nx-glass-border);
 
     border-radius:var(--nx-radius-lg);
 
@@ -30,7 +30,7 @@
 
 .nx-design-card:hover{
 
-    transform:translateY(-8px);
+    transform:translateY(var(--nx-motion-offset-up-lg));
 
     border-color:var(--nx-border-strong);
 
@@ -46,15 +46,15 @@
 
     justify-content:center;
 
-    width:72px;
+    width:var(--nx-size-72);
 
-    height:72px;
+    height:var(--nx-size-72);
 
     margin:0 auto var(--nx-space-md);
 
     border-radius:var(--nx-radius-md);
 
-    font-size:2rem;
+    font-size:var(--nx-font-size-3xl);
 
     background:color-mix(in srgb, var(--nx-primary) 12%, transparent);
 
@@ -70,6 +70,6 @@
 
     color:var(--nx-text-muted);
 
-    line-height:1.8;
+    line-height:var(--nx-line-height-loose);
 
 }

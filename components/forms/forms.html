@@ -6,31 +6,49 @@ Version: 1.0
 ==================================================
 -->
 
-<form class="nx-form">
+<form
+    class="nx-form"
+    data-nx-form>
 
     <div class="nx-form-grid">
 
         <div class="nx-form-field">
 
-            <label for="name">
+            <label
+                class="nx-label"
+                for="name">
+
                 Nombre
+
             </label>
 
             <input
                 id="name"
+                class="nx-input"
                 type="text"
                 placeholder="Ingrese su nombre">
+
+            <small class="nx-help">
+
+                Campo obligatorio.
+
+            </small>
 
         </div>
 
         <div class="nx-form-field">
 
-            <label for="email">
+            <label
+                class="nx-label"
+                for="email">
+
                 Correo electrónico
+
             </label>
 
             <input
                 id="email"
+                class="nx-input"
                 type="email"
                 placeholder="correo@ejemplo.cl">
 
@@ -38,14 +56,20 @@ Version: 1.0
 
         <div class="nx-form-field nx-form-field-full">
 
-            <label for="message">
+            <label
+                class="nx-label"
+                for="message">
+
                 Mensaje
+
             </label>
 
             <textarea
                 id="message"
-                rows="6"
-                placeholder="Escriba su mensaje"></textarea>
+                class="nx-textarea"
+                placeholder="Escriba su mensaje">
+
+            </textarea>
 
         </div>
 

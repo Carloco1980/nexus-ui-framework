@@ -45,19 +45,19 @@ Icon
 
     justify-content:center;
 
-    width:60px;
+    width:var(--nx-size-60);
 
-    height:60px;
+    height:var(--nx-size-60);
 
     border-radius:var(--nx-radius-md);
 
     background:var(--nx-surface-light);
 
-    border:1px solid var(--nx-border);
+    border:var(--nx-border-width) solid var(--nx-border);
 
     color:var(--nx-primary);
 
-    font-size:1.5rem;
+    font-size:var(--nx-font-size-2xl);
 
     transition:var(--nx-transition);
 
@@ -69,9 +69,9 @@ Symbol
 
 .nx-kpi-symbol{
 
-    font-size:2rem;
+    font-size:var(--nx-font-size-3xl);
 
-    line-height:1;
+    line-height:var(--nx-line-height-tight);
 
 }
 
@@ -99,17 +99,17 @@ Value
 
 .nx-kpi-value{
 
-    font-size:clamp(2.2rem,5vw,2.9rem);
+    font-size:clamp(var(--nx-font-size-display-sm),var(--nx-fluid-scale-md),var(--nx-font-size-display-lg));
 
     font-variant-numeric:tabular-nums;
 
-    font-weight:700;
+    font-weight:var(--nx-font-weight-bold);
 
-    line-height:1;
+    line-height:var(--nx-line-height-tight);
 
-    letter-spacing:-0.5px;
+    letter-spacing:var(--nx-letter-spacing-heading);
 
-    color:var(--nx-white);
+    color:var(--nx-heading);
 
 }
 
@@ -119,13 +119,13 @@ Title
 
 .nx-kpi-title{
 
-    font-size:.95rem;
+    font-size:var(--nx-font-size-medium-minus);
 
-    font-weight:500;
+    font-weight:var(--nx-font-weight-medium);
 
     color:var(--nx-text-muted);
 
-    margin-top:.35rem;
+    margin-top:var(--nx-space-compact);
 
 }
 
@@ -135,9 +135,9 @@ Description
 
 .nx-kpi-description{
 
-    font-size:.92rem;
+    font-size:var(--nx-font-size-small-emphasis);
 
-    line-height:1.6;
+    line-height:var(--nx-line-height-copy);
 
     max-width:26ch;
 
@@ -155,11 +155,11 @@ Trend
 
     align-items:center;
 
-    gap:.35rem;
+    gap:var(--nx-space-compact);
 
-    font-size:.9rem;
+    font-size:var(--nx-font-size-small-plus);
 
-    font-weight:600;
+    font-weight:var(--nx-font-weight-semibold);
 
     color:var(--nx-success);
 
@@ -171,7 +171,7 @@ Update
 
 .nx-kpi-update{
 
-    font-size:.82rem;
+    font-size:var(--nx-font-size-compact);
 
     color:var(--nx-text-soft);
 
@@ -193,7 +193,7 @@ Badge
 
 .nx-kpi:hover .nx-kpi-icon{
 
-    transform:translateY(-2px);
+    transform:translateY(var(--nx-button-hover-offset));
 
     border-color:var(--nx-primary);
 

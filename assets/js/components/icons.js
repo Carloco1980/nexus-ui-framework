@@ -22,17 +22,25 @@ Nexus Icons
 
         path: "assets/icons/",
 
+        config: {},
+
         init() {
+
+            this.config = global.NX.config?.icons || {};
 
             this.render();
 
-            console.info("Icons Ready");
+            if (global.NX.config?.debug?.enabled) {
+                console.info("Icons Ready");
+            }
 
         },
 
         async load(name) {
 
-            if (CACHE.has(name)) {
+            const cacheEnabled = this.config.cache !== false;
+
+            if (cacheEnabled && CACHE.has(name)) {
 
                 return CACHE.get(name);
 
@@ -41,7 +49,7 @@ Nexus Icons
             try {
 
                 const response = await fetch(
-                    `${this.path}${name}.svg`
+                    `${this.config.path || this.path}${name}${this.config.extension || ".svg"}`
                 );
 
                 if (!response.ok) {
@@ -52,15 +60,20 @@ Nexus Icons
 
                 const svg = await response.text();
 
-                CACHE.set(name, svg);
+                if (cacheEnabled) {
+                    CACHE.set(name, svg);
+                }
 
                 return svg;
 
             } catch (error) {
 
-                console.warn(
-                    `Icon "${name}" not found.`
-                );
+                if (
+                    global.NX.config?.debug?.enabled &&
+                    global.NX.config?.debug?.showWarnings !== false
+                ) {
+                    console.warn(`Icon "${name}" not found.`);
+                }
 
                 return null;
 

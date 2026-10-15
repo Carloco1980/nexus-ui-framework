@@ -1,90 +1,85 @@
 /*=========================================================
-04 Typography
+TYPOGRAPHY COMPONENTS
 =========================================================*/
-
-/*---------------------------------------------------------
-Base Typography
----------------------------------------------------------*/
-
-#oiid-app h1,
-#oiid-app h2,
-#oiid-app h3,
-#oiid-app h4,
-#oiid-app h5,
-#oiid-app h6{
-
-    color:var(--nx-white);
-
-    font-weight:700;
-
-    line-height:1.15;
-
-    letter-spacing:-.02em;
-
-}
-
-#oiid-app p{
-
-    color:var(--nx-text);
-
-    line-height:1.7;
-
-}
-
-#oiid-app small{
-
-    color:var(--nx-text-muted);
-
-}
-
-#oiid-app strong{
-
-    font-weight:700;
-
-}
-
-/*---------------------------------------------------------
-Nexus Typography Components
----------------------------------------------------------*/
 
 .nx-title-xl{
 
-    font-size:clamp(3.5rem,6vw,5.2rem);
+    font-size:clamp(
+        var(--nx-font-size-5xl),
+        var(--nx-fluid-scale-lg),
+        var(--nx-font-size-6xl)
+    );
 
-    line-height:.95;
+    font-weight:var(--nx-font-weight-extrabold);
 
-    font-weight:800;
+    line-height:var(--nx-line-height-display);
 
-    letter-spacing:-.05em;
+    letter-spacing:var(--nx-letter-spacing-tight);
 
-    color:var(--nx-white);
+    color:var(--nx-text-primary);
 
 }
 
 .nx-title-lg{
 
-    margin-top:1rem;
+    font-size:var(--nx-font-size-2xl);
 
-    font-size:1.6rem;
+    font-weight:var(--nx-font-weight-semibold);
 
-    font-weight:500;
+    line-height:var(--nx-line-height-title);
 
-    color:var(--nx-text-muted);
+    color:var(--nx-text-primary);
+
+}
+
+.nx-title-md{
+
+    font-size:var(--nx-font-size-xl);
+
+    font-weight:var(--nx-font-weight-semibold);
+
+    line-height:var(--nx-line-height-heading-alt);
+
+    color:var(--nx-text-primary);
+
+}
+
+.nx-subtitle{
+
+    font-size:var(--nx-font-size-lg);
+
+    font-weight:var(--nx-font-weight-medium);
+
+    color:var(--nx-text-secondary);
 
 }
 
 .nx-lead{
 
-    max-width:680px;
+    max-width:var(--nx-size-680);
 
-    margin-top:2rem;
+    font-size:var(--nx-font-size-lg);
 
-    color:var(--nx-text);
+    line-height:var(--nx-line-height-relaxed);
 
-    font-size:1.2rem;
+    color:var(--nx-text-secondary);
 
-    font-weight:400;
+}
 
-    line-height:1.7;
+.nx-body{
+
+    font-size:var(--nx-font-size-md);
+
+    line-height:var(--nx-line-height-relaxed);
+
+    color:var(--nx-text-secondary);
+
+}
+
+.nx-caption{
+
+    font-size:var(--nx-font-size-sm);
+
+    color:var(--nx-text-tertiary);
 
 }

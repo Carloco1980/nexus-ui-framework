@@ -10,9 +10,9 @@
 
     position:fixed;
 
-    right:24px;
+    right:var(--nx-icon-md);
 
-    bottom:24px;
+    bottom:var(--nx-icon-md);
 
     z-index:var(--nx-z-toast);
 
@@ -20,13 +20,13 @@
 
     place-items:center;
 
-    width:56px;
+    width:var(--nx-button-height);
 
     aspect-ratio:1;
 
     border:none;
 
-    border-radius:50%;
+    border-radius:var(--nx-radius-circle);
 
     background:var(--nx-gradient-primary);
 
@@ -42,7 +42,7 @@
 
 .nx-fab:hover{
 
-    transform:translateY(-4px);
+    transform:translateY(var(--nx-motion-offset-up-md));
 
     box-shadow:
         var(--nx-glow-green-strong),
@@ -58,17 +58,17 @@
 
 .nx-fab:focus-visible{
 
-    outline:2px solid var(--nx-white);
+    outline:var(--nx-focus-outline-width) solid var(--nx-white);
 
-    outline-offset:4px;
+    outline-offset:var(--nx-focus-outline-offset-lg);
 
 }
 
 .nx-fab svg{
 
-    width:30px;
+    width:var(--nx-navbar-indicator-width);
 
-    height:30px;
+    height:var(--nx-navbar-indicator-width);
 
     fill:currentColor;
 

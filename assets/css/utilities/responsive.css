@@ -24,7 +24,7 @@
 
     .nx-dashboard{
 
-        max-width:700px;
+        max-width:var(--nx-size-700);
 
         width:100%;
 
@@ -54,7 +54,7 @@
 
     .nx-preview-block{
 
-        height:70px;
+        height:var(--nx-size-70);
 
     }
 
@@ -104,15 +104,15 @@
 
         position:absolute;
 
-        top:calc(100% + 12px);
+        top:calc(100% + var(--nx-space-xs));
 
         left:50%;
 
-        transform:translate(-50%, -10px);
+        transform:translate(-50%, var(--nx-motion-offset-up-xl));
 
-        width:calc(100% - 2rem);
+        width:calc(100% - var(--nx-space-md));
 
-        max-width:700px;
+        max-width:var(--nx-size-700);
 
         flex-direction:column;
 
@@ -122,17 +122,17 @@
 
         margin:0;
 
-        padding:.75rem;
+        padding:var(--nx-container-padding-mobile);
 
         list-style:none;
 
-        border:1px solid var(--nx-border);
+        border:var(--nx-border-width) solid var(--nx-border);
 
         border-radius:var(--nx-radius-md);
 
-        background:rgba(15,23,42,.98);
+        background:var(--nx-glass-bg);
 
-        backdrop-filter:blur(18px);
+        backdrop-filter:var(--nx-glass-blur);
 
         box-shadow:var(--nx-shadow-md);
 
@@ -141,9 +141,9 @@
         visibility:hidden;
 
         transition:
-            opacity .25s ease,
-            transform .25s ease,
-            visibility .25s ease;
+            opacity var(--nx-duration-normal) var(--nx-easing),
+            transform var(--nx-duration-normal) var(--nx-easing),
+            visibility var(--nx-duration-normal) var(--nx-easing);
 
     }
 
@@ -167,7 +167,7 @@
 
     .nx-navbar-menu li + li{
 
-        border-top:1px solid var(--nx-border-soft);
+        border-top:var(--nx-border-width) solid var(--nx-border-soft);
 
     }
 
@@ -183,7 +183,7 @@
 
         height:auto;
 
-        padding:.85rem 1rem;
+        padding:var(--nx-space-menu-link-y) var(--nx-space-sm);
 
     }
 
@@ -211,7 +211,7 @@
 
     .nx-title-xl{
 
-        font-size:clamp(2.5rem,8vw,3.4rem);
+        font-size:clamp(var(--nx-font-size-display-md),var(--nx-fluid-scale-xl),var(--nx-font-size-display-xl));
 
     }
 
@@ -297,9 +297,9 @@
 
     .nx-navbar{
 
-        min-height:72px;
+        min-height:var(--nx-navbar-height);
 
-        padding:0 1rem;
+        padding:0 var(--nx-navbar-padding-x);
 
     }
 
@@ -311,7 +311,7 @@
 
     .nx-title-xl{
 
-        font-size:2.5rem;
+        font-size:var(--nx-font-size-display-md);
 
     }
 

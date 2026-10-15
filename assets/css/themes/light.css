@@ -4,4 +4,62 @@ NEXUS LIGHT THEME
 
 :root[data-nx-theme="light"]{
 
+    /*=====================================================
+    BACKGROUND
+    =====================================================*/
+
+    --nx-bg:#F8FAFC;
+
+    /*=====================================================
+    SURFACES
+    =====================================================*/
+
+    --nx-surface:#FFFFFF;
+
+    --nx-surface-light:#F8FAFC;
+
+    --nx-surface-hover:#F1F5F9;
+
+    --nx-surface-elevated:#FFFFFF;
+
+    /*=====================================================
+    TEXT
+    =====================================================*/
+
+    --nx-white:#FFFFFF;
+
+    --nx-text:#1E293B;
+
+    --nx-text-muted:#475569;
+
+    --nx-text-soft:#64748B;
+
+    --nx-heading:var(--nx-text);
+    --nx-text-primary:var(--nx-text);
+    --nx-hero-overlay-bg:rgba(248,250,252,.72);
+    --nx-preview-white-01:rgba(15,23,42,.01);
+    --nx-preview-white-03:rgba(15,23,42,.03);
+    --nx-preview-white-04:rgba(15,23,42,.04);
+    --nx-preview-white-05:rgba(15,23,42,.05);
+    --nx-preview-white-08:rgba(15,23,42,.08);
+    --nx-preview-white-10:rgba(15,23,42,.10);
+
+    /*=====================================================
+    BORDERS
+    =====================================================*/
+
+    --nx-border:rgba(15,23,42,.10);
+
+    --nx-border-soft:rgba(15,23,42,.05);
+
+    --nx-border-strong:rgba(15,23,42,.18);
+
+    /*=====================================================
+    GLASS
+    =====================================================*/
+
+    --nx-glass-bg:rgba(255,255,255,.72);
+
+    --nx-glass-border:rgba(15,23,42,.10);
+
 }

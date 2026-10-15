@@ -18,7 +18,7 @@ Base
 
     background:var(--nx-glass-bg);
 
-    border:1px solid var(--nx-glass-border);
+    border:var(--nx-border-width) solid var(--nx-glass-border);
 
     border-radius:var(--nx-radius-md);
 
@@ -34,7 +34,7 @@ Base
 
 .nx-panel:hover{
 
-    transform:translateY(-4px);
+    transform:translateY(var(--nx-motion-offset-up-md));
     
     will-change:transform;
 
@@ -100,7 +100,7 @@ Subtitle
 
     color:var(--nx-text-muted);
 
-    font-size:.90rem;
+    font-size:var(--nx-font-size-small-plus);
 
 }
 
@@ -140,7 +140,7 @@ Footer
 
     padding-top:var(--nx-space-md);
 
-    border-top:1px solid var(--nx-border-soft);
+    border-top:var(--nx-border-width) solid var(--nx-border-soft);
 
 }
 
@@ -156,13 +156,13 @@ Action
 
     justify-content:center;
 
-    width:40px;
+    width:var(--nx-icon-xl);
 
-    height:40px;
+    height:var(--nx-icon-xl);
 
     border:none;
 
-    border-radius:50%;
+    border-radius:var(--nx-radius-circle);
 
     background:transparent;
 
@@ -184,8 +184,8 @@ Action
 
 .nx-panel-action:focus-visible{
 
-    outline:2px solid var(--nx-primary);
+    outline:var(--nx-focus-outline-width) solid var(--nx-primary);
 
-    outline-offset:2px;
+    outline-offset:var(--nx-focus-outline-width);
 
 }

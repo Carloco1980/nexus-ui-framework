@@ -36,7 +36,7 @@ Header
 
     padding-bottom:var(--nx-space-sm);
 
-    border-bottom:1px solid var(--nx-border);
+    border-bottom:var(--nx-border-width) solid var(--nx-border);
 
 }
 
@@ -52,11 +52,11 @@ Status
 
 .nx-status{
 
-    width:12px;
+    width:var(--nx-size-12);
 
     aspect-ratio:1;
 
-    border-radius:50%;
+    border-radius:var(--nx-radius-circle);
 
     background:var(--nx-success);
 
@@ -97,7 +97,7 @@ Charts
         repeat(
             auto-fit,
             minmax(
-                var(--nx-chart-min),
+                var(--nx-grid-min),
                 1fr
             )
         );
@@ -116,13 +116,13 @@ Dashboard Summary
 
     flex-direction:column;
 
-    gap:.75rem;
+    gap:var(--nx-button-gap);
 
     width:100%;
 
     padding-bottom:var(--nx-space-lg);
 
-    border-bottom:1px solid var(--nx-border);
+    border-bottom:var(--nx-border-width) solid var(--nx-border);
 
 }
 
@@ -136,9 +136,9 @@ Dashboard Summary
 
     gap:var(--nx-space-md);
 
-    padding:.35rem 0;
+    padding:var(--nx-space-compact) 0;
 
-    border-bottom:1px solid var(--nx-border);
+    border-bottom:var(--nx-border-width) solid var(--nx-border);
 
 }
 
@@ -152,15 +152,15 @@ Dashboard Summary
 
     color:var(--nx-text-muted);
 
-    font-size:.92rem;
+    font-size:var(--nx-font-size-small-emphasis);
 
 }
 
 .nx-summary-row strong{
 
-    color:var(--nx-white);
+    color:var(--nx-heading);
 
-    font-weight:700;
+    font-weight:var(--nx-font-weight-bold);
 
 }
 
@@ -176,11 +176,11 @@ Dashboard Placeholder
 
     justify-content:center;
 
-    height:180px;
+    height:var(--nx-size-180);
 
     padding:var(--nx-space-md);
 
-    border:1px dashed var(--nx-border);
+    border:var(--nx-border-width) dashed var(--nx-border);
 
     border-radius:var(--nx-radius-md);
 
@@ -188,7 +188,7 @@ Dashboard Placeholder
 
     color:var(--nx-text-soft);
 
-    font-size:.90rem;
+    font-size:var(--nx-font-size-small-plus);
 
     text-align:center;
 
@@ -218,7 +218,7 @@ Responsive
 
         align-items:flex-start;
 
-        gap:.35rem;
+        gap:var(--nx-space-compact);
 
     }
 

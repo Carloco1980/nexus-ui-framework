@@ -16,12 +16,12 @@ Hero
 
     justify-content:center;
 
-    min-height:100vh;
+    min-height:var(--nx-viewport-height);
 
     padding:
-    calc(var(--nx-header-height) + 6rem)
+    calc(var(--nx-header-height) + var(--nx-space-xl))
     0
-    5rem;
+    var(--nx-section-padding-mobile);
 
     overflow:hidden;
 
@@ -56,7 +56,7 @@ Background
 
 .nx-hero-video{
 
-    opacity:.30;
+    opacity:var(--nx-opacity-video);
 
 }
 
@@ -66,7 +66,7 @@ Background
 
     inset:0;
 
-    background:rgba(2,6,23,.72);
+    background:var(--nx-hero-overlay-bg);
 
 }
 
@@ -79,7 +79,7 @@ Background
     background:
         radial-gradient(
             circle at top right,
-            rgba(37,99,235,.35),
+            var(--nx-primary-glow),
             transparent 45%
         );
 
@@ -103,7 +103,7 @@ Layout
 
     align-items:center;
 
-    gap:4rem;
+    gap:var(--nx-space-lg);
 
 }
 
@@ -121,26 +121,26 @@ Hero Content
 
     align-items:flex-start;
 
-    gap:1.5rem;
+    gap:var(--nx-space-md-minus);
 }
 
 .nx-hero-title{
 
     margin:0;
 
-    max-width:650px;
+    max-width:var(--nx-size-650);
 
 }
 
 .nx-hero-description{
 
-    max-width:560px;
+    max-width:var(--nx-size-560);
 
     margin:0;
 
     color:var(--nx-text-muted);
 
-    line-height:1.8;
+    line-height:var(--nx-line-height-loose);
 
 }
 
@@ -188,19 +188,19 @@ Highlights
 
 .nx-highlight{
 
-    padding:.8rem 1.3rem;
+    padding:var(--nx-space-button) var(--nx-space-action);
 
     background:var(--nx-glass-bg);
 
     backdrop-filter:var(--nx-glass-blur);
 
-    border:1px solid var(--nx-glass-border);
+    border:var(--nx-border-width) solid var(--nx-glass-border);
 
     border-radius:var(--nx-radius-pill);
 
     color:var(--nx-text);
 
-    font-size:.95rem;
+    font-size:var(--nx-font-size-medium-minus);
 
     transition:var(--nx-transition);
 
@@ -208,7 +208,7 @@ Highlights
 
 .nx-highlight:hover{
 
-    transform:translateY(-3px);
+    transform:translateY(var(--nx-motion-offset-up-sm));
 
     background:var(--nx-surface-hover);
 
@@ -228,7 +228,7 @@ Scroll Indicator
 
     left:50%;
 
-    bottom:35px;
+    bottom:var(--nx-size-35);
 
     z-index:5;
 
@@ -244,12 +244,12 @@ Scroll Indicator
 
     transform:translateX(-50%);
 
-    animation:nxFloat 2s ease-in-out infinite;
+    animation:nxFloat var(--nx-duration-float) var(--nx-easing-in-out) infinite;
 
 }
 
 .nx-scroll-arrow{
 
-    font-size:1.4rem;
+    font-size:var(--nx-font-size-xl);
 
 }

@@ -20,9 +20,20 @@ const NexusAnimations = {
 
     init() {
 
+        this.config = window.NX.config?.animations || {};
+
+        if (this.config.enabled === false) {
+            return;
+        }
+
         this.cacheDOM();
 
         if (!this.elements.length) {
+            return;
+        }
+
+        if (this.config.reducedMotion === true) {
+            this.elements.forEach((element) => this.animate(element));
             return;
         }
 
@@ -94,8 +105,13 @@ const NexusAnimations = {
 
         element.style.opacity = "0";
 
+        const duration = Number.isFinite(Number(this.config.duration))
+            ? Math.max(0, Number(this.config.duration))
+            : 300;
+        const easing = this.config.easing || "ease";
+
         element.style.transition =
-            "opacity .8s ease, transform .8s ease";
+            `opacity ${duration}ms ${easing}, transform ${duration}ms ${easing}`;
 
         switch (element.dataset.nxAnimation) {
 
@@ -153,4 +169,6 @@ const NexusAnimations = {
 
 };
 
+window.NX = window.NX || {};
+window.NX.animations = NexusAnimations;
 window.NexusAnimations = NexusAnimations;

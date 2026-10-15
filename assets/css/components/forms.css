@@ -22,6 +22,16 @@ Grid
 
 }
 
+@media (max-width:768px){
+
+    .nx-form-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
 /*=========================================================
 Field
 =========================================================*/
@@ -46,13 +56,17 @@ Field
 Label
 =========================================================*/
 
-.nx-form-field label{
+.nx-label{
+
+    display:block;
+
+    margin-bottom:var(--nx-space-xs);
+
+    font-size:var(--nx-font-size-sm);
+
+    font-weight:var(--nx-font-weight-medium);
 
     color:var(--nx-text);
-
-    font-size:.90rem;
-
-    font-weight:500;
 
 }
 
@@ -60,57 +74,65 @@ Label
 Controls
 =========================================================*/
 
-.nx-form-field input,
-.nx-form-field select,
-.nx-form-field textarea{
+.nx-input,
+.nx-select,
+.nx-textarea{
 
     width:100%;
 
     min-height:var(--nx-input-height);
 
-    padding:.9rem 1rem;
+    padding:
+        var(--nx-input-padding-y)
+        var(--nx-input-padding-x);
 
-    border:1px solid var(--nx-border);
+    border:var(--nx-border-width) solid var(--nx-input-border);
 
     border-radius:var(--nx-radius-sm);
 
-    background:var(--nx-glass-bg);
+    background:var(--nx-input-bg);
 
     backdrop-filter:var(--nx-glass-blur);
 
-    color:var(--nx-white);
+    color:var(--nx-text-primary);
 
     font:inherit;
-    
 
     transition:var(--nx-transition);
 
-
 }
 
-.nx-form-field textarea{
+.nx-textarea{
 
     resize:vertical;
 
-    min-height:140px;
+    min-height:var(--nx-textarea-min-height);
 
 }
 
-.nx-form-field select{
+.nx-select{
 
     appearance:none;
 
     cursor:pointer;
 
     background-image:
-        linear-gradient(45deg, transparent 50%, var(--nx-text-soft) 50%),
-        linear-gradient(135deg, var(--nx-text-soft) 50%, transparent 50%);
+        linear-gradient(
+            var(--nx-angle-45),
+            transparent 50%,
+            var(--nx-text-soft) 50%
+        ),
+        linear-gradient(
+            var(--nx-angle-135),
+            var(--nx-text-soft) 50%,
+            transparent 50%
+        );
 
     background-position:
-        calc(100% - 20px) calc(50% - 3px),
-        calc(100% - 15px) calc(50% - 3px);
+        calc(100% - var(--nx-icon-sm)) calc(50% - var(--nx-motion-offset-sm)),
+        calc(100% - var(--nx-size-15)) calc(50% - var(--nx-motion-offset-sm));
 
-    background-size:5px 5px;
+    background-size:var(--nx-size-5) var(--nx-size-5);
 
     background-repeat:no-repeat;
 
@@ -120,30 +142,10 @@ Controls
 Placeholder
 =========================================================*/
 
-.nx-form-field input::placeholder,
-.nx-form-field textarea::placeholder{
+.nx-input::placeholder,
+.nx-textarea::placeholder{
 
     color:var(--nx-text-soft);
-
-}
-
-/*=========================================================
-Focus
-=========================================================*/
-
-.nx-form-field input:focus,
-.nx-form-field select:focus,
-.nx-form-field textarea:focus{
-
-    outline:none;
-
-    border-color:var(--nx-primary);
-
-    box-shadow:
-    0 0 0 3px rgba(53,216,255,.10),
-    var(--nx-glow-blue);
-
-
 
 }
 
@@ -151,38 +153,90 @@ Focus
 Hover
 =========================================================*/
 
-.nx-form-field input:hover,
-.nx-form-field select:hover,
-.nx-form-field textarea:hover{
+.nx-input:hover,
+.nx-select:hover,
+.nx-textarea:hover{
 
-    border-color:rgba(53,216,255,.30);
+    border-color:var(--nx-input-hover-border);
 
 }
 
+/*=========================================================
+Focus
+=========================================================*/
+
+.nx-input:focus,
+.nx-select:focus,
+.nx-textarea:focus{
+
+    outline:none;
+
+    border-color:var(--nx-primary);
+
+    box-shadow:
+        var(--nx-focus-ring),
+        var(--nx-glow-blue);
+
+}
 
 /*=========================================================
 Disabled
 =========================================================*/
 
-.nx-form-field input:disabled,
-.nx-form-field select:disabled,
-.nx-form-field textarea:disabled{
+.nx-input:disabled,
+.nx-select:disabled,
+.nx-textarea:disabled{
 
-    opacity:.6;
+    opacity:var(--nx-disabled-opacity);
 
     cursor:not-allowed;
 
 }
 
 /*=========================================================
-Invalid
+Validation
 =========================================================*/
 
-.nx-form-field input[aria-invalid="true"],
-.nx-form-field select[aria-invalid="true"],
-.nx-form-field textarea[aria-invalid="true"]{
+.nx-input[aria-invalid="true"],
+.nx-select[aria-invalid="true"],
+.nx-textarea[aria-invalid="true"],
+.nx-input-error{
 
     border-color:var(--nx-red);
+
+}
+
+.nx-input-success{
+
+    border-color:var(--nx-green);
+
+}
+
+/*=========================================================
+Help Text
+=========================================================*/
+
+.nx-help{
+
+    font-size:var(--nx-font-size-sm);
+
+    color:var(--nx-text-muted);
+
+}
+
+.nx-error{
+
+    font-size:var(--nx-font-size-sm);
+
+    color:var(--nx-red);
+
+}
+
+.nx-success{
+
+    font-size:var(--nx-font-size-sm);
+
+    color:var(--nx-green);
 
 }
 
@@ -192,9 +246,11 @@ Status
 
 .nx-form-status{
 
-    min-height:1.5em;
+    min-height:var(--nx-space-md-minus);
 
     margin-top:var(--nx-space-sm);
+
+    font-size:var(--nx-font-size-sm);
 
     color:var(--nx-text);
 

@@ -12,7 +12,7 @@ Page
 
 .nx-design-system{
 
-    min-height:100vh;
+    min-height:var(--nx-viewport-height);
 
     background:var(--nx-bg);
 
@@ -26,9 +26,9 @@ Header
 
 .nx-design-header{
 
-    padding:6rem 0 4rem;
+    padding:var(--nx-space-xl) 0 var(--nx-space-lg);
 
-    border-bottom:1px solid var(--nx-border-soft);
+    border-bottom:var(--nx-border-width) solid var(--nx-border-soft);
 
     text-align:center;
 
@@ -48,13 +48,13 @@ Header
 
 .nx-design-header .nx-subtitle{
 
-    max-width:760px;
+    max-width:var(--nx-size-760);
 
     margin:0 auto;
 
     color:var(--nx-text-muted);
 
-    line-height:1.7;
+    line-height:var(--nx-line-height-relaxed);
 
 }
 
@@ -68,9 +68,9 @@ Main
 
     flex-direction:column;
 
-    gap:4rem;
+    gap:var(--nx-space-lg);
 
-    padding:4rem 0;
+    padding:var(--nx-space-lg) 0;
 
 }
 
@@ -84,11 +84,11 @@ Sections
 
     flex-direction:column;
 
-    gap:1rem;
+    gap:var(--nx-space-sm);
 
-    padding-bottom:3rem;
+    padding-bottom:var(--nx-space-display);
 
-    border-bottom:1px solid var(--nx-border-soft);
+    border-bottom:var(--nx-border-width) solid var(--nx-border-soft);
 
 }
 
@@ -102,7 +102,7 @@ Sections
 
     margin:0;
 
-    color:var(--nx-white);
+    color:var(--nx-heading);
 
 }
 
@@ -112,7 +112,7 @@ Sections
 
     color:var(--nx-text-muted);
 
-    line-height:1.7;
+    line-height:var(--nx-line-height-relaxed);
 
 }
 
@@ -122,9 +122,9 @@ Footer
 
 .nx-design-footer{
 
-    padding:2rem 0;
+    padding:var(--nx-space-md) 0;
 
-    border-top:1px solid var(--nx-border-soft);
+    border-top:var(--nx-border-width) solid var(--nx-border-soft);
 
     text-align:center;
 
@@ -140,15 +140,15 @@ Responsive
 
     .nx-design-header{
 
-        padding:4rem 0 3rem;
+        padding:var(--nx-space-lg) 0 var(--nx-space-display);
 
     }
 
     .nx-design-main{
 
-        gap:3rem;
+        gap:var(--nx-space-display);
 
-        padding:3rem 0;
+        padding:var(--nx-space-display) 0;
 
     }
 
@@ -164,7 +164,7 @@ Foundation
 
     flex-direction:column;
 
-    gap:1.5rem;
+    gap:var(--nx-space-md-minus);
 
 }
 
@@ -172,9 +172,9 @@ Foundation
 
     margin:0;
 
-    font-size:1rem;
+    font-size:var(--nx-font-size-md);
 
-    color:var(--nx-white);
+    color:var(--nx-heading);
 
 }
 
@@ -182,7 +182,7 @@ Foundation
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(var(--nx-kpi-min),1fr));
 
     gap:var(--nx-space-lg);
 
@@ -198,9 +198,9 @@ Token Grid
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(var(--nx-size-180),1fr));
 
-    gap:1.5rem;
+    gap:var(--nx-space-md-minus);
 
 }
 
@@ -216,15 +216,15 @@ Token Card
 
     justify-content:space-between;
 
-    min-height:190px;
+    min-height:var(--nx-size-190);
 
     gap:var(--nx-space-md);
 
-    padding:1.25rem;
+    padding:var(--nx-space-sm-plus);
 
     background:var(--nx-glass-bg);
 
-    border:1px solid var(--nx-glass-border);
+    border:var(--nx-border-width) solid var(--nx-glass-border);
 
     border-radius:var(--nx-radius-md);
 
@@ -244,11 +244,11 @@ Color Preview
 
     width:100%;
 
-    height:72px;
+    height:var(--nx-size-72);
 
     border-radius:var(--nx-radius-sm);
 
-    border:1px solid var(--nx-border-soft);
+    border:var(--nx-border-width) solid var(--nx-border-soft);
 
 }
 
@@ -330,7 +330,7 @@ Typography Demo
 
     margin:0;
 
-    line-height:1.8;
+    line-height:var(--nx-line-height-loose);
 
 }
 
@@ -344,9 +344,9 @@ Typography Demo
 
     border:none;
 
-    border-top:1px solid var(--nx-border-soft);
+    border-top:var(--nx-border-width) solid var(--nx-border-soft);
 
-    margin:.75rem 0;
+    margin:var(--nx-button-gap) 0;
 
 }
 
@@ -356,9 +356,9 @@ Spacing Preview
 
 .nx-spacing-preview{
 
-    height:16px;
+    height:var(--nx-icon-xs);
 
-    border-radius:999px;
+    border-radius:var(--nx-radius-pill);
 
     background:var(--nx-primary);
 
@@ -368,31 +368,31 @@ Spacing Preview
 
 .nx-space-xs{
 
-    width:20px;
+    width:var(--nx-icon-sm);
 
 }
 
 .nx-space-sm{
 
-    width:40px;
+    width:var(--nx-icon-xl);
 
 }
 
 .nx-space-md{
 
-    width:70px;
+    width:var(--nx-size-70);
 
 }
 
 .nx-space-lg{
 
-    width:100px;
+    width:var(--nx-size-100);
 
 }
 
 .nx-space-xl{
 
-    width:140px;
+    width:var(--nx-size-140);
 
 }
 
@@ -406,19 +406,19 @@ Code
 
     margin-top:auto;
 
-    padding:.35rem .65rem;
+    padding:var(--nx-space-compact) var(--nx-space-tight);
 
-    background:rgba(255,255,255,.05);
+    background:var(--nx-preview-white-05);
 
-    border:1px solid var(--nx-border-soft);
+    border:var(--nx-border-width) solid var(--nx-border-soft);
 
     border-radius:var(--nx-radius-sm);
 
     color:var(--nx-cyan);
 
-    font-family:var(--nx-font-mono);
+    font-family:var(--nx-font-family);
 
-    font-size:.82rem;
+    font-size:var(--nx-font-size-compact);
 
 }
 
@@ -428,9 +428,9 @@ Radius
 
 .nx-radius-demo{
 
-    width:120px;
+    width:var(--nx-size-120);
 
-    height:80px;
+    height:var(--nx-size-80);
 
     margin-bottom:var(--nx-space-md);
 
@@ -476,26 +476,26 @@ Shadows
 
     display:flex;
     flex-direction:column;
-    gap:1rem;
+    gap:var(--nx-space-sm);
 
 }
 
 .nx-shadow-demo{
 
-    width:170px;
-    height:120px;
+    width:var(--nx-button-min-width);
+    height:var(--nx-size-120);
 
     border-radius:var(--nx-radius-md);
 
     background:var(--nx-surface-light);
 
-    border:1px solid var(--nx-border);
+    border:var(--nx-border-width) solid var(--nx-border);
 
 }
 
 .nx-shadow-demo:hover{
 
-    transform:translateY(-4px);
+    transform:translateY(var(--nx-motion-offset-up-md));
 
 }
 

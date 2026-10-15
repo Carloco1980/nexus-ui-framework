@@ -16,7 +16,7 @@ Modal
 
     justify-content:center;
 
-    z-index:1000;
+    z-index:var(--nx-z-toast);
 
     opacity:0;
 
@@ -24,7 +24,7 @@ Modal
 
     pointer-events:none;
 
-    transition:opacity .25s ease;
+    transition:opacity var(--nx-duration-ui) var(--nx-easing);
 
 }
 
@@ -44,7 +44,7 @@ Modal
 
     inset:0;
 
-    background:rgba(0,0,0,.55);
+    background:var(--nx-modal-overlay);
 
 }
 
@@ -52,17 +52,17 @@ Modal
 
     position:relative;
 
-    width:min(90vw,520px);
+    width:min(var(--nx-modal-viewport-width),var(--nx-hero-dashboard-width));
 
     background:var(--nx-surface);
 
     color:var(--nx-text);
 
-    border:1px solid var(--nx-border);
+    border:var(--nx-border-width) solid var(--nx-border);
 
     border-radius:var(--nx-radius-lg);
 
-    padding:2rem;
+    padding:var(--nx-space-md);
 
     z-index:1;
 
@@ -73,8 +73,8 @@ Modal
     opacity:0;
 
     transition:
-        transform .25s ease,
-        opacity .25s ease;
+        transform var(--nx-duration-ui) var(--nx-easing),
+        opacity var(--nx-duration-ui) var(--nx-easing);
 
 }
 
@@ -93,7 +93,7 @@ Header
 
 .nx-modal__header{
 
-    margin-bottom:1rem;
+    margin-bottom:var(--nx-space-sm);
 
 }
 
@@ -101,9 +101,9 @@ Header
 
     margin:0;
 
-    font-size:1.5rem;
+    font-size:var(--nx-font-size-2xl);
 
-    font-weight:700;
+    font-weight:var(--nx-font-weight-bold);
 
     color:var(--nx-text);
 
@@ -115,7 +115,7 @@ Body
 
 .nx-modal__body{
 
-    margin-bottom:2rem;
+    margin-bottom:var(--nx-space-md);
 
 }
 
@@ -125,7 +125,7 @@ Body
 
     color:var(--nx-text-muted);
 
-    line-height:1.7;
+    line-height:var(--nx-line-height-relaxed);
 
 }
 
@@ -139,9 +139,9 @@ Footer
 
     justify-content:flex-end;
 
-    gap:1rem;
+    gap:var(--nx-space-sm);
 
-    margin-top:2rem;
+    margin-top:var(--nx-space-md);
 
 }
 
@@ -155,7 +155,7 @@ Animation
 
     visibility:hidden;
 
-    transition:opacity .25s ease;
+    transition:opacity var(--nx-duration-ui) var(--nx-easing);
 
 }
 
@@ -172,8 +172,8 @@ Animation
     transform:scale(.96);
 
     transition:
-        transform .25s ease,
-        opacity .25s ease;
+        transform var(--nx-duration-ui) var(--nx-easing),
+        opacity var(--nx-duration-ui) var(--nx-easing);
 
 }
 

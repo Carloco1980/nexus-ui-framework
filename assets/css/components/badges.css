@@ -14,24 +14,24 @@
 
     justify-content:center;
 
-    gap:.35rem;
+    gap:var(--nx-space-compact);
 
-    padding:.45rem 1rem;
+    padding:var(--nx-space-badge) var(--nx-space-sm);
 
     border-radius:var(--nx-radius-pill);
 
     background:var(--nx-surface-light);
 
-    border:1px solid var(--nx-border);
+    border:var(--nx-border-width) solid var(--nx-border);
 
     color:var(--nx-text);
 
-    font-size:.82rem;
+    font-size:var(--nx-font-size-compact);
 
 
-    font-weight:600;
+    font-weight:var(--nx-font-weight-semibold);
 
-    line-height:1;
+    line-height:var(--nx-line-height-tight);
 
     white-space:nowrap;
 
@@ -51,22 +51,22 @@
 
 .nx-badge-primary{
 
-    background:rgba(37,99,235,.12);
+    background:var(--nx-primary-soft-bg);
 
     color:var(--nx-primary);
 
-    border-color:rgba(37,99,235,.25);
+    border-color:var(--nx-primary-soft-border);
 
 }
 /*========================================*/
 
 .nx-badge-success{
 
-    background:rgba(50,230,122,.15);
+    background:var(--nx-success-soft-bg);
 
     color:var(--nx-green);
 
-    border-color:rgba(50,230,122,.25);
+    border-color:var(--nx-success-soft-border);
 
 }
 
@@ -74,11 +74,11 @@
 
 .nx-badge-info{
 
-    background:rgba(53,216,255,.12);
+    background:var(--nx-info-soft-bg);
 
     color:var(--nx-cyan);
 
-    border-color:rgba(53,216,255,.25);
+    border-color:var(--nx-info-soft-border);
 
 }
 
@@ -86,11 +86,11 @@
 
 .nx-badge-purple{
 
-    background:rgba(139,92,246,.15);
+    background:var(--nx-purple-soft-bg);
 
     color:var(--nx-purple);
 
-    border-color:rgba(139,92,246,.25);
+    border-color:var(--nx-purple-soft-border);
 
 }
 
@@ -118,16 +118,16 @@ Badge Dot
 
 .nx-badge-dot{
 
-    width:.45rem;
+    width:var(--nx-space-badge);
 
-    height:.45rem;
+    height:var(--nx-space-badge);
 
-    border-radius:50%;
+    border-radius:var(--nx-radius-circle);
 
     background:currentColor;
 
     flex-shrink:0;
 
-    box-shadow:0 0 10px currentColor;
+    box-shadow:var(--nx-glow-current);
 
 }

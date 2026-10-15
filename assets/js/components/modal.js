@@ -38,6 +38,8 @@ Nexus Modal
 
         init() {
 
+            this.config = global.NX.config?.modal || {};
+
             this.bindOpenButtons();
 
             this.bindCloseButtons();
@@ -46,7 +48,9 @@ Nexus Modal
 
             this.bindOverlay();
 
-            console.info("Modal Ready");
+            if (global.NX.config?.debug?.enabled) {
+                console.info("Modal Ready");
+            }
 
         },
 
@@ -106,6 +110,10 @@ Nexus Modal
 
         bindKeyboard() {
 
+            if (this.config.closeOnEscape === false) {
+                return;
+            }
+
             document.addEventListener("keydown", (event) => {
 
                 if (event.key !== "Escape") {
@@ -135,6 +143,10 @@ Nexus Modal
         --------------------------------------------------*/
 
         bindOverlay() {
+
+            if (this.config.closeOnOverlay === false) {
+                return;
+            }
 
             document
                 .querySelectorAll(SELECTORS.overlay)
@@ -178,9 +190,11 @@ Nexus Modal
 
             modal.classList.add("is-open");
 
-            document.body.classList.add(
-                "nx-modal-open"
-            );
+            if (this.config.lockScroll !== false) {
+                document.body.classList.add(
+                    "nx-modal-open"
+                );
+            }
 
             modal.setAttribute(
                 "aria-hidden",
@@ -220,9 +234,11 @@ Nexus Modal
 
             modal.classList.remove("is-open");
 
-            document.body.classList.remove(
-                "nx-modal-open"
-            );
+            if (this.config.lockScroll !== false) {
+                document.body.classList.remove(
+                    "nx-modal-open"
+                );
+            }
 
             modal.setAttribute(
                 "aria-hidden",

@@ -41,7 +41,7 @@ Siempre debe combinarse con una variante:
 
     padding:0 var(--nx-button-padding-x);
 
-    border:1px solid transparent;
+    border:var(--nx-border-width) solid transparent;
 
     border-radius:var(--nx-radius-md);
 
@@ -53,12 +53,15 @@ Siempre debe combinarse con una variante:
     text-decoration:none;
     white-space:nowrap;
 
-    font-family:var(--nx-font-family);
-    font-size:1rem;
-    font-weight:700;
-    letter-spacing:.02em;
+   font-family:var(--nx-font-family);
 
-    color:var(--nx-white);
+font-size:var(--nx-font-size-md);
+
+font-weight:var(--nx-font-weight-bold);
+
+letter-spacing:var(--nx-letter-spacing-md);
+
+color:var(--nx-text-primary);
 
     transition:var(--nx-transition);
 
@@ -95,7 +98,10 @@ Hover
 
 .nx-button:hover{
 
-    transform:translateY(-2px);
+    transform:
+translateY(
+var(--nx-button-hover-offset)
+);
 
     box-shadow:var(--nx-shadow-md);
 
@@ -107,7 +113,10 @@ Active
 
 .nx-button:active{
 
-    transform:translateY(1px);
+   transform:
+translateY(
+var(--nx-button-active-offset)
+);
 
 }
 
@@ -135,7 +144,7 @@ Primary
 
         var(--nx-gradient-primary);
 
-    border-color:rgba(255,255,255,.12);
+    border-color:var(--nx-button-primary-border);
 
     box-shadow:var(--nx-shadow-md);
 
@@ -145,17 +154,7 @@ Primary
 
     opacity:1;
 
-    background:
-
-        linear-gradient(
-
-            180deg,
-
-            rgba(255,255,255,.18),
-
-            transparent 60%
-
-        );
+    background:var(--nx-button-glow);
 
 }
 
@@ -167,7 +166,7 @@ Outline
 
     background:transparent;
 
-    border-color:rgba(96,145,255,.45);
+   border-color:var(--nx-button-outline-border);
 
 }
 
@@ -185,7 +184,7 @@ Glass
 
 .nx-button-glass{
 
-    background:rgba(255,255,255,.05);
+    background:var(--nx-button-glass-bg);
 
     border-color:var(--nx-border);
 
@@ -213,7 +212,7 @@ Ghost
 
 .nx-button-ghost:hover{
 
-    background:rgba(255,255,255,.05);
+    background:var(--nx-button-glass-bg);
 
 }
 
@@ -223,15 +222,9 @@ Success
 
 .nx-button-success{
 
-    background:
+    background:var(--nx-gradient-success);
 
-        linear-gradient(
-            135deg,
-            #76e07f,
-            #58c965
-        );
-
-    border-color:rgba(255,255,255,.10);
+    border-color:var(--nx-button-success-border);
 
     box-shadow:var(--nx-shadow-sm);
 
@@ -243,15 +236,9 @@ Danger
 
 .nx-button-danger{
 
-    background:
+    background:var(--nx-gradient-danger);
 
-        linear-gradient(
-            135deg,
-            #ef6760,
-            #d64039
-        );
-
-    border-color:rgba(255,255,255,.10);
+    border-color:var(--nx-button-danger-border);
 
     box-shadow:var(--nx-shadow-md);
 
@@ -267,9 +254,9 @@ Sizes
 
     height:var(--nx-button-sm-height);
 
-    padding:0 1.4rem;
+    padding:0 var(--nx-button-sm-padding-x);
 
-    font-size:.85rem;
+    font-size:var(--nx-font-size-sm);
 
 }
 
@@ -285,9 +272,9 @@ Sizes
 
     height:var(--nx-button-lg-height);
 
-    padding:0 2.5rem;
+    padding:0 var(--nx-button-lg-padding-x);
 
-    font-size:1.05rem;
+    font-size:var(--nx-font-size-lg);
 
 }
 
@@ -312,14 +299,7 @@ Icon
     align-items:center;
 
     gap:var(--nx-button-gap);
-
-}
-
-.nx-button-icon svg{
-
-   width:var(--nx-button-icon-size);
-
-   height:var(--nx-button-icon-size);
+    
 
 }
 
@@ -366,3 +346,5 @@ Button Icons
     stroke:currentColor;
 
 }
+
+

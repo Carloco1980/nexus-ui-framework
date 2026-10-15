@@ -16,8 +16,6 @@ Base
 
     width:100%;
 
-    margin-bottom:var(--nx-space-3xl);
-
 }
 
 /*---------------------------------------------------------
@@ -40,7 +38,7 @@ Alignment
 
     width:100%;
 
-    max-width:840px;
+    max-width:var(--nx-size-840);
 
     margin-inline:auto;
 
@@ -74,9 +72,9 @@ Title
 
     margin:0;
 
-    max-width:760px;
+    max-width:var(--nx-size-760);
 
-    line-height:1.15;
+    line-height:var(--nx-line-height-heading);
 
 }
 
@@ -88,13 +86,13 @@ Description
 
     margin:0;
 
-    max-width:760px;
+    max-width:var(--nx-size-760);
 
     color:var(--nx-text-muted);
 
-    font-size:1.05rem;
+    font-size:var(--nx-font-size-medium-plus);
 
-    line-height:1.8;
+    line-height:var(--nx-line-height-loose);
 
 }
 
@@ -120,7 +118,7 @@ Responsive
 
     .nx-section-header p{
 
-        font-size:1rem;
+        font-size:var(--nx-font-size-md);
 
     }
 

@@ -42,6 +42,18 @@ Display
 
 }
 
+.nx-flow-root{
+
+    display:flow-root;
+
+}
+
+.nx-contents{
+
+    display:contents;
+
+}
+
 .nx-hidden{
 
     display:none !important;
@@ -86,6 +98,12 @@ Flex Alignment
 
 }
 
+.nx-items-stretch{
+
+    align-items:stretch;
+
+}
+
 .nx-justify-start{
 
     justify-content:flex-start;
@@ -119,6 +137,56 @@ Flex Alignment
 .nx-justify-evenly{
 
     justify-content:space-evenly;
+
+}
+
+/*---------------------------------------------------------
+Align Self
+---------------------------------------------------------*/
+
+.nx-self-start{
+
+    align-self:flex-start;
+
+}
+
+.nx-self-center{
+
+    align-self:center;
+
+}
+
+.nx-self-end{
+
+    align-self:flex-end;
+
+}
+
+.nx-self-stretch{
+
+    align-self:stretch;
+
+}
+
+/*---------------------------------------------------------
+Flex Grow
+---------------------------------------------------------*/
+
+.nx-flex-1{
+
+    flex:1;
+
+}
+
+.nx-flex-auto{
+
+    flex:auto;
+
+}
+
+.nx-flex-none{
+
+    flex:none;
 
 }
 
@@ -166,15 +234,53 @@ Gap
 
 }
 
+.nx-gap-xl{
+
+    gap:var(--nx-space-xl);
+
+}
+
 /*---------------------------------------------------------
 Grid Helpers
 ---------------------------------------------------------*/
+
+.nx-grid-2{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.nx-grid-3{
+
+    grid-template-columns:repeat(3,1fr);
+
+}
+
+.nx-grid-4{
+
+    grid-template-columns:repeat(4,1fr);
+
+}
 
 .nx-grid-auto{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    grid-template-columns:
+
+        repeat(
+
+            auto-fit,
+
+            minmax(
+
+                var(--nx-grid-min),
+
+                1fr
+
+            )
+
+        );
 
     gap:var(--nx-space-md);
 

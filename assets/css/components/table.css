@@ -12,7 +12,7 @@ Card
 
 .nx-table-card{
 
-    min-height:420px;
+    min-height:var(--nx-chart-card-min-height);
 
 }
 
@@ -46,7 +46,7 @@ Header
 
 .nx-table thead{
 
-    border-bottom:1px solid var(--nx-border);
+    border-bottom:var(--nx-border-width) solid var(--nx-border);
 
 }
 
@@ -56,19 +56,19 @@ Header Cell
 
 .nx-table th{
 
-    padding:1rem;
+    padding:var(--nx-space-sm);
 
     text-align:left;
 
     color:var(--nx-text-muted);
 
-    font-size:.85rem;
+    font-size:var(--nx-font-size-dense);
 
-    font-weight:600;
+    font-weight:var(--nx-font-weight-semibold);
 
     text-transform:uppercase;
 
-    letter-spacing:.05em;
+    letter-spacing:var(--nx-letter-spacing-wide);
 
 }
 
@@ -78,11 +78,11 @@ Body Cell
 
 .nx-table td{
 
-    padding:1rem;
+    padding:var(--nx-space-sm);
 
     color:var(--nx-text);
 
-    border-bottom:1px solid var(--nx-border-soft);
+    border-bottom:var(--nx-border-width) solid var(--nx-border-soft);
 
 }
 

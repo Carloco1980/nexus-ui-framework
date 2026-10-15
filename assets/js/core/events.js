@@ -36,6 +36,12 @@ Nexus Events
 
         emit(event, detail = {}) {
 
+            const debug = global.NX?.config?.debug;
+
+            if (debug?.enabled && debug.logEvents) {
+                console.info(`[Nexus event] ${event}`, detail);
+            }
+
             document.dispatchEvent(
 
                 new CustomEvent(

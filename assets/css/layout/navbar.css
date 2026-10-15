@@ -1,417 +1,168 @@
-/*=========================================================
-06.3 Navbar
-=========================================================*/
-
-/*---------------------------------------------------------
-Header
----------------------------------------------------------*/
-
 .nx-header{
-
     position:fixed;
-
-    top:0;
-
-    left:0;
-
-    width:100%;
-
+    inset:0 0 auto;
     z-index:var(--nx-z-navbar);
-
-    padding:1rem 0;
-
+    padding:var(--nx-navbar-padding-y) 0;
 }
-
-/*---------------------------------------------------------
-Navbar
----------------------------------------------------------*/
 
 .nx-navbar{
-
     position:relative;
-
     display:grid;
-
     grid-template-columns:auto 1fr auto;
-
     align-items:center;
-
-    gap:2rem;
-
+    gap:var(--nx-navbar-gap);
     width:100%;
-
-    min-height:82px;
-
-    padding:0 2rem;
-
-    background:rgba(15,23,42,.82);
-
-    backdrop-filter:blur(18px);
-
-    border:1px solid var(--nx-border);
-
-    border-radius:999px;
-
-    box-shadow:var(--nx-shadow-sm);
-
+    min-height:var(--nx-navbar-height);
+    padding:0 var(--nx-navbar-padding-x);
+    background:var(--nx-glass-bg);
+    backdrop-filter:var(--nx-navbar-blur);
+    border:var(--nx-border-width) solid var(--nx-navbar-border);
+    border-radius:var(--nx-navbar-radius);
+    box-shadow:var(--nx-navbar-shadow);
 }
 
-/*---------------------------------------------------------
-Brand
----------------------------------------------------------*/
-
 .nx-navbar-brand{
-
     display:flex;
-
     align-items:center;
-
-    gap:1rem;
-
-    text-decoration:none;
-
+    gap:var(--nx-space-sm);
     flex-shrink:0;
-
+    color:var(--nx-text);
+    text-decoration:none;
 }
 
 .nx-logo-mark{
-
-    width:56px;
-    height:56px;
-
     display:flex;
-
     align-items:center;
     justify-content:center;
-
-    border-radius:16px;
-
-    background:linear-gradient(
-        135deg,
-        var(--nx-cyan),
-        var(--nx-green)
-    );
-
-    color:#fff;
-
-    font-size:1.4rem;
-
-    font-weight:800;
-
+    width:var(--nx-navbar-logo-size);
+    height:var(--nx-navbar-logo-size);
+    border-radius:var(--nx-navbar-logo-radius);
+    background:var(--nx-navbar-logo-bg);
+    color:var(--nx-navbar-logo-color);
     box-shadow:var(--nx-glow-green);
-
 }
 
 .nx-logo-content{
-
     display:flex;
-
     flex-direction:column;
-
-    line-height:1.05;
-
+    line-height:var(--nx-line-height-logo);
 }
 
 .nx-logo-title{
-
-    color:#fff;
-
-    font-size:1rem;
-
-    font-weight:800;
-
-    letter-spacing:.20em;
-
+    color:var(--nx-text);
 }
 
 .nx-logo-subtitle{
-
     color:var(--nx-text-soft);
-
-    font-size:.70rem;
-
-    letter-spacing:.22em;
-
 }
 
-/*---------------------------------------------------------
-Menu
----------------------------------------------------------*/
-
 .nx-navbar-menu{
-
     display:flex;
-
-    justify-content:center;
-
     align-items:center;
-
-    list-style:none;
-
-    gap:2.5rem;
-
+    justify-content:center;
+    gap:var(--nx-navbar-gap);
     margin:0;
-
     padding:0;
-
+    list-style:none;
 }
 
 .nx-navbar-menu li{
-
     position:relative;
-
 }
 
 .nx-navbar-menu a{
-
     position:relative;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
-    height:82px;
-
-    color:var(--nx-text);
-
+    height:var(--nx-navbar-height);
+    color:var(--nx-navbar-link-color);
     text-decoration:none;
-
-    font-size:.96rem;
-
-    font-weight:600;
-
-    transition:
-        color .25s ease,
-        transform .25s ease;
-
+    transition:color var(--nx-duration-fast) var(--nx-easing);
 }
 
-.nx-navbar-menu a:hover{
-
-    color:#fff;
-
-}
-
+.nx-navbar-menu a:hover,
 .nx-navbar-menu a.active{
-
-    color:#fff;
-
+    color:var(--nx-text);
 }
-
-/* Línea verde */
 
 .nx-navbar-menu a.active::after{
-
-    content:"";
-
     position:absolute;
-
+    bottom:var(--nx-space-sm);
     left:50%;
-
+    width:var(--nx-navbar-indicator-width);
+    height:var(--nx-navbar-indicator-height);
+    border-radius:var(--nx-radius-pill);
+    background:var(--nx-navbar-indicator-color);
+    box-shadow:var(--nx-glow-green);
+    content:"";
     transform:translateX(-50%);
-
-    bottom:16px;
-
-    width:30px;
-
-    height:4px;
-
-    border-radius:999px;
-
-    background:var(--nx-green);
-
-    box-shadow:
-        0 0 12px rgba(80,255,170,.8),
-        0 0 24px rgba(80,255,170,.45);
-
 }
-
-/*---------------------------------------------------------
-Actions
----------------------------------------------------------*/
 
 .nx-navbar-actions{
-
     display:flex;
-
     align-items:center;
-
-    gap:1rem;
-
+    gap:var(--nx-space-sm);
     flex-shrink:0;
-
 }
 
-/*---------------------------------------------------------
-Search
----------------------------------------------------------*/
-
 .nx-navbar-search{
-
-    width:240px;
-
-    height:48px;
-
-    padding:0 1rem;
-
-    border-radius:999px;
-
-    border:1px solid var(--nx-border);
-
-    background:rgba(255,255,255,.04);
-
-    color:var(--nx-text);
-
+    width:var(--nx-navbar-search-width);
+    height:var(--nx-navbar-search-height);
+    padding:0 var(--nx-input-padding-x);
+    border:var(--nx-border-width) solid var(--nx-navbar-search-border);
+    border-radius:var(--nx-radius-pill);
     outline:none;
-
-    transition:.3s;
-
+    background:var(--nx-navbar-search-bg);
+    color:var(--nx-navbar-search-color);
+    transition:border-color var(--nx-duration-fast) var(--nx-easing),
+        box-shadow var(--nx-duration-fast) var(--nx-easing);
 }
 
 .nx-navbar-search::placeholder{
-
-    color:var(--nx-text-soft);
-
+    color:var(--nx-navbar-search-placeholder);
 }
 
 .nx-navbar-search:focus{
-
-    border-color:var(--nx-primary);
-
-    background:rgba(255,255,255,.06);
-
-    box-shadow:var(--nx-glow-blue);
-
+    border-color:var(--nx-navbar-search-focus-border);
+    box-shadow:var(--nx-navbar-search-focus-shadow);
 }
-
-/*---------------------------------------------------------
-Theme
----------------------------------------------------------*/
-
-.nx-navbar-theme{
-
-    width:48px;
-
-    height:48px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:50%;
-
-    border:1px solid var(--nx-border);
-
-    background:rgba(255,255,255,.04);
-
-    color:#fff;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-.nx-navbar-theme:hover{
-
-    transform:translateY(-2px);
-
-    border-color:var(--nx-primary);
-
-    box-shadow:var(--nx-glow-blue);
-
-}
-
-/*---------------------------------------------------------
-Mobile Button
----------------------------------------------------------*/
 
 .nx-mobile-button{
-
     display:none;
-
     position:absolute;
-
     top:50%;
-
-    right:2rem;
-
-    transform:translateY(-50%);
-
-    width:46px;
-    height:46px;
-
-    padding:0;
-
-    border:none;
-
-    background:transparent;
-
-    cursor:pointer;
-
+    right:var(--nx-navbar-padding-x);
     align-items:center;
     justify-content:center;
-
+    width:var(--nx-navbar-mobile-button-size);
+    height:var(--nx-navbar-mobile-button-size);
+    padding:0;
+    border:0;
+    background:transparent;
+    cursor:pointer;
     flex-direction:column;
-
-    gap:5px;
-
-    z-index:10;
-
+    gap:var(--nx-navbar-mobile-line-gap);
+    transform:translateY(-50%);
 }
 
 .nx-mobile-button span{
-
     display:block;
-
-    width:22px;
-
-    height:2px;
-
-    border-radius:999px;
-
-    background:var(--nx-white);
-
+    width:var(--nx-navbar-mobile-line-width);
+    height:var(--nx-navbar-mobile-line-height);
+    border-radius:var(--nx-radius-pill);
+    background:var(--nx-text);
     transition:var(--nx-transition);
-
 }
-
-/*---------------------------------------------------------
-Mobile Menu States
----------------------------------------------------------*/
-
-.nx-navbar-menu.is-open{
-
-    display:flex;
-
-}
-
-/*---------------------------------------------------------
-Mobile Button Active
----------------------------------------------------------*/
 
 .nx-mobile-button.is-active span:nth-child(1){
-
-    transform:
-        translateY(7px)
-        rotate(45deg);
-
+    transform:translateY(var(--nx-size-7)) rotate(var(--nx-angle-45));
 }
 
 .nx-mobile-button.is-active span:nth-child(2){
-
     opacity:0;
-
 }
 
 .nx-mobile-button.is-active span:nth-child(3){
-
-    transform:
-        translateY(-7px)
-        rotate(-45deg);
-
+    transform:translateY(var(--nx-size-7-negative)) rotate(var(--nx-angle-neg-45));
 }
