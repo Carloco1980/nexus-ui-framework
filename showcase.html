@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Documentación técnica interactiva de Nexus UI Framework.">
+    <title>Nexus UI Framework | Documentación</title>
+    <link rel="stylesheet" href="dist/nexus-ui.css">
+    <link rel="stylesheet" href="components/catalog/catalog.css">
+    <link rel="stylesheet" href="assets/css/pages/documentation-layout.css">
+</head>
+<body class="nx-design-system">
+    <header class="nx-header">
+        <div class="nx-container">
+            <nav class="nx-navbar" aria-label="Navegación principal">
+                <a href="#overview" class="nx-navbar-brand" aria-label="Nexus UI Framework">
+                    <span class="nx-logo-mark" aria-hidden="true">N</span>
+                    <span class="nx-logo-content">
+                        <span class="nx-logo-title">NEXUS</span>
+                        <span class="nx-logo-subtitle">UI Framework</span>
+                    </span>
+                </a>
+                <ul id="nx-navbar-menu" class="nx-navbar-menu">
+                    <li><a href="#overview" class="active" aria-current="page">Documentación</a></li>
+                    <li><a href="#component-index">Componentes</a></li>
+                    <li><a href="#api">API</a></li>
+                </ul>
+                <div class="nx-navbar-actions">
+                    <input class="nx-navbar-search" type="search" placeholder="Buscar componentes..." aria-label="Buscar componentes">
+                    <button id="nx-theme-button" class="nx-theme-toggle" type="button" aria-label="Cambiar tema" aria-pressed="false">
+                        <span class="nx-theme-toggle__thumb" aria-hidden="true"></span>
+                    </button>
+                    <a href="index.html" class="nx-button nx-button-outline">Demo</a>
+                </div>
+                <button id="nx-mobile-button" class="nx-mobile-button" type="button" aria-controls="nx-navbar-menu" aria-expanded="false" aria-label="Abrir menú">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="nx-container nx-page nx-page--under-navbar">
+        <section id="overview" class="nx-hero nx-docs-hero" aria-labelledby="docs-title">
+            <div class="nx-hero-grid">
+                <div class="nx-hero-content">
+                    <span class="nx-badge nx-badge-primary"><span class="nx-badge-dot" aria-hidden="true"></span>Documentación técnica · v1.0</span>
+                    <h1 id="docs-title" class="nx-title-xl nx-hero-title">Nexus UI Framework</h1>
+                    <p class="nx-hero-description">Referencia de marcado, clases CSS, módulos JavaScript y accesibilidad de los componentes disponibles.</p>
+                    <div class="nx-hero-actions">
+                        <a href="#component-index" class="nx-button nx-button-primary">Índice de componentes</a>
+                        <a href="examples/design-system.html" class="nx-button nx-button-outline">Design Tokens</a>
+                    </div>
+                </div>
+                <aside class="nx-hero-dashboard" aria-label="Información del framework">
+                    <article class="nx-card">
+                        <header class="nx-card-header"><span class="nx-badge nx-badge-success"><span class="nx-badge-dot" aria-hidden="true"></span>Framework UI</span><span class="nx-card-meta">v1.0</span></header>
+                        <div class="nx-card-body">
+                            <h2 class="nx-card-title">Arquitectura modular</h2>
+                            <p class="nx-card-text">HTML semántico, estilos por componentes y JavaScript Vanilla registrado en <code>NX</code>.</p>
+                            <div class="nx-highlights"><span class="nx-highlight">Design Tokens</span><span class="nx-highlight">Light / Dark</span><span class="nx-highlight">Sin dependencias</span></div>
+                        </div>
+                    </article>
+                </aside>
+            </div>
+        </section>
+
+        <nav id="component-index" class="nx-doc-index" aria-label="Índice de componentes">
+            <a class="nx-button nx-button-ghost nx-button-sm" href="#navbar">Navbar</a>
+            <a class="nx-button nx-button-ghost nx-button-sm" href="#theme-toggle">Theme Toggle</a>
+            <a class="nx-button nx-button-ghost nx-button-sm" href="#buttons">Buttons</a>
+            <a class="nx-button nx-button-ghost nx-button-sm" href="#badges">Badges</a>
+            <a class="nx-button nx-button-ghost nx-button-sm" href="#icons">Icons</a>
+            <a class="nx-button nx-button-ghost nx-button-sm" href="#cards">Cards</a>
+            <a class="nx-button nx-button-ghost nx-button-sm" href="#feature-card">Feature Card</a>
+            <a class="nx-button nx-button-ghost nx-button-sm" href="#panel">Panel</a>
+            <a class="nx-button nx-button-ghost nx-button-sm" href="#modal">Modal</a>
+            <a class="nx-button nx-button-ghost nx-button-sm" href="#forms">Forms</a>
+            <a class="nx-button nx-button-ghost nx-button-sm" href="#table">Table</a>
+            <a class="nx-button nx-button-ghost nx-button-sm" href="#kpi">KPI</a>
+            <a class="nx-button nx-button-ghost nx-button-sm" href="#chart-card">Chart Card</a>
+            <a class="nx-button nx-button-ghost nx-button-sm" href="#dashboard">Dashboard</a>
+            <a class="nx-button nx-button-ghost nx-button-sm" href="#fab">FAB</a>
+            <a class="nx-button nx-button-ghost nx-button-sm" href="#section-header">Section Header</a>
+            <a class="nx-button nx-button-ghost nx-button-sm" href="#animations">Animations</a>
+        </nav>
+
+        <section id="navbar" class="nx-doc-section" aria-labelledby="navbar-title">
+            <header><span class="nx-badge">Navigation</span><h2 id="navbar-title" class="nx-title-lg">Navbar</h2><p class="nx-text-muted">Barra principal responsive. La instancia funcional de esta página está en el encabezado.</p></header>
+            <div class="nx-doc-example">
+                <div class="nx-doc-preview"><a class="nx-button nx-button-outline" href="#nx-mobile-button">Ir a la Navbar activa</a></div>
+                <div class="nx-doc-reference"><h3>HTML</h3><pre class="nx-doc-code"><code>&lt;header class="nx-header"&gt;
+  &lt;div class="nx-container"&gt;
+    &lt;nav class="nx-navbar" aria-label="Navegación principal"&gt;
+      &lt;a class="nx-navbar-brand" href="#inicio"&gt;Nexus&lt;/a&gt;
+      &lt;ul id="nx-navbar-menu" class="nx-navbar-menu"&gt;...&lt;/ul&gt;
+      &lt;button id="nx-mobile-button" class="nx-mobile-button"
+        type="button" aria-controls="nx-navbar-menu"
+        aria-expanded="false" aria-label="Abrir menú"&gt;...&lt;/button&gt;
+    &lt;/nav&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</code></pre><p><strong>Clases:</strong> <code>nx-header</code>, <code>nx-navbar</code>, <code>nx-navbar-brand</code>, <code>nx-navbar-menu</code>, <code>nx-navbar-actions</code>, <code>nx-mobile-button</code>.</p><p><strong>API:</strong> <code>NX.navbar.init()</code>, <code>toggleMenu()</code>, <code>closeMenu()</code>. Los IDs del menú y botón móvil son selectores de la API del módulo.</p><p><strong>Accesibilidad:</strong> nombra el landmark <code>nav</code> y conserva <code>aria-controls</code> y <code>aria-expanded</code>.</p><a class="nx-button nx-button-outline nx-doc-source" href="components/navbar/navbar.html">Ver implementación fuente</a></div>
+            </div>
+        </section>
+
+        <section id="theme-toggle" class="nx-doc-section" aria-labelledby="theme-title">
+            <header><span class="nx-badge">Theme</span><h2 id="theme-title" class="nx-title-lg">Theme Toggle</h2><p class="nx-text-muted">El botón del encabezado alterna el tema mediante el servicio público de Theme.</p></header>
+            <div class="nx-doc-example">
+                <div class="nx-doc-preview"><a class="nx-button nx-button-outline" href="#nx-theme-button">Ir al control de tema activo</a></div>
+                <div class="nx-doc-reference"><h3>HTML</h3><pre class="nx-doc-code"><code>&lt;button id="nx-theme-button" class="nx-theme-toggle"
+  type="button" aria-label="Cambiar tema" aria-pressed="false"&gt;
+  &lt;span class="nx-theme-toggle__thumb" aria-hidden="true"&gt;&lt;/span&gt;
+&lt;/button&gt;</code></pre><p><strong>Clases:</strong> <code>nx-theme-toggle</code>, <code>nx-theme-toggle__thumb</code>.</p><p><strong>API:</strong> <code>NX.theme.set()</code>, <code>get()</code>, <code>current()</code>, <code>toggle()</code>, <code>reset()</code>. Evento: <code>nx:themechange</code>.</p><p><strong>Accesibilidad:</strong> <code>aria-pressed</code> refleja el tema actual. Los tokens se seleccionan con <code>data-nx-theme</code> en el elemento raíz.</p><a class="nx-button nx-button-outline nx-doc-source" href="assets/js/components/theme-toggle.js">Ver módulo</a></div>
+            </div>
+        </section>
+
+        <section id="buttons" class="nx-doc-section" aria-labelledby="buttons-title">
+            <header><span class="nx-badge">Actions</span><h2 id="buttons-title" class="nx-title-lg">Buttons</h2><p class="nx-text-muted">Variantes disponibles para acciones y navegación.</p></header>
+            <div class="nx-doc-example">
+                <div class="nx-doc-preview"><button class="nx-button nx-button-primary" type="button">Primary</button><button class="nx-button nx-button-outline" type="button">Outline</button><button class="nx-button nx-button-ghost" type="button">Ghost</button><button class="nx-button nx-button-success" type="button">Success</button><button class="nx-button nx-button-danger" type="button">Danger</button><button class="nx-button nx-button-glass" type="button">Glass</button></div>
+                <div class="nx-doc-reference"><h3>HTML</h3><pre class="nx-doc-code"><code>&lt;button class="nx-button nx-button-primary" type="button"&gt;
+  Guardar
+&lt;/button&gt;</code></pre><p><strong>Clases:</strong> <code>nx-button</code>, <code>nx-button-primary</code>, <code>nx-button-outline</code>, <code>nx-button-ghost</code>, <code>nx-button-success</code>, <code>nx-button-danger</code>, <code>nx-button-glass</code>, <code>nx-button-sm</code>, <code>nx-button-md</code>, <code>nx-button-lg</code>.</p><p><strong>API:</strong> sin API JavaScript propia; utiliza eventos nativos del elemento.</p><p><strong>Accesibilidad:</strong> usa <code>button</code> para acciones y <code>a</code> para navegación; define <code>type</code>.</p><a class="nx-button nx-button-outline nx-doc-source" href="components/button/button.html">Ver implementación fuente</a></div>
+            </div>
+        </section>
+
+        <section id="badges" class="nx-doc-section" aria-labelledby="badges-title">
+            <header><span class="nx-badge">Feedback</span><h2 id="badges-title" class="nx-title-lg">Badges</h2><p class="nx-text-muted">Etiquetas para indicar estado o categoría; no tienen comportamiento interactivo.</p></header>
+            <div class="nx-doc-example">
+                <div class="nx-doc-preview"><span class="nx-badge nx-badge-primary"><span class="nx-badge-dot" aria-hidden="true"></span>Framework</span><span class="nx-badge nx-badge-success"><span class="nx-badge-dot" aria-hidden="true"></span>Stable</span><span class="nx-badge nx-badge-info"><span class="nx-badge-dot" aria-hidden="true"></span>Dashboard</span><span class="nx-badge nx-badge-outline"><span class="nx-badge-dot" aria-hidden="true"></span>New</span><span class="nx-badge nx-badge-purple"><span class="nx-badge-dot" aria-hidden="true"></span>Beta</span></div>
+                <div class="nx-doc-reference"><h3>HTML</h3><pre class="nx-doc-code"><code>&lt;span class="nx-badge nx-badge-success"&gt;
+  &lt;span class="nx-badge-dot" aria-hidden="true"&gt;&lt;/span&gt;
+  Stable
+&lt;/span&gt;</code></pre><p><strong>Clases:</strong> <code>nx-badge</code>, <code>nx-badge-primary</code>, <code>nx-badge-success</code>, <code>nx-badge-info</code>, <code>nx-badge-purple</code>, <code>nx-badge-outline</code>, <code>nx-badge-glass</code>, <code>nx-badge-dot</code>.</p><p><strong>API:</strong> ninguna. Usa texto además del color para expresar el estado.</p><a class="nx-button nx-button-outline nx-doc-source" href="components/badge/badge.html">Ver implementación fuente</a></div>
+            </div>
+        </section>
+
+        <section id="icons" class="nx-doc-section" aria-labelledby="icons-title">
+            <header><span class="nx-badge">Assets</span><h2 id="icons-title" class="nx-title-lg">Icons</h2><p class="nx-text-muted">El módulo inserta los SVG del Framework en elementos declarados con <code>data-nx-icon</code>.</p></header>
+            <div class="nx-doc-example">
+                <div class="nx-doc-preview"><span class="nx-icon" data-nx-icon="search" aria-hidden="true"></span><span class="nx-icon" data-nx-icon="save" aria-hidden="true"></span><span class="nx-icon" data-nx-icon="close" aria-hidden="true"></span></div>
+                <div class="nx-doc-reference"><h3>HTML</h3><pre class="nx-doc-code"><code>&lt;span class="nx-icon" data-nx-icon="search"
+  aria-hidden="true"&gt;&lt;/span&gt;</code></pre><p><strong>Clases:</strong> <code>nx-icon</code>, <code>nx-icon-xs</code>, <code>nx-icon-sm</code>, <code>nx-icon-md</code>, <code>nx-icon-lg</code>, <code>nx-icon-xl</code>.</p><p><strong>API:</strong> <code>NX.icons.load(name)</code>, <code>render()</code>, <code>refresh()</code>, <code>clearCache()</code>.</p><p><strong>Accesibilidad:</strong> oculta iconos decorativos; proporciona un nombre accesible a los informativos.</p><a class="nx-button nx-button-outline nx-doc-source" href="assets/js/components/icons.js">Ver módulo</a></div>
+            </div>
+        </section>
+
+        <section id="cards" class="nx-doc-section" aria-labelledby="cards-title">
+            <header><span class="nx-badge">Layout</span><h2 id="cards-title" class="nx-title-lg">Cards</h2><p class="nx-text-muted">Contenedor para agrupar contenido, metadatos y acciones.</p></header>
+            <div class="nx-doc-example">
+                <div class="nx-doc-preview"><article class="nx-card"><header class="nx-card-header"><span class="nx-badge">Componente</span><span class="nx-card-meta">Nexus</span></header><div class="nx-card-body"><h3 class="nx-card-title">Card reutilizable</h3><p class="nx-card-text">Contenido y acciones organizados en una superficie.</p></div><footer class="nx-card-footer"><a class="nx-button nx-button-outline" href="#feature-card">Ver Feature Card</a></footer></article></div>
+                <div class="nx-doc-reference"><h3>HTML</h3><pre class="nx-doc-code"><code>&lt;article class="nx-card"&gt;
+  &lt;header class="nx-card-header"&gt;...&lt;/header&gt;
+  &lt;div class="nx-card-body"&gt;
+    &lt;h3 class="nx-card-title"&gt;Título&lt;/h3&gt;
+    &lt;p class="nx-card-text"&gt;Descripción&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;footer class="nx-card-footer"&gt;...&lt;/footer&gt;
+&lt;/article&gt;</code></pre><p><strong>Clases:</strong> <code>nx-card</code>, <code>nx-card-header</code>, <code>nx-card-body</code>, <code>nx-card-title</code>, <code>nx-card-text</code>, <code>nx-card-meta</code>, <code>nx-card-footer</code>.</p><p><strong>API:</strong> ninguna; componente visual.</p><a class="nx-button nx-button-outline nx-doc-source" href="components/card/card.html">Ver implementación fuente</a></div>
+            </div>
+        </section>
+
+        <section id="feature-card" class="nx-doc-section" aria-labelledby="feature-card-title">
+            <header><span class="nx-badge">Layout</span><h2 id="feature-card-title" class="nx-title-lg">Feature Card</h2><p class="nx-text-muted">Composición de Card con icono y énfasis visual para describir una capacidad.</p></header>
+            <div class="nx-doc-example">
+                <div class="nx-doc-preview"><article class="nx-card nx-feature-card"><div class="nx-feature-icon" aria-hidden="true"><span class="nx-icon" data-nx-icon="search"></span></div><div class="nx-card-body"><h3 class="nx-card-title">Reutilizable</h3><p class="nx-card-text">Feature Card compuesta sobre la Card base.</p></div></article></div>
+                <div class="nx-doc-reference"><h3>HTML</h3><pre class="nx-doc-code"><code>&lt;article class="nx-card nx-feature-card"&gt;
+  &lt;div class="nx-feature-icon" aria-hidden="true"&gt;
+    &lt;span class="nx-icon" data-nx-icon="search"&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="nx-card-body"&gt;...&lt;/div&gt;
+&lt;/article&gt;</code></pre><p><strong>Clases:</strong> <code>nx-feature-card</code>, <code>nx-feature-icon</code> y las clases base de Card.</p><p><strong>API:</strong> ninguna; composición visual.</p><a class="nx-button nx-button-outline nx-doc-source" href="components/feature-card/feature-card.html">Ver implementación fuente</a></div>
+            </div>
+        </section>
+
+        <section id="panel" class="nx-doc-section" aria-labelledby="panel-title">
+            <header><span class="nx-badge">Layout</span><h2 id="panel-title" class="nx-title-lg">Panel</h2><p class="nx-text-muted">Superficie para agrupar una cabecera, cuerpo y pie opcionales.</p></header>
+            <div class="nx-doc-example">
+                <div class="nx-doc-preview"><article class="nx-panel"><header class="nx-panel-header"><div class="nx-panel-heading"><h3 class="nx-panel-title">Actividad reciente</h3><p class="nx-panel-subtitle">Actualizado hoy</p></div></header><div class="nx-panel-body"><p class="nx-body">Contenido del panel.</p></div><footer class="nx-panel-footer"><span class="nx-caption">3 elementos</span></footer></article></div>
+                <div class="nx-doc-reference"><h3>HTML</h3><pre class="nx-doc-code"><code>&lt;article class="nx-panel"&gt;
+  &lt;header class="nx-panel-header"&gt;...&lt;/header&gt;
+  &lt;div class="nx-panel-body"&gt;Contenido&lt;/div&gt;
+  &lt;footer class="nx-panel-footer"&gt;...&lt;/footer&gt;
+&lt;/article&gt;</code></pre><p><strong>Clases:</strong> <code>nx-panel</code>, <code>nx-panel-header</code>, <code>nx-panel-heading</code>, <code>nx-panel-title</code>, <code>nx-panel-subtitle</code>, <code>nx-panel-body</code>, <code>nx-panel-footer</code>, <code>nx-panel-action</code>.</p><p><strong>API:</strong> ninguna; componente visual.</p><a class="nx-button nx-button-outline nx-doc-source" href="components/panel/panel.html">Ver implementación fuente</a></div>
+            </div>
+        </section>
+
+        <section id="modal" class="nx-doc-section" aria-labelledby="modal-title">
+            <header><span class="nx-badge">Feedback</span><h2 id="modal-title" class="nx-title-lg">Modal</h2><p class="nx-text-muted">Diálogo funcional controlado por atributos y por la API pública.</p></header>
+            <div class="nx-doc-example">
+                <div class="nx-doc-preview"><button class="nx-button nx-button-primary" type="button" data-nx-modal-open="demo-modal">Abrir Modal</button></div>
+                <div class="nx-doc-reference"><h3>HTML</h3><pre class="nx-doc-code"><code>&lt;button type="button" data-nx-modal-open="demo-modal"&gt;
+  Abrir Modal
+&lt;/button&gt;
+&lt;div class="nx-modal" id="demo-modal" aria-hidden="true"&gt;
+  &lt;div class="nx-modal__overlay"&gt;&lt;/div&gt;
+  &lt;div class="nx-modal__dialog" role="dialog" aria-modal="true"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre><p><strong>Clases:</strong> <code>nx-modal</code>, <code>nx-modal__overlay</code>, <code>nx-modal__dialog</code>, <code>nx-modal__header</code>, <code>nx-modal__body</code>, <code>nx-modal__footer</code>.</p><p><strong>API:</strong> <code>NX.modal.open(id)</code>, <code>close(id)</code>, <code>toggle(id)</code>. Eventos: <code>modal:open</code>, <code>modal:close</code>.</p><p><strong>Accesibilidad:</strong> asocia el diálogo a un título con <code>aria-labelledby</code> y mantiene sincronizado <code>aria-hidden</code>.</p><a class="nx-button nx-button-outline nx-doc-source" href="components/modal/modal.html">Ver implementación fuente</a></div>
+            </div>
+            <div class="nx-modal" id="demo-modal" aria-hidden="true">
+                <div class="nx-modal__overlay"></div>
+                <div class="nx-modal__dialog" role="dialog" aria-modal="true">
+                    <header class="nx-modal__header"><h2>Nexus Modal</h2></header>
+                    <div class="nx-modal__body"><p>Este es el primer componente Modal del Nexus UI Framework.</p></div>
+                    <footer class="nx-modal__footer">
+                        <button class="nx-button nx-button-outline" type="button" data-nx-modal-close><span class="nx-icon" data-nx-icon="close" aria-hidden="true"></span><span>Cancelar</span></button>
+                        <button class="nx-button nx-button-primary" type="button"><span class="nx-icon" data-nx-icon="save" aria-hidden="true"></span><span>Aceptar</span></button>
+                    </footer>
+                </div>
+            </div>
+        </section>
+
+        <section id="forms" class="nx-doc-section" aria-labelledby="forms-title">
+            <header><span class="nx-badge">Forms</span><h2 id="forms-title" class="nx-title-lg">Forms</h2><p class="nx-text-muted">Estilos para campos nativos, etiquetas, ayudas y distribución en rejilla.</p></header>
+            <div class="nx-doc-example">
+                <div class="nx-doc-preview"><form class="nx-form"><div class="nx-form-grid"><div class="nx-form-field"><label class="nx-label" for="docs-email">Correo</label><input class="nx-input" id="docs-email" type="email" autocomplete="email" placeholder="nombre@ejemplo.cl"></div><div class="nx-form-field"><label class="nx-label" for="docs-category">Categoría</label><select class="nx-select" id="docs-category"><option>Framework</option><option>Componentes</option></select></div></div><button class="nx-button nx-button-primary" type="button">Vista previa</button></form></div>
+                <div class="nx-doc-reference"><h3>HTML</h3><pre class="nx-doc-code"><code>&lt;div class="nx-form-field"&gt;
+  &lt;label class="nx-label" for="email"&gt;Correo&lt;/label&gt;
+  &lt;input class="nx-input" id="email" type="email"&gt;
+&lt;/div&gt;
+&lt;select class="nx-select" id="category"&gt;...&lt;/select&gt;</code></pre><p><strong>Clases:</strong> <code>nx-form</code>, <code>nx-form-grid</code>, <code>nx-form-field</code>, <code>nx-form-field-full</code>, <code>nx-label</code>, <code>nx-input</code>, <code>nx-select</code>, <code>nx-textarea</code>, <code>nx-help</code>, <code>nx-form-status</code>.</p><p><strong>API:</strong> <code>NX.forms.init()</code>, <code>submit(event)</code>, <code>validate(fields)</code>, <code>showStatus(message)</code>. El módulo de envío usa <code>#nx-contact-form</code>.</p><p><strong>Accesibilidad:</strong> relaciona cada etiqueta con su control mediante <code>for</code> e <code>id</code>.</p><a class="nx-button nx-button-outline nx-doc-source" href="components/forms/forms.html">Ver implementación fuente</a></div>
+            </div>
+        </section>
+
+        <section id="table" class="nx-doc-section" aria-labelledby="table-title">
+            <header><span class="nx-badge">Data Display</span><h2 id="table-title" class="nx-title-lg">Table</h2><p class="nx-text-muted">Tabla semántica con desplazamiento horizontal en contenedores estrechos.</p></header>
+            <div class="nx-doc-example">
+                <div class="nx-doc-preview"><div class="nx-table-wrapper"><table class="nx-table"><caption class="nx-caption">Estado de proyectos</caption><thead><tr><th scope="col">Proyecto</th><th scope="col">Estado</th></tr></thead><tbody><tr><td>Framework</td><td><span class="nx-badge nx-badge-success">Stable</span></td></tr><tr><td>Showcase</td><td><span class="nx-badge nx-badge-info">En curso</span></td></tr></tbody></table></div></div>
+                <div class="nx-doc-reference"><h3>HTML</h3><pre class="nx-doc-code"><code>&lt;div class="nx-table-wrapper"&gt;
+  &lt;table class="nx-table"&gt;
+    &lt;caption&gt;Estado de proyectos&lt;/caption&gt;
+    &lt;thead&gt;&lt;tr&gt;&lt;th scope="col"&gt;Proyecto&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+    &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Framework&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre><p><strong>Clases:</strong> <code>nx-table-wrapper</code>, <code>nx-table</code>, <code>nx-table-card</code>.</p><p><strong>API:</strong> ninguna; tabla HTML nativa.</p><p><strong>Accesibilidad:</strong> añade <code>caption</code> y define <code>scope="col"</code> en las cabeceras.</p><a class="nx-button nx-button-outline nx-doc-source" href="components/table/table.html">Ver implementación fuente</a></div>
+            </div>
+        </section>
+
+        <section id="kpi" class="nx-doc-section" aria-labelledby="kpi-title">
+            <header><span class="nx-badge">Dashboard</span><h2 id="kpi-title" class="nx-title-lg">KPI</h2><p class="nx-text-muted">Composición de Panel para presentar valor, etiqueta, descripción y tendencia.</p></header>
+            <div class="nx-doc-example">
+                <div class="nx-doc-preview"><article class="nx-panel nx-kpi"><header class="nx-panel-header"><div class="nx-kpi-icon" aria-hidden="true"><span class="nx-icon" data-nx-icon="search"></span></div></header><div class="nx-panel-body nx-kpi-body"><span class="nx-kpi-value">248</span><h3 class="nx-kpi-title">Componentes</h3><p class="nx-kpi-description">En la biblioteca</p></div><footer class="nx-panel-footer"><span class="nx-kpi-trend">+8%</span><span class="nx-kpi-update">Último mes</span></footer></article></div>
+                <div class="nx-doc-reference"><h3>HTML</h3><pre class="nx-doc-code"><code>&lt;article class="nx-panel nx-kpi"&gt;
+  &lt;div class="nx-panel-body nx-kpi-body"&gt;
+    &lt;span class="nx-kpi-value"&gt;248&lt;/span&gt;
+    &lt;h3 class="nx-kpi-title"&gt;Componentes&lt;/h3&gt;
+    &lt;p class="nx-kpi-description"&gt;En la biblioteca&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre><p><strong>Clases:</strong> <code>nx-kpi</code>, <code>nx-kpi-body</code>, <code>nx-kpi-icon</code>, <code>nx-kpi-value</code>, <code>nx-kpi-title</code>, <code>nx-kpi-description</code>, <code>nx-kpi-trend</code>, <code>nx-kpi-update</code>.</p><p><strong>API:</strong> ninguna; los datos los proporciona la aplicación.</p><p><strong>Accesibilidad:</strong> expresa valor y contexto como texto; no uses solo color para indicar tendencia.</p><a class="nx-button nx-button-outline nx-doc-source" href="components/kpi/kpi.html">Ver implementación fuente</a></div>
+            </div>
+        </section>
+
+        <section id="chart-card" class="nx-doc-section" aria-labelledby="chart-title">
+            <header><span class="nx-badge">Dashboard</span><h2 id="chart-title" class="nx-title-lg">Chart Card</h2><p class="nx-text-muted">Panel que ofrece una superficie para gráficos y métricas. No incluye motor de gráficos.</p></header>
+            <div class="nx-doc-example">
+                <div class="nx-doc-preview"><article class="nx-panel nx-chart-card"><header class="nx-panel-header"><div class="nx-panel-heading"><h3 class="nx-panel-title">Resumen anual</h3><p class="nx-panel-subtitle">Datos de ejemplo</p></div></header><div class="nx-panel-body"><div class="nx-chart-body"><canvas aria-label="Área del gráfico de ejemplo"></canvas></div><div class="nx-chart-divider"></div><div class="nx-chart-metrics"><div class="nx-chart-metric"><span class="nx-chart-label">Total</span><strong class="nx-chart-value">248</strong></div></div></div></article></div>
+                <div class="nx-doc-reference"><h3>HTML</h3><pre class="nx-doc-code"><code>&lt;article class="nx-panel nx-chart-card"&gt;
+  &lt;header class="nx-panel-header"&gt;...&lt;/header&gt;
+  &lt;div class="nx-panel-body"&gt;
+    &lt;div class="nx-chart-body"&gt;&lt;canvas&gt;&lt;/canvas&gt;&lt;/div&gt;
+    &lt;div class="nx-chart-divider"&gt;&lt;/div&gt;
+    &lt;div class="nx-chart-metrics"&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre><p><strong>Clases:</strong> <code>nx-chart-card</code>, <code>nx-chart-body</code>, <code>nx-chart-divider</code>, <code>nx-chart-metrics</code>, <code>nx-chart-metric</code>, <code>nx-chart-label</code>, <code>nx-chart-value</code>, <code>nx-chart-legend</code>.</p><p><strong>API:</strong> ninguna provista; la aplicación dibuja el contenido del canvas.</p><p><strong>Accesibilidad:</strong> proporciona una descripción textual equivalente para los datos del gráfico.</p><a class="nx-button nx-button-outline nx-doc-source" href="components/chart-card/chart-card.html">Ver implementación fuente</a></div>
+            </div>
+        </section>
+
+        <section id="dashboard" class="nx-doc-section" aria-labelledby="dashboard-title">
+            <header><span class="nx-badge">Dashboard</span><h2 id="dashboard-title" class="nx-title-lg">Dashboard</h2><p class="nx-text-muted">Layout que organiza cabecera, KPIs y paneles en una vista de resumen.</p></header>
+            <div class="nx-doc-example">
+                <div class="nx-doc-preview"><section class="nx-dashboard" aria-label="Dashboard de ejemplo"><header class="nx-dashboard-header"><h3>Resumen</h3><span class="nx-status" role="img" aria-label="Estado en línea"></span></header><div class="nx-dashboard-kpis"><article class="nx-panel nx-kpi"><div class="nx-panel-body nx-kpi-body"><span class="nx-kpi-value">12</span><h4 class="nx-kpi-title">Proyectos</h4></div></article></div><div class="nx-dashboard-charts"><article class="nx-panel"><div class="nx-panel-body"><h4 class="nx-panel-title">Actividad</h4><p class="nx-panel-subtitle">Panel de contenido</p></div></article></div></section></div>
+                <div class="nx-doc-reference"><h3>HTML</h3><pre class="nx-doc-code"><code>&lt;section class="nx-dashboard" aria-label="Resumen"&gt;
+  &lt;header class="nx-dashboard-header"&gt;...&lt;/header&gt;
+  &lt;div class="nx-dashboard-kpis"&gt;...&lt;/div&gt;
+  &lt;div class="nx-dashboard-charts"&gt;...&lt;/div&gt;
+&lt;/section&gt;</code></pre><p><strong>Clases:</strong> <code>nx-dashboard</code>, <code>nx-dashboard-header</code>, <code>nx-dashboard-kpis</code>, <code>nx-dashboard-charts</code>; se compone con Panel, KPI y Chart Card.</p><p><strong>API:</strong> ninguna; layout CSS.</p><p><strong>Accesibilidad:</strong> nombra las regiones y conserva una jerarquía de encabezados lógica.</p><a class="nx-button nx-button-outline nx-doc-source" href="components/dashboard/dashboard.html">Ver implementación fuente</a></div>
+            </div>
+        </section>
+
+        <section id="fab" class="nx-doc-section" aria-labelledby="fab-title">
+            <header><span class="nx-badge">Actions</span><h2 id="fab-title" class="nx-title-lg">Floating Action Button</h2><p class="nx-text-muted">Botón compacto de acción principal. Su apariencia no añade por sí misma una acción.</p></header>
+            <div class="nx-doc-example">
+                <div class="nx-doc-preview"><button class="nx-fab" type="button" aria-label="Crear elemento"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5h2v14h-2z"></path><path d="M5 11h14v2H5z"></path></svg></button></div>
+                <div class="nx-doc-reference"><h3>HTML</h3><pre class="nx-doc-code"><code>&lt;button class="nx-fab" type="button" aria-label="Crear elemento"&gt;
+  &lt;svg viewBox="0 0 24 24" aria-hidden="true"&gt;...&lt;/svg&gt;
+&lt;/button&gt;</code></pre><p><strong>Clases:</strong> <code>nx-fab</code>.</p><p><strong>API:</strong> <code>NX.fab.init()</code> configura enlaces `.nx-whatsapp-button` con <code>data-whatsapp-number</code>.</p><p><strong>Accesibilidad:</strong> usa una etiqueta que describa la acción y marca el SVG decorativo.</p><a class="nx-button nx-button-outline nx-doc-source" href="components/fab/fab.html">Ver implementación fuente</a></div>
+            </div>
+        </section>
+
+        <section id="section-header" class="nx-doc-section" aria-labelledby="section-header-title">
+            <header><span class="nx-badge">Layout</span><h2 id="section-header-title" class="nx-title-lg">Section Header</h2><p class="nx-text-muted">Composición para titular y contextualizar una sección.</p></header>
+            <div class="nx-doc-example">
+                <div class="nx-doc-preview"><header class="nx-section-header nx-section-header-left"><span class="nx-badge">Documentación</span><h3 class="nx-title-lg">Componentes reutilizables</h3><p>Descripción de la sección.</p></header></div>
+                <div class="nx-doc-reference"><h3>HTML</h3><pre class="nx-doc-code"><code>&lt;header class="nx-section-header nx-section-header-left"&gt;
+  &lt;span class="nx-badge"&gt;Documentación&lt;/span&gt;
+  &lt;h2 class="nx-title-lg"&gt;Título&lt;/h2&gt;
+  &lt;p&gt;Descripción&lt;/p&gt;
+&lt;/header&gt;</code></pre><p><strong>Clases:</strong> <code>nx-section-header</code>, <code>nx-section-header-left</code>, <code>nx-section-header-center</code>, <code>nx-section-header-right</code>.</p><p><strong>API:</strong> ninguna; composición visual.</p><p><strong>Accesibilidad:</strong> elige el nivel del encabezado según la jerarquía del documento.</p><a class="nx-button nx-button-outline nx-doc-source" href="assets/css/components/section-header.css">Ver estilos del componente</a></div>
+            </div>
+        </section>
+
+        <section id="animations" class="nx-doc-section" aria-labelledby="animations-title">
+            <header><span class="nx-badge">Core</span><h2 id="animations-title" class="nx-title-lg">Animations</h2><p class="nx-text-muted">El módulo revela elementos marcados con <code>data-nx-animation</code> al entrar en el viewport.</p></header>
+            <div class="nx-doc-example">
+                <div class="nx-doc-preview"><article class="nx-card" data-nx-animation="fade-up"><div class="nx-card-body"><h3 class="nx-card-title">Fade up</h3><p class="nx-card-text">Animación de entrada del módulo.</p></div></article></div>
+                <div class="nx-doc-reference"><h3>HTML</h3><pre class="nx-doc-code"><code>&lt;article class="nx-card" data-nx-animation="fade-up"&gt;
+  &lt;div class="nx-card-body"&gt;Contenido&lt;/div&gt;
+&lt;/article&gt;</code></pre><p><strong>Atributos:</strong> <code>fade-up</code>, <code>fade-down</code>, <code>fade-left</code>, <code>fade-right</code>, <code>zoom</code>.</p><p><strong>API:</strong> <code>NX.animations.init()</code>; configuración en <code>NX.config.animations</code>.</p><p><strong>Accesibilidad:</strong> el contenido debe seguir comprensible con movimiento reducido o sin animación.</p><a class="nx-button nx-button-outline nx-doc-source" href="assets/js/core/animations.js">Ver módulo</a></div>
+            </div>
+        </section>
+
+        <section id="api" class="nx-doc-section" aria-labelledby="api-title">
+            <header><span class="nx-badge nx-badge-primary">API pública</span><h2 id="api-title" class="nx-title-lg">Inicialización y eventos</h2><p class="nx-text-muted">Los módulos incluidos en la página se registran en <code>window.NX</code> y el bootstrap los inicializa automáticamente.</p></header>
+            <div class="nx-doc-reference"><h3>Servicios principales</h3><p><strong>Theme:</strong> <code>NX.theme.set()</code>, <code>get()</code>, <code>current()</code>, <code>toggle()</code>, <code>reset()</code>; evento <code>nx:themechange</code>.</p><p><strong>Modal:</strong> <code>NX.modal.open(id)</code>, <code>close(id)</code>, <code>toggle(id)</code>; eventos <code>modal:open</code> y <code>modal:close</code>.</p><p><strong>Icons:</strong> <code>NX.icons.refresh()</code>, <code>load(name)</code>, <code>clearCache()</code>.</p><p><strong>Configuración:</strong> <code>NX.config</code> contiene las opciones de tema, navbar, modal, iconos, animaciones, breakpoints y debug.</p></div>
+        </section>
+    </main>
+
+    <footer class="nx-design-footer"><div class="nx-container"><p>Nexus UI Framework · Documentación técnica · v1.0</p></div></footer>
+
+    <script src="assets/js/core/config.js"></script>
+    <script src="assets/js/core/events.js"></script>
+    <script src="assets/js/core/theme.js"></script>
+    <script src="assets/js/components/icons.js"></script>
+    <script src="assets/js/components/navbar.js"></script>
+    <script src="assets/js/components/modal.js"></script>
+    <script src="assets/js/components/theme-toggle.js"></script>
+    <script src="assets/js/components/forms.js"></script>
+    <script src="assets/js/components/fab.js"></script>
+    <script src="assets/js/core/animations.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

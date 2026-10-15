@@ -32,11 +32,17 @@ Nexus Modal
 
         lastFocusedElement: null,
 
+        initialized: false,
+
         /*--------------------------------------------------
         Init
         --------------------------------------------------*/
 
         init() {
+
+            if (this.initialized) return;
+
+            if (!document.querySelector(SELECTORS.modal)) return;
 
             this.config = global.NX.config?.modal || {};
 
@@ -47,6 +53,8 @@ Nexus Modal
             this.bindKeyboard();
 
             this.bindOverlay();
+
+            this.initialized = true;
 
             if (global.NX.config?.debug?.enabled) {
                 console.info("Modal Ready");

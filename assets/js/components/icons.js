@@ -24,11 +24,17 @@ Nexus Icons
 
         config: {},
 
+        initialized: false,
+
         init() {
+
+            if (this.initialized) return;
 
             this.config = global.NX.config?.icons || {};
 
             this.render();
+
+            this.initialized = true;
 
             if (global.NX.config?.debug?.enabled) {
                 console.info("Icons Ready");

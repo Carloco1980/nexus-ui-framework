@@ -1,0 +1,33 @@
+/* Shared page rhythm for Framework pages and documentation. */
+.nx-page {
+    display: flex;
+    flex-direction: column;
+    gap: var(--nx-space-lg);
+    min-width: 0;
+    padding-block: var(--nx-space-lg);
+}
+
+.nx-page--under-navbar {
+    padding-top: calc(var(--nx-header-height) + var(--nx-space-xl));
+}
+
+.nx-page--landing {
+    gap: 0;
+    padding-block: 0;
+}
+
+@media (max-width: 768px) {
+    .nx-page {
+        gap: var(--nx-space-md);
+        padding-block: var(--nx-space-md);
+    }
+
+    .nx-page--under-navbar {
+        padding-top: calc(var(--nx-header-height) + var(--nx-space-md));
+    }
+
+    .nx-page--landing {
+        gap: 0;
+        padding-block: 0;
+    }
+}

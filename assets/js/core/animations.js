@@ -18,7 +18,11 @@ Animations Module
 
 const NexusAnimations = {
 
+    initialized: false,
+
     init() {
+
+        if (this.initialized) return;
 
         this.config = window.NX.config?.animations || {};
 
@@ -34,10 +38,18 @@ const NexusAnimations = {
 
         if (this.config.reducedMotion === true) {
             this.elements.forEach((element) => this.animate(element));
+            this.initialized = true;
+            return;
+        }
+
+        if (typeof IntersectionObserver !== "function") {
+            this.elements.forEach((element) => this.animate(element));
+            this.initialized = true;
             return;
         }
 
         this.createObserver();
+        this.initialized = true;
 
     },
 

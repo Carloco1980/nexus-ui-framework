@@ -1,0 +1,132 @@
+/* Layout local de la documentación interactiva. */
+.nx-docs-hero {
+    min-height: auto;
+    padding: var(--nx-space-lg) 0;
+}
+
+.nx-docs-hero .nx-hero-grid {
+    grid-template-columns: minmax(0, 1.4fr) minmax(16rem, .8fr);
+}
+
+.nx-doc-index {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--nx-space-xs);
+    padding-block: var(--nx-space-md);
+    border-bottom: var(--nx-border-width) solid var(--nx-border-soft);
+}
+
+.nx-doc-section {
+    display: grid;
+    gap: var(--nx-space-md);
+    padding-block: var(--nx-space-lg);
+    border-bottom: var(--nx-border-width) solid var(--nx-border-soft);
+    scroll-margin-top: calc(var(--nx-header-height) + var(--nx-space-md));
+}
+
+.nx-doc-section > header {
+    display: grid;
+    gap: var(--nx-space-xs);
+}
+
+.nx-doc-section h2,
+.nx-doc-section h3,
+.nx-doc-section p {
+    margin: 0;
+}
+
+.nx-doc-example {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--nx-space-lg);
+    align-items: start;
+}
+
+.nx-doc-preview,
+.nx-doc-reference {
+    min-width: 0;
+    padding: var(--nx-space-md);
+    border: var(--nx-border-width) solid var(--nx-border);
+    border-radius: var(--nx-radius-md);
+    background: var(--nx-surface);
+}
+
+.nx-doc-preview {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--nx-space-sm);
+    min-height: var(--nx-size-190);
+    overflow: auto;
+}
+
+.nx-doc-preview > .nx-card,
+.nx-doc-preview > .nx-panel,
+.nx-doc-preview > .nx-dashboard,
+.nx-doc-preview > .nx-table-card {
+    width: 100%;
+}
+
+.nx-doc-reference {
+    display: grid;
+    gap: var(--nx-space-sm);
+}
+
+.nx-doc-reference h3 {
+    margin: 0;
+    color: var(--nx-heading);
+}
+
+.nx-doc-reference p {
+    margin: 0;
+    color: var(--nx-text-muted);
+    line-height: var(--nx-line-height-relaxed);
+}
+
+.nx-doc-code {
+    min-width: 0;
+    margin: 0;
+    padding: var(--nx-space-sm);
+    overflow: auto;
+    border: var(--nx-border-width) solid var(--nx-border-soft);
+    border-radius: var(--nx-radius-sm);
+    background: var(--nx-bg);
+}
+
+.nx-doc-code code {
+    white-space: pre;
+}
+
+.nx-doc-source {
+    justify-self: start;
+}
+
+.nx-doc-component-index {
+    color: var(--nx-text-muted);
+}
+
+@media (max-width: 768px) {
+    .nx-docs-hero .nx-hero-grid,
+    .nx-doc-example {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .nx-doc-section {
+        padding-block: var(--nx-space-md);
+    }
+
+    .nx-doc-example {
+        gap: var(--nx-space-md);
+    }
+
+    .nx-doc-preview,
+    .nx-doc-reference {
+        padding: var(--nx-space-sm);
+    }
+}
+
+@media (max-width: 992px) {
+    .nx-docs-hero .nx-hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}

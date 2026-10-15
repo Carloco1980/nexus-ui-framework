@@ -24,11 +24,34 @@ Object.assign(NX, {
 
     version: "1.0.0",
 
+    initialized: false,
+
+    initializing: false,
+
+    waitingForDOM: false,
+
     /*--------------------------------------------------
     Init
     --------------------------------------------------*/
 
     init() {
+
+        if (this.initialized || this.initializing) {
+            return;
+        }
+
+        if (document.readyState === "loading") {
+            if (!this.waitingForDOM) {
+                this.waitingForDOM = true;
+                document.addEventListener("DOMContentLoaded", () => {
+                    this.waitingForDOM = false;
+                    this.init();
+                }, { once: true });
+            }
+            return;
+        }
+
+        this.initializing = true;
 
         if (this.config?.debug?.enabled) {
             console.info(
@@ -49,6 +72,9 @@ Object.assign(NX, {
 
         this.initializeModules();
 
+        this.initializing = false;
+        this.initialized = true;
+
     },
 
     /*--------------------------------------------------
@@ -67,30 +93,16 @@ Object.assign(NX, {
 
     initializeModules() {
 
-        const modules = [
-            this.theme,
-            this.themeToggle,
-            this.navbar,
-            this.forms,
-            this.fab,
-            this.animations,
-            this.modal,
-            this.icons
-        ];
+        const modules = Object.entries(this).filter(([, module]) =>
+            typeof module?.init === "function"
+        );
 
-        modules.forEach((module) => {
-            if (typeof module?.init !== "function") {
-                return;
-            }
+        modules.forEach(([moduleName, module]) => {
 
             try {
                 module.init();
             } catch (error) {
                 if (this.config?.debug?.enabled) {
-                    const moduleName = Object.keys(this).find(
-                        (key) => this[key] === module
-                    ) || "unknown";
-
                     console.error(
                         `[Nexus] Error initializing module "${moduleName}".`,
                         error
@@ -113,8 +125,4 @@ window.Nexus = NX;
 Bootstrap
 ==================================================*/
 
-document.addEventListener("DOMContentLoaded", () => {
-
-    NX.init();
-
-});
+NX.init();

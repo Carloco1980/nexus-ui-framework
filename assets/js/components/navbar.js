@@ -2,7 +2,11 @@
 
 const NexusNavbar = {
 
+    initialized: false,
+
     init() {
+        if (this.initialized) return;
+
         this.cacheDOM();
 
         if (!this.mobileButton || !this.menu) {
@@ -14,6 +18,7 @@ const NexusNavbar = {
         this.header = this.menu.closest(".nx-header");
         this.applySticky();
         this.bindEvents();
+        this.initialized = true;
     },
 
     cacheDOM() {

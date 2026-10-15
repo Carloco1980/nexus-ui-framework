@@ -51,11 +51,9 @@ const NexusTheme = {
 
         }
 
-        this.mediaQuery = window.matchMedia(
-
-            "(prefers-color-scheme: dark)"
-
-        );
+        this.mediaQuery = typeof window.matchMedia === "function"
+            ? window.matchMedia("(prefers-color-scheme: dark)")
+            : null;
 
         this.apply(
 
@@ -75,53 +73,21 @@ const NexusTheme = {
 
     bindEvents() {
 
+        if (!this.mediaQuery) return;
+
+        this.mediaChangeHandler = () => {
+            if (this.get() === this.THEMES.SYSTEM) {
+                this.apply(this.THEMES.SYSTEM);
+            }
+        };
+
         if (this.mediaQuery.addEventListener) {
+            this.mediaQuery.addEventListener("change", this.mediaChangeHandler);
 
-            this.mediaQuery.addEventListener(
-
-                "change",
-
-                () => {
-
-                    if (
-
-                        this.get() === this.THEMES.SYSTEM
-
-                    ) {
-
-                        this.apply(
-
-                            this.THEMES.SYSTEM
-
-                        );
-
-                    }
-
-                }
-
-            );
-
-        } else {
+        } else if (this.mediaQuery.addListener) {
 
             /* Compatibilidad */
-
-            this.mediaQuery.addListener(() => {
-
-                if (
-
-                    this.get() === this.THEMES.SYSTEM
-
-                ) {
-
-                    this.apply(
-
-                        this.THEMES.SYSTEM
-
-                    );
-
-                }
-
-            });
+            this.mediaQuery.addListener(this.mediaChangeHandler);
 
         }
 
@@ -143,7 +109,7 @@ const NexusTheme = {
 
         }
 
-        return this.mediaQuery.matches
+        return this.mediaQuery?.matches
 
             ? this.THEMES.DARK
 
@@ -195,20 +161,14 @@ const NexusTheme = {
 
         this.apply(theme);
 
-        if (
-
-            window.NX.config.theme.savePreference
-
-        ) {
-
-            localStorage.setItem(
-
-                window.NX.config.theme.storageKey,
-
-                theme
-
-            );
-
+        if (window.NX.config.theme.savePreference) {
+            try {
+                localStorage.setItem(window.NX.config.theme.storageKey, theme);
+            } catch (error) {
+                if (window.NX.config.debug?.enabled) {
+                    console.warn("Nexus could not save the theme preference.", error);
+                }
+            }
         }
 
     },
@@ -218,20 +178,12 @@ const NexusTheme = {
     --------------------------------------------------*/
 
     get() {
-
-        return (
-
-            localStorage.getItem(
-
-                window.NX.config.theme.storageKey
-
-            )
-
-            ||
-
-            window.NX.config.theme.default
-
-        );
+        try {
+            return localStorage.getItem(window.NX.config.theme.storageKey)
+                || window.NX.config.theme.default;
+        } catch (error) {
+            return window.NX.config.theme.default;
+        }
 
     },
 
@@ -299,11 +251,13 @@ const NexusTheme = {
 
     reset() {
 
-        localStorage.removeItem(
-
-            window.NX.config.theme.storageKey
-
-        );
+        try {
+            localStorage.removeItem(window.NX.config.theme.storageKey);
+        } catch (error) {
+            if (window.NX.config.debug?.enabled) {
+                console.warn("Nexus could not clear the theme preference.", error);
+            }
+        }
 
         this.apply(
 
@@ -319,7 +273,17 @@ const NexusTheme = {
 
     destroy() {
 
+        if (this.mediaQuery && this.mediaChangeHandler) {
+            if (this.mediaQuery.removeEventListener) {
+                this.mediaQuery.removeEventListener("change", this.mediaChangeHandler);
+            } else if (this.mediaQuery.removeListener) {
+                this.mediaQuery.removeListener(this.mediaChangeHandler);
+            }
+        }
+
         this.initialized = false;
+
+        this.mediaChangeHandler = null;
 
     }
 

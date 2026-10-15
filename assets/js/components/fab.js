@@ -16,7 +16,11 @@ FAB Module
 
 const NexusFab = {
 
+    initialized: false,
+
     init() {
+
+        if (this.initialized) return;
 
         this.cacheDOM();
 
@@ -27,6 +31,8 @@ const NexusFab = {
         this.configure();
 
         this.bindEvents();
+
+        this.initialized = true;
 
     },
 

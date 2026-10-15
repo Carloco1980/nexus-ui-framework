@@ -16,7 +16,11 @@ Forms Module
 
 const NexusForms = {
 
+    initialized: false,
+
     init() {
+
+        if (this.initialized) return;
 
         this.cacheDOM();
 
@@ -25,6 +29,8 @@ const NexusForms = {
         }
 
         this.bindEvents();
+
+        this.initialized = true;
 
     },
 

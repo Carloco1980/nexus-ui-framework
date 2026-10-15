@@ -65,27 +65,20 @@ const NexusThemeToggle = {
 
     bindEvents() {
 
+        this.toggleHandler = () => {
+            window.NX.theme.toggle();
+        };
+
+        this.themeChangeHandler = () => {
+            this.update();
+        };
+
         this.buttons.forEach((button) => {
-
-            button.addEventListener("click", () => {
-
-                window.NX.theme.toggle();
-
-            });
+            button.addEventListener("click", this.toggleHandler);
 
         });
 
-        document.addEventListener(
-
-            "nx:themechange",
-
-            () => {
-
-                this.update();
-
-            }
-
-        );
+        document.addEventListener("nx:themechange", this.themeChangeHandler);
 
     },
 
@@ -131,7 +124,21 @@ const NexusThemeToggle = {
 
     destroy() {
 
+        this.buttons.forEach((button) => {
+            button.removeEventListener("click", this.toggleHandler);
+        });
+
+        if (this.themeChangeHandler) {
+            document.removeEventListener("nx:themechange", this.themeChangeHandler);
+        }
+
         this.initialized = false;
+
+        this.buttons = [];
+
+        this.toggleHandler = null;
+
+        this.themeChangeHandler = null;
 
     }
 
