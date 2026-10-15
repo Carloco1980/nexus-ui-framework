@@ -1,105 +1,143 @@
 # Guía de Contribución
 
-¡Gracias por tu interés en contribuir a **Nexus UI Framework**!
+Gracias por tu interés en contribuir a **Nexus UI Framework**.
 
-Este documento describe las reglas y convenciones utilizadas durante el desarrollo del Framework.
+Este documento describe las convenciones utilizadas durante el desarrollo del Framework para mantener una arquitectura consistente, modular y escalable.
 
 ---
 
-# Filosofía del Proyecto
+# Filosofía
 
-Nexus UI Framework sigue un principio fundamental:
+Nexus UI Framework sigue cinco principios fundamentales.
 
-> **Un archivo = una responsabilidad.**
+## 1. Una responsabilidad por archivo
 
-Cada módulo debe resolver un único problema.
+Cada archivo debe resolver un único problema.
 
-El objetivo es mantener un Framework:
+No mezclar:
 
-- Modular
-- Escalable
-- Fácil de mantener
-- Reutilizable
-- Independiente de cualquier proyecto específico
+- estructura
+- estilos
+- comportamiento
+
+---
+
+## 2. Componentes desacoplados
+
+Los componentes deben ser independientes.
+
+Un componente nunca debe depender directamente de otro componente.
+
+Toda comunicación debe realizarse mediante la API pública o el sistema de eventos.
+
+---
+
+## 3. HTML semántico
+
+Siempre utilizar HTML semántico antes que soluciones basadas únicamente en JavaScript.
+
+---
+
+## 4. JavaScript Vanilla
+
+El Framework no depende de:
+
+- Bootstrap
+- Tailwind CSS
+- jQuery
+- React
+- Vue
+- Angular
+
+---
+
+## 5. Design Tokens
+
+Todos los valores reutilizables deben definirse mediante variables CSS.
+
+Nunca repetir colores, radios, espaciados o sombras dentro de los componentes.
 
 ---
 
 # Arquitectura
 
 ```
+assets/
+
 css/
 
 base/
 layout/
 components/
 sections/
+themes/
 utilities/
 
 js/
 
-app.js
-navbar.js
-forms.js
-fab.js
-animations.js
-```
+core/
+components/
 
-No se deben mezclar responsabilidades entre carpetas.
+docs/
+```
 
 ---
 
 # Convenciones CSS
 
-Todas las clases deben comenzar con el prefijo:
+Todas las clases deben utilizar el prefijo:
 
 ```css
 .nx-
 ```
 
-Ejemplos
+Ejemplo
 
 ```css
 .nx-button
 
 .nx-card
 
-.nx-dashboard
+.nx-modal
 
 .nx-navbar
 ```
 
-Nunca utilizar nombres genéricos como:
+Evitar nombres genéricos.
+
+Incorrecto
 
 ```css
 .button
 
 .card
 
-.container
-
-.title
+.header
 ```
 
 ---
 
-# Variables CSS
+# Design Tokens
 
-Todos los valores reutilizables deben declararse en:
+Todos los valores reutilizables deben definirse en
 
 ```
-base/variables.css
+assets/css/base/variables.css
 ```
 
 Ejemplo
 
 ```css
 --nx-primary
---nx-text
+
 --nx-radius-md
+
 --nx-space-lg
+
+--nx-shadow-md
 ```
 
-No repetir colores ni tamaños directamente en los componentes.
+Los componentes solo consumen tokens.
 
 ---
 
@@ -112,17 +150,15 @@ Contiene únicamente:
 - Variables
 - Reset
 - Tipografía
-- Animaciones Base
-
-Nunca deben existir componentes en esta carpeta.
+- Animaciones
 
 ---
 
 ## Layout
 
-Contiene únicamente elementos estructurales.
+Elementos estructurales.
 
-Ejemplos
+Ejemplo
 
 - Container
 - Grid
@@ -133,31 +169,30 @@ Ejemplos
 
 ## Components
 
-Aquí viven los componentes reutilizables.
+Componentes reutilizables.
 
-Ejemplos
+Ejemplo
 
 - Buttons
 - Cards
-- Dashboard
 - Forms
+- Modal
 - FAB
-
-Un componente nunca debe depender de otro componente.
+- Icons
+- Theme Toggle
 
 ---
 
 ## Sections
 
-Contiene únicamente secciones completas.
+Secciones completas.
 
-Ejemplos
+Ejemplo
 
 - Hero
 - Features
-- Contact
 - Templates
-- Framework
+- Contact
 
 ---
 
@@ -165,121 +200,79 @@ Ejemplos
 
 Clases auxiliares.
 
-Ejemplos
-
-```css
-.nx-text-center
-
-.nx-hidden
-
-.nx-mt-lg
-
-.nx-flex
-```
-
-Las utilidades nunca deben modificar componentes.
+Nunca deben modificar componentes.
 
 ---
 
-# Convenciones JavaScript
+# JavaScript
 
 El Framework utiliza una arquitectura modular.
 
 ```
-app.js
+core/
+
+components/
 ```
 
-es únicamente el núcleo del sistema.
+El Core proporciona:
 
-No debe contener lógica de componentes.
+- configuración
+- eventos
+- tema
+- almacenamiento
+- inicialización
+
+Los componentes únicamente implementan comportamiento visual.
 
 ---
 
-Cada módulo debe tener esta estructura.
+# API pública
+
+La única API pública es:
 
 ```javascript
-const NexusModulo = {
-
-    init(){},
-
-    cacheDOM(){},
-
-    bindEvents(){}
-
-};
-
-window.NexusModulo = NexusModulo;
+NX
 ```
 
----
-
-# Inicialización
-
-Todos los módulos deben inicializarse desde:
-
-```
-app.js
-```
-
-Ejemplo
+Ejemplos
 
 ```javascript
-if(window.NexusNavbar?.init){
+NX.init();
 
-    window.NexusNavbar.init();
+NX.theme.set("dark");
 
-}
+NX.theme.toggle();
+
+NX.modal.open("#demo");
+
+NX.icons.refresh();
 ```
 
-Nunca llamar módulos directamente desde otro módulo.
+Los módulos internos no deben invocarse directamente desde código externo.
 
 ---
 
-# Convenciones de nombres
+# Eventos
 
-CSS
+La comunicación entre módulos debe realizarse mediante:
 
-```
-nx-button
-
-nx-card
-
-nx-dashboard
+```javascript
+NX.events
 ```
 
-JavaScript
-
-```
-NexusNavbar
-
-NexusForms
-
-NexusFab
-
-NexusAnimations
-```
-
-Variables CSS
-
-```
---nx-primary
-
---nx-space-md
-
---nx-radius-lg
-```
+Evitar referencias directas entre componentes.
 
 ---
 
 # Accesibilidad
 
-Todo componente debe considerar:
+Todo componente nuevo debe considerar:
 
 - aria-label
 - aria-expanded
 - aria-hidden
 - focus-visible
-- Navegación mediante teclado
+- navegación mediante teclado
 
 Siempre que sea posible.
 
@@ -287,115 +280,87 @@ Siempre que sea posible.
 
 # Responsive
 
-Todo componente nuevo debe probarse en:
+Todo componente debe funcionar correctamente en:
 
 - Desktop
 - Tablet
 - Mobile
 
-No se aceptan componentes exclusivos para escritorio.
-
 ---
 
 # Rendimiento
 
-Se recomienda:
+Priorizar siempre:
 
-- Evitar dependencias innecesarias.
-- Reducir el uso de JavaScript.
-- Favorecer CSS nativo cuando sea posible.
-- Evitar duplicación de código.
-- Reutilizar Design Tokens.
+- CSS nativo
+- JavaScript Vanilla
+- pocas dependencias
+- reutilización
+- Design Tokens
 
----
+Evitar:
 
-# Dependencias
-
-Actualmente el Framework funciona únicamente con tecnologías estándar.
-
-- HTML5
-- CSS3
-- JavaScript ES6+
-
-No depende de:
-
-- Bootstrap
-- Tailwind CSS
-- jQuery
-- React
-- Vue
-- Angular
-
----
-
-# Compatibilidad
-
-El Framework está orientado a navegadores modernos compatibles con:
-
-- CSS Grid
-- Flexbox
-- CSS Variables
-- ES6+
-- IntersectionObserver
+- código duplicado
+- listeners innecesarios
+- consultas repetidas al DOM
 
 ---
 
 # Flujo de desarrollo
 
-Cada nueva funcionalidad debe seguir este proceso:
+Toda nueva funcionalidad debe seguir este proceso.
 
-1. Analizar la necesidad.
+1. Analizar el problema.
 2. Diseñar el componente.
-3. Implementar el CSS.
-4. Implementar el JavaScript (si aplica).
-5. Validar la accesibilidad.
-6. Verificar el comportamiento responsive.
-7. Actualizar la documentación.
-8. Registrar el cambio en `CHANGELOG.md`.
+3. Implementar HTML.
+4. Implementar CSS.
+5. Implementar JavaScript.
+6. Validar accesibilidad.
+7. Verificar comportamiento responsive.
+8. Actualizar la documentación.
+9. Registrar el cambio en CHANGELOG.
+10. Crear Commit.
 
 ---
 
 # Versionado
 
-Se utiliza **Semantic Versioning**.
+El proyecto utiliza Semantic Versioning.
 
 Ejemplos
 
 ```
-0.9.0 RC1
-
-0.9.0 RC2
-
 1.0.0
 
+1.0.1
+
 1.1.0
+
+2.0.0
 ```
 
 ---
 
 # Código limpio
 
-Antes de incorporar código nuevo, verificar:
+Antes de agregar código nuevo verificar:
 
-- ¿Existe ya un componente similar?
-- ¿Puede reutilizarse una utilidad existente?
-- ¿Respeta la arquitectura del Framework?
+- ¿Existe un componente similar?
+- ¿Puede reutilizarse uno existente?
+- ¿Respeta la arquitectura?
+- ¿Utiliza Design Tokens?
 - ¿Mantiene una única responsabilidad?
 
-Si la respuesta es **no**, el código debe revisarse antes de integrarlo.
+Si alguna respuesta es negativa, el cambio debe revisarse antes de integrarse.
 
 ---
 
-# Objetivo del Proyecto
+# Objetivo
 
-Nexus UI Framework busca convertirse en la base visual del **Nexus Ecosystem**, proporcionando una arquitectura moderna, consistente y reutilizable para el desarrollo de aplicaciones web, dashboards y soluciones basadas en WordPress.
+Nexus UI Framework busca convertirse en la capa visual del **Nexus Ecosystem**, proporcionando una base moderna, reutilizable y mantenible para aplicaciones web, dashboards y soluciones institucionales.
 
 ---
 
-**Autor**
+Autor
 
 Carlos Santander Díaz
-
-**Proyecto**
-
-Nexus UI Framework

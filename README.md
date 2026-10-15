@@ -1,39 +1,22 @@
 # Nexus UI Framework
 
-> Framework UI modular, moderno y ligero para el desarrollo de dashboards, aplicaciones web, sitios institucionales y plugins de WordPress.
+Framework UI moderno, modular y ligero para construir dashboards, aplicaciones web, sitios institucionales y plugins de WordPress utilizando HTML, CSS y JavaScript Vanilla.
 
 ---
 
-# Descripción
+# Estado del proyecto
 
-**Nexus UI Framework** es un framework Front-End desarrollado con una arquitectura modular basada en componentes reutilizables.
+**Versión actual**
 
-Su objetivo es proporcionar una base sólida para construir interfaces modernas, consistentes y escalables, reduciendo el tiempo de desarrollo y facilitando el mantenimiento del código.
+```text
+v1.0.0 Core
+```
 
-Forma parte del **Nexus Ecosystem**, una iniciativa orientada al desarrollo de herramientas, plataformas y soluciones digitales.
+Estado:
 
----
+> Núcleo estable.
 
-# Estado del Proyecto
-
-**Versión:** 0.9.0 RC1
-
-Estado actual:
-
-> Release Candidate
-
-Esta versión constituye la primera base estable del Framework.
-
----
-
-# Objetivos
-
-- Crear interfaces modernas y profesionales.
-- Mantener una arquitectura limpia y modular.
-- Facilitar el desarrollo de proyectos escalables.
-- Favorecer la reutilización de componentes.
-- Integrarse fácilmente con WordPress.
-- Servir como base para el ecosistema Nexus.
+Esta versión consolida la arquitectura base del Framework, define la API pública y establece los componentes fundamentales para futuras versiones.
 
 ---
 
@@ -43,66 +26,83 @@ Esta versión constituye la primera base estable del Framework.
 
 - Arquitectura modular
 - Design Tokens
-- Sistema de Layout
-- Grid Responsive
+- Sistema de temas (Light / Dark)
+- Layout Responsive
 - Componentes reutilizables
 - Utilidades CSS
-- Responsive Design
 - Accesibilidad
+- Sistema de variables CSS
 
 ## JavaScript
 
-- Arquitectura modular
-- Núcleo (Core)
+- Core modular
+- API pública `NX`
+- Sistema de eventos
+- Theme Manager
 - Navbar
-- Formularios
-- Floating Action Button
-- Motor de Animaciones
-- Inicialización automática de módulos
+- Modal
+- Forms
+- FAB
+- Icons
+- Animations
+- Inicialización automática
 
 ---
 
-# Arquitectura del Proyecto
+# Filosofía
+
+Nexus UI Framework se basa en cuatro principios fundamentales:
+
+- Una responsabilidad por archivo.
+- Componentes desacoplados.
+- HTML semántico.
+- JavaScript Vanilla.
+
+El objetivo es construir interfaces reutilizables, mantenibles y escalables sin depender de frameworks externos.
+
+---
+
+# Arquitectura
 
 ```
-nexus-ui-framework/
+assets/
 
-│
 ├── css/
 │   ├── base/
 │   ├── layout/
 │   ├── components/
 │   ├── sections/
-│   └── utilities/
+│   ├── themes/
+│   ├── utilities/
+│   └── vendor/
 │
 ├── js/
-│   ├── app.js
-│   ├── navbar.js
-│   ├── forms.js
-│   ├── fab.js
-│   └── animations.js
+│   ├── core/
+│   │
+│   │── app.js
+│   │── config.js
+│   │── events.js
+│   │── storage.js
+│   │── theme.js
+│   │── animations.js
+│   │
+│   └── components/
 │
-├── assets/
+│       navbar.js
+│       modal.js
+│       forms.js
+│       fab.js
+│       icons.js
+│       theme-toggle.js
 │
-├── docs/
-│
-├── examples/
-│
-├── README.md
-├── CHANGELOG.md
-└── LICENSE
+├── icons/
+├── img/
+└── fonts/
 ```
 
 ---
 
-# Arquitectura CSS
-
-## Base
-
-- Variables
-- Reset
-- Tipografía
-- Animaciones
+# Componentes disponibles
 
 ## Layout
 
@@ -113,12 +113,18 @@ nexus-ui-framework/
 
 ## Componentes
 
-- Botones
+- Buttons
 - Cards
 - Badges
 - Dashboard
-- Formularios
-- Floating Action Button
+- Forms
+- FAB
+- Modal
+- Icons
+- Theme Toggle
+- Tables
+- KPI Cards
+- Chart Cards
 
 ## Secciones
 
@@ -126,125 +132,160 @@ nexus-ui-framework/
 - Features
 - Templates
 - Framework
-- Contacto
-
-## Utilidades
-
-- Display
-- Helpers
-- Espaciado
-- Responsive
+- Contact
 
 ---
 
-# Arquitectura JavaScript
+# Sistema de temas
 
-El Framework utiliza un núcleo muy pequeño encargado únicamente de inicializar los módulos disponibles.
+El Framework incorpora soporte para:
 
+- Light
+- Dark
+- System
+
+Los temas utilizan Design Tokens y pueden cambiarse dinámicamente mediante:
+
+```javascript
+NX.theme.set("dark");
+
+NX.theme.set("light");
+
+NX.theme.set("system");
+
+NX.theme.toggle();
 ```
-Core
-
-app.js
-```
-
-Módulos actuales
-
-```
-navbar.js
-
-forms.js
-
-fab.js
-
-animations.js
-```
-
-Cada módulo posee una única responsabilidad y funciona de forma independiente.
 
 ---
 
-# Filosofía del Framework
+# API pública
 
-Nexus UI Framework sigue un principio muy simple:
+El Framework expone un único namespace:
 
-> **Cada archivo debe tener una única responsabilidad.**
+```javascript
+NX
+```
 
-Esto permite:
+Servicios disponibles:
 
-- mayor mantenibilidad;
-- mejor reutilización;
-- código más limpio;
-- mayor escalabilidad.
+```javascript
+NX.init()
 
-El núcleo del Framework nunca contiene la lógica de los componentes.
+NX.theme
 
----
+NX.modal
 
-# Ejemplo de uso
+NX.icons
 
-```html
-<link rel="stylesheet" href="css/nexus-ui-framework.css">
-
-<script src="js/navbar.js"></script>
-<script src="js/forms.js"></script>
-<script src="js/fab.js"></script>
-<script src="js/animations.js"></script>
-<script src="js/app.js"></script>
+NX.events
 ```
 
 ---
 
 # Compatibilidad
 
-Compatible con los navegadores modernos que soportan:
+Compatible con navegadores modernos compatibles con:
 
 - CSS Variables
-- Flexbox
 - CSS Grid
+- Flexbox
 - ES6+
+- CustomEvent
 - IntersectionObserver
 
 ---
 
-# Próximas versiones
+# Documentación
 
-La versión 1.0 contempla incorporar nuevos módulos:
+La documentación del proyecto se encuentra en:
 
-- Modal
-- Tabs
+```
+docs/
+
+README.md
+
+ARCHITECTURE.md
+
+DESIGN_SYSTEM.md
+
+COMPONENTS.md
+
+ROADMAP.md
+
+CHANGELOG.md
+```
+
+---
+
+# Desarrollo
+
+Clonar el repositorio
+
+```bash
+git clone https://github.com/Carloco1980/nexus-ui-framework.git
+```
+
+Instalar dependencias
+
+```bash
+npm install
+```
+
+Compilar
+
+```bash
+npm run build
+```
+
+Modo desarrollo
+
+```bash
+npm run watch
+```
+
+---
+
+# Roadmap
+
+Las próximas versiones incorporarán:
+
 - Accordion
-- Notificaciones
+- Tabs
+- Dropdown
 - Toast
+- Notification
+- Tooltip
 - Dashboard Widgets
 - Charts
-- Timeline
-- Contadores
-- Theme Manager
-- Dark Mode / Light Mode
+- Templates
+- Playground
+
+Más información en:
+
+```
+docs/ROADMAP.md
+```
 
 ---
 
 # Ecosistema Nexus
 
-Nexus UI Framework constituye la base visual del ecosistema Nexus.
+Nexus UI Framework forma parte del **Nexus Ecosystem**.
 
 Proyectos relacionados:
 
 - Nexus Core
+- Nexus Explorer
 - Nexus Dashboard
-- Nexus Charts
-- Nexus Components
 - Nexus Forms
 - Nexus WordPress
-- Nexus Explorer
 - Nexus API
-- Nexus CLI
 
 ---
 
 # Licencia
 
-Pendiente de definición.
+MIT License
 
 ---
 
@@ -254,23 +295,4 @@ Pendiente de definición.
 
 ---
 
-# Estado del Proyecto
-
-```
-Versión actual
-
-0.9.0 RC1
-```
-
-Release Candidate.
-
----
-
-## Visión
-
-El objetivo de **Nexus UI Framework** es convertirse en una plataforma visual reutilizable que permita desarrollar aplicaciones modernas con una arquitectura consistente, modular y preparada para evolucionar hacia un ecosistema completo de herramientas y componentes.
-
----
-
-**Nexus UI Framework**  
-*Construido como parte del Nexus Ecosystem.*
+> Nexus UI Framework es la capa visual del Nexus Ecosystem y proporciona una base consistente para el desarrollo de aplicaciones web modernas.
