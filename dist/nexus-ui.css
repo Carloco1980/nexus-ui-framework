@@ -1209,15 +1209,13 @@ Accessibility
 
 @media (prefers-reduced-motion:reduce){
 
-    #oiid-app{
-
-        scroll-behavior:auto;
-
+    html{
+        scroll-behavior:auto !important;
     }
 
-    #oiid-app *,
-    #oiid-app *::before,
-    #oiid-app *::after{
+    *,
+    *::before,
+    *::after{
 
         animation-duration:var(--nx-duration-reduced) !important;
 
@@ -1629,6 +1627,31 @@ Gap
     transform:translateY(var(--nx-size-7-negative)) rotate(var(--nx-angle-neg-45));
 }
 
+.nx-navbar-preview{
+
+    position:relative;
+
+    width:100%;
+
+    padding:1rem;
+
+    border-radius:var(--nx-radius-lg);
+
+    background:var(--nx-surface);
+
+    overflow:hidden;
+
+}
+
+.nx-navbar-preview .nx-header{
+
+    position:static;
+
+}
+.nx-component-demo .nx-navbar-preview{width:100%;max-height:100%;padding:var(--nx-space-xs);}
+.nx-component-demo .nx-navbar-preview .nx-navbar{grid-template-columns:auto 1fr;gap:var(--nx-space-xs);min-height:0;padding:var(--nx-space-xs);}
+.nx-component-demo .nx-navbar-preview .nx-navbar-menu{justify-content:flex-end;gap:var(--nx-space-xs);}
+.nx-component-demo .nx-navbar-preview .nx-navbar-menu a{height:auto;font-size:var(--nx-font-size-sm);}
 /*=========================================================
 06 Layout
 =========================================================*/
@@ -2264,8 +2287,6 @@ Label
 
     display:block;
 
-    margin-bottom:var(--nx-space-xs);
-
     font-size:var(--nx-font-size-sm);
 
     font-weight:var(--nx-font-weight-medium);
@@ -2470,6 +2491,10 @@ Status
 
 }
 
+.nx-component-demo .nx-form{width:100%;max-width:100%;}
+.nx-component-demo .nx-form-grid{gap:var(--nx-space-xs);margin-bottom:var(--nx-space-xs);}
+.nx-component-demo .nx-form-field{gap:0;min-width:0;}
+.nx-component-demo .nx-form-status{display:none;}
 /*=========================================================
 07 Components
 =========================================================*/
@@ -2808,13 +2833,21 @@ Modal
 
     box-shadow:var(--nx-shadow-xl);
 
-    transform:scale(.95);
+    transform:scale(.96);
 
     opacity:0;
 
     transition:
         transform var(--nx-duration-ui) var(--nx-easing),
         opacity var(--nx-duration-ui) var(--nx-easing);
+
+}
+
+.nx-modal__dialog:focus{
+
+    outline:var(--nx-focus-outline-width) solid var(--nx-primary);
+
+    outline-offset:var(--nx-focus-outline-offset);
 
 }
 
@@ -2885,57 +2918,23 @@ Footer
 
 }
 
-/*==================================================
-Animation
-==================================================*/
-
-.nx-modal{
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transition:opacity var(--nx-duration-ui) var(--nx-easing);
-
-}
-
-.nx-modal.is-open{
-
-    opacity:1;
-
-    visibility:visible;
-
-}
-
-.nx-modal__dialog{
-
-    transform:scale(.96);
-
-    transition:
-        transform var(--nx-duration-ui) var(--nx-easing),
-        opacity var(--nx-duration-ui) var(--nx-easing);
-
-}
-
-.nx-modal.is-open .nx-modal__dialog{
-
-    transform:scale(1);
-
-}
-
-
 /*
 ==================================================
 Body Lock
 ==================================================
 */
 
-body.nx-modal-open{
+html.nx-modal-open{
 
     overflow:hidden;
 
 }
-
+.nx-modal-preview .nx-modal{position:absolute;inset:0;z-index:1;opacity:1;visibility:visible;pointer-events:auto;}
+.nx-modal-preview .nx-modal__overlay{background:var(--nx-glass-bg);}
+.nx-modal-preview .nx-modal__dialog{width:min(100%,320px);max-height:100%;padding:var(--nx-space-sm);transform:none;opacity:1;}
+.nx-modal-preview .nx-modal__header h2{font-size:var(--nx-font-size-lg);}
+.nx-modal-preview .nx-modal__body{margin-bottom:var(--nx-space-xs);}
+.nx-modal-preview .nx-modal__footer{margin-top:var(--nx-space-xs);}
 /*=========================================================
 07 Components
 =========================================================*/
@@ -3162,6 +3161,13 @@ Responsive
 
 }
 
+.nx-component-demo .nx-dashboard-header{padding-bottom:var(--nx-space-compact);}
+.nx-component-demo .nx-dashboard-kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--nx-space-xs);}
+.nx-component-demo .nx-dashboard-charts{grid-template-columns:1fr;gap:var(--nx-space-xs);}
+.nx-component-demo .nx-kpi{height:auto;width:100%;min-height:0;gap:0;padding:var(--nx-space-xs);}
+.nx-component-demo .nx-panel-body{gap:var(--nx-space-xs);}
+.nx-component-demo .nx-chart-body{min-height:48px;height:48px;padding:0;}
+.nx-component-demo .nx-dashboard{gap:var(--nx-space-xs);}
 /*=========================================================
 07 Components
 =========================================================*/
@@ -3237,6 +3243,8 @@ Responsive
     fill:currentColor;
 
 }
+
+.nx-component-demo .nx-fab{position:static;z-index:auto;}
 
 /*=========================================================
 07 Components
@@ -3454,7 +3462,9 @@ Horizontal
     text-align:left;
 
 }
-
+.nx-component-demo .nx-kpi{height:auto;width:auto;min-height:0;max-width:100%;gap:var(--nx-space-xs);padding:var(--nx-space-xs);}
+.nx-component-demo .nx-kpi-value{font-size:var(--nx-font-size-2xl);}
+.nx-component-demo .nx-kpi-icon{width:var(--nx-icon-lg);height:var(--nx-icon-lg);}
 /*=========================================================
 07 Components
 =========================================================*/
@@ -3885,6 +3895,12 @@ Loading State
 
 }
 
+
+.nx-component-demo .nx-chart-card{min-height:0;max-height:220px;padding:var(--nx-space-xs);gap:var(--nx-space-xs);}
+.nx-component-demo .nx-chart-body{min-height:44px;height:44px;padding:0;}
+.nx-component-demo .nx-preview-chart{height:44px;}
+.nx-component-demo .nx-chart-metrics{gap:var(--nx-space-sm);margin-top:0;}
+.nx-component-demo .nx-chart-value{font-size:var(--nx-font-size-md);}
 /*=========================================================
 07.7 Panel
 =========================================================*/
@@ -3923,8 +3939,6 @@ Base
 
     transform:translateY(var(--nx-motion-offset-up-md));
     
-    will-change:transform;
-
     border-color:var(--nx-border-strong);
 
     box-shadow:var(--nx-shadow-md);
@@ -3973,7 +3987,11 @@ Title
 
     color:var(--nx-text);
 
-    transform:scale(1.05);
+    font-size:var(--nx-font-size-lg);
+
+    font-weight:var(--nx-font-weight-bold);
+
+    line-height:var(--nx-line-height-heading-alt);
 
 }
 
@@ -4203,6 +4221,9 @@ Responsive
 
 }
 
+.nx-component-demo .nx-section-header{margin:0;gap:var(--nx-space-xs);}
+.nx-component-demo .nx-section-header .nx-title-lg{font-size:var(--nx-font-size-xl);}
+.nx-component-demo .nx-section-header p{font-size:var(--nx-font-size-sm);}
 /*=========================================================
 07 Components
 =========================================================*/
@@ -4229,7 +4250,7 @@ Wrapper
 
     width:100%;
 
-    overflow-x:auto;
+    overflow:hidden;
 
 }
 
@@ -4242,6 +4263,18 @@ Table
     width:100%;
 
     border-collapse:collapse;
+
+}
+
+.nx-table caption{
+
+    padding-bottom:var(--nx-space-sm);
+
+    color:var(--nx-heading);
+
+    font-weight:var(--nx-font-weight-semibold);
+
+    text-align:left;
 
 }
 
@@ -4289,6 +4322,8 @@ Body Cell
 
     border-bottom:var(--nx-border-width) solid var(--nx-border-soft);
 
+    overflow-wrap:anywhere;
+
 }
 
 /*=========================================================
@@ -4310,7 +4345,10 @@ Hover
     background:var(--nx-surface-hover);
 
 }
-
+.nx-component-demo .nx-table-card{min-height:0;max-height:220px;padding:var(--nx-space-xs);gap:var(--nx-space-xs);}
+.nx-component-demo .nx-table-wrapper{overflow:hidden;}
+.nx-component-demo .nx-table th,.nx-component-demo .nx-table td{padding:var(--nx-space-compact);}
+.nx-component-demo .nx-panel-footer{padding-top:var(--nx-space-xs);}
 /*=========================================================
 Icons
 =========================================================*/
@@ -4389,10 +4427,168 @@ SVG
 
 }
 
+/*
+----------------------------------------------------
+Nexus UI Framework
+Catalog Module
+----------------------------------------------------
+*/
+
+/* ==========================
+   Grid
+========================== */
+
+#component-catalog{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(min(100%,320px),1fr));
+
+    gap:var(--nx-space-lg);
+
+}
+
+/* ==========================
+   Card
+========================== */
+
+.nx-component-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:var(--nx-space-md);
+
+    padding:var(--nx-space-lg);
+
+    border:1px solid var(--nx-border);
+
+    border-radius:var(--nx-radius-lg);
+
+    background:var(--nx-surface);
+
+    transition:.25s;
+
+}
+
+.nx-component-card:hover{
+
+    transform:translateY(-4px);
+
+}
+
+/* ==========================
+   Header
+========================== */
+
+.nx-component-card-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+/* ==========================
+   Meta
+========================== */
+
+.nx-component-meta{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:.5rem;
+
+}
+
+/* ==========================
+   Preview
+========================== */
+
+.nx-component-preview{
+
+    min-height:180px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:1px solid var(--nx-border-soft);
+
+    border-radius:var(--nx-radius-md);
+
+    padding:var(--nx-space-md);
+
+    overflow:hidden;
+
+}
+
+/* ==========================
+   Footer
+========================== */
+
+.nx-component-card footer{
+
+    margin-top:auto;
+
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:768px){
+
+#component-catalog{
+
+grid-template-columns:1fr;
+
+}
+
+.nx-component-card{
+
+padding:var(--nx-space-md);
+
+}
+
+}
+/* Preview mode used by component registry snippets. */
+.nx-component-demo{
+    box-sizing:border-box;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+    gap:var(--nx-space-md);
+    width:100%;
+    max-height:150px;
+    overflow:hidden;
+    color:var(--nx-text);
+}
+
+.nx-component-demo>*{max-width:100%;}
+.nx-component-preview{
+    max-height:220px;
+    overflow:hidden;
+}
+.nx-modal-preview{
+    position:relative;
+    min-height:0;
+    height:150px;
+}
+.nx-component-demo .nx-panel-body{gap:var(--nx-space-xs);}
 /*=========================================================
 04 Sections
 =========================================================*/
-
 /*=========================================================
 08.1 Hero
 =========================================================*/
@@ -4411,12 +4607,12 @@ Hero
 
     justify-content:center;
 
-    min-height:var(--nx-viewport-height);
+    min-height:0;
 
     padding:
-    calc(var(--nx-header-height) + var(--nx-space-xl))
-    0
-    var(--nx-section-padding-mobile);
+        calc(var(--nx-header-height) + var(--nx-space-xl))
+        0
+        var(--nx-section-padding-mobile);
 
     overflow:hidden;
 
@@ -4457,7 +4653,7 @@ Background
 
 }
 
-.nx-overlay{
+.nx-hero-overlay{
 
     position:absolute;
 
@@ -4467,7 +4663,7 @@ Background
 
 }
 
-.nx-gradient{
+.nx-hero-gradient{
 
     position:absolute;
 
@@ -4519,6 +4715,7 @@ Hero Content
     align-items:flex-start;
 
     gap:var(--nx-space-md-minus);
+
 }
 
 .nx-hero-title{
@@ -4531,9 +4728,9 @@ Hero Content
 
 .nx-hero-description{
 
-    max-width:var(--nx-size-560);
-
     margin:0;
+
+    max-width:var(--nx-size-560);
 
     color:var(--nx-text-muted);
 
@@ -4585,13 +4782,18 @@ Highlights
 
 .nx-highlight{
 
-    padding:var(--nx-space-button) var(--nx-space-action);
+    padding:
+        var(--nx-space-button)
+        var(--nx-space-action);
 
     background:var(--nx-glass-bg);
 
     backdrop-filter:var(--nx-glass-blur);
 
-    border:var(--nx-border-width) solid var(--nx-glass-border);
+    border:
+        var(--nx-border-width)
+        solid
+        var(--nx-glass-border);
 
     border-radius:var(--nx-radius-pill);
 
@@ -4641,7 +4843,11 @@ Scroll Indicator
 
     transform:translateX(-50%);
 
-    animation:nxFloat var(--nx-duration-float) var(--nx-easing-in-out) infinite;
+    animation:
+        nxFloat
+        var(--nx-duration-float)
+        var(--nx-easing-in-out)
+        infinite;
 
 }
 
@@ -4651,6 +4857,86 @@ Scroll Indicator
 
 }
 
+/*---------------------------------------------------------
+Responsive
+---------------------------------------------------------*/
+
+@media (max-width:992px){
+
+    .nx-hero{
+
+        min-height:auto;
+
+        padding:
+            calc(var(--nx-header-height) + var(--nx-space-lg))
+            0
+            var(--nx-space-xl);
+
+    }
+
+    .nx-hero-grid{
+
+        grid-template-columns:1fr;
+
+        gap:var(--nx-space-xl);
+
+    }
+
+    .nx-hero-content{
+
+        align-items:center;
+
+        text-align:center;
+
+    }
+
+    .nx-hero-title,
+    .nx-hero-description{
+
+        max-width:none;
+
+    }
+
+    .nx-hero-dashboard{
+
+        justify-content:center;
+
+    }
+
+    .nx-hero-actions,
+    .nx-highlights{
+
+        justify-content:center;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .nx-hero{
+
+        padding:
+            calc(var(--nx-header-height) + var(--nx-space-md))
+            0
+            var(--nx-space-lg);
+
+    }
+
+    .nx-scroll-indicator{
+
+        display:none;
+
+    }
+
+}
+.nx-component-demo.nx-hero{min-height:0;height:150px;max-height:150px;padding:var(--nx-space-sm);}
+.nx-component-demo.nx-hero .nx-hero-background{display:none;}
+.nx-component-demo.nx-hero .nx-hero-grid{grid-template-columns:1fr;gap:var(--nx-space-xs);}
+.nx-component-demo.nx-hero .nx-hero-content{gap:var(--nx-space-xs);}
+.nx-component-demo.nx-hero .nx-hero-title{font-size:var(--nx-font-size-xl);}
+.nx-component-demo.nx-hero .nx-hero-description{font-size:var(--nx-font-size-sm);line-height:var(--nx-line-height-copy);}
+.nx-component-demo.nx-hero .nx-highlights{gap:var(--nx-space-xs);}
 /*=========================================================
 08.3 Features
 =========================================================*/
@@ -4769,8 +5055,8 @@ Hover Effect
 
     opacity:1;
 
-}
-
+}.nx-component-demo .nx-feature-card{min-height:0;padding:var(--nx-space-sm);}
+.nx-component-demo .nx-feature-icon{width:var(--nx-icon-xl);height:var(--nx-icon-xl);margin-bottom:var(--nx-space-xs);}
 /*=========================================================
 08 Sections
 =========================================================*/

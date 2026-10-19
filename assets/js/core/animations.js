@@ -2,7 +2,7 @@
 ==================================================
 Nexus UI Framework
 
-Version : 0.9.0 RC1
+Version : 1.0.0
 Author  : Carlos Santander Díaz
 License : MIT
 

@@ -123,15 +123,13 @@ Accessibility
 
 @media (prefers-reduced-motion:reduce){
 
-    #oiid-app{
-
-        scroll-behavior:auto;
-
+    html{
+        scroll-behavior:auto !important;
     }
 
-    #oiid-app *,
-    #oiid-app *::before,
-    #oiid-app *::after{
+    *,
+    *::before,
+    *::after{
 
         animation-duration:var(--nx-duration-reduced) !important;
 

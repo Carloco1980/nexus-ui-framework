@@ -1,26 +1,3 @@
-Versión 1.1
+# Hoja de ruta
 
-- Tabs
-- Accordion
-- Dropdown
-- Toast
-- Notifications
-
----
-
-Versión 1.2
-
-- DataTable
-- Calendar
-- Timeline
-- Charts
-
----
-
-Versión 2.0
-
-- Documentación Web
-- Showcase
-- CLI
-- Integración WordPress
-- Templates
+La hoja de ruta oficial se mantiene en [`../ROADMAP.md`](../ROADMAP.md).

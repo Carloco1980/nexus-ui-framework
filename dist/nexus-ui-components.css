@@ -1059,15 +1059,13 @@ Accessibility
 
 @media (prefers-reduced-motion:reduce){
 
-    #oiid-app{
-
-        scroll-behavior:auto;
-
+    html{
+        scroll-behavior:auto !important;
     }
 
-    #oiid-app *,
-    #oiid-app *::before,
-    #oiid-app *::after{
+    *,
+    *::before,
+    *::after{
 
         animation-duration:var(--nx-duration-reduced) !important;
 
@@ -1210,6 +1208,222 @@ Gap
 .nx-grid-gap-lg{
 
     gap:var(--nx-space-lg);
+
+}
+
+.nx-header{
+    position:fixed;
+    inset:0 0 auto;
+    z-index:var(--nx-z-navbar);
+    padding:var(--nx-navbar-padding-y) 0;
+}
+
+.nx-navbar{
+    position:relative;
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    align-items:center;
+    gap:var(--nx-navbar-gap);
+    width:100%;
+    min-height:var(--nx-navbar-height);
+    padding:0 var(--nx-navbar-padding-x);
+    background:var(--nx-glass-bg);
+    backdrop-filter:var(--nx-navbar-blur);
+    border:var(--nx-border-width) solid var(--nx-navbar-border);
+    border-radius:var(--nx-navbar-radius);
+    box-shadow:var(--nx-navbar-shadow);
+}
+
+.nx-navbar-brand{
+    display:flex;
+    align-items:center;
+    gap:var(--nx-space-sm);
+    flex-shrink:0;
+    color:var(--nx-text);
+    text-decoration:none;
+}
+
+.nx-logo-mark{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:var(--nx-navbar-logo-size);
+    height:var(--nx-navbar-logo-size);
+    border-radius:var(--nx-navbar-logo-radius);
+    background:var(--nx-navbar-logo-bg);
+    color:var(--nx-navbar-logo-color);
+    box-shadow:var(--nx-glow-green);
+}
+
+.nx-logo-content{
+    display:flex;
+    flex-direction:column;
+    line-height:var(--nx-line-height-logo);
+}
+
+.nx-logo-title{
+    color:var(--nx-text);
+}
+
+.nx-logo-subtitle{
+    color:var(--nx-text-soft);
+}
+
+.nx-navbar-menu{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:var(--nx-navbar-gap);
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+.nx-navbar-menu li{
+    position:relative;
+}
+
+.nx-navbar-menu a{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:var(--nx-navbar-height);
+    color:var(--nx-navbar-link-color);
+    text-decoration:none;
+    transition:color var(--nx-duration-fast) var(--nx-easing);
+}
+
+.nx-navbar-menu a:hover,
+.nx-navbar-menu a.active{
+    color:var(--nx-text);
+}
+
+.nx-navbar-menu a.active::after{
+    position:absolute;
+    bottom:var(--nx-space-sm);
+    left:50%;
+    width:var(--nx-navbar-indicator-width);
+    height:var(--nx-navbar-indicator-height);
+    border-radius:var(--nx-radius-pill);
+    background:var(--nx-navbar-indicator-color);
+    box-shadow:var(--nx-glow-green);
+    content:"";
+    transform:translateX(-50%);
+}
+
+.nx-navbar-actions{
+    display:flex;
+    align-items:center;
+    gap:var(--nx-space-sm);
+    flex-shrink:0;
+}
+
+.nx-navbar-search{
+    width:var(--nx-navbar-search-width);
+    height:var(--nx-navbar-search-height);
+    padding:0 var(--nx-input-padding-x);
+    border:var(--nx-border-width) solid var(--nx-navbar-search-border);
+    border-radius:var(--nx-radius-pill);
+    outline:none;
+    background:var(--nx-navbar-search-bg);
+    color:var(--nx-navbar-search-color);
+    transition:border-color var(--nx-duration-fast) var(--nx-easing),
+        box-shadow var(--nx-duration-fast) var(--nx-easing);
+}
+
+.nx-navbar-search::-moz-placeholder{
+    color:var(--nx-navbar-search-placeholder);
+}
+
+.nx-navbar-search::placeholder{
+    color:var(--nx-navbar-search-placeholder);
+}
+
+.nx-navbar-search:focus{
+    border-color:var(--nx-navbar-search-focus-border);
+    box-shadow:var(--nx-navbar-search-focus-shadow);
+}
+
+.nx-mobile-button{
+    display:none;
+    position:absolute;
+    top:50%;
+    right:var(--nx-navbar-padding-x);
+    align-items:center;
+    justify-content:center;
+    width:var(--nx-navbar-mobile-button-size);
+    height:var(--nx-navbar-mobile-button-size);
+    padding:0;
+    border:0;
+    background:transparent;
+    cursor:pointer;
+    flex-direction:column;
+    gap:var(--nx-navbar-mobile-line-gap);
+    transform:translateY(-50%);
+}
+
+.nx-mobile-button span{
+    display:block;
+    width:var(--nx-navbar-mobile-line-width);
+    height:var(--nx-navbar-mobile-line-height);
+    border-radius:var(--nx-radius-pill);
+    background:var(--nx-text);
+    transition:var(--nx-transition);
+}
+
+.nx-mobile-button.is-active span:nth-child(1){
+    transform:translateY(var(--nx-size-7)) rotate(var(--nx-angle-45));
+}
+
+.nx-mobile-button.is-active span:nth-child(2){
+    opacity:0;
+}
+
+.nx-mobile-button.is-active span:nth-child(3){
+    transform:translateY(var(--nx-size-7-negative)) rotate(var(--nx-angle-neg-45));
+}
+
+.nx-navbar-preview{
+
+    position:relative;
+
+    width:100%;
+
+    padding:1rem;
+
+    border-radius:var(--nx-radius-lg);
+
+    background:var(--nx-surface);
+
+    overflow:hidden;
+
+}
+
+.nx-navbar-preview .nx-header{
+
+    position:static;
+
+}
+.nx-component-demo .nx-navbar-preview{width:100%;max-height:100%;padding:var(--nx-space-xs);}
+.nx-component-demo .nx-navbar-preview .nx-navbar{grid-template-columns:auto 1fr;gap:var(--nx-space-xs);min-height:0;padding:var(--nx-space-xs);}
+.nx-component-demo .nx-navbar-preview .nx-navbar-menu{justify-content:flex-end;gap:var(--nx-space-xs);}
+.nx-component-demo .nx-navbar-preview .nx-navbar-menu a{height:auto;font-size:var(--nx-font-size-sm);}
+/*=========================================================
+06 Layout
+=========================================================*/
+
+/*---------------------------------------------------------
+06.4 Footer
+---------------------------------------------------------*/
+
+.nx-footer{
+
+    position:relative;
+
+    padding:var(--nx-space-xl) 0;
+
+    background:transparent;
 
 }
 
@@ -1566,6 +1780,74 @@ Button Icons
 
 }
 
+/*
+==================================================
+Theme Toggle
+==================================================
+*/
+
+.nx-theme-toggle{
+
+    width:var(--nx-size-60);
+    height:var(--nx-icon-lg);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
+    padding:var(--nx-space-2xs);
+
+    background:var(--nx-surface-light);
+
+    border:var(--nx-border-width) solid var(--nx-border);
+
+    border-radius:var(--nx-radius-pill);
+
+    cursor:pointer;
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:
+        background var(--nx-duration-ui) var(--nx-easing),
+        border-color var(--nx-duration-ui) var(--nx-easing);
+
+}
+
+.nx-theme-toggle:hover{
+
+    background:var(--nx-surface-hover);
+
+}
+
+.nx-theme-toggle__thumb{
+
+    width:var(--nx-icon-md);
+    height:var(--nx-icon-md);
+
+    border-radius:var(--nx-radius-circle);
+
+    background:var(--nx-primary);
+
+    flex-shrink:0;
+
+    box-shadow:var(--nx-shadow-toggle-thumb);
+
+    transition:
+        transform var(--nx-duration-ui) var(--nx-easing),
+        background var(--nx-duration-ui) var(--nx-easing);
+
+}
+
+html[data-nx-theme="light"] .nx-theme-toggle__thumb{
+
+    transform:translateX(var(--nx-size-28));
+
+}
+
 /*=========================================================
 07 Components
 =========================================================*/
@@ -1761,8 +2043,6 @@ Label
 .nx-label{
 
     display:block;
-
-    margin-bottom:var(--nx-space-xs);
 
     font-size:var(--nx-font-size-sm);
 
@@ -1968,6 +2248,10 @@ Status
 
 }
 
+.nx-component-demo .nx-form{width:100%;max-width:100%;}
+.nx-component-demo .nx-form-grid{gap:var(--nx-space-xs);margin-bottom:var(--nx-space-xs);}
+.nx-component-demo .nx-form-field{gap:0;min-width:0;}
+.nx-component-demo .nx-form-status{display:none;}
 /*=========================================================
 07 Components
 =========================================================*/
@@ -2236,6 +2520,178 @@ Utilities
 
 }
 
+/*
+==================================================
+Modal
+==================================================
+*/
+
+.nx-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:var(--nx-z-toast);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transition:opacity var(--nx-duration-ui) var(--nx-easing);
+
+}
+
+.nx-modal.is-open{
+
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
+}
+
+.nx-modal__overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:var(--nx-modal-overlay);
+
+}
+
+.nx-modal__dialog{
+
+    position:relative;
+
+    width:min(var(--nx-modal-viewport-width),var(--nx-hero-dashboard-width));
+
+    background:var(--nx-surface);
+
+    color:var(--nx-text);
+
+    border:var(--nx-border-width) solid var(--nx-border);
+
+    border-radius:var(--nx-radius-lg);
+
+    padding:var(--nx-space-md);
+
+    z-index:1;
+
+    box-shadow:var(--nx-shadow-xl);
+
+    transform:scale(.96);
+
+    opacity:0;
+
+    transition:
+        transform var(--nx-duration-ui) var(--nx-easing),
+        opacity var(--nx-duration-ui) var(--nx-easing);
+
+}
+
+.nx-modal__dialog:focus{
+
+    outline:var(--nx-focus-outline-width) solid var(--nx-primary);
+
+    outline-offset:var(--nx-focus-outline-offset);
+
+}
+
+.nx-modal.is-open .nx-modal__dialog{
+
+    transform:scale(1);
+
+    opacity:1;
+
+}
+
+
+/*==================================================
+Header
+==================================================*/
+
+.nx-modal__header{
+
+    margin-bottom:var(--nx-space-sm);
+
+}
+
+.nx-modal__header h2{
+
+    margin:0;
+
+    font-size:var(--nx-font-size-2xl);
+
+    font-weight:var(--nx-font-weight-bold);
+
+    color:var(--nx-text);
+
+}
+
+/*==================================================
+Body
+==================================================*/
+
+.nx-modal__body{
+
+    margin-bottom:var(--nx-space-md);
+
+}
+
+.nx-modal__body p{
+
+    margin:0;
+
+    color:var(--nx-text-muted);
+
+    line-height:var(--nx-line-height-relaxed);
+
+}
+
+/*==================================================
+Footer
+==================================================*/
+
+.nx-modal__footer{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:var(--nx-space-sm);
+
+    margin-top:var(--nx-space-md);
+
+}
+
+/*
+==================================================
+Body Lock
+==================================================
+*/
+
+html.nx-modal-open{
+
+    overflow:hidden;
+
+}
+.nx-modal-preview .nx-modal{position:absolute;inset:0;z-index:1;opacity:1;visibility:visible;pointer-events:auto;}
+.nx-modal-preview .nx-modal__overlay{background:var(--nx-glass-bg);}
+.nx-modal-preview .nx-modal__dialog{width:min(100%,320px);max-height:100%;padding:var(--nx-space-sm);transform:none;opacity:1;}
+.nx-modal-preview .nx-modal__header h2{font-size:var(--nx-font-size-lg);}
+.nx-modal-preview .nx-modal__body{margin-bottom:var(--nx-space-xs);}
+.nx-modal-preview .nx-modal__footer{margin-top:var(--nx-space-xs);}
 /*=========================================================
 07.7 Panel
 =========================================================*/
@@ -2274,8 +2730,6 @@ Base
 
     transform:translateY(var(--nx-motion-offset-up-md));
     
-    will-change:transform;
-
     border-color:var(--nx-border-strong);
 
     box-shadow:var(--nx-shadow-md);
@@ -2324,7 +2778,11 @@ Title
 
     color:var(--nx-text);
 
-    transform:scale(1.05);
+    font-size:var(--nx-font-size-lg);
+
+    font-weight:var(--nx-font-weight-bold);
+
+    line-height:var(--nx-line-height-heading-alt);
 
 }
 
@@ -2654,6 +3112,91 @@ Responsive
 
 }
 
+.nx-component-demo .nx-dashboard-header{padding-bottom:var(--nx-space-compact);}
+.nx-component-demo .nx-dashboard-kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--nx-space-xs);}
+.nx-component-demo .nx-dashboard-charts{grid-template-columns:1fr;gap:var(--nx-space-xs);}
+.nx-component-demo .nx-kpi{height:auto;width:100%;min-height:0;gap:0;padding:var(--nx-space-xs);}
+.nx-component-demo .nx-panel-body{gap:var(--nx-space-xs);}
+.nx-component-demo .nx-chart-body{min-height:48px;height:48px;padding:0;}
+.nx-component-demo .nx-dashboard{gap:var(--nx-space-xs);}
+/*=========================================================
+07 Components
+=========================================================*/
+
+/*---------------------------------------------------------
+07.6 Floating Action Button
+---------------------------------------------------------*/
+
+.nx-fab{
+
+    position:fixed;
+
+    right:var(--nx-icon-md);
+
+    bottom:var(--nx-icon-md);
+
+    z-index:var(--nx-z-toast);
+
+    display:grid;
+
+    place-items:center;
+
+    width:var(--nx-button-height);
+
+    aspect-ratio:1;
+
+    border:none;
+
+    border-radius:var(--nx-radius-circle);
+
+    background:var(--nx-gradient-primary);
+
+    color:var(--nx-white);
+
+    box-shadow:var(--nx-glow-green);
+
+    cursor:pointer;
+
+    transition:var(--nx-transition);
+
+}
+
+.nx-fab:hover{
+
+    transform:translateY(var(--nx-motion-offset-up-md));
+
+    box-shadow:
+        var(--nx-glow-green-strong),
+        var(--nx-shadow-md);
+
+}
+
+.nx-fab:active{
+
+    transform:translateY(0) scale(.96);
+
+}
+
+.nx-fab:focus-visible{
+
+    outline:var(--nx-focus-outline-width) solid var(--nx-white);
+
+    outline-offset:var(--nx-focus-outline-offset-lg);
+
+}
+
+.nx-fab svg{
+
+    width:var(--nx-navbar-indicator-width);
+
+    height:var(--nx-navbar-indicator-width);
+
+    fill:currentColor;
+
+}
+
+.nx-component-demo .nx-fab{position:static;z-index:auto;}
+
 /*=========================================================
 07 Components
 =========================================================*/
@@ -2870,7 +3413,9 @@ Horizontal
     text-align:left;
 
 }
-
+.nx-component-demo .nx-kpi{height:auto;width:auto;min-height:0;max-width:100%;gap:var(--nx-space-xs);padding:var(--nx-space-xs);}
+.nx-component-demo .nx-kpi-value{font-size:var(--nx-font-size-2xl);}
+.nx-component-demo .nx-kpi-icon{width:var(--nx-icon-lg);height:var(--nx-icon-lg);}
 /*=========================================================
 07 Components
 =========================================================*/
@@ -3301,10 +3846,974 @@ Loading State
 
 }
 
+
+.nx-component-demo .nx-chart-card{min-height:0;max-height:220px;padding:var(--nx-space-xs);gap:var(--nx-space-xs);}
+.nx-component-demo .nx-chart-body{min-height:44px;height:44px;padding:0;}
+.nx-component-demo .nx-preview-chart{height:44px;}
+.nx-component-demo .nx-chart-metrics{gap:var(--nx-space-sm);margin-top:0;}
+.nx-component-demo .nx-chart-value{font-size:var(--nx-font-size-md);}
+/*=========================================================
+07 Components
+=========================================================*/
+
+/*---------------------------------------------------------
+07.8 Table
+---------------------------------------------------------*/
+
+/*=========================================================
+Card
+=========================================================*/
+
+.nx-table-card{
+
+    min-height:var(--nx-chart-card-min-height);
+
+}
+
+/*=========================================================
+Wrapper
+=========================================================*/
+
+.nx-table-wrapper{
+
+    width:100%;
+
+    overflow:hidden;
+
+}
+
+/*=========================================================
+Table
+=========================================================*/
+
+.nx-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.nx-table caption{
+
+    padding-bottom:var(--nx-space-sm);
+
+    color:var(--nx-heading);
+
+    font-weight:var(--nx-font-weight-semibold);
+
+    text-align:left;
+
+}
+
+/*=========================================================
+Header
+=========================================================*/
+
+.nx-table thead{
+
+    border-bottom:var(--nx-border-width) solid var(--nx-border);
+
+}
+
+/*=========================================================
+Header Cell
+=========================================================*/
+
+.nx-table th{
+
+    padding:var(--nx-space-sm);
+
+    text-align:left;
+
+    color:var(--nx-text-muted);
+
+    font-size:var(--nx-font-size-dense);
+
+    font-weight:var(--nx-font-weight-semibold);
+
+    text-transform:uppercase;
+
+    letter-spacing:var(--nx-letter-spacing-wide);
+
+}
+
+/*=========================================================
+Body Cell
+=========================================================*/
+
+.nx-table td{
+
+    padding:var(--nx-space-sm);
+
+    color:var(--nx-text);
+
+    border-bottom:var(--nx-border-width) solid var(--nx-border-soft);
+
+    overflow-wrap:anywhere;
+
+}
+
+/*=========================================================
+Row
+=========================================================*/
+
+.nx-table tbody tr{
+
+    transition:var(--nx-transition);
+
+}
+
+/*=========================================================
+Hover
+=========================================================*/
+
+.nx-table tbody tr:hover{
+
+    background:var(--nx-surface-hover);
+
+}
+.nx-component-demo .nx-table-card{min-height:0;max-height:220px;padding:var(--nx-space-xs);gap:var(--nx-space-xs);}
+.nx-component-demo .nx-table-wrapper{overflow:hidden;}
+.nx-component-demo .nx-table th,.nx-component-demo .nx-table td{padding:var(--nx-space-compact);}
+.nx-component-demo .nx-panel-footer{padding-top:var(--nx-space-xs);}
+/*=========================================================
+Icons
+=========================================================*/
+
+.nx-icon{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:var(--nx-icon-md);
+
+    height:var(--nx-icon-md);
+
+    flex-shrink:0;
+
+    color:currentColor;
+
+}
+
+.nx-icon-xs{
+
+    width:var(--nx-icon-xs);
+
+    height:var(--nx-icon-xs);
+
+}
+
+.nx-icon-sm{
+
+    width:var(--nx-icon-sm);
+
+    height:var(--nx-icon-sm);
+
+}
+
+.nx-icon-md{
+
+    width:var(--nx-icon-md);
+
+    height:var(--nx-icon-md);
+
+}
+
+.nx-icon-lg{
+
+    width:var(--nx-icon-lg);
+
+    height:var(--nx-icon-lg);
+
+}
+
+.nx-icon-xl{
+
+    width:var(--nx-icon-xl);
+
+    height:var(--nx-icon-xl);
+
+}
+
+/*
+==================================================
+SVG
+==================================================
+*/
+
+.nx-icon-svg{
+
+    width:100%;
+
+    height:100%;
+
+    display:block;
+
+}
+
+/*=========================================================
+07.x Section Header
+=========================================================*/
+
+/*---------------------------------------------------------
+Base
+---------------------------------------------------------*/
+
+.nx-section-header{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:var(--nx-space-md);
+
+    width:100%;
+
+}
+
+/*---------------------------------------------------------
+Alignment
+---------------------------------------------------------*/
+
+.nx-section-header-left{
+
+    align-items:flex-start;
+
+    text-align:left;
+
+}
+
+.nx-section-header-center{
+
+    align-items:center;
+
+    text-align:center;
+
+    width:100%;
+
+    max-width:var(--nx-size-840);
+
+    margin-inline:auto;
+
+}
+
+.nx-section-header-right{
+
+    align-items:flex-end;
+
+    text-align:right;
+
+}
+
+/*---------------------------------------------------------
+Badge
+---------------------------------------------------------*/
+
+.nx-section-header .nx-badge{
+
+    margin:0 0 var(--nx-space-xs);
+
+    flex-shrink:0;
+
+}
+
+/*---------------------------------------------------------
+Title
+---------------------------------------------------------*/
+
+.nx-section-header .nx-title-lg{
+
+    margin:0;
+
+    max-width:var(--nx-size-760);
+
+    line-height:var(--nx-line-height-heading);
+
+}
+
+/*---------------------------------------------------------
+Description
+---------------------------------------------------------*/
+
+.nx-section-header p{
+
+    margin:0;
+
+    max-width:var(--nx-size-760);
+
+    color:var(--nx-text-muted);
+
+    font-size:var(--nx-font-size-medium-plus);
+
+    line-height:var(--nx-line-height-loose);
+
+}
+
+/*---------------------------------------------------------
+Responsive
+---------------------------------------------------------*/
+
+@media (max-width:768px){
+
+    .nx-section-header{
+
+        margin-bottom:var(--nx-space-2xl);
+
+    }
+
+    .nx-section-header-center,
+    .nx-section-header .nx-title-lg,
+    .nx-section-header p{
+
+        max-width:100%;
+
+    }
+
+    .nx-section-header p{
+
+        font-size:var(--nx-font-size-md);
+
+    }
+
+}
+
+.nx-component-demo .nx-section-header{margin:0;gap:var(--nx-space-xs);}
+.nx-component-demo .nx-section-header .nx-title-lg{font-size:var(--nx-font-size-xl);}
+.nx-component-demo .nx-section-header p{font-size:var(--nx-font-size-sm);}
+/*
+----------------------------------------------------
+Nexus UI Framework
+Catalog Module
+----------------------------------------------------
+*/
+
+/* ==========================
+   Grid
+========================== */
+
+#component-catalog{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(min(100%,320px),1fr));
+
+    gap:var(--nx-space-lg);
+
+}
+
+/* ==========================
+   Card
+========================== */
+
+.nx-component-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:var(--nx-space-md);
+
+    padding:var(--nx-space-lg);
+
+    border:1px solid var(--nx-border);
+
+    border-radius:var(--nx-radius-lg);
+
+    background:var(--nx-surface);
+
+    transition:.25s;
+
+}
+
+.nx-component-card:hover{
+
+    transform:translateY(-4px);
+
+}
+
+/* ==========================
+   Header
+========================== */
+
+.nx-component-card-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+/* ==========================
+   Meta
+========================== */
+
+.nx-component-meta{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:.5rem;
+
+}
+
+/* ==========================
+   Preview
+========================== */
+
+.nx-component-preview{
+
+    min-height:180px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:1px solid var(--nx-border-soft);
+
+    border-radius:var(--nx-radius-md);
+
+    padding:var(--nx-space-md);
+
+    overflow:hidden;
+
+}
+
+/* ==========================
+   Footer
+========================== */
+
+.nx-component-card footer{
+
+    margin-top:auto;
+
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:768px){
+
+#component-catalog{
+
+grid-template-columns:1fr;
+
+}
+
+.nx-component-card{
+
+padding:var(--nx-space-md);
+
+}
+
+}
+/* Preview mode used by component registry snippets. */
+.nx-component-demo{
+    box-sizing:border-box;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+    gap:var(--nx-space-md);
+    width:100%;
+    max-height:150px;
+    overflow:hidden;
+    color:var(--nx-text);
+}
+
+.nx-component-demo>*{max-width:100%;}
+.nx-component-preview{
+    max-height:220px;
+    overflow:hidden;
+}
+.nx-modal-preview{
+    position:relative;
+    min-height:0;
+    height:150px;
+}
+.nx-component-demo .nx-panel-body{gap:var(--nx-space-xs);}
+/*=========================================================
+08.1 Hero
+=========================================================*/
+
+/*---------------------------------------------------------
+Hero
+---------------------------------------------------------*/
+
+.nx-hero{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-height:0;
+
+    padding:
+        calc(var(--nx-header-height) + var(--nx-space-xl))
+        0
+        var(--nx-section-padding-mobile);
+
+    overflow:hidden;
+
+}
+
+/*---------------------------------------------------------
+Background
+---------------------------------------------------------*/
+
+.nx-hero-background{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+.nx-hero-image,
+.nx-hero-video{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    -o-object-fit:cover;
+
+       object-fit:cover;
+
+}
+
+.nx-hero-video{
+
+    opacity:var(--nx-opacity-video);
+
+}
+
+.nx-hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:var(--nx-hero-overlay-bg);
+
+}
+
+.nx-hero-gradient{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            var(--nx-primary-glow),
+            transparent 45%
+        );
+
+}
+
+/*---------------------------------------------------------
+Layout
+---------------------------------------------------------*/
+
+.nx-hero-grid{
+
+    position:relative;
+
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:
+        1fr
+        var(--nx-hero-dashboard-width);
+
+    align-items:center;
+
+    gap:var(--nx-space-lg);
+
+}
+
+/*---------------------------------------------------------
+Hero Content
+---------------------------------------------------------*/
+
+.nx-hero-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    gap:var(--nx-space-md-minus);
+
+}
+
+.nx-hero-title{
+
+    margin:0;
+
+    max-width:var(--nx-size-650);
+
+}
+
+.nx-hero-description{
+
+    margin:0;
+
+    max-width:var(--nx-size-560);
+
+    color:var(--nx-text-muted);
+
+    line-height:var(--nx-line-height-loose);
+
+}
+
+/*---------------------------------------------------------
+Hero Dashboard
+---------------------------------------------------------*/
+
+.nx-hero-dashboard{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+}
+
+/*---------------------------------------------------------
+Actions
+---------------------------------------------------------*/
+
+.nx-hero-actions{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:var(--nx-space-sm);
+
+}
+
+/*---------------------------------------------------------
+Highlights
+---------------------------------------------------------*/
+
+.nx-highlights{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:var(--nx-space-sm);
+
+}
+
+.nx-highlight{
+
+    padding:
+        var(--nx-space-button)
+        var(--nx-space-action);
+
+    background:var(--nx-glass-bg);
+
+    backdrop-filter:var(--nx-glass-blur);
+
+    border:
+        var(--nx-border-width)
+        solid
+        var(--nx-glass-border);
+
+    border-radius:var(--nx-radius-pill);
+
+    color:var(--nx-text);
+
+    font-size:var(--nx-font-size-medium-minus);
+
+    transition:var(--nx-transition);
+
+}
+
+.nx-highlight:hover{
+
+    transform:translateY(var(--nx-motion-offset-up-sm));
+
+    background:var(--nx-surface-hover);
+
+    border-color:var(--nx-border-strong);
+
+    box-shadow:var(--nx-shadow-sm);
+
+}
+
+/*---------------------------------------------------------
+Scroll Indicator
+---------------------------------------------------------*/
+
+.nx-scroll-indicator{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:var(--nx-size-35);
+
+    z-index:5;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:var(--nx-space-xs);
+
+    color:var(--nx-text-muted);
+
+    transform:translateX(-50%);
+
+    animation:
+        nxFloat
+        var(--nx-duration-float)
+        var(--nx-easing-in-out)
+        infinite;
+
+}
+
+.nx-scroll-arrow{
+
+    font-size:var(--nx-font-size-xl);
+
+}
+
+/*---------------------------------------------------------
+Responsive
+---------------------------------------------------------*/
+
+@media (max-width:992px){
+
+    .nx-hero{
+
+        min-height:auto;
+
+        padding:
+            calc(var(--nx-header-height) + var(--nx-space-lg))
+            0
+            var(--nx-space-xl);
+
+    }
+
+    .nx-hero-grid{
+
+        grid-template-columns:1fr;
+
+        gap:var(--nx-space-xl);
+
+    }
+
+    .nx-hero-content{
+
+        align-items:center;
+
+        text-align:center;
+
+    }
+
+    .nx-hero-title,
+    .nx-hero-description{
+
+        max-width:none;
+
+    }
+
+    .nx-hero-dashboard{
+
+        justify-content:center;
+
+    }
+
+    .nx-hero-actions,
+    .nx-highlights{
+
+        justify-content:center;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .nx-hero{
+
+        padding:
+            calc(var(--nx-header-height) + var(--nx-space-md))
+            0
+            var(--nx-space-lg);
+
+    }
+
+    .nx-scroll-indicator{
+
+        display:none;
+
+    }
+
+}
+.nx-component-demo.nx-hero{min-height:0;height:150px;max-height:150px;padding:var(--nx-space-sm);}
+.nx-component-demo.nx-hero .nx-hero-background{display:none;}
+.nx-component-demo.nx-hero .nx-hero-grid{grid-template-columns:1fr;gap:var(--nx-space-xs);}
+.nx-component-demo.nx-hero .nx-hero-content{gap:var(--nx-space-xs);}
+.nx-component-demo.nx-hero .nx-hero-title{font-size:var(--nx-font-size-xl);}
+.nx-component-demo.nx-hero .nx-hero-description{font-size:var(--nx-font-size-sm);line-height:var(--nx-line-height-copy);}
+.nx-component-demo.nx-hero .nx-highlights{gap:var(--nx-space-xs);}
+/*=========================================================
+08.3 Features
+=========================================================*/
+
+/*---------------------------------------------------------
+Grid
+---------------------------------------------------------*/
+
+.nx-feature-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:var(--nx-space-md);
+
+}
+
+/*---------------------------------------------------------
+Feature Card
+---------------------------------------------------------*/
+
+.nx-feature-card{
+
+    position:relative;
+
+    min-height:var(--nx-size-300);
+
+    padding:var(--nx-space-md);
+
+}
+
+.nx-feature-card:hover{
+
+    background:var(--nx-surface-hover);
+
+    border-color:var(--nx-border-strong);
+
+}
+
+/*---------------------------------------------------------
+Feature Icon
+---------------------------------------------------------*/
+
+.nx-feature-icon{
+
+    width:var(--nx-size-72);
+
+    height:var(--nx-size-72);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:var(--nx-space-md-minus);
+
+    border-radius:var(--nx-radius-md);
+
+    background:var(--nx-primary-soft-bg);
+
+    color:var(--nx-primary);
+
+    font-size:var(--nx-font-size-3xl);
+
+    transition:var(--nx-transition);
+
+}
+
+.nx-feature-card:hover .nx-feature-icon{
+
+    transform:translateY(var(--nx-motion-offset-up-md));
+
+    box-shadow:var(--nx-glow-blue);
+
+}
+
+/*---------------------------------------------------------
+Feature Title
+---------------------------------------------------------*/
+
+.nx-feature-card .nx-card-title{
+
+    max-width:var(--nx-size-260);
+
+}
+
+/*---------------------------------------------------------
+Hover Effect
+---------------------------------------------------------*/
+
+.nx-feature-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        var(--nx-angle-135),
+        var(--nx-primary-soft-hover),
+        transparent 60%
+    );
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:var(--nx-transition);
+
+}
+
+.nx-feature-card:hover::before{
+
+    opacity:1;
+
+}.nx-component-demo .nx-feature-card{min-height:0;padding:var(--nx-space-sm);}
+.nx-component-demo .nx-feature-icon{width:var(--nx-icon-xl);height:var(--nx-icon-xl);margin-bottom:var(--nx-space-xs);}
 /*=========================================================
 04 Utilities
 =========================================================*/
-
 /*=========================================================
 05 Utilities
 =========================================================*/

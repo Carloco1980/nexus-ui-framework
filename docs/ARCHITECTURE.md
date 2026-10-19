@@ -1,231 +1,49 @@
 # Arquitectura
 
 **Proyecto:** Nexus UI Framework
-
 **Versión:** 1.0.0
 
-**Estado:** Estable
-
----
-
-# Introducción
-
-Nexus UI Framework es un framework de interfaz de usuario desarrollado con una arquitectura modular, ligera y escalable basada en tecnologías web estándar.
-
-Su objetivo es proporcionar una base consistente para el desarrollo de aplicaciones web, dashboards, sistemas institucionales y plugins de WordPress, formando parte del ecosistema Nexus.
-
-El framework está diseñado bajo el principio de separación de responsabilidades, donde cada componente mantiene una única función y puede evolucionar de forma independiente.
-
----
-
-# Objetivos
-
-Los principales objetivos del framework son:
-
-- Arquitectura modular.
-- Bajo acoplamiento.
-- Componentes reutilizables.
-- Alto rendimiento.
-- Fácil mantenimiento.
-- Compatibilidad con WordPress.
-- Integración sencilla en cualquier proyecto HTML.
-
----
-
-# Principios de Diseño
-
-## Una responsabilidad por archivo
-
-Cada archivo implementa una única responsabilidad.
-
-No se mezclan componentes, lógica o estilos.
-
----
-
-## Componentes reutilizables
-
-Todo componente debe poder utilizarse en múltiples proyectos sin modificaciones.
-
----
-
-## HTML primero
-
-El HTML representa la estructura.
-
-CSS define la apariencia.
-
-JavaScript agrega únicamente comportamiento.
-
----
-
-## Modularidad
-
-Cada módulo funciona de manera independiente.
-
-La incorporación de nuevos módulos no requiere modificar el núcleo del Framework.
-
----
-
-## Sistema basado en Design Tokens
-
-Todos los componentes consumen variables del sistema de diseño.
-
-Los valores visuales no deben declararse directamente en los componentes.
-
-Los tokens definen:
-
-- colores
-- tipografía
-- espaciados
-- radios
-- sombras
-- transiciones
-- elevaciones
-- tamaños
-
----
-
-## Rendimiento
-
-El framework prioriza:
-
-- CSS nativo
-- JavaScript Vanilla
-- carga diferida de componentes
-- pocas dependencias
-- bajo peso
-
----
-
-# Arquitectura General
+## Estructura oficial
 
 ```text
-                 Nexus UI Framework
-
-                        NX
-                        │
-        ┌───────────────┼────────────────┐
-        │               │                │
-        ▼               ▼                ▼
-
-     Core           Components       Utilities
-
-        │
-        ▼
-
- app.js (Bootstrap)
-
-        │
-        ▼
-
-Inicialización de módulos
+components/             Componentes organizados por carpeta
+sections/               Secciones de página organizadas por carpeta
+assets/css/             Base, layout, páginas, temas, utilidades y hojas de entrada
+assets/js/core/         Configuración, eventos, temas, almacenamiento y animaciones
+assets/js/app.js        Bootstrap global
+dist/                   Hojas CSS compiladas
+docs/                   Documentación del framework
+examples/               Páginas de ejemplo
 ```
 
-El núcleo únicamente inicializa los módulos disponibles.
+Los estilos propios de cada componente viven junto al componente dentro de `components/<componente>/`. Los estilos de sección viven junto a la sección dentro de `sections/<seccion>/`. No se utilizan `assets/css/components/`, `assets/css/sections/` ni `assets/js/components/`.
 
-Cada módulo administra su propio ciclo de vida.
+## CSS
 
----
-
-# Arquitectura CSS
+`assets/css/style.css` es la hoja de entrada completa y `assets/css/style-components.css` es la entrada de estilos reutilizables. Ambas importan archivos existentes desde `assets/css/`, `components/` y `sections/`, usando rutas relativas al archivo de entrada.
 
 ```text
 assets/css/
+  base/       Tokens, resets, tipografía y animaciones
+  layout/     Contenedores y grillas
+  pages/      Estilos de páginas de ejemplo y documentación
+  themes/     Temas claro y oscuro
+  utilities/  Clases auxiliares
+  style.css
+  style-components.css
 
-base/
-layout/
-components/
-sections/
-pages/
-themes/
-utilities/
-
-style.css
-style-components.css
+components/<nombre>/<nombre>.css
+sections/<nombre>/<nombre>.css
 ```
 
-## Base
+## JavaScript
 
-Contiene la infraestructura del sistema visual.
-
-- variables.css
-- reset.css
-- reset-components.css
-- typography.css
-- animations.css
-
----
-
-## Layout
-
-Define la estructura general.
-
-- container.css
-- navbar.css
-
----
-
-## Components
-
-Implementa componentes reutilizables.
-
-Ejemplos:
-
-- Buttons
-- Cards
-- Badges
-- Dashboard
-- FAB
-- Forms
-- Icons
-- KPI
-- Modal
-- Panel
-- Table
-- Theme Toggle
-
----
-
-## Sections
-
-Componentes de páginas institucionales.
-
-- Hero
-- Features
-- Framework
-- Templates
-- Contact
-- Design System
-
----
-
-## Themes
-
-Define los temas visuales.
-
-- light.css
-- dark.css
-
----
-
-## Utilities
-
-Clases auxiliares reutilizables.
-
-- helpers.css
-- display.css
-- responsive.css
-
----
-
-# Arquitectura JavaScript
+Los servicios compartidos están en `assets/js/core/`; el bootstrap vive en `assets/js/app.js`. Cada módulo de componente está junto a su componente en `components/<nombre>/`.
 
 ```text
 assets/js/
-
-app.js
-
-core/
+  app.js
+  core/
     config.js
     events.js
     theme.js
@@ -233,224 +51,21 @@ core/
     animations.js
 
 components/
-    navbar.js
-    modal.js
-    forms.js
-    icons.js
-    fab.js
-    theme-toggle.js
+  catalog/catalog.js
+  fab/fab.js
+  form/form.js
+  icon/icon.js
+  modal/modal.js
+  navbar/navbar.js
+  theme-toogle/theme-toggle.js
 ```
 
----
+Las páginas cargan los módulos que utilizan desde sus rutas actuales. El namespace público es `window.NX`.
 
-# Núcleo (Core)
+## Componentes y secciones
 
-El núcleo proporciona servicios compartidos para todo el framework.
+Cada carpeta de componente contiene su `README.md`. HTML, CSS y JavaScript se mantienen junto al componente cuando corresponden; el registry declara `preview` para las vistas previas disponibles. El registro se encuentra en `components/registry/`. Las secciones de página se organizan en carpetas bajo `sections/`, por ejemplo `sections/hero/hero.css` y `sections/design-system/design-system.css`.
 
-## Config
+## Build
 
-Configuración global del Framework.
-
-## Theme
-
-Gestión de temas Light / Dark.
-
-## Events
-
-Bus de eventos interno.
-
-## Storage
-
-Persistencia de preferencias del usuario.
-
-## Animations
-
-Motor de animaciones.
-
----
-
-# Componentes
-
-Los componentes implementan comportamiento reutilizable.
-
-Actualmente existen módulos para:
-
-- Navbar
-- Modal
-- Forms
-- Icons
-- FAB
-- Theme Toggle
-
-Cada módulo puede inicializarse de manera independiente.
-
----
-
-# Flujo de Inicialización
-
-```text
-DOMContentLoaded
-        │
-        ▼
-
-NX.init()
-
-        │
-
-Bootstrap
-
-        │
-
-Inicialización de módulos
-
-        │
-
-Theme
-
-Navbar
-
-Theme Toggle
-
-Modal
-
-Forms
-
-Icons
-
-Animations
-
-FAB
-```
-
-Cada inicialización se ejecuta de forma aislada.
-
-Si un módulo falla, los demás continúan iniciándose.
-
----
-
-# API Pública
-
-El Framework expone un único namespace global.
-
-```javascript
-window.NX
-```
-
-Desde él se accede a los servicios públicos del framework.
-
-Ejemplos:
-
-- NX.init()
-- NX.theme
-- NX.modal
-- NX.icons
-- NX.events
-
-Los módulos internos no forman parte de la API pública.
-
----
-
-# Sistema de Temas
-
-El Framework utiliza un sistema basado en Design Tokens.
-
-Los componentes consumen variables CSS semánticas.
-
-Los temas únicamente redefinen dichos tokens.
-
-Esto permite cambiar entre Light y Dark sin modificar los componentes.
-
----
-
-# Eventos
-
-Los módulos se comunican mediante eventos personalizados.
-
-El objetivo es minimizar el acoplamiento entre componentes.
-
----
-
-# Tecnologías
-
-El Framework utiliza únicamente tecnologías estándar.
-
-- HTML5
-- CSS3
-- JavaScript ES6+
-
-No requiere:
-
-- Bootstrap
-- Tailwind CSS
-- jQuery
-- React
-- Vue
-- Angular
-
----
-
-# Compatibilidad
-
-Compatible con navegadores modernos que soporten:
-
-- CSS Variables
-- Flexbox
-- CSS Grid
-- ES Modules
-- IntersectionObserver
-- CustomEvent
-
----
-
-# Escalabilidad
-
-La arquitectura está preparada para incorporar nuevos módulos como:
-
-- Tabs
-- Accordion
-- Toast
-- Notifications
-- Timeline
-- Carousel
-- Charts
-- Dashboard
-- Tables avanzadas
-
-sin modificar el núcleo del Framework.
-
----
-
-# Relación con Nexus Ecosystem
-
-Nexus UI Framework constituye la capa visual del ecosistema Nexus.
-
-Es utilizado como base para proyectos como:
-
-- Nexus Explorer
-- Nexus Dashboard
-- Nexus Forms
-- Nexus UI
-- Plugins WordPress
-- Sistemas institucionales
-
----
-
-# Estado del Proyecto
-
-Versión estable 1.0.0.
-
-La arquitectura del núcleo, el sistema de temas y la API pública se consideran la base para la evolución futura del Framework.
-
----
-
-**Autor**
-
-Carlos Santander Díaz
-
-**Proyecto**
-
-Nexus UI Framework
-
-**Versión**
-
-1.0.0
+Los comandos de `package.json` procesan `assets/css/style.css` y `assets/css/style-components.css` con la configuración de `config/` y generan las hojas compiladas en `dist/`.

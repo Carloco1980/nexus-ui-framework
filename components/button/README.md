@@ -9,24 +9,24 @@ Componente reutilizable para acciones y navegación.
 ### Primario
 
 ```html
-<a href="#" class="nx-btn nx-btn-primary">
+<button type="button" class="nx-button nx-button-primary">
     Comenzar
-</a>
+</button>
 ```
 
 ### Secundario
 
 ```html
-<a href="#" class="nx-btn nx-btn-secondary">
+<a href="docs/COMPONENTS.md" class="nx-button nx-button-outline">
     Documentación
 </a>
 ```
 
 ## Clases
 
-- nx-btn
-- nx-btn-primary
-- nx-btn-secondary
+- nx-button
+- nx-button-primary
+- nx-button-outline
 
 ## Dependencias
 

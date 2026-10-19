@@ -23,19 +23,30 @@ version: 1.0.0
 =========================================================*/
 
 @import url("./layout/grid.css");
+@import url("../../components/navbar/navbar.css");
+@import url("../../components/footer.css");
 
 /*=========================================================
 03 Components
 =========================================================*/
 
-@import url("./components/buttons.css");
-@import url("./components/badges.css");
-@import url("./components/forms.css");
-@import url("./components/cards.css");
-@import url("./components/panel.css");
-@import url("./components/dashboard.css");
-@import url("./components/kpi.css");
-@import url("./components/chart-card.css");
+@import url("../../components/button/button.css");
+@import url("../../components/theme-toogle/theme-toggle.css");
+@import url("../../components/badge/badge.css");
+@import url("../../components/form/form.css");
+@import url("../../components/card/card.css");
+@import url("../../components/modal/modal.css");
+@import url("../../components/panel/panel.css");
+@import url("../../components/dashboard/dashboard.css");
+@import url("../../components/fab/fab.css");
+@import url("../../components/kpi/kpi.css");
+@import url("../../components/chart-card/chart-card.css");
+@import url("../../components/table/table.css");
+@import url("../../components/icon/icon.css");
+@import url("../../components/section-header/section-header.css");
+@import url("../../components/catalog/catalog.css");
+@import url("../../sections/hero/hero.css");
+@import url("../../sections/features/features.css");
 
 /*=========================================================
 04 Utilities

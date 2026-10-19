@@ -1,0 +1,77 @@
+/*=========================================================
+07 Components
+=========================================================*/
+
+/*---------------------------------------------------------
+07.6 Floating Action Button
+---------------------------------------------------------*/
+
+.nx-fab{
+
+    position:fixed;
+
+    right:var(--nx-icon-md);
+
+    bottom:var(--nx-icon-md);
+
+    z-index:var(--nx-z-toast);
+
+    display:grid;
+
+    place-items:center;
+
+    width:var(--nx-button-height);
+
+    aspect-ratio:1;
+
+    border:none;
+
+    border-radius:var(--nx-radius-circle);
+
+    background:var(--nx-gradient-primary);
+
+    color:var(--nx-white);
+
+    box-shadow:var(--nx-glow-green);
+
+    cursor:pointer;
+
+    transition:var(--nx-transition);
+
+}
+
+.nx-fab:hover{
+
+    transform:translateY(var(--nx-motion-offset-up-md));
+
+    box-shadow:
+        var(--nx-glow-green-strong),
+        var(--nx-shadow-md);
+
+}
+
+.nx-fab:active{
+
+    transform:translateY(0) scale(.96);
+
+}
+
+.nx-fab:focus-visible{
+
+    outline:var(--nx-focus-outline-width) solid var(--nx-white);
+
+    outline-offset:var(--nx-focus-outline-offset-lg);
+
+}
+
+.nx-fab svg{
+
+    width:var(--nx-navbar-indicator-width);
+
+    height:var(--nx-navbar-indicator-width);
+
+    fill:currentColor;
+
+}
+
+.nx-component-demo .nx-fab{position:static;z-index:auto;}

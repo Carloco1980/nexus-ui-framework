@@ -1,0 +1,22 @@
+[
+    {
+        "id": "stable",
+        "label": "Stable",
+        "color": "success"
+    },
+    {
+        "id": "beta",
+        "label": "Beta",
+        "color": "warning"
+    },
+    {
+        "id": "experimental",
+        "label": "Experimental",
+        "color": "info"
+    },
+    {
+        "id": "planned",
+        "label": "Planned",
+        "color": "neutral"
+    }
+]

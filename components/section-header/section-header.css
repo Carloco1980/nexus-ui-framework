@@ -1,0 +1,129 @@
+/*=========================================================
+07.x Section Header
+=========================================================*/
+
+/*---------------------------------------------------------
+Base
+---------------------------------------------------------*/
+
+.nx-section-header{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:var(--nx-space-md);
+
+    width:100%;
+
+}
+
+/*---------------------------------------------------------
+Alignment
+---------------------------------------------------------*/
+
+.nx-section-header-left{
+
+    align-items:flex-start;
+
+    text-align:left;
+
+}
+
+.nx-section-header-center{
+
+    align-items:center;
+
+    text-align:center;
+
+    width:100%;
+
+    max-width:var(--nx-size-840);
+
+    margin-inline:auto;
+
+}
+
+.nx-section-header-right{
+
+    align-items:flex-end;
+
+    text-align:right;
+
+}
+
+/*---------------------------------------------------------
+Badge
+---------------------------------------------------------*/
+
+.nx-section-header .nx-badge{
+
+    margin:0 0 var(--nx-space-xs);
+
+    flex-shrink:0;
+
+}
+
+/*---------------------------------------------------------
+Title
+---------------------------------------------------------*/
+
+.nx-section-header .nx-title-lg{
+
+    margin:0;
+
+    max-width:var(--nx-size-760);
+
+    line-height:var(--nx-line-height-heading);
+
+}
+
+/*---------------------------------------------------------
+Description
+---------------------------------------------------------*/
+
+.nx-section-header p{
+
+    margin:0;
+
+    max-width:var(--nx-size-760);
+
+    color:var(--nx-text-muted);
+
+    font-size:var(--nx-font-size-medium-plus);
+
+    line-height:var(--nx-line-height-loose);
+
+}
+
+/*---------------------------------------------------------
+Responsive
+---------------------------------------------------------*/
+
+@media (max-width:768px){
+
+    .nx-section-header{
+
+        margin-bottom:var(--nx-space-2xl);
+
+    }
+
+    .nx-section-header-center,
+    .nx-section-header .nx-title-lg,
+    .nx-section-header p{
+
+        max-width:100%;
+
+    }
+
+    .nx-section-header p{
+
+        font-size:var(--nx-font-size-md);
+
+    }
+
+}
+
+.nx-component-demo .nx-section-header{margin:0;gap:var(--nx-space-xs);}
+.nx-component-demo .nx-section-header .nx-title-lg{font-size:var(--nx-font-size-xl);}
+.nx-component-demo .nx-section-header p{font-size:var(--nx-font-size-sm);}

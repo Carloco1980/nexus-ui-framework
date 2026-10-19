@@ -1,0 +1,37 @@
+[
+    {
+        "id": "layout",
+        "name": "Layout",
+        "icon": "layout"
+    },
+    {
+        "id": "navigation",
+        "name": "Navigation",
+        "icon": "navigation"
+    },
+    {
+        "id": "actions",
+        "name": "Actions",
+        "icon": "pointer"
+    },
+    {
+        "id": "feedback",
+        "name": "Feedback",
+        "icon": "message"
+    },
+    {
+        "id": "forms",
+        "name": "Forms",
+        "icon": "form"
+    },
+    {
+        "id": "data-display",
+        "name": "Data Display",
+        "icon": "table"
+    },
+    {
+        "id": "dashboard",
+        "name": "Dashboard",
+        "icon": "chart"
+    }
+]

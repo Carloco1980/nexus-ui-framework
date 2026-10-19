@@ -125,7 +125,7 @@ Import the framework
 Example
 
 ```html
-<button class="nx-btn nx-btn-primary">
+<button class="nx-button nx-button-primary" type="button">
 Get Started
 </button>
 ```
