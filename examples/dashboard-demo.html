@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Demostración de un dashboard construido con los componentes de Nexus UI Framework.">
+    <title>Nexus UI Framework | Dashboard demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../dist/nexus-ui.css">
+    <link rel="stylesheet" href="../assets/css/pages/documentation-layout.css">
+</head>
+<body class="nx-dashboard-demo-page">
+    <header class="nx-header">
+        <div class="nx-container">
+            <nav class="nx-navbar" aria-label="Navegación principal">
+                <a href="../index.html" class="nx-navbar-brand" aria-label="Nexus UI Framework, inicio">
+                    <span class="nx-logo-mark" aria-hidden="true">N</span>
+                    <span class="nx-logo-content"><span class="nx-logo-title">NEXUS</span><span class="nx-logo-subtitle">UI Framework</span></span>
+                </a>
+                <ul id="nx-navbar-menu" class="nx-navbar-menu">
+                    <li><a href="../index.html#hero">Inicio</a></li>
+                    <li><a href="../showcase.html#component-catalog">Componentes</a></li>
+                    <li><a href="design-system.html">Design System</a></li>
+                    <li><a href="#dashboard" class="active" aria-current="page">Dashboard demo</a></li>
+                </ul>
+                <div class="nx-navbar-actions">
+                    <button id="nx-theme-button" class="nx-theme-toggle" type="button" aria-label="Cambiar tema" aria-pressed="false"><span class="nx-theme-toggle__thumb" aria-hidden="true"></span></button>
+                    <a href="https://github.com/Carloco1980/nexus-ui-framework" target="_blank" rel="noopener noreferrer" class="nx-button nx-button-outline nx-button-sm">GitHub</a>
+                </div>
+                <button id="nx-mobile-button" class="nx-mobile-button" type="button" aria-controls="nx-navbar-menu" aria-expanded="false" aria-label="Abrir menú">
+                    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="dashboard" class="nx-container nx-page nx-page--under-navbar">
+        <div class="nx-dashboard">
+            <header class="nx-dashboard-header">
+                <div class="nx-section-heading">
+                    <span class="nx-badge nx-badge-primary nx-section-label"><span class="nx-badge-dot" aria-hidden="true"></span> Aplicación de ejemplo</span>
+                    <h1 class="nx-section-title">Resumen de operaciones</h1>
+                    <p class="nx-section-description">Una vista de trabajo compuesta con los componentes existentes de Nexus UI Framework.</p>
+                </div>
+                <span class="nx-badge nx-badge-success"><span class="nx-status" aria-hidden="true"></span> Todos los sistemas activos</span>
+            </header>
+
+            <section class="nx-dashboard-kpis" aria-label="Indicadores principales">
+                <article class="nx-kpi nx-kpi-card">
+                    <header class="nx-kpi-header"><h2 class="nx-kpi-title nx-kpi-indicator">Usuarios activos</h2><span class="nx-kpi-icon" aria-hidden="true">◎</span></header>
+                    <div class="nx-kpi-body"><data class="nx-kpi-value" value="1245">1.245</data><p class="nx-kpi-description">Personas en el espacio de trabajo.</p></div>
+                    <footer class="nx-kpi-footer"><span class="nx-kpi-update">+8,4% respecto al mes anterior</span></footer>
+                </article>
+                <article class="nx-kpi nx-kpi-card">
+                    <header class="nx-kpi-header"><h2 class="nx-kpi-title nx-kpi-indicator">Proyectos</h2><span class="nx-kpi-icon" aria-hidden="true">↗</span></header>
+                    <div class="nx-kpi-body"><data class="nx-kpi-value" value="234">234</data><p class="nx-kpi-description">Iniciativas registradas este año.</p></div>
+                    <footer class="nx-kpi-footer"><span class="nx-kpi-update">12 en revisión</span></footer>
+                </article>
+                <article class="nx-kpi nx-kpi-card">
+                    <header class="nx-kpi-header"><h2 class="nx-kpi-title nx-kpi-indicator">Tareas completadas</h2><span class="nx-kpi-icon" aria-hidden="true">✓</span></header>
+                    <div class="nx-kpi-body"><data class="nx-kpi-value" value="87">87%</data><p class="nx-kpi-description">Avance general del periodo.</p></div>
+                    <footer class="nx-kpi-footer"><span class="nx-kpi-update">Dentro del objetivo mensual</span></footer>
+                </article>
+            </section>
+
+            <section class="nx-dashboard-charts" aria-label="Rendimiento y actividad">
+                <article class="nx-panel nx-chart-card">
+                    <header class="nx-panel-header">
+                        <div class="nx-panel-heading nx-section-heading"><h2 class="nx-panel-title nx-section-title nx-section-title--compact">Proyectos por periodo</h2><p class="nx-panel-subtitle nx-section-description nx-section-description--compact">Actividad de los últimos seis meses</p></div>
+                        <span class="nx-badge nx-badge-success">En crecimiento</span>
+                    </header>
+                    <div class="nx-panel-body">
+                        <div class="nx-chart-body" role="img" aria-label="Gráfico de barras: enero 42, febrero 56, marzo 48, abril 72, mayo 63, junio 85">
+                            <div class="nx-preview-chart"><span style="height:48%"></span><span style="height:64%"></span><span style="height:55%"></span><span style="height:82%"></span><span style="height:72%"></span><span style="height:96%"></span></div>
+                        </div>
+                        <div class="nx-chart-metrics"><div class="nx-chart-metric"><span class="nx-chart-label">Total del año</span><strong class="nx-chart-value">234</strong></div><div class="nx-chart-metric"><span class="nx-chart-label">Periodo actual</span><strong class="nx-chart-value">Junio</strong></div></div>
+                    </div>
+                </article>
+                <article class="nx-panel">
+                    <header class="nx-panel-header"><div class="nx-panel-heading nx-section-heading"><h2 class="nx-panel-title nx-section-title nx-section-title--compact">Estado del equipo</h2><p class="nx-panel-subtitle nx-section-description nx-section-description--compact">Resumen de tareas activas</p></div></header>
+                    <div class="nx-panel-body nx-dashboard-summary">
+                        <div class="nx-summary-row"><span>Completadas</span><strong>87%</strong></div>
+                        <div class="nx-summary-row"><span>En progreso</span><strong>10%</strong></div>
+                        <div class="nx-summary-row"><span>Pendientes</span><strong>3%</strong></div>
+                    </div>
+                    <footer class="nx-panel-footer"><span>Actualizado hace 5 minutos</span></footer>
+                </article>
+            </section>
+
+            <section aria-labelledby="activity-title">
+                <header class="nx-section-header nx-section-heading">
+                    <div><h2 id="activity-title" class="nx-section-title">Actividad reciente</h2><p class="nx-section-description">Últimos proyectos registrados en el espacio de trabajo.</p></div>
+                    <a class="nx-button nx-button-outline nx-button-sm" href="../showcase.html#component-catalog">Ver componentes</a>
+                </header>
+                <article class="nx-panel nx-table-card">
+                    <div class="nx-table-wrapper">
+                        <table class="nx-table">
+                            <caption>Actividad reciente de proyectos</caption>
+                            <thead><tr><th scope="col">Proyecto</th><th scope="col">Responsable</th><th scope="col">Actualización</th><th scope="col">Estado</th></tr></thead>
+                            <tbody>
+                                <tr><td>Aula Invertida</td><td>Equipo de innovación</td><td>Hoy, 10:42</td><td><span class="nx-badge nx-badge-success">Activo</span></td></tr>
+                                <tr><td>Evaluación Formativa</td><td>Equipo académico</td><td>Ayer, 16:18</td><td><span class="nx-badge nx-badge-info">En revisión</span></td></tr>
+                                <tr><td>Aprendizaje Adaptativo</td><td>Equipo de producto</td><td>12 jun, 09:30</td><td><span class="nx-badge nx-badge-primary">Publicado</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+            </section>
+
+            <nav class="nx-hero-actions" aria-label="Continuar explorando Nexus UI">
+                <a class="nx-button nx-button-primary" href="../showcase.html#component-catalog">Explorar el catálogo</a>
+                <a class="nx-button nx-button-outline" href="design-system.html">Consultar el Design System</a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="nx-footer">
+        <div class="nx-container nx-footer-inner">
+            <div class="nx-footer-brand"><strong>Nexus UI Framework</strong><span>Un sistema de diseño modular para construir experiencias digitales.</span></div>
+            <section class="nx-footer-group" aria-labelledby="footer-version"><h2 id="footer-version">Versión</h2><span>Nexus UI · 1.0.0</span></section>
+            <section class="nx-footer-group" aria-labelledby="footer-project"><h2 id="footer-project">Proyecto</h2><a href="https://github.com/Carloco1980/nexus-ui-framework" target="_blank" rel="noopener noreferrer">GitHub</a><a href="../LICENSE">Licencia MIT</a></section>
+            <section class="nx-footer-group" aria-labelledby="footer-explore"><h2 id="footer-explore">Explorar</h2><a href="../showcase.html#component-catalog">Componentes</a><a href="design-system.html">Design System</a><a href="dashboard-demo.html">Dashboard demo</a><a href="../docs/COMPONENTS.md">Documentación</a></section>
+            <section class="nx-footer-group" aria-labelledby="footer-license"><h2 id="footer-license">Licencia</h2><span>MIT · Uso abierto</span><a href="../README.md">Acerca del framework</a></section>
+        </div>
+        <div class="nx-footer-bottom"><div class="nx-container">Nexus UI Framework · Hecho para interfaces consistentes.</div></div>
+    </footer>
+
+    <script src="../assets/js/core/config.js"></script>
+    <script src="../assets/js/core/events.js"></script>
+    <script src="../assets/js/core/theme.js"></script>
+    <script src="../components/theme-toogle/theme-toggle.js"></script>
+    <script src="../components/navbar/navbar.js"></script>
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

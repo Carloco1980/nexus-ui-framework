@@ -62,22 +62,6 @@ Header
 .nx-design-header .nx-section-description{margin-block-start:var(--nx-space-heading-title-description);}
 
 /*=========================================================
-Main
-=========================================================*/
-
-.nx-design-main{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:var(--nx-space-lg);
-
-    padding:var(--nx-space-lg) 0;
-
-}
-
-/*=========================================================
 Sections
 =========================================================*/
 
@@ -120,22 +104,6 @@ Sections
 }
 
 /*=========================================================
-Footer
-=========================================================*/
-
-.nx-design-footer{
-
-    padding:var(--nx-space-md) 0;
-
-    border-top:var(--nx-border-width) solid var(--nx-border-soft);
-
-    text-align:center;
-
-    color:var(--nx-text-soft);
-
-}
-
-/*=========================================================
 Responsive
 =========================================================*/
 
@@ -144,14 +112,6 @@ Responsive
     .nx-design-header{
 
         padding:var(--nx-space-lg) 0 var(--nx-space-display);
-
-    }
-
-    .nx-design-main{
-
-        gap:var(--nx-space-display);
-
-        padding:var(--nx-space-display) 0;
 
     }
 
@@ -187,9 +147,9 @@ Foundation
 
     grid-template-columns:repeat(auto-fit,minmax(var(--nx-kpi-min),1fr));
 
-    gap:var(--nx-space-lg);
+    gap:var(--nx-space-md-minus);
 
-    margin-top:var(--nx-space-lg);
+    margin-top:var(--nx-space-md-minus);
 
 }
 
@@ -221,15 +181,9 @@ Token Card
 
     min-height:var(--nx-size-190);
 
-    gap:var(--nx-space-md);
+    gap:var(--nx-space-xs);
 
-    padding:var(--nx-space-sm-plus);
-
-    background:var(--nx-glass-bg);
-
-    border:var(--nx-border-width) solid var(--nx-glass-border);
-
-    border-radius:var(--nx-radius-md);
+    padding:var(--nx-card-padding);
 
 }
 
@@ -365,7 +319,7 @@ Spacing Preview
 
     background:var(--nx-primary);
 
-    margin-bottom:var(--nx-space-md);
+    margin-bottom:var(--nx-space-xs);
 
 }
 
@@ -475,14 +429,6 @@ Radius
 Shadows
 =========================================================*/
 
-.nx-shadow-card{
-
-    display:flex;
-    flex-direction:column;
-    gap:var(--nx-space-sm);
-
-}
-
 .nx-shadow-demo{
 
     width:var(--nx-button-min-width);
@@ -493,12 +439,6 @@ Shadows
     background:var(--nx-surface-light);
 
     border:var(--nx-border-width) solid var(--nx-border);
-
-}
-
-.nx-shadow-demo:hover{
-
-    transform:translateY(var(--nx-motion-offset-up-md));
 
 }
 

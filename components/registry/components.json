@@ -150,7 +150,7 @@
     },
     {
         "id":  "kpi",
-        "name":  "KPI",
+        "name":  "Metric Card",
         "category":  "dashboard",
         "status":  "stable",
         "version":  "1.0.0",

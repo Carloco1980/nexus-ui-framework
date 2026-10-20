@@ -13,11 +13,11 @@
         name="viewport"
         content="width=device-width, initial-scale=1.0">
 
-    <title>Nexus UI Framework | Modern UI Components</title>
+    <title>Nexus UI Framework | Componentes de interfaz</title>
 
     <meta
         name="description"
-        content="Modern UI Framework for Dashboards, Landing Pages, Enterprise Applications and WordPress Plugins.">
+    content="Framework de interfaz modular con componentes reutilizables, tokens de diseño y patrones responsive.">
 
     <!--=====================================================
     Fonts
@@ -59,7 +59,7 @@ Header
 <header class="nx-header">
     <div class="nx-container">
         <nav class="nx-navbar" aria-label="Navegación principal">
-            <a href="/" class="nx-navbar-brand" aria-label="Nexus UI Framework">
+            <a href="index.html" class="nx-navbar-brand" aria-label="Nexus UI Framework, inicio">
                 <span class="nx-logo-mark" aria-hidden="true">N</span>
                 <span class="nx-logo-content">
                     <span class="nx-logo-title">NEXUS</span>
@@ -69,14 +69,12 @@ Header
 
             <ul id="nx-navbar-menu" class="nx-navbar-menu">
                 <li><a href="#hero" class="active" aria-current="page">Inicio</a></li>
-                <li><a href="#components">Componentes</a></li>
-                <li><a href="#templates">Templates</a></li>
-                <li><a href="#documentation">Documentación</a></li>
-                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="showcase.html#component-catalog">Componentes</a></li>
+                <li><a href="examples/design-system.html">Design System</a></li>
+                <li><a href="examples/dashboard-demo.html">Dashboard demo</a></li>
             </ul>
 
             <div class="nx-navbar-actions">
-                <input class="nx-navbar-search" type="search" placeholder="Buscar componentes..." aria-label="Buscar">
                 <button id="nx-theme-button" class="nx-theme-toggle" type="button" aria-label="Cambiar tema" aria-pressed="false">
                     <span class="nx-theme-toggle__thumb" aria-hidden="true"></span>
                 </button>
@@ -104,8 +102,7 @@ Header
            ======================================================-->
 
 
-<section
-id="hero"class="nx-hero">
+<section id="hero" class="nx-hero">
 
     <div class="nx-container">
 
@@ -125,42 +122,27 @@ id="hero"class="nx-hero">
 
 </span>
 
-<button
-    class="nx-button nx-button-primary"
-    data-nx-modal-open="demo-modal">
-
-    <span
-        class="nx-icon"
-        data-nx-icon="search">
-    </span>
-
-    <span>Abrir Modal</span>
-
-</button>
-
-                    
-
                 <h1 class="nx-title-xl nx-hero-title nx-section-title nx-section-title--display">
 
-                    Build modern interfaces with a reusable UI Framework.
+                    Construye interfaces modernas con un Framework reutilizable.
 
                  </h1>
 
                 <p class="nx-hero-description nx-section-description">
 
-                   Nexus UI Framework provides reusable components,
-                   design tokens and modular architecture for dashboards,
-                    institutional websites and WordPress plugins.
+                   Nexus UI Framework reúne componentes reutilizables,
+                   tokens de diseño y una arquitectura modular para dashboards,
+                   sitios institucionales y aplicaciones web.
 
                      </p>
 
                 <div class="nx-hero-actions">
 
                     <a
-                    href="#components-preview"
+                    href="showcase.html#component-catalog"
                     class="nx-button nx-button-primary">
 
-                        Explore Components
+                        Explorar componentes
 
                     </a>
                     
@@ -169,29 +151,31 @@ id="hero"class="nx-hero">
                     href="examples/design-system.html"
                     class="nx-button nx-button-outline">
 
-                        Design System
+                        Ver Design System
 
                     </a>
 
                 </div>
 
+                    <a href="examples/dashboard-demo.html" class="nx-button nx-button-ghost">Ver dashboard demo</a>
+
                 <div class="nx-highlights">
 
                     <span class="nx-highlight">
 
-                        Design Tokens
+                        Tokens de diseño
 
                     </span>
 
                     <span class="nx-highlight">
 
-                        Responsive
+                        Adaptable
 
                     </span>
 
                     <span class="nx-highlight">
 
-                        Dashboard Ready
+                        Listo para dashboards
 
                     </span>
 
@@ -214,7 +198,7 @@ id="hero"class="nx-hero">
     <div class="nx-dashboard">
 
         <!--=====================================
-        Dashboard Preview
+                Vista previa del dashboard
         ======================================-->
 
         <article class="nx-panel nx-chart-card">
@@ -224,12 +208,17 @@ id="hero"class="nx-hero">
                 <div class="nx-panel-heading">
 
                     <h3 class="nx-panel-title nx-section-title nx-section-title--compact">
-    Dashboard Preview
+    Vista previa del dashboard
 </h3>
 
                 </div>
 
-                <span class="nx-status"></span>
+                <div class="nx-panel-header-actions">
+                    <span class="nx-status" role="status" aria-label="Sistema activo"></span>
+                    <button class="nx-panel-action" type="button" data-nx-modal-open="demo-modal" aria-label="Abrir modal de muestra">
+                        <span class="nx-icon" data-nx-icon="search" aria-hidden="true"></span>
+                    </button>
+                </div>
 
             </div>
 
@@ -259,7 +248,7 @@ id="hero"class="nx-hero">
 
         <div class="nx-preview-stat">
 
-            <span>Components</span>
+            <span>Componentes</span>
 
             <strong>42</strong>
 
@@ -288,19 +277,19 @@ id="hero"class="nx-hero">
         <div class="nx-dashboard-kpis">
 
             <article class="nx-kpi nx-kpi-card">
-                <header class="nx-kpi-header"><h3 class="nx-kpi-title nx-kpi-indicator">Components</h3><span class="nx-kpi-icon" aria-hidden="true">▦</span></header>
-                <div class="nx-kpi-body"><data class="nx-kpi-value" value="42">42</data><p class="nx-kpi-description">Reusable interface building blocks.</p></div>
-                <footer class="nx-kpi-footer"><span class="nx-kpi-update">Updated with each release</span></footer>
+                <header class="nx-kpi-header"><h3 class="nx-kpi-title nx-kpi-indicator">Componentes</h3><span class="nx-kpi-icon" aria-hidden="true">▦</span></header>
+                <div class="nx-kpi-body"><data class="nx-kpi-value" value="42">42</data><p class="nx-kpi-description">Bloques reutilizables para crear interfaces.</p></div>
+                <footer class="nx-kpi-footer"><span class="nx-kpi-update">Actualizados en cada versión</span></footer>
             </article>
             <article class="nx-kpi nx-kpi-card">
                 <header class="nx-kpi-header"><h3 class="nx-kpi-title nx-kpi-indicator">Responsive</h3><span class="nx-kpi-icon" aria-hidden="true">↔</span></header>
-                <div class="nx-kpi-body"><data class="nx-kpi-value" value="100">100%</data><p class="nx-kpi-description">Designed across device sizes.</p></div>
-                <footer class="nx-kpi-footer"><span class="nx-kpi-update">Mobile and desktop ready</span></footer>
+                <div class="nx-kpi-body"><data class="nx-kpi-value" value="100">100%</data><p class="nx-kpi-description">Diseñado para todos los tamaños de pantalla.</p></div>
+                <footer class="nx-kpi-footer"><span class="nx-kpi-update">Móvil y escritorio</span></footer>
             </article>
             <article class="nx-kpi nx-kpi-card">
-                <header class="nx-kpi-header"><h3 class="nx-kpi-title nx-kpi-indicator">License</h3><span class="nx-kpi-icon" aria-hidden="true">◇</span></header>
-                <div class="nx-kpi-body"><data class="nx-kpi-value" value="MIT">MIT</data><p class="nx-kpi-description">Open source framework.</p></div>
-                <footer class="nx-kpi-footer"><span class="nx-kpi-update">MIT license</span></footer>
+                <header class="nx-kpi-header"><h3 class="nx-kpi-title nx-kpi-indicator">Licencia</h3><span class="nx-kpi-icon" aria-hidden="true">◇</span></header>
+                <div class="nx-kpi-body"><data class="nx-kpi-value" value="MIT">MIT</data><p class="nx-kpi-description">Framework de código abierto.</p></div>
+                <footer class="nx-kpi-footer"><span class="nx-kpi-update">Licencia MIT</span></footer>
             </article>
 
         </div>
@@ -325,17 +314,17 @@ Table Component
 
         <div class="nx-section-header nx-section-heading">
 
-            <h2 class="nx-section-title">
-                Table
+                <h2 class="nx-section-title">
+                Actividad reciente
             </h2>
 
             <p class="nx-section-subtitle nx-section-description">
-                Responsive data table component.
+                Un resumen de la actividad de la plataforma.
             </p>
 
         </div>
 
-        <!-- Pegar aquí el contenido de table.html -->
+                <!-- Componente de tabla reutilizado -->
 
         <article class="nx-panel nx-table-card">
 
@@ -444,7 +433,7 @@ Table Component
 
 
 <!--=================================================
-Core Features
+Funciones principales
 ==================================================-->
 
 <section
@@ -463,21 +452,21 @@ Core Features
 
         <span class="nx-badge-dot"></span>
 
-        Core Features
+        Funciones principales
 
     </span>
 
     <h2 class="nx-title-lg nx-section-title">
 
-        Everything you need to build modern interfaces.
+        Todo lo que necesitas para crear interfaces modernas.
 
     </h2>
 
     <p class="nx-section-description">
 
-        Nexus UI Framework provides a modular foundation
-        with reusable components, design tokens and
-        responsive layouts for scalable web applications.
+        Nexus UI Framework ofrece una base modular con
+        componentes reutilizables, tokens de diseño y
+        composiciones responsive para aplicaciones web.
 
     </p>
 
@@ -500,12 +489,12 @@ Features Grid
         <div class="nx-card-body">
 
             <h3 class="nx-card-title">
-                Reusable Components
+                Componentes reutilizables
             </h3>
 
             <p class="nx-card-text">
-                Build consistent interfaces using modular
-                components designed for reuse across projects.
+                Construye interfaces consistentes con componentes
+                modulares que puedes reutilizar en tus proyectos.
             </p>
 
         </div>
@@ -523,12 +512,12 @@ Features Grid
         <div class="nx-card-body">
 
             <h3 class="nx-card-title">
-                Design Tokens
+                Tokens de diseño
             </h3>
 
             <p class="nx-card-text">
-                Colors, spacing, typography and shadows
-                managed from a centralized design system.
+                Colores, espaciado, tipografía y sombras
+                gestionados desde un sistema de diseño centralizado.
             </p>
 
         </div>
@@ -546,12 +535,12 @@ Features Grid
         <div class="nx-card-body">
 
             <h3 class="nx-card-title">
-                Responsive First
+                Adaptable a cada pantalla
             </h3>
 
             <p class="nx-card-text">
-                Every layout is designed to adapt naturally
-                across desktop, tablet and mobile devices.
+                Cada composición se adapta de forma natural
+                a escritorio, tabletas y móviles.
             </p>
 
         </div>
@@ -569,12 +558,12 @@ Features Grid
         <div class="nx-card-body">
 
             <h3 class="nx-card-title">
-                Developer Experience
+                Experiencia de desarrollo
             </h3>
 
             <p class="nx-card-text">
-                Clean architecture, modular CSS and
-                lightweight JavaScript with no dependencies.
+                Arquitectura clara, CSS modular y
+                JavaScript ligero sin dependencias externas.
             </p>
 
         </div>
@@ -596,16 +585,6 @@ Features Grid
 
        
 
-        <!--=================================================
-        Footer CTA
-        ==================================================-->
-
-        <section
-        id="footer-cta"
-        class="nx-section">
-
-        </section>
-
     </main>
 
     <!--=====================================================
@@ -613,7 +592,14 @@ Features Grid
     ======================================================-->
 
     <footer class="nx-footer">
-
+        <div class="nx-container nx-footer-inner">
+            <div class="nx-footer-brand"><strong>Nexus UI Framework</strong><span>Un sistema de diseño modular para construir experiencias digitales.</span></div>
+            <section class="nx-footer-group" aria-labelledby="footer-version"><h2 id="footer-version">Versión</h2><span>Nexus UI · 1.0.0</span></section>
+            <section class="nx-footer-group" aria-labelledby="footer-project"><h2 id="footer-project">Proyecto</h2><a href="https://github.com/Carloco1980/nexus-ui-framework" target="_blank" rel="noopener noreferrer">GitHub</a><a href="LICENSE">Licencia MIT</a></section>
+            <section class="nx-footer-group" aria-labelledby="footer-docs"><h2 id="footer-docs">Explorar</h2><a href="showcase.html#component-catalog">Componentes</a><a href="examples/design-system.html">Design System</a><a href="examples/dashboard-demo.html">Dashboard demo</a><a href="docs/COMPONENTS.md">Documentación</a></section>
+            <section class="nx-footer-group" aria-labelledby="footer-license"><h2 id="footer-license">Licencia</h2><span>MIT · Uso abierto</span><a href="README.md">Acerca del framework</a></section>
+        </div>
+        <div class="nx-footer-bottom"><div class="nx-container">Nexus UI Framework · Hecho para interfaces consistentes.</div></div>
     </footer>
 
 

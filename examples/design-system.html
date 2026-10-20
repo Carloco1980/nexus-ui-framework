@@ -8,17 +8,51 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Nexus UI Framework | Design System</title>
+    <title>Nexus UI Framework | Sistema de diseño</title>
 
     <meta name="description"
-          content="Design System oficial de Nexus UI Framework.">
+          content="Referencia oficial de tokens, tipografía, superficies y componentes de Nexus UI Framework.">
 
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../dist/nexus-ui.css">
     <link rel="stylesheet" href="../assets/css/pages/documentation-layout.css">
 
 </head>
 
 <body class="nx-design-system">
+
+    <header class="nx-header">
+        <div class="nx-container">
+            <nav class="nx-navbar" aria-label="Navegación principal">
+                <a href="../index.html" class="nx-navbar-brand" aria-label="Nexus UI Framework, inicio">
+                    <span class="nx-logo-mark" aria-hidden="true">N</span>
+                    <span class="nx-logo-content">
+                        <span class="nx-logo-title">NEXUS</span>
+                        <span class="nx-logo-subtitle">UI Framework</span>
+                    </span>
+                </a>
+                <ul id="nx-navbar-menu" class="nx-navbar-menu">
+                    <li><a href="../index.html#hero">Inicio</a></li>
+                    <li><a href="../showcase.html#component-catalog">Componentes</a></li>
+                    <li><a href="#foundation" class="active" aria-current="page">Design System</a></li>
+                    <li><a href="dashboard-demo.html">Dashboard demo</a></li>
+                </ul>
+                <div class="nx-navbar-actions">
+                    <button id="nx-theme-button" class="nx-theme-toggle" type="button" aria-label="Cambiar tema" aria-pressed="false">
+                        <span class="nx-theme-toggle__thumb" aria-hidden="true"></span>
+                    </button>
+                    <a href="https://github.com/Carloco1980/nexus-ui-framework" target="_blank" rel="noopener noreferrer" class="nx-button nx-button-outline nx-button-sm">GitHub</a>
+                </div>
+                <button id="nx-mobile-button" class="nx-mobile-button" type="button" aria-controls="nx-navbar-menu" aria-expanded="false" aria-label="Abrir menú">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
 
     <!-- ==========================================
     Header
@@ -29,17 +63,12 @@
         <div class="nx-container nx-section-heading nx-section-header-center nx-design-heading">
 
             <span class="nx-badge nx-section-label">
-                Version 1.0
+                Versión 1.0
             </span>
 
-            <h1 class="nx-title nx-section-title">
-                Nexus UI Framework
-            </h1>
+            <h1 class="nx-title nx-section-title">Sistema de diseño</h1>
 
-            <p class="nx-subtitle nx-section-description">
-                Un Framework moderno para construir dashboards,
-                plataformas y aplicaciones web modulares.
-            </p>
+            <p class="nx-subtitle nx-section-description">La referencia visual compartida por los componentes y las páginas de Nexus UI Framework.</p>
 
         </div>
 
@@ -49,7 +78,7 @@
     Main
     =========================================== -->
 
-    <main class="nx-container nx-page">
+    <main class="nx-container nx-page nx-page--under-navbar">
 
         <!-- ======================================
         Foundation
@@ -59,7 +88,7 @@
     id="foundation"
     class="nx-design-section">
 
-    <h2>Foundation</h2>
+    <h2>Fundamentos</h2>
 
     <p>
         Tokens fundamentales del sistema de diseño.
@@ -67,47 +96,47 @@
 
     <div class="nx-foundation-group">
 
-        <h3>Color Palette</h3>
+        <h3>Paleta de colores</h3>
 
         <div class="nx-token-grid">
 
-    <div class="nx-token">
+    <div class="nx-card nx-token">
         <div class="nx-color-preview nx-color-primary"></div>
         <strong>Primary</strong>
         <code>--nx-primary</code>
     </div>
 
-    <div class="nx-token">
+    <div class="nx-card nx-token">
         <div class="nx-color-preview nx-color-primary-dark"></div>
         <strong>Primary Dark</strong>
         <code>--nx-primary-dark</code>
     </div>
 
-    <div class="nx-token">
+    <div class="nx-card nx-token">
         <div class="nx-color-preview nx-color-green"></div>
         <strong>Green</strong>
         <code>--nx-green</code>
     </div>
 
-    <div class="nx-token">
+    <div class="nx-card nx-token">
         <div class="nx-color-preview nx-color-cyan"></div>
         <strong>Cyan</strong>
         <code>--nx-cyan</code>
     </div>
 
-    <div class="nx-token">
+    <div class="nx-card nx-token">
         <div class="nx-color-preview nx-color-purple"></div>
         <strong>Purple</strong>
         <code>--nx-purple</code>
     </div>
 
-    <div class="nx-token">
+    <div class="nx-card nx-token">
         <div class="nx-color-preview nx-color-orange"></div>
         <strong>Orange</strong>
         <code>--nx-orange</code>
     </div>
 
-    <div class="nx-token">
+    <div class="nx-card nx-token">
         <div class="nx-color-preview nx-color-red"></div>
         <strong>Red</strong>
         <code>--nx-red</code>
@@ -120,11 +149,11 @@
 
     <section class="nx-foundation-group">
 
-    <h3>Typography</h3>
+    <h3>Tipografía</h3>
 
     <div class="nx-token-grid">
 
-        <article class="nx-token">
+        <article class="nx-card nx-token">
 
             <h1>Heading 1</h1>
 
@@ -134,7 +163,7 @@
 
         </article>
 
-        <article class="nx-token">
+        <article class="nx-card nx-token">
 
             <h2>Heading 2</h2>
 
@@ -144,7 +173,7 @@
 
         </article>
 
-        <article class="nx-token">
+        <article class="nx-card nx-token">
 
             <h3>Heading 3</h3>
 
@@ -154,7 +183,7 @@
 
         </article>
 
-        <article class="nx-token">
+        <article class="nx-card nx-token">
 
             <p class="nx-demo-body">
                 Body text para párrafos y contenido general.
@@ -164,7 +193,7 @@
 
         </article>
 
-        <article class="nx-token">
+        <article class="nx-card nx-token">
 
             <small class="nx-demo-small">
                 Small text para información secundaria.
@@ -180,11 +209,11 @@
 
     <div class="nx-foundation-group">
 
-    <h3>Spacing</h3>
+    <h3>Espaciado</h3>
 
     <div class="nx-token-grid">
 
-        <article class="nx-token">
+        <article class="nx-card nx-token">
 
             <div class="nx-spacing-preview nx-space-xs"></div>
 
@@ -194,7 +223,7 @@
 
         </article>
 
-        <article class="nx-token">
+        <article class="nx-card nx-token">
 
             <div class="nx-spacing-preview nx-space-sm"></div>
 
@@ -204,7 +233,7 @@
 
         </article>
 
-        <article class="nx-token">
+        <article class="nx-card nx-token">
 
             <div class="nx-spacing-preview nx-space-md"></div>
 
@@ -214,7 +243,7 @@
 
         </article>
 
-        <article class="nx-token">
+        <article class="nx-card nx-token">
 
             <div class="nx-spacing-preview nx-space-lg"></div>
 
@@ -224,7 +253,7 @@
 
         </article>
 
-        <article class="nx-token">
+        <article class="nx-card nx-token">
 
             <div class="nx-spacing-preview nx-space-xl"></div>
 
@@ -240,11 +269,11 @@
 
     <section class="nx-section">
 
-    <h3>Radius</h3>
+    <h3>Radios</h3>
 
-    <div class="nx-foundation-grid">
+    <div class="nx-token-grid">
 
-        <article class="nx-token-card">
+        <article class="nx-card nx-token">
 
             <div class="nx-radius-demo nx-radius-xs"></div>
 
@@ -254,7 +283,7 @@
 
         </article>
 
-        <article class="nx-token-card">
+        <article class="nx-card nx-token">
 
             <div class="nx-radius-demo nx-radius-sm"></div>
 
@@ -264,7 +293,7 @@
 
         </article>
 
-        <article class="nx-token-card">
+        <article class="nx-card nx-token">
 
             <div class="nx-radius-demo nx-radius-md"></div>
 
@@ -274,7 +303,7 @@
 
         </article>
 
-        <article class="nx-token-card">
+        <article class="nx-card nx-token">
 
             <div class="nx-radius-demo nx-radius-lg"></div>
 
@@ -284,7 +313,7 @@
 
         </article>
 
-        <article class="nx-token-card">
+        <article class="nx-card nx-token">
 
             <div class="nx-radius-demo nx-radius-xl"></div>
 
@@ -298,11 +327,11 @@
 
 </section>
 
-    <h3>Shadows</h3>
+    <h3>Sombras</h3>
 
-<div class="nx-foundation-grid">
+<div class="nx-token-grid">
 
-    <article class="nx-shadow-card">
+    <article class="nx-card nx-token">
 
         <div class="nx-shadow-demo nx-shadow-xs"></div>
 
@@ -312,7 +341,7 @@
 
     </article>
 
-    <article class="nx-shadow-card">
+    <article class="nx-card nx-token">
 
         <div class="nx-shadow-demo nx-shadow-sm"></div>
 
@@ -322,7 +351,7 @@
 
     </article>
 
-    <article class="nx-shadow-card">
+    <article class="nx-card nx-token">
 
         <div class="nx-shadow-demo nx-shadow-md"></div>
 
@@ -332,7 +361,7 @@
 
     </article>
 
-    <article class="nx-shadow-card">
+    <article class="nx-card nx-token">
 
         <div class="nx-shadow-demo nx-shadow-lg"></div>
 
@@ -342,7 +371,7 @@
 
     </article>
 
-    <article class="nx-shadow-card">
+    <article class="nx-card nx-token">
 
         <div class="nx-shadow-demo nx-shadow-xl"></div>
 
@@ -363,9 +392,7 @@
     id="components"
     class="nx-design-section">
 
-    <h2>
-        Components
-    </h2>
+    <h2>Componentes</h2>
 
     <p>
         Componentes reutilizables del Nexus UI Framework.
@@ -375,99 +402,70 @@
     Buttons
     ======================================= -->
 
-    <h3>Buttons</h3>
+    <h3>Botones</h3>
 
 <div class="nx-foundation-grid">
 
-    <a class="nx-button nx-button-primary">Primary</a>
+        <button class="nx-button nx-button-primary" type="button">Primario</button>
 
-    <a class="nx-button nx-button-outline">Outline</a>
+        <button class="nx-button nx-button-outline" type="button">Contorno</button>
 
-    <a class="nx-button nx-button-glass">Glass</a>
+        <button class="nx-button nx-button-glass" type="button">Vidrio</button>
 
-    <a class="nx-button nx-button-ghost">Ghost</a>
+        <button class="nx-button nx-button-ghost" type="button">Transparente</button>
 
-    <a class="nx-button nx-button-success">Success</a>
+        <button class="nx-button nx-button-success" type="button">Éxito</button>
 
-    <a class="nx-button nx-button-danger">Danger</a>
+        <button class="nx-button nx-button-danger" type="button">Peligro</button>
 
 </div>
 
-</section>
-
-<h3>Badges</h3>
+<h3>Insignias</h3>
 
 <div class="nx-foundation-grid">
 
     <span class="nx-badge">
-        Default
+        Predeterminada
     </span>
 
     <span class="nx-badge nx-badge-primary">
-        Primary
+        Primaria
     </span>
 
     <span class="nx-badge nx-badge-success">
-        Success
+        Éxito
     </span>
 
     <span class="nx-badge nx-badge-info">
-        Info
+        Información
     </span>
 
     <span class="nx-badge nx-badge-purple">
-        Purple
+        Púrpura
     </span>
 
     <span class="nx-badge nx-badge-warning">
-        Warning
+        Advertencia
     </span>
 
     <span class="nx-badge nx-badge-outline">
-        Outline
+        Contorno
     </span>
 
     <span class="nx-badge nx-badge-glass">
-        Glass
+        Vidrio
     </span>
 
 </div>
 
-        <!-- ======================================
-        Dashboard Kit
-        ======================================= -->
+    <h3>Continúa explorando</h3>
+    <p>Aplica estos patrones en el catálogo o recorre una interfaz construida con los componentes del Framework.</p>
+    <div class="nx-hero-actions">
+        <a class="nx-button nx-button-primary" href="../showcase.html#component-catalog">Explorar componentes</a>
+        <a class="nx-button nx-button-outline" href="dashboard-demo.html">Ver dashboard demo</a>
+    </div>
 
-        <section
-            id="dashboard-kit"
-            class="nx-design-section">
-
-            <h2>
-                Dashboard Kit
-            </h2>
-
-            <p>
-                Componentes especializados para dashboards.
-            </p>
-
-        </section>
-
-        <!-- ======================================
-        Roadmap
-        ======================================= -->
-
-        <section
-            id="roadmap"
-            class="nx-design-section">
-
-            <h2>
-                Roadmap
-            </h2>
-
-            <p>
-                Próximos componentes del Framework.
-            </p>
-
-        </section>
+</section>
 
     </main>
 
@@ -475,18 +473,23 @@
     Footer
     =========================================== -->
 
-    <footer class="nx-design-footer">
-
-        <div class="nx-container">
-
-            <p>
-                Nexus UI Framework · Version 1.0
-            </p>
-
+    <footer class="nx-footer">
+        <div class="nx-container nx-footer-inner">
+            <div class="nx-footer-brand"><strong>Nexus UI Framework</strong><span>Un sistema de dise&ntilde;o modular para construir experiencias digitales.</span></div>
+            <section class="nx-footer-group" aria-labelledby="footer-version"><h2 id="footer-version">Versi&oacute;n</h2><span>Nexus UI &middot; 1.0.0</span></section>
+            <section class="nx-footer-group" aria-labelledby="footer-project"><h2 id="footer-project">Proyecto</h2><a href="https://github.com/Carloco1980/nexus-ui-framework" target="_blank" rel="noopener noreferrer">GitHub</a><a href="../LICENSE">Licencia MIT</a></section>
+            <section class="nx-footer-group" aria-labelledby="footer-docs"><h2 id="footer-docs">Explorar</h2><a href="../showcase.html#component-catalog">Componentes</a><a href="design-system.html">Design System</a><a href="dashboard-demo.html">Dashboard demo</a><a href="../docs/COMPONENTS.md">Documentaci&oacute;n</a></section>
+            <section class="nx-footer-group" aria-labelledby="footer-license"><h2 id="footer-license">Licencia</h2><span>MIT &middot; Uso abierto</span><a href="../README.md">Acerca del framework</a></section>
         </div>
-
+        <div class="nx-footer-bottom"><div class="nx-container">Nexus UI Framework &middot; Hecho para interfaces consistentes.</div></div>
     </footer>
 
+    <script src="../assets/js/core/config.js"></script>
+    <script src="../assets/js/core/events.js"></script>
+    <script src="../assets/js/core/theme.js"></script>
+    <script src="../components/theme-toogle/theme-toggle.js"></script>
+    <script src="../components/navbar/navbar.js"></script>
+    <script src="../assets/js/app.js"></script>
 </body>
 
 </html>

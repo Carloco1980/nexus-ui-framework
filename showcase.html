@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Catálogo oficial de componentes de Nexus UI Framework.">
     <meta name="theme-color" content="#020617">
-    <title>Nexus UI Framework · Design System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Nexus UI Framework · Catálogo de componentes</title>
     <link rel="stylesheet" href="dist/nexus-ui.css">
     <link rel="stylesheet" href="assets/css/pages/showcase.css">
 </head>
@@ -18,13 +21,14 @@
                 <span class="nx-logo-content"><span class="nx-logo-title">NEXUS</span><span class="nx-logo-subtitle">UI Framework</span></span>
             </a>
             <ul id="nx-navbar-menu" class="nx-navbar-menu">
+                <li><a href="index.html#hero">Inicio</a></li>
                 <li><a href="#component-catalog" class="active" aria-current="page">Componentes</a></li>
-                <li><a href="docs/COMPONENTS.md">Documentación</a></li>
                 <li><a href="examples/design-system.html">Design System</a></li>
+                <li><a href="examples/dashboard-demo.html">Dashboard demo</a></li>
             </ul>
             <div class="nx-navbar-actions">
-                <a href="https://github.com/Carloco1980/nexus-ui-framework" target="_blank" rel="noopener noreferrer" class="nx-button nx-button-outline nx-button-sm">GitHub</a>
                 <button id="nx-theme-button" class="nx-theme-toggle" type="button" aria-label="Cambiar tema" aria-pressed="false"><span class="nx-theme-toggle__thumb" aria-hidden="true"></span></button>
+                <a href="https://github.com/Carloco1980/nexus-ui-framework" target="_blank" rel="noopener noreferrer" class="nx-button nx-button-outline nx-button-sm">GitHub</a>
             </div>
             <button id="nx-mobile-button" class="nx-mobile-button" type="button" aria-controls="nx-navbar-menu" aria-expanded="false" aria-label="Abrir menú">
                 <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
@@ -36,20 +40,37 @@
     <section class="nx-showcase-hero" aria-labelledby="showcase-title">
         <div class="nx-container nx-showcase-hero-grid">
             <div class="nx-section-heading">
-                <span class="nx-showcase-kicker nx-section-label"><span class="nx-badge-dot" aria-hidden="true"></span> Design System · Versión 1.0</span>
-                <h1 id="showcase-title" class="nx-section-title">Un sistema. Interfaces extraordinarias.</h1>
-                <p class="nx-showcase-hero-copy nx-section-description">Nexus UI Framework reúne componentes accesibles, tokens de diseño y patrones responsive para crear productos digitales coherentes con menos esfuerzo.</p>
+                <span class="nx-showcase-kicker nx-section-label"><span class="nx-badge-dot" aria-hidden="true"></span> Catálogo oficial · Versión 1.0</span>
+                <h1 id="showcase-title" class="nx-section-title">Componentes para construir con Nexus.</h1>
+                <p class="nx-showcase-hero-copy nx-section-description">Explora los componentes disponibles, revisa sus estados y accede a sus recursos para construir interfaces coherentes con el Framework.</p>
                 <div class="nx-showcase-hero-actions">
                     <a class="nx-button nx-button-primary" href="#component-catalog">Explorar componentes</a>
                     <a class="nx-button nx-button-outline" href="examples/design-system.html">Ver Design System</a>
+                    <a class="nx-button nx-button-ghost" href="examples/dashboard-demo.html">Ver dashboard demo</a>
                 </div>
             </div>
-            <dl class="nx-showcase-proof" aria-label="Características del framework">
-                <div class="nx-showcase-proof-item"><dt>Componentes</dt><dd id="showcase-component-total">18+</dd></div>
-                <div class="nx-showcase-proof-item"><dt>Dependencias</dt><dd>0</dd></div>
-                <div class="nx-showcase-proof-item"><dt>Diseño</dt><dd>Responsive</dd></div>
-                <div class="nx-showcase-proof-item"><dt>Licencia</dt><dd>MIT</dd></div>
-            </dl>
+            <section class="nx-dashboard-kpis nx-showcase-proof" aria-label="Caracter&iacute;sticas del framework">
+                <article class="nx-kpi nx-kpi-card">
+                    <header class="nx-kpi-header"><h3 class="nx-kpi-title nx-kpi-indicator">Componentes</h3><span class="nx-kpi-icon" aria-hidden="true">&#9638;</span></header>
+                    <div class="nx-kpi-body"><data id="showcase-component-total" class="nx-kpi-value" value="18">18+</data><p class="nx-kpi-description">Bloques reutilizables de interfaz.</p></div>
+                    <footer class="nx-kpi-footer"><span class="nx-kpi-update">Actualizados en cada versi&oacute;n</span></footer>
+                </article>
+                <article class="nx-kpi nx-kpi-card">
+                    <header class="nx-kpi-header"><h3 class="nx-kpi-title nx-kpi-indicator">Dependencias</h3><span class="nx-kpi-icon" aria-hidden="true">&#9671;</span></header>
+                    <div class="nx-kpi-body"><data class="nx-kpi-value" value="0">0</data><p class="nx-kpi-description">Framework sin dependencias externas.</p></div>
+                    <footer class="nx-kpi-footer"><span class="nx-kpi-update">Sin librer&iacute;as adicionales</span></footer>
+                </article>
+                <article class="nx-kpi nx-kpi-card">
+                    <header class="nx-kpi-header"><h3 class="nx-kpi-title nx-kpi-indicator">Dise&ntilde;o</h3><span class="nx-kpi-icon" aria-hidden="true">&#8596;</span></header>
+                    <div class="nx-kpi-body"><data class="nx-kpi-value" value="100">100%</data><p class="nx-kpi-description">Adaptado a todos los tama&ntilde;os de pantalla.</p></div>
+                    <footer class="nx-kpi-footer"><span class="nx-kpi-update">Preparado para m&oacute;vil y escritorio</span></footer>
+                </article>
+                <article class="nx-kpi nx-kpi-card">
+                    <header class="nx-kpi-header"><h3 class="nx-kpi-title nx-kpi-indicator">Licencia</h3><span class="nx-kpi-icon" aria-hidden="true">&#9671;</span></header>
+                    <div class="nx-kpi-body"><data class="nx-kpi-value" value="MIT">MIT</data><p class="nx-kpi-description">Framework de c&oacute;digo abierto.</p></div>
+                    <footer class="nx-kpi-footer"><span class="nx-kpi-update">Licencia MIT</span></footer>
+                </article>
+            </section>
         </div>
     </section>
     <section class="nx-showcase-catalog" id="catalogo" aria-labelledby="catalog-title">
@@ -67,15 +88,15 @@
             <div id="component-catalog" class="nx-component-grid" aria-label="Catálogo de componentes"></div>
         </div>
     </section>
-</main><footer class="nx-showcase-footer">
-    <div class="nx-container nx-showcase-footer-inner">
-        <div class="nx-showcase-footer-brand"><strong>Nexus UI Framework</strong><span>Un sistema de diseño modular para construir experiencias digitales.</span></div>
-        <section class="nx-showcase-footer-group" aria-labelledby="footer-version"><h2 id="footer-version">Versión</h2><span>Nexus UI · 1.0.0</span></section>
-        <section class="nx-showcase-footer-group" aria-labelledby="footer-project"><h2 id="footer-project">Proyecto</h2><a href="https://github.com/Carloco1980/nexus-ui-framework" target="_blank" rel="noopener noreferrer">GitHub</a><a href="LICENSE">Licencia MIT</a></section>
-        <section class="nx-showcase-footer-group" aria-labelledby="footer-docs"><h2 id="footer-docs">Documentación</h2><a href="docs/COMPONENTS.md">Componentes</a><a href="examples/design-system.html">Design System</a></section>
-        <section class="nx-showcase-footer-group" aria-labelledby="footer-license"><h2 id="footer-license">Licencia</h2><span>MIT · Uso abierto</span><a href="README.md">Acerca del framework</a></section>
+</main><footer class="nx-footer">
+    <div class="nx-container nx-footer-inner">
+        <div class="nx-footer-brand"><strong>Nexus UI Framework</strong><span>Un sistema de diseño modular para construir experiencias digitales.</span></div>
+        <section class="nx-footer-group" aria-labelledby="footer-version"><h2 id="footer-version">Versión</h2><span>Nexus UI · 1.0.0</span></section>
+        <section class="nx-footer-group" aria-labelledby="footer-project"><h2 id="footer-project">Proyecto</h2><a href="https://github.com/Carloco1980/nexus-ui-framework" target="_blank" rel="noopener noreferrer">GitHub</a><a href="LICENSE">Licencia MIT</a></section>
+        <section class="nx-footer-group" aria-labelledby="footer-docs"><h2 id="footer-docs">Explorar</h2><a href="#component-catalog">Componentes</a><a href="examples/design-system.html">Design System</a><a href="examples/dashboard-demo.html">Dashboard demo</a><a href="docs/COMPONENTS.md">Documentación</a></section>
+        <section class="nx-footer-group" aria-labelledby="footer-license"><h2 id="footer-license">Licencia</h2><span>MIT · Uso abierto</span><a href="README.md">Acerca del framework</a></section>
     </div>
-    <div class="nx-showcase-footer-bottom"><div class="nx-container">Nexus UI Framework · Hecho para interfaces consistentes.</div></div>
+    <div class="nx-footer-bottom"><div class="nx-container">Nexus UI Framework · Hecho para interfaces consistentes.</div></div>
 </footer>
 <script src="assets/js/core/config.js"></script>
 <script src="assets/js/core/events.js"></script>

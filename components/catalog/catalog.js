@@ -73,7 +73,7 @@ const NexusCatalog = {
 
         const article = document.createElement("article");
 
-        article.className = "nx-component-card";
+        article.className = "nx-card nx-component-card";
         article.dataset.category = component.category;
 
         article.innerHTML = `
@@ -86,9 +86,9 @@ const NexusCatalog = {
 
 </header>
 
-<h3>${component.name}</h3>
+<h3 class="nx-card-title">${component.name}</h3>
 
-<p>${component.description}</p>
+<p class="nx-card-text">${component.description}</p>
 
 <div class="nx-component-meta">
 

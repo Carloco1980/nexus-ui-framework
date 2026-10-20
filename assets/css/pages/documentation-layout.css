@@ -8,7 +8,11 @@
 }
 
 .nx-page--under-navbar {
-    padding-top: calc(var(--nx-header-height) + var(--nx-space-xl));
+    padding-top: calc(var(--nx-header-height) + var(--nx-space-display));
+}
+
+.nx-design-system .nx-design-header {
+    padding-top: 0;
 }
 
 .nx-page--landing {
@@ -23,7 +27,7 @@
     }
 
     .nx-page--under-navbar {
-        padding-top: calc(var(--nx-header-height) + var(--nx-space-md));
+        padding-top: calc(var(--nx-header-height) + var(--nx-space-md-minus));
     }
 
     .nx-page--landing {
