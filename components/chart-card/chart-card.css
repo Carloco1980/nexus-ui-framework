@@ -12,6 +12,9 @@ Card
 
 .nx-chart-card{
 
+    --nx-chart-height-tablet:15rem;
+    --nx-chart-height-mobile:10rem;
+
     min-height:var(--nx-chart-card-min-height);
 
     display:flex;

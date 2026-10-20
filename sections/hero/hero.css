@@ -125,6 +125,9 @@ Hero Content
 
 }
 
+.nx-hero-content.nx-section-heading{gap:0;}
+.nx-hero-content.nx-section-heading .nx-hero-actions{margin-block-start:var(--nx-space-heading-content);}
+
 .nx-hero-title{
 
     margin:0;
@@ -132,6 +135,8 @@ Hero Content
     max-width:var(--nx-size-650);
 
 }
+
+.nx-hero-title.nx-section-title{font-weight:var(--nx-font-weight-bold);letter-spacing:var(--nx-letter-spacing-heading);}
 
 .nx-hero-description{
 
@@ -144,6 +149,8 @@ Hero Content
     line-height:var(--nx-line-height-loose);
 
 }
+
+.nx-hero-description.nx-section-description{margin-block-start:var(--nx-space-heading-title-description);}
 
 /*---------------------------------------------------------
 Hero Dashboard

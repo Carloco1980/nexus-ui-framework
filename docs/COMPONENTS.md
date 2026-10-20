@@ -2,6 +2,8 @@
 
 El catálogo y sus rutas de preview y documentación se mantienen en [`components/registry/components.json`](../components/registry/components.json). Cada carpeta de componente incluye un `README.md` con su uso y opciones.
 
+`Result Summary` presenta un recuento y una descripción contextual de resultados filtrados; su estructura y estilos están en `components/result-summary/`.
+
 ## Componentes registrados
 
 | Categoría | Componentes |

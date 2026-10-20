@@ -1,6 +1,17 @@
 ﻿<section class="nx-component-demo" aria-label="Vista previa del componente Dashboard">
     <section class="nx-dashboard">
-        <header class="nx-dashboard-header"><h3>Resumen del equipo</h3><span class="nx-status" role="status" aria-label="Online"></span></header>
-        <section class="nx-dashboard-kpis"><article class="nx-panel nx-kpi"><div class="nx-panel-body nx-kpi-body"><span class="nx-kpi-value">1.245</span><h4 class="nx-kpi-title">Usuarios</h4></div></article><article class="nx-panel nx-kpi"><div class="nx-panel-body nx-kpi-body"><span class="nx-kpi-value">234</span><h4 class="nx-kpi-title">Proyectos</h4></div></article></section>
+        <header class="nx-dashboard-header"><h3 class="nx-section-title nx-section-title--compact">Resumen del equipo</h3><span class="nx-status" role="status" aria-label="Online"></span></header>
+        <section class="nx-dashboard-kpis">
+            <article class="nx-panel nx-kpi nx-kpi-card">
+                <header class="nx-kpi-header"><h4 class="nx-kpi-title nx-kpi-indicator">Usuarios</h4><span class="nx-kpi-icon" aria-hidden="true">◎</span></header>
+                <div class="nx-kpi-body"><data class="nx-kpi-value" value="1245">1.245</data><p class="nx-kpi-description">Usuarios activos en el espacio de trabajo.</p></div>
+                <footer class="nx-kpi-footer"><span class="nx-kpi-update">Actualizado automáticamente</span></footer>
+            </article>
+            <article class="nx-panel nx-kpi nx-kpi-card">
+                <header class="nx-kpi-header"><h4 class="nx-kpi-title nx-kpi-indicator">Proyectos</h4><span class="nx-kpi-icon" aria-hidden="true">↗</span></header>
+                <div class="nx-kpi-body"><data class="nx-kpi-value" value="234">234</data><p class="nx-kpi-description">Proyectos registrados en el periodo.</p></div>
+                <footer class="nx-kpi-footer"><span class="nx-kpi-update">Sincronizado con el repositorio</span></footer>
+            </article>
+        </section>
     </section>
 </section>

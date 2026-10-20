@@ -140,6 +140,8 @@ Primary
 
 .nx-button-primary{
 
+    color:var(--nx-text-on-accent);
+
     background:
 
         var(--nx-gradient-primary);
@@ -222,6 +224,8 @@ Success
 
 .nx-button-success{
 
+    color:var(--nx-text-on-accent);
+
     background:var(--nx-gradient-success);
 
     border-color:var(--nx-button-success-border);
@@ -235,6 +239,8 @@ Danger
 =========================================================*/
 
 .nx-button-danger{
+
+    color:var(--nx-text-on-accent);
 
     background:var(--nx-gradient-danger);
 

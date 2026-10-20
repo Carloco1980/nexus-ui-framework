@@ -45,6 +45,15 @@
     --nx-danger:var(--nx-red);
     --nx-info:var(--nx-cyan);
 
+    /* Contrast foreground for bright brand and status fills. */
+    --nx-text-on-accent:#020617;
+    --nx-success-text:var(--nx-green);
+    --nx-info-text:var(--nx-cyan);
+    --nx-purple-text:var(--nx-purple);
+    --nx-warning-text:var(--nx-orange);
+    --nx-warning-soft-bg:rgba(245,158,11,.12);
+    --nx-warning-soft-border:rgba(245,158,11,.25);
+
     /*=====================================================
     CHARTS
     =====================================================*/
@@ -190,6 +199,10 @@ TYPOGRAPHY
 
 --nx-font-size-6xl:5rem;
 
+/* Section heading scale */
+--nx-font-size-section-title:clamp(var(--nx-font-size-2xl),calc(var(--nx-font-size-2xl) + 1vw),var(--nx-font-size-4xl));
+--nx-font-size-section-title-compact:clamp(var(--nx-font-size-lg),calc(var(--nx-font-size-lg) + .35vw),var(--nx-font-size-xl));
+
 /* Extra Font Weight */
 
 --nx-font-weight-extrabold:800;
@@ -208,6 +221,7 @@ TYPOGRAPHY
 --nx-letter-spacing-sm:.01em;
 --nx-letter-spacing-md:.02em;
 --nx-letter-spacing-lg:.03em;
+--nx-letter-spacing-heading:-.025em;
 
     /*=====================================================
     SPACING
@@ -222,6 +236,9 @@ TYPOGRAPHY
     --nx-space-lg:4rem;
     --nx-space-xl:6rem;
     --nx-space-2xl:8rem;
+    --nx-space-heading-label-title:.75rem;
+    --nx-space-heading-title-description:.625rem;
+    --nx-space-heading-content:2rem;
 
     /*=====================================================
     RADIUS

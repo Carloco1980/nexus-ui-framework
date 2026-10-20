@@ -254,6 +254,21 @@
         "preview":  "components/theme-toogle/theme-toggle.html"
     },
     {
+        "id":  "result-summary",
+        "name":  "Result Summary",
+        "category":  "dashboard",
+        "status":  "stable",
+        "version":  "1.0.0",
+        "description":  "Resumen compacto con recuento y contexto de resultados filtrados.",
+        "icon":  "chart",
+        "preview":  "components/result-summary/result-summary.html",
+        "documentation":  "components/result-summary/README.md",
+        "responsive":  true,
+        "darkMode":  true,
+        "javascript":  false,
+        "accessibility":  true
+    },
+    {
         "id":  "hero",
         "name":  "Hero",
         "category":  "layout",

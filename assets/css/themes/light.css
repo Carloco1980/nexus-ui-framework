@@ -36,6 +36,10 @@ NEXUS LIGHT THEME
 
     --nx-heading:var(--nx-text);
     --nx-text-primary:var(--nx-text);
+    --nx-success-text:#15803D;
+    --nx-info-text:#0E7490;
+    --nx-purple-text:#6D28D9;
+    --nx-warning-text:#B45309;
     --nx-hero-overlay-bg:rgba(248,250,252,.72);
     --nx-preview-white-01:rgba(15,23,42,.01);
     --nx-preview-white-03:rgba(15,23,42,.03);

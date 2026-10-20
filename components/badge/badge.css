@@ -14,9 +14,11 @@
 
     justify-content:center;
 
-    gap:var(--nx-space-compact);
+    gap:var(--nx-space-2xs);
 
-    padding:var(--nx-space-badge) var(--nx-space-sm);
+    min-height:1.75rem;
+    padding:0 var(--nx-space-2xs);
+    box-sizing:border-box;
 
     border-radius:var(--nx-radius-pill);
 
@@ -26,7 +28,7 @@
 
     color:var(--nx-text);
 
-    font-size:var(--nx-font-size-compact);
+    font-size:var(--nx-font-size-xs);
 
 
     font-weight:var(--nx-font-weight-semibold);
@@ -35,15 +37,27 @@
 
     white-space:nowrap;
 
-    transition:var(--nx-transition);
+    transition:border-color 180ms var(--nx-easing),
+        box-shadow 180ms var(--nx-easing);
 
 }
 
 .nx-badge:hover{
 
-    border-color:var(--nx-border-strong);
+    border-color:color-mix(in srgb,currentColor 42%,transparent);
 
-    box-shadow:var(--nx-shadow-sm);
+    box-shadow:0 0 6px color-mix(in srgb,currentColor 18%,transparent);
+
+}
+
+.nx-badge-primary,
+.nx-badge-success,
+.nx-badge-info,
+.nx-badge-purple,
+.nx-badge-warning{
+
+    background:var(--nx-glass-bg);
+    backdrop-filter:var(--nx-glass-blur);
 
 }
 
@@ -51,9 +65,9 @@
 
 .nx-badge-primary{
 
-    background:var(--nx-primary-soft-bg);
-
     color:var(--nx-primary);
+
+    background:var(--nx-primary-soft-bg);
 
     border-color:var(--nx-primary-soft-border);
 
@@ -62,9 +76,9 @@
 
 .nx-badge-success{
 
-    background:var(--nx-success-soft-bg);
+    color:var(--nx-success);
 
-    color:var(--nx-green);
+    background:var(--nx-success-soft-bg);
 
     border-color:var(--nx-success-soft-border);
 
@@ -74,9 +88,9 @@
 
 .nx-badge-info{
 
-    background:var(--nx-info-soft-bg);
+    color:var(--nx-info);
 
-    color:var(--nx-cyan);
+    background:var(--nx-info-soft-bg);
 
     border-color:var(--nx-info-soft-border);
 
@@ -86,11 +100,23 @@
 
 .nx-badge-purple{
 
-    background:var(--nx-purple-soft-bg);
-
     color:var(--nx-purple);
 
+    background:var(--nx-purple-soft-bg);
+
     border-color:var(--nx-purple-soft-border);
+
+}
+
+/*========================================*/
+
+.nx-badge-warning{
+
+    color:var(--nx-warning-text);
+
+    background:var(--nx-warning-soft-bg);
+
+    border-color:var(--nx-warning-soft-border);
 
 }
 
@@ -118,9 +144,9 @@ Badge Dot
 
 .nx-badge-dot{
 
-    width:var(--nx-space-badge);
+    width:var(--nx-space-2xs);
 
-    height:var(--nx-space-badge);
+    height:var(--nx-space-2xs);
 
     border-radius:var(--nx-radius-circle);
 
@@ -128,6 +154,6 @@ Badge Dot
 
     flex-shrink:0;
 
-    box-shadow:var(--nx-glow-current);
+    box-shadow:0 0 6px currentColor;
 
 }

@@ -1,24 +1,14 @@
-# KPI
+# KPI Card
 
-## Descripción
+Compact summary card for a key value and its context. It is built on the Nexus panel surface and keeps the existing `.nx-kpi`, `.nx-kpi-value`, `.nx-kpi-title`, `.nx-kpi-description`, `.nx-kpi-trend`, and `.nx-kpi-update` classes compatible.
 
-Composición de Panel para presentar un valor, su etiqueta y contexto.
+## Structure
 
-## Uso
+- `.nx-kpi` / `.nx-kpi-card`: card surface and layout.
+- `.nx-kpi-header`: title row.
+- `.nx-kpi-indicator`: title with a decorative token-colored marker.
+- `.nx-kpi-icon`: circular glass icon container; set `aria-hidden="true"` when decorative.
+- `.nx-kpi-body`: value and description.
+- `.nx-kpi-footer`: update text, trend, or a secondary `.nx-kpi-action` link.
 
-Consulta `kpi.html` para el ejemplo y `kpi.css` para estilos.
-
-## Clases
-
-- `nx-kpi`
-- `nx-kpi-value`
-- `nx-kpi-title`
-- `nx-kpi-description`
-
-## Dependencias
-
-Se compone con Panel.
-
-## Estado
-
-Estable.
+See `kpi.html` for the complete example. All colors come from the existing Nexus design tokens. The card adapts through the Framework tablet and mobile breakpoints and respects reduced-motion preferences.

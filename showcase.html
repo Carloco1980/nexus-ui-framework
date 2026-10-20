@@ -17,7 +17,7 @@
                 <span class="nx-logo-mark" aria-hidden="true">N</span>
                 <span class="nx-logo-content"><span class="nx-logo-title">NEXUS</span><span class="nx-logo-subtitle">UI Framework</span></span>
             </a>
-            <ul class="nx-navbar-menu">
+            <ul id="nx-navbar-menu" class="nx-navbar-menu">
                 <li><a href="#component-catalog" class="active" aria-current="page">Componentes</a></li>
                 <li><a href="docs/COMPONENTS.md">Documentación</a></li>
                 <li><a href="examples/design-system.html">Design System</a></li>
@@ -26,16 +26,19 @@
                 <a href="https://github.com/Carloco1980/nexus-ui-framework" target="_blank" rel="noopener noreferrer" class="nx-button nx-button-outline nx-button-sm">GitHub</a>
                 <button id="nx-theme-button" class="nx-theme-toggle" type="button" aria-label="Cambiar tema" aria-pressed="false"><span class="nx-theme-toggle__thumb" aria-hidden="true"></span></button>
             </div>
+            <button id="nx-mobile-button" class="nx-mobile-button" type="button" aria-controls="nx-navbar-menu" aria-expanded="false" aria-label="Abrir menú">
+                <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+            </button>
         </nav>
     </div>
 </header>
 <main class="nx-showcase-main">
     <section class="nx-showcase-hero" aria-labelledby="showcase-title">
         <div class="nx-container nx-showcase-hero-grid">
-            <div>
-                <span class="nx-showcase-kicker"><span class="nx-badge-dot" aria-hidden="true"></span> Design System · Versión 1.0</span>
-                <h1 id="showcase-title">Un sistema. Interfaces extraordinarias.</h1>
-                <p class="nx-showcase-hero-copy">Nexus UI Framework reúne componentes accesibles, tokens de diseño y patrones responsive para crear productos digitales coherentes con menos esfuerzo.</p>
+            <div class="nx-section-heading">
+                <span class="nx-showcase-kicker nx-section-label"><span class="nx-badge-dot" aria-hidden="true"></span> Design System · Versión 1.0</span>
+                <h1 id="showcase-title" class="nx-section-title">Un sistema. Interfaces extraordinarias.</h1>
+                <p class="nx-showcase-hero-copy nx-section-description">Nexus UI Framework reúne componentes accesibles, tokens de diseño y patrones responsive para crear productos digitales coherentes con menos esfuerzo.</p>
                 <div class="nx-showcase-hero-actions">
                     <a class="nx-button nx-button-primary" href="#component-catalog">Explorar componentes</a>
                     <a class="nx-button nx-button-outline" href="examples/design-system.html">Ver Design System</a>
@@ -52,8 +55,7 @@
     <section class="nx-showcase-catalog" id="catalogo" aria-labelledby="catalog-title">
         <div class="nx-container">
             <div class="nx-showcase-section-heading">
-                <div><h2 id="catalog-title">Explora el catálogo</h2><p>Busca por nombre o descripción y filtra la colección por categoría y estado.</p></div>
-                <span class="nx-badge nx-badge-primary"><span class="nx-badge-dot" aria-hidden="true"></span> Componentes v1.0</span>
+                <div class="nx-section-heading"><span class="nx-badge nx-badge-primary nx-section-label"><span class="nx-badge-dot" aria-hidden="true"></span> Componentes v1.0</span><h2 id="catalog-title" class="nx-section-title nx-section-title--compact">Explora el catálogo</h2><p class="nx-section-description nx-section-description--compact">Busca por nombre o descripción y filtra la colección por categoría y estado.</p></div>
             </div>
             <form class="nx-showcase-controls" role="search">
                 <label class="nx-showcase-field"><span>Buscar componentes</span><input id="component-search" class="nx-input" type="search" placeholder="Ej. botones, navegación…" autocomplete="off" aria-controls="component-catalog"></label>

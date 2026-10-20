@@ -35,7 +35,7 @@ Base
 .nx-panel:hover{
 
     transform:translateY(var(--nx-motion-offset-up-md));
-    
+
     border-color:var(--nx-border-strong);
 
     box-shadow:var(--nx-shadow-md);

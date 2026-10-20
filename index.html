@@ -115,7 +115,7 @@ id="hero"class="nx-hero">
             Hero Content
             ==========================================-->
 
-            <div class="nx-hero-content">
+                    <div class="nx-hero-content nx-section-heading">
 
                 <span class="nx-badge nx-badge-primary">
 
@@ -140,13 +140,13 @@ id="hero"class="nx-hero">
 
                     
 
-                <h1 class="nx-title-xl nx-hero-title">
+                <h1 class="nx-title-xl nx-hero-title nx-section-title nx-section-title--display">
 
                     Build modern interfaces with a reusable UI Framework.
 
                  </h1>
 
-                <p class="nx-hero-description">
+                <p class="nx-hero-description nx-section-description">
 
                    Nexus UI Framework provides reusable components,
                    design tokens and modular architecture for dashboards,
@@ -223,7 +223,7 @@ id="hero"class="nx-hero">
 
                 <div class="nx-panel-heading">
 
-                    <h3 class="nx-panel-title">
+                    <h3 class="nx-panel-title nx-section-title nx-section-title--compact">
     Dashboard Preview
 </h3>
 
@@ -287,28 +287,20 @@ id="hero"class="nx-hero">
 
         <div class="nx-dashboard-kpis">
 
-            <article class="nx-kpi">
-
-                <span class="nx-kpi-value">42</span>
-
-                <span class="nx-kpi-title">Components</span>
-
+            <article class="nx-kpi nx-kpi-card">
+                <header class="nx-kpi-header"><h3 class="nx-kpi-title nx-kpi-indicator">Components</h3><span class="nx-kpi-icon" aria-hidden="true">▦</span></header>
+                <div class="nx-kpi-body"><data class="nx-kpi-value" value="42">42</data><p class="nx-kpi-description">Reusable interface building blocks.</p></div>
+                <footer class="nx-kpi-footer"><span class="nx-kpi-update">Updated with each release</span></footer>
             </article>
-
-            <article class="nx-kpi">
-
-                <span class="nx-kpi-value">100%</span>
-
-                <span class="nx-kpi-title">Responsive</span>
-
+            <article class="nx-kpi nx-kpi-card">
+                <header class="nx-kpi-header"><h3 class="nx-kpi-title nx-kpi-indicator">Responsive</h3><span class="nx-kpi-icon" aria-hidden="true">↔</span></header>
+                <div class="nx-kpi-body"><data class="nx-kpi-value" value="100">100%</data><p class="nx-kpi-description">Designed across device sizes.</p></div>
+                <footer class="nx-kpi-footer"><span class="nx-kpi-update">Mobile and desktop ready</span></footer>
             </article>
-
-            <article class="nx-kpi">
-
-                <span class="nx-kpi-value">MIT</span>
-
-                <span class="nx-kpi-title">License</span>
-
+            <article class="nx-kpi nx-kpi-card">
+                <header class="nx-kpi-header"><h3 class="nx-kpi-title nx-kpi-indicator">License</h3><span class="nx-kpi-icon" aria-hidden="true">◇</span></header>
+                <div class="nx-kpi-body"><data class="nx-kpi-value" value="MIT">MIT</data><p class="nx-kpi-description">Open source framework.</p></div>
+                <footer class="nx-kpi-footer"><span class="nx-kpi-update">MIT license</span></footer>
             </article>
 
         </div>
@@ -331,13 +323,13 @@ Table Component
 
     <div class="nx-container">
 
-        <div class="nx-section-header">
+        <div class="nx-section-header nx-section-heading">
 
             <h2 class="nx-section-title">
                 Table
             </h2>
 
-            <p class="nx-section-subtitle">
+            <p class="nx-section-subtitle nx-section-description">
                 Responsive data table component.
             </p>
 
@@ -349,13 +341,13 @@ Table Component
 
     <header class="nx-panel-header">
 
-        <div class="nx-panel-heading">
+        <div class="nx-panel-heading nx-section-heading">
 
-            <h3 class="nx-panel-title">
+            <h3 class="nx-panel-title nx-section-title nx-section-title--compact">
                 Últimas iniciativas
             </h3>
 
-            <p class="nx-panel-subtitle">
+            <p class="nx-panel-subtitle nx-section-description nx-section-description--compact">
                 Repositorio institucional
             </p>
 
@@ -465,9 +457,9 @@ Core Features
         Section Heading
         ==========================================-->
 
-        <div class="nx-section-header nx-section-header-center">
+        <div class="nx-section-header nx-section-header-center nx-section-heading">
 
-    <span class="nx-badge nx-badge-primary">
+    <span class="nx-badge nx-badge-primary nx-section-label">
 
         <span class="nx-badge-dot"></span>
 
@@ -475,13 +467,13 @@ Core Features
 
     </span>
 
-    <h2 class="nx-title-lg">
+    <h2 class="nx-title-lg nx-section-title">
 
         Everything you need to build modern interfaces.
 
     </h2>
 
-    <p>
+    <p class="nx-section-description">
 
         Nexus UI Framework provides a modular foundation
         with reusable components, design tokens and

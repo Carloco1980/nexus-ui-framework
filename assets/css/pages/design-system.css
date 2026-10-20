@@ -36,13 +36,13 @@ Header
 
 .nx-design-header .nx-badge{
 
-    margin-bottom:var(--nx-space-md);
+    margin-bottom:var(--nx-space-heading-label-title);
 
 }
 
 .nx-design-header .nx-title{
 
-    margin-bottom:var(--nx-space-md);
+    margin:0;
 
 }
 
@@ -57,6 +57,9 @@ Header
     line-height:var(--nx-line-height-relaxed);
 
 }
+
+.nx-design-heading{align-items:center;text-align:center;}
+.nx-design-header .nx-section-description{margin-block-start:var(--nx-space-heading-title-description);}
 
 /*=========================================================
 Main
@@ -400,7 +403,7 @@ Spacing Preview
 Code
 =========================================================*/
 
-#oiid-app code{
+.nx-design-system code{
 
     display:inline-block;
 
