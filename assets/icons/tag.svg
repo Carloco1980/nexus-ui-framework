@@ -1,0 +1,15 @@
+<svg
+    id="nx-icon-tag"
+    class="nx-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none">
+
+    <path
+        d="M20.2 13.4 10.6 3.8H4v6.6l9.6 9.6a2 2 0 0 0 2.8 0l3.8-3.8a2 2 0 0 0 0-2.8ZM7.5 7.5h.01"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+</svg>

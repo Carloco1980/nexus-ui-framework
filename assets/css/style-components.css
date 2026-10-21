@@ -41,6 +41,7 @@ version: 1.0.0
 @import url("../../components/fab/fab.css");
 @import url("../../components/kpi/kpi.css");
 @import url("../../components/chart-card/chart-card.css");
+@import url("../../components/chart-tooltip/chart-tooltip.css");
 @import url("../../components/result-summary/result-summary.css");
 @import url("../../components/table/table.css");
 @import url("../../components/icon/icon.css");

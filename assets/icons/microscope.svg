@@ -1,0 +1,15 @@
+<svg
+    id="nx-icon-microscope"
+    class="nx-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none">
+
+    <path
+        d="m8 3 5 5m-7-3 5-2 4 5-3 4-5-5 2-2Zm7 5 2 2m-4 1a6 6 0 0 0 6 6h1m-8-5a5 5 0 0 0 5 5h2m-13 0h17m-5-3 2 3"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+</svg>

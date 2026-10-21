@@ -74,6 +74,20 @@
         "accessibility":  true
     },
     {
+        "id":  "chart-tooltip",
+        "name":  "Chart Tooltip",
+        "category":  "dashboard",
+        "status":  "stable",
+        "version":  "1.0.0",
+        "description":  "Tooltip de grÃ¡ficos con estilo de tarjeta Nexus y soporte de temas.",
+        "icon":  "chart",
+        "documentation":  "components/chart-tooltip/README.md",
+        "responsive":  true,
+        "darkMode":  true,
+        "javascript":  true,
+        "accessibility":  true
+    },
+    {
         "id":  "dashboard",
         "name":  "Dashboard",
         "category":  "dashboard",

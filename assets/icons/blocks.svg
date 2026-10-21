@@ -1,0 +1,15 @@
+<svg
+    id="nx-icon-blocks"
+    class="nx-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none">
+
+    <path
+        d="m4 7 4-2.5L12 7 8 9.5 4 7Zm8 0 4-2.5L20 7l-4 2.5L12 7ZM4 12l4-2.5 4 2.5-4 2.5L4 12Zm8 0 4-2.5 4 2.5-4 2.5-4-2.5ZM8 17l4-2.5 4 2.5-4 2.5L8 17Z"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+</svg>
