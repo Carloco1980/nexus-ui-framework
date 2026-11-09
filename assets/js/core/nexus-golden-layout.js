@@ -74,12 +74,29 @@ Module : Golden Layout
             unitsByRoot.set(root, members);
         });
 
-        return Array.from(unitsByRoot.values(), (members) => ({
-            cards: members.sort(getReadingOrder),
-            priority: Math.max(...members.map((card) => clamp(Number(card.priority) || 0, 0, 1))),
-            firstOrder: Math.min(...members.map((card) => originalOrder.get(card.id)))
-        })).sort((first, second) =>
-            second.priority - first.priority || first.firstOrder - second.firstOrder
+        return Array.from(unitsByRoot.values(), (members) => {
+            const projectGroup = preserveSemanticGroups && groups.find((group) =>
+                group.group === "project-detail"
+                && (Number(group.confidence) || 0) >= semanticConfidenceThreshold
+                && members.some((card) => group.cards.includes(card.id))
+            );
+            const projectOrder = new Map((projectGroup?.cards || []).map((id, index) => [id, index]));
+            const projectDetail = Boolean(projectGroup);
+
+            return {
+                cards: members.sort((first, second) => projectDetail
+                    ? (projectOrder.get(first.id) ?? Number.MAX_SAFE_INTEGER)
+                        - (projectOrder.get(second.id) ?? Number.MAX_SAFE_INTEGER)
+                        || getReadingOrder(first, second)
+                    : getReadingOrder(first, second)),
+                priority: Math.max(...members.map((card) => clamp(Number(card.priority) || 0, 0, 1))),
+                firstOrder: Math.min(...members.map((card) => originalOrder.get(card.id))),
+                projectDetail
+            };
+        }).sort((first, second) =>
+            Number(second.projectDetail) - Number(first.projectDetail)
+            || second.priority - first.priority
+            || first.firstOrder - second.firstOrder
         );
 
     }
@@ -178,6 +195,12 @@ Module : Golden Layout
                 cursor = position.row * columns + position.column + card.colSpan;
 
             });
+
+            if (unit.projectDetail) {
+                const lastRow = placements.reduce((maximum, placement) =>
+                    Math.max(maximum, placement.row + placement.rowSpan - 1), 0);
+                cursor = Math.max(cursor, lastRow * columns);
+            }
         });
 
         placements.sort(getReadingOrder);

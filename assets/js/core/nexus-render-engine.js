@@ -21,27 +21,121 @@ Module : Render Engine Preview
     ];
     let snapshots = [];
     let previewActive = false;
+    let projectOrderObserver = null;
 
-    function getTrackCount(container, fallback, itemCount) {
+    function normalizeProjectDetailOrder() {
+
+        const nexus = global.Nexus || global.NX;
+        const scanner = nexus?.cardScanner;
+        const semanticGroups = nexus?.semanticGroups;
+
+        if (typeof scanner?.scan !== "function" || typeof semanticGroups?.detect !== "function") {
+            return;
+        }
+
+        let scannedCards;
+        let groups;
+
+        try {
+            scannedCards = scanner.scan();
+            groups = semanticGroups.detect();
+        } catch (_) {
+            return;
+        }
+
+        const membersByContainer = new Map();
+
+        (Array.isArray(groups) ? groups : []).forEach((group) => {
+
+            if (
+                group.group !== "project-detail"
+                || (Number(group.confidence) || 0) < 0.5
+                || !Array.isArray(group.cards)
+            ) {
+                return;
+            }
+
+            const members = group.cards
+                .map((id) => scannedCards[Number(id) - 1]?.element)
+                .filter(Boolean);
+            const container = members[0]?.parentElement;
+
+            if (!container || members.length < 2 || members.some((card) => card.parentElement !== container)) {
+                return;
+            }
+
+            const orderedMembers = membersByContainer.get(container) || [];
+            members.forEach((card) => {
+                if (!orderedMembers.includes(card)) orderedMembers.push(card);
+            });
+            membersByContainer.set(container, orderedMembers);
+
+        });
+
+        membersByContainer.forEach((orderedMembers, container) => {
+
+            const current = Array.from(container.children);
+            const memberSet = new Set(orderedMembers);
+            const desired = [
+                ...orderedMembers,
+                ...current.filter((child) => !memberSet.has(child))
+            ];
+
+            if (desired.length !== current.length || desired.every((child, index) => child === current[index])) {
+                return;
+            }
+
+            desired.forEach((child) => container.appendChild(child));
+
+        });
+
+    }
+
+    function observeProjectDetailOrder() {
+
+        normalizeProjectDetailOrder();
+
+        const Observer = global.MutationObserver;
+        const root = global.document?.documentElement || global.document?.body;
+
+        if (typeof Observer !== "function" || !root || projectOrderObserver) {
+            return;
+        }
+
+        projectOrderObserver = new Observer(() => {
+            if (!previewActive) normalizeProjectDetailOrder();
+        });
+        projectOrderObserver.observe(root, {
+            childList: true,
+            subtree: true,
+            attributes: true,
+            attributeFilter: ["class", "style", "hidden"]
+        });
+
+    }
+
+    function getTrackCount(container, fallback, itemCount, device) {
 
         const tracks = global.getComputedStyle(container).gridTemplateColumns;
         const count = tracks && tracks !== "none"
             ? tracks.trim().split(/\s+(?![^()]*\))/).filter(Boolean).length
             : 0;
+        const deviceLimit = device === "mobile"
+            ? 1
+            : device === "tablet"
+                ? 2
+                : device === "ultrawide"
+                    ? 6
+                    : 4;
 
-        return Math.max(1, Math.min(itemCount, count || fallback));
+        return Math.max(1, Math.min(itemCount, deviceLimit, count || fallback, fallback));
 
     }
 
     function reflowGroup(items, columns) {
 
         const occupied = new Set();
-        const ordered = [...items].sort((first, second) => {
-            const position = first.card.compareDocumentPosition(second.card);
-            if (position & global.Node.DOCUMENT_POSITION_FOLLOWING) return -1;
-            if (position & global.Node.DOCUMENT_POSITION_PRECEDING) return 1;
-            return first.row - second.row || first.column - second.column;
-        });
+        const ordered = [...items].sort((first, second) => first.order - second.order);
         let cursor = 0;
 
         return ordered.map((item) => {
@@ -150,6 +244,7 @@ Module : Render Engine Preview
         }
 
         const columns = Math.floor(Number(proposal?.columns));
+        const device = proposal?.device || "desktop";
         const placements = proposal?.cards;
 
         if (!Number.isFinite(columns) || columns < 1 || !Array.isArray(placements) || !placements.length) {
@@ -161,7 +256,7 @@ Module : Render Engine Preview
         }
 
         const positionedCardElements = new Set();
-        const positionedCards = placements.map((placement) => {
+        const positionedCards = placements.map((placement, order) => {
 
             const id = Number(placement?.id);
             const card = Number.isInteger(id) && id > 0
@@ -189,7 +284,7 @@ Module : Render Engine Preview
             }
 
             positionedCardElements.add(card);
-            return { card, column, row, colSpan, rowSpan };
+            return { card, column, row, colSpan, rowSpan, order };
 
         });
 
@@ -221,8 +316,8 @@ Module : Render Engine Preview
             return containsOnlyCards && items.length > 1
                 ? {
                     container,
-                    items: reflowGroup(items, getTrackCount(container, columns, items.length)),
-                    columns: getTrackCount(container, columns, items.length),
+                    items: reflowGroup(items, getTrackCount(container, columns, items.length, device)),
+                    columns: getTrackCount(container, columns, items.length, device),
                     cardSet
                 }
                 : null;
@@ -285,5 +380,6 @@ Module : Render Engine Preview
     global.NX = nexus;
     global.Nexus = nexus;
     nexus.renderEngine = renderEngine;
+    observeProjectDetailOrder();
 
 })(window);

@@ -167,6 +167,49 @@ Module : Semantic Groups
 
     }
 
+    function getSectionRole(element) {
+
+        const heading = element?.querySelector?.(
+            '.nx-badge, h1, h2, h3, h4, h5, h6, [role="heading"], [data-card-title], .nx-card-title, .nx-panel-title'
+        );
+        const title = (heading?.textContent || "").replace(/\s+/g, " ").trim();
+        const normalizedTitle = title.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+        if (/\bresponsable\b/i.test(normalizedTitle)) return "responsable";
+        if (/\bcoautores\b/i.test(normalizedTitle)) return "coautores";
+        if (/\bproyecto\b/i.test(normalizedTitle)) return "proyecto";
+        if (/\bresumen\b/i.test(normalizedTitle)) return "resumen";
+        if (/\bobjetivos\b/i.test(normalizedTitle)) return "objetivos";
+        if (/\bresultados\b/i.test(normalizedTitle)) return "resultados";
+        if (/\bvideo\b/i.test(normalizedTitle)) return "video";
+        if (/\bposter\b/i.test(normalizedTitle)) return "poster";
+        return "";
+
+    }
+
+    function getProjectDetailOrder(card) {
+
+        const sectionOrder = {
+            responsable: 0,
+            coautores: 1,
+            proyecto: 2,
+            resumen: 3,
+            objetivos: 4,
+            resultados: 5,
+            video: 6,
+            poster: 7
+        };
+
+        if (Object.prototype.hasOwnProperty.call(sectionOrder, card.sectionRole)) {
+            return sectionOrder[card.sectionRole];
+        }
+
+        if (card.type === "profile") return 0;
+        if (card.type === "project") return 2;
+        return 8;
+
+    }
+
     const semanticGroups = Object.freeze({
 
         detect() {
@@ -196,6 +239,7 @@ Module : Semantic Groups
                     index,
                     type: classifiedCards[index].type,
                     confidence: classifiedCards[index].confidence,
+                    sectionRole: getSectionRole(scannedCards[index]?.element),
                     bounds
                 });
 
@@ -207,7 +251,66 @@ Module : Semantic Groups
 
                 const candidates = cards.filter((card) => rule.types.includes(card.type));
 
-                getComponents(candidates).forEach((component) => {
+                if (rule.group === "project-detail") {
+                    const projectCards = cards.filter((card) => card.sectionRole === "proyecto");
+                    const containers = new Set(projectCards.map((card) =>
+                        scannedCards[card.index]?.element?.parentElement
+                    ).filter(Boolean));
+
+                    containers.forEach((container) => {
+                        const members = cards.filter((card) =>
+                            ["responsable", "proyecto", "coautores", "resumen", "objetivos", "resultados", "video", "poster"].includes(card.sectionRole)
+                            && scannedCards[card.index]?.element?.parentElement === container
+                        );
+                        const roles = new Set(members.map((card) => card.sectionRole));
+
+                        if (!roles.has("responsable") || !roles.has("proyecto") || members.length < 2) {
+                            return;
+                        }
+
+                        groups.push({
+                            group: "project-detail",
+                            cards: members
+                                .sort((first, second) => getProjectDetailOrder(first)
+                                    - getProjectDetailOrder(second)
+                                    || first.index - second.index)
+                                .map((card) => card.index + 1),
+                            confidence: getGroupConfidence(rule, members)
+                        });
+                    });
+
+                    if (containers.size) {
+                        return;
+                    }
+                }
+
+                const components = getComponents(candidates);
+
+                if (rule.group === "project-detail") {
+                    const projectComponent = components.find((component) => {
+                        const presentTypes = new Set(component.map((card) => card.type));
+                        return component.some((card) => card.type === "project")
+                            && rule.required.every((type) => presentTypes.has(type));
+                    });
+
+                    if (projectComponent) {
+                        const memberIndexes = new Set(projectComponent.map((card) => card.index));
+                        const projectAnchor = projectComponent.find((card) => card.type === "project");
+                        const projectContainer = scannedCards[projectAnchor?.index]?.element?.parentElement;
+                        cards.filter((card) =>
+                            ["responsable", "proyecto", "coautores", "resumen", "objetivos", "resultados", "video", "poster"].includes(card.sectionRole)
+                            && scannedCards[card.index]?.element?.parentElement === projectContainer
+                        )
+                            .forEach((card) => {
+                                if (!memberIndexes.has(card.index)) {
+                                    projectComponent.push(card);
+                                    memberIndexes.add(card.index);
+                                }
+                            });
+                    }
+                }
+
+                components.forEach((component) => {
 
                     const presentTypes = new Set(component.map((card) => card.type));
                     const matches = rule.required.every((type) => presentTypes.has(type));
@@ -219,8 +322,12 @@ Module : Semantic Groups
                     groups.push({
                         group: rule.group,
                         cards: component
-                            .map((card) => card.index + 1)
-                            .sort((first, second) => first - second),
+                            .sort((first, second) => rule.group === "project-detail"
+                                ? getProjectDetailOrder(first)
+                                    - getProjectDetailOrder(second)
+                                    || first.index - second.index
+                                : first.index - second.index)
+                            .map((card) => card.index + 1),
                         confidence: getGroupConfidence(rule, component)
                     });
 

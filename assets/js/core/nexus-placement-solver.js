@@ -30,6 +30,18 @@ Module : Placement Solver
 
         const maximum = Math.max(1, Math.floor(Number(policy.maxColumns) || 1));
 
+        if (cardCount <= 1) {
+            return 1;
+        }
+
+        if (policy.device === "mobile") {
+            return 1;
+        }
+
+        if (policy.device === "tablet") {
+            return maximum;
+        }
+
         if (!policy.adaptiveColumns || cardCount <= 1) {
             return maximum;
         }
@@ -116,14 +128,34 @@ Module : Placement Solver
             unitsByRoot.set(root, members);
         });
 
-        return Array.from(unitsByRoot.values(), (members) => ({
-            cards: members.sort((first, second) => first.id - second.id),
-            priority: Math.max(...members.map((card) => card.priority))
-        })).sort((first, second) => second.priority - first.priority);
+        return Array.from(unitsByRoot.values(), (members) => {
+            const projectGroup = preserveSemanticGroups && groups.find((group) =>
+                group.group === "project-detail"
+                && clamp(Number(group.confidence) || 0, 0, 1) >= semanticConfidenceThreshold
+                && members.some((card) => group.cards.includes(card.id))
+            );
+            const projectOrder = new Map((projectGroup?.cards || []).map((id, index) => [id, index]));
+            const projectDetail = Boolean(projectGroup);
+
+            return {
+                cards: members.sort((first, second) => projectDetail
+                    ? (projectOrder.get(first.id) ?? Number.MAX_SAFE_INTEGER)
+                        - (projectOrder.get(second.id) ?? Number.MAX_SAFE_INTEGER)
+                        || first.id - second.id
+                    : first.id - second.id),
+                priority: Math.max(...members.map((card) => card.priority)),
+                projectDetail
+            };
+        }).sort((first, second) => Number(second.projectDetail) - Number(first.projectDetail)
+            || second.priority - first.priority);
 
     }
 
-    function getSpans(card, columns, policy, orientation) {
+    function getSpans(card, columns, policy, orientation, isProjectDetail) {
+
+        if (isProjectDetail) {
+            return { colSpan: 1, rowSpan: 1 };
+        }
 
         let colSpan = 1;
         let rowSpan = 1;
@@ -195,6 +227,10 @@ Module : Placement Solver
     function placeCards(cards, groups, policy, orientation, columns) {
 
         const units = makeUnits(cards, groups, Boolean(policy.preserveSemanticGroups));
+        const projectDetailIds = new Set(groups
+            .filter((group) => group.group === "project-detail"
+                && clamp(Number(group.confidence) || 0, 0, 1) >= semanticConfidenceThreshold)
+            .flatMap((group) => group.cards));
         const occupied = new Set();
         const placements = [];
         let cursor = 0;
@@ -202,7 +238,13 @@ Module : Placement Solver
         units.forEach((unit) => {
             unit.cards.forEach((card) => {
 
-                const { colSpan, rowSpan } = getSpans(card, columns, policy, orientation);
+                const { colSpan, rowSpan } = getSpans(
+                    card,
+                    columns,
+                    policy,
+                    orientation,
+                    projectDetailIds.has(card.id)
+                );
                 const position = findPosition(occupied, columns, cursor, colSpan, rowSpan);
 
                 for (let rowOffset = 0; rowOffset < rowSpan; rowOffset += 1) {
@@ -223,6 +265,12 @@ Module : Placement Solver
                 cursor = position.row * columns + position.column + colSpan;
 
             });
+
+            if (unit.projectDetail) {
+                const lastRow = placements.reduce((maximum, placement) =>
+                    Math.max(maximum, placement.row + placement.rowSpan - 1), 0);
+                cursor = Math.max(cursor, lastRow * columns);
+            }
         });
 
         placements.sort((first, second) => first.row - second.row || first.column - second.column);

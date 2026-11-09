@@ -70,9 +70,16 @@ Module : Layout Context
 
             const nexus = global.Nexus || global.NX;
             const root = global.document?.documentElement;
+            const frameworkContainer = global.document?.querySelector?.(".nx-dashboard")
+                || global.document?.querySelector?.(".nx-container");
+            const frameworkContainerWidth = finiteDimension(
+                frameworkContainer?.getBoundingClientRect?.().width
+            );
             const viewportWidth = finiteDimension(global.innerWidth) || finiteDimension(root?.clientWidth);
             const viewportHeight = finiteDimension(global.innerHeight) || finiteDimension(root?.clientHeight);
-            const containerWidth = finiteDimension(root?.clientWidth) || viewportWidth;
+            const containerWidth = frameworkContainerWidth
+                || finiteDimension(root?.clientWidth)
+                || viewportWidth;
             const containerHeight = finiteDimension(root?.clientHeight) || viewportHeight;
             const aspectRatio = viewportHeight > 0 ? viewportWidth / viewportHeight : 1;
             const orientation = viewportWidth >= viewportHeight ? "landscape" : "portrait";
