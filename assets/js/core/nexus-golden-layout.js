@@ -117,6 +117,18 @@ Module : Golden Layout
 
     }
 
+    function balanceSpans(cards, device, typesById) {
+
+        const balanceRows = device !== "mobile";
+
+        return cards.map((card) => ({
+            ...card,
+            colSpan: typesById.get(card.id) === "chart" ? 1 : card.colSpan,
+            rowSpan: balanceRows ? 1 : card.rowSpan
+        }));
+
+    }
+
     function reflow(proposal) {
 
         const columns = Math.floor(Number(proposal.columns));
@@ -125,12 +137,15 @@ Module : Golden Layout
             return proposal;
         }
 
-        const cards = proposal.cards.map((card) => ({
+        const classifications = (global.Nexus || global.NX)?.cardClassifier?.classify?.() || [];
+        const typesById = new Map(classifications.map((card, index) => [index + 1, card.type]));
+        const normalizedCards = proposal.cards.map((card) => ({
             ...card,
             colSpan: clamp(Math.floor(Number(card.colSpan) || 1), 1, columns),
             rowSpan: Math.max(1, Math.floor(Number(card.rowSpan) || 1)),
             priority: clamp(Number(card.priority) || 0, 0, 1)
         }));
+        const cards = balanceSpans(normalizedCards, proposal.device, typesById);
         const groups = Array.isArray(proposal.semanticGroups) ? proposal.semanticGroups : [];
         const units = makeUnits(cards, groups, Boolean(proposal.preserveSemanticGroups));
         const occupied = new Set();

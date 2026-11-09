@@ -22,6 +22,68 @@ Module : Render Engine Preview
     let snapshots = [];
     let previewActive = false;
 
+    function getTrackCount(container, fallback, itemCount) {
+
+        const tracks = global.getComputedStyle(container).gridTemplateColumns;
+        const count = tracks && tracks !== "none"
+            ? tracks.trim().split(/\s+(?![^()]*\))/).filter(Boolean).length
+            : 0;
+
+        return Math.max(1, Math.min(itemCount, count || fallback));
+
+    }
+
+    function reflowGroup(items, columns) {
+
+        const occupied = new Set();
+        const ordered = [...items].sort((first, second) => {
+            const position = first.card.compareDocumentPosition(second.card);
+            if (position & global.Node.DOCUMENT_POSITION_FOLLOWING) return -1;
+            if (position & global.Node.DOCUMENT_POSITION_PRECEDING) return 1;
+            return first.row - second.row || first.column - second.column;
+        });
+        let cursor = 0;
+
+        return ordered.map((item) => {
+            const colSpan = Math.min(columns, item.colSpan);
+            const rowSpan = item.rowSpan;
+            let row = Math.floor(cursor / columns);
+            let column = cursor % columns;
+            let position;
+
+            while (!position) {
+                for (let candidate = column; candidate + colSpan <= columns; candidate += 1) {
+                    let fits = true;
+                    for (let rowOffset = 0; rowOffset < rowSpan && fits; rowOffset += 1) {
+                        for (let columnOffset = 0; columnOffset < colSpan; columnOffset += 1) {
+                            if (occupied.has(`${row + rowOffset}:${candidate + columnOffset}`)) {
+                                fits = false;
+                                break;
+                            }
+                        }
+                    }
+                    if (fits) {
+                        position = { row, column: candidate };
+                        break;
+                    }
+                }
+                if (!position) {
+                    row += 1;
+                    column = 0;
+                }
+            }
+
+            for (let rowOffset = 0; rowOffset < rowSpan; rowOffset += 1) {
+                for (let columnOffset = 0; columnOffset < colSpan; columnOffset += 1) {
+                    occupied.add(`${position.row + rowOffset}:${position.column + columnOffset}`);
+                }
+            }
+            cursor = position.row * columns + position.column + colSpan;
+            return { ...item, column: position.column + 1, row: position.row + 1, colSpan };
+        });
+
+    }
+
     function captureProperties(element, properties) {
 
         const present = new Set(Array.from(
@@ -157,7 +219,12 @@ Module : Render Engine Preview
                 && Array.from(container.children).every((child) => cardSet.has(child));
 
             return containsOnlyCards && items.length > 1
-                ? { container, items, cardSet }
+                ? {
+                    container,
+                    items: reflowGroup(items, getTrackCount(container, columns, items.length)),
+                    columns: getTrackCount(container, columns, items.length),
+                    cardSet
+                }
                 : null;
 
         }).filter(Boolean);
@@ -175,18 +242,17 @@ Module : Render Engine Preview
         });
 
         try {
-            layoutGroups.forEach(({ container, items }) => {
+            layoutGroups.forEach(({ container, items, columns: groupColumns }) => {
 
-                const rowOffset = Math.min(...items.map((item) => item.row)) - 1;
                 container.style.setProperty("display", "grid");
                 container.style.setProperty(
                     "grid-template-columns",
-                    `repeat(${columns}, minmax(0, 1fr))`
+                    `repeat(${groupColumns}, minmax(0, 1fr))`
                 );
 
                 items.forEach(({ card, column, row, colSpan, rowSpan }) => {
                     card.style.setProperty("grid-column", String(column));
-                    card.style.setProperty("grid-row", String(row - rowOffset));
+                    card.style.setProperty("grid-row", String(row));
                     card.style.setProperty("grid-column-end", `span ${colSpan}`);
                     card.style.setProperty("grid-row-end", `span ${rowSpan}`);
                 });
