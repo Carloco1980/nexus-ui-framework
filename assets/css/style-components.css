@@ -51,6 +51,7 @@ version: 1.0.0
 @import url("../../sections/features/features.css");
 
 @import url("../../components/card/card-system.css");
+@import url("./components/cards-layout.css");
 
 /*=========================================================
 04 Utilities

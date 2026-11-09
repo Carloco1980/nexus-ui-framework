@@ -125,4 +125,31 @@ window.Nexus = NX;
 Bootstrap
 ==================================================*/
 
+(function loadCardScannerModule() {
+
+    const appScript = document.currentScript;
+
+    if (!appScript?.src) {
+        return;
+    }
+
+    const scannerModuleUrl = new URL("./core/nexus-card-scanner.js", appScript.src).href;
+    const classifierModuleUrl = new URL("./core/nexus-card-classifier.js", appScript.src).href;
+    const semanticGroupsModuleUrl = new URL("./core/nexus-semantic-groups.js", appScript.src).href;
+    const layoutContextModuleUrl = new URL("./core/nexus-layout-context.js", appScript.src).href;
+
+    NX.cardScannerReady = import(scannerModuleUrl)
+        .then(() => import(classifierModuleUrl))
+        .then(() => import(semanticGroupsModuleUrl))
+        .then(() => import(layoutContextModuleUrl))
+        .then(() => NX.cardScanner)
+        .catch((error) => {
+            if (NX.config?.debug?.enabled) {
+                console.error("[Nexus] Could not load a NACE core module.", error);
+            }
+            return null;
+        });
+
+})();
+
 NX.init();

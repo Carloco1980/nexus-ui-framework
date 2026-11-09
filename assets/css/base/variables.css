@@ -227,6 +227,15 @@ TYPOGRAPHY
     SPACING
     =====================================================*/
 
+    --nx-space-1:.25rem;
+    --nx-space-2:.5rem;
+    --nx-space-3:.75rem;
+    --nx-space-4:1rem;
+    --nx-space-5:1.5rem;
+    --nx-space-6:2rem;
+    --nx-space-7:3rem;
+    --nx-space-8:4rem;
+
     --nx-space-xs:.5rem;
     --nx-space-2xs:.25rem;
     --nx-space-sm:1rem;

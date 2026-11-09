@@ -77,6 +77,7 @@ Load Order
 @import url("../../sections/design-system/design-system.css");
 
 @import url("../../components/card/card-system.css");
+@import url("./components/cards-layout.css");
 
 /*=========================================================
 05 Utilities

@@ -256,6 +256,15 @@ TYPOGRAPHY
     SPACING
     =====================================================*/
 
+    --nx-space-1:.25rem;
+    --nx-space-2:.5rem;
+    --nx-space-3:.75rem;
+    --nx-space-4:1rem;
+    --nx-space-5:1.5rem;
+    --nx-space-6:2rem;
+    --nx-space-7:3rem;
+    --nx-space-8:4rem;
+
     --nx-space-xs:.5rem;
     --nx-space-2xs:.25rem;
     --nx-space-sm:1rem;
@@ -5899,6 +5908,49 @@ Hover Effect
 
 @media (prefers-reduced-motion:reduce){
     :is(.nx-card,.nx-panel,.nx-kpi,.nx-kpi-card,.nx-result-summary){transition:none;}
+}
+
+/* Reusable card layout primitives for Nexus ecosystem plugins. */
+
+.nx-card-stack{
+    display:flex;
+    flex-direction:column;
+    gap:var(--nx-space-3);
+}
+
+.nx-card-body{
+    display:flex;
+    flex:1;
+    flex-direction:column;
+    gap:var(--nx-space-sm);
+    padding:var(--nx-card-padding);
+}
+
+.nx-card-footer{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:var(--nx-space-xs);
+    padding:var(--nx-card-padding);
+    border-top:var(--nx-border-width) solid var(--nx-border-soft);
+}
+
+.nx-card-media{
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+.nx-reading{
+    width:100%;
+    max-width:var(--nx-reading-width, 70ch);
+}
+
+.nx-detail-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    gap:var(--nx-space-4);
 }
 
 /*=========================================================

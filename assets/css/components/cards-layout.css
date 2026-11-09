@@ -1,0 +1,42 @@
+/* Reusable card layout primitives for Nexus ecosystem plugins. */
+
+.nx-card-stack{
+    display:flex;
+    flex-direction:column;
+    gap:var(--nx-space-3);
+}
+
+.nx-card-body{
+    display:flex;
+    flex:1;
+    flex-direction:column;
+    gap:var(--nx-space-sm);
+    padding:var(--nx-card-padding);
+}
+
+.nx-card-footer{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:var(--nx-space-xs);
+    padding:var(--nx-card-padding);
+    border-top:var(--nx-border-width) solid var(--nx-border-soft);
+}
+
+.nx-card-media{
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+.nx-reading{
+    width:100%;
+    max-width:var(--nx-reading-width, 70ch);
+}
+
+.nx-detail-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    gap:var(--nx-space-4);
+}
