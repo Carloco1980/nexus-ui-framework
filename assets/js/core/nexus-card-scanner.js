@@ -10,11 +10,25 @@ Module : Card Scanner
 
     "use strict";
 
+    const cardSelector = [
+        ".nx-card",
+        ".nx-panel",
+        ".nx-kpi",
+        ".nx-kpi-card",
+        ".nx-chart-card",
+        ".nx-table-card",
+        ".nx-result-summary",
+        ".nx-component-card",
+        ".nx-design-card",
+        ".nx-feature-card",
+        ".nx-template-card"
+    ].join(", ");
+
     const cardScanner = Object.freeze({
 
         scan() {
 
-            return Array.from(document.querySelectorAll(".nx-card"), (card) => {
+            return Array.from(document.querySelectorAll(cardSelector), (card) => {
 
                 const bounds = card.getBoundingClientRect();
                 const title = card.querySelector(

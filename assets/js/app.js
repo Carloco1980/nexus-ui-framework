@@ -122,29 +122,86 @@ Expose Core
 window.Nexus = NX;
 
 /*==================================================
-Bootstrap
+Core Module Registry and Bootstrap
 ==================================================*/
 
-(function loadCardScannerModule() {
+(function loadNexusModules() {
 
-    const appScript = document.currentScript;
+    const CORE_MODULES = [
+        { path: "assets/js/core/config.js", loaded: () => Boolean(NX.config) },
+        { path: "assets/js/core/events.js", loaded: () => Boolean(NX.events) },
+        { path: "assets/js/core/theme.js", loaded: () => Boolean(NX.theme) },
+        { path: "components/theme-toogle/theme-toggle.js", loaded: () => Boolean(NX.themeToggle) },
+        { path: "assets/js/core/nexus-card-scanner.js", phase: "nace" },
+        { path: "assets/js/core/nexus-card-classifier.js", phase: "nace" },
+        { path: "assets/js/core/nexus-semantic-groups.js", phase: "nace" },
+        { path: "assets/js/core/nexus-layout-context.js", phase: "nace" },
+        { path: "assets/js/core/nexus-composition-policy.js", phase: "nace" },
+        { path: "assets/js/core/nexus-visual-weight.js", phase: "nace" },
+        { path: "assets/js/core/nexus-placement-solver.js", phase: "nace" },
+        { path: "assets/js/core/nexus-layout-validator.js", phase: "nace" },
+        { path: "assets/js/core/nexus-layout-score.js", phase: "nace" },
+        { path: "assets/js/core/nexus-golden-layout.js", phase: "nace" },
+        { path: "assets/js/core/nexus-render-engine.js", phase: "nace" }
+    ];
 
-    if (!appScript?.src) {
+    function resolveFrameworkBaseUrl() {
+
+        try {
+            if (NX.frameworkAssetBaseUrl) {
+                return new URL(NX.frameworkAssetBaseUrl, document.baseURI);
+            }
+
+            const appScriptUrl = document.currentScript?.src;
+            return appScriptUrl ? new URL("../../", appScriptUrl) : null;
+        } catch (_) {
+            return null;
+        }
+
+    }
+
+    const frameworkBaseUrl = resolveFrameworkBaseUrl();
+
+    if (!frameworkBaseUrl) {
+        NX.coreReady = Promise.resolve(null);
+        NX.cardScannerReady = NX.coreReady;
+        if (NX.config?.debug?.enabled) {
+            console.error("[Nexus] Could not resolve the Framework base URL; core modules were not loaded.");
+        }
         return;
     }
 
-    const scannerModuleUrl = new URL("./core/nexus-card-scanner.js", appScript.src).href;
-    const classifierModuleUrl = new URL("./core/nexus-card-classifier.js", appScript.src).href;
-    const semanticGroupsModuleUrl = new URL("./core/nexus-semantic-groups.js", appScript.src).href;
-    const layoutContextModuleUrl = new URL("./core/nexus-layout-context.js", appScript.src).href;
-    const compositionPolicyModuleUrl = new URL("./core/nexus-composition-policy.js", appScript.src).href;
+    function loadModules(modules) {
+        return modules.reduce(
+            (loading, module) => loading.then(() => module.loaded?.()
+                ? undefined
+                : import(new URL(module.path, frameworkBaseUrl).href)),
+            Promise.resolve()
+        );
+    }
 
-    NX.cardScannerReady = import(scannerModuleUrl)
-        .then(() => import(classifierModuleUrl))
-        .then(() => import(semanticGroupsModuleUrl))
-        .then(() => import(layoutContextModuleUrl))
-        .then(() => import(compositionPolicyModuleUrl))
-        .then(() => NX.cardScanner)
+    const frameworkModules = CORE_MODULES.filter((module) => module.phase !== "nace");
+    const naceModules = CORE_MODULES.filter((module) => module.phase === "nace");
+
+    NX.coreReady = loadModules(frameworkModules)
+        .then(() => new Promise((resolve) => {
+            NX.init();
+            if (NX.initialized) {
+                resolve(NX);
+                return;
+            }
+
+            document.addEventListener("DOMContentLoaded", () => resolve(NX), { once: true });
+        }))
+        .catch((error) => {
+            if (NX.config?.debug?.enabled) {
+                console.error("[Nexus] Could not load a Framework core module.", error);
+            }
+            return null;
+        });
+
+    NX.cardScannerReady = NX.coreReady
+        .then((framework) => framework ? loadModules(naceModules).then(() => NX.cardScanner) : null)
         .catch((error) => {
             if (NX.config?.debug?.enabled) {
                 console.error("[Nexus] Could not load a NACE core module.", error);
@@ -153,5 +210,3 @@ Bootstrap
         });
 
 })();
-
-NX.init();
